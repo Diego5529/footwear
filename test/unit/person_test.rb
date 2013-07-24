@@ -19,6 +19,11 @@ class PersonTest < ActiveSupport::TestCase
 		assert !@person.valid?
 	end
 
+	test "não pode ter nome vazio" do
+     	@person.password = ""
+		assert !@person.valid?
+	end
+
 	#Restricts the name to 50 characters
 	test "não pode ter nome maior que 50 caracteres" do
 		@person.name = "*"*51

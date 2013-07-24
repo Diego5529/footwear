@@ -1,4 +1,7 @@
 Footwear::Application.routes.draw do
+  resources :enterprises
+
+
   resources :people
 
 
