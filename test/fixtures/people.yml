@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+admin:
+  name: Diego Oliveira
+  password: secret
+  admin: true
+
+commum:
+  name: Diego Oliveira
+  password: secret
+  admin: false

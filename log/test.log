@@ -1,0 +1,83 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "people"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "people" ("name", "password", "admin", "created_at", "updated_at", "id") VALUES ('Diego Oliveira', 'secret', 't', '2013-07-23 17:36:54', '2013-07-23 17:36:54', 135138680)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "people" ("name", "password", "admin", "created_at", "updated_at", "id") VALUES ('Empresa', 'secretagain', 'f', '2013-07-23 17:36:54', '2013-07-23 17:36:54', 833841669)
+  [1m[36m (190.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "people"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "people" ("name", "password", "admin", "created_at", "updated_at", "id") VALUES ('Diego Oliveira', 'secret', 't', '2013-07-23 17:41:34', '2013-07-23 17:41:34', 135138680)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "people" ("name", "password", "admin", "created_at", "updated_at", "id") VALUES ('Empresa', 'secretagain', 'f', '2013-07-23 17:41:34', '2013-07-23 17:41:34', 833841669)
+  [1m[36m (176.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPerson Load (1.1ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT 1[0m  [["id", 135138680]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT 1  [["id", 135138680]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPerson Load (0.0ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT 1[0m  [["id", 135138680]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "people"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "people" ("name", "password", "admin", "created_at", "updated_at", "id") VALUES ('Diego Oliveira', 'secret', 't', '2013-07-23 17:57:04', '2013-07-23 17:57:04', 135138680)[0m
+  [1m[35mFixture Insert (0.1ms)[0m  INSERT INTO "people" ("name", "password", "admin", "created_at", "updated_at", "id") VALUES ('Empresa', 'secretagain', 'f', '2013-07-23 17:57:04', '2013-07-23 17:57:04', 833841669)
+  [1m[36m (173.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPerson Load (1.7ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT 1[0m  [["id", 135138680]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT 1  [["id", 135138680]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPerson Load (0.0ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT 1[0m  [["id", 135138680]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "people"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "people" ("name", "password", "admin", "created_at", "updated_at", "id") VALUES ('Diego Oliveira', 'secret', 't', '2013-07-23 17:57:41', '2013-07-23 17:57:41', 135138680)[0m
+  [1m[35mFixture Insert (0.0ms)[0m  INSERT INTO "people" ("name", "password", "admin", "created_at", "updated_at", "id") VALUES ('Empresa', 'secretagain', 'f', '2013-07-23 17:57:41', '2013-07-23 17:57:41', 833841669)
+  [1m[36m (165.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mPerson Load (1.6ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT 1[0m  [["id", 135138680]]
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPerson Load (0.1ms)[0m  SELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT 1  [["id", 135138680]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPerson Load (0.0ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT 1[0m  [["id", 135138680]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mFixture Delete (0.1ms)[0m  DELETE FROM "people"
+  [1m[36mFixture Insert (0.1ms)[0m  [1mINSERT INTO "people" ("name", "password", "admin", "created_at", "updated_at", "id") VALUES ('Diego Oliveira', 'secret', 't', '2013-07-23 18:22:54', '2013-07-23 18:22:54', 135138680)[0m
+  [1m[35m (182.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mPerson Load (1.7ms)[0m  SELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT 1  [["id", 135138680]]
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mPerson Load (0.1ms)[0m  [1mSELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT 1[0m  [["id", 135138680]]
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mPerson Load (0.0ms)[0m  SELECT "people".* FROM "people" WHERE "people"."id" = ? LIMIT 1  [["id", 135138680]]
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+Connecting to database specified by database.yml
