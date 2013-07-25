@@ -2,10 +2,5 @@
 
 admin:
   name: Diego Oliveira
-  password: secret
+  password: <%= Person.encrypt_password("teste") %>
   admin: true
-
-commum:
-  name: Diego Oliveira
-  password: secret
-  admin: false
