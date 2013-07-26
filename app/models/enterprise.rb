@@ -15,7 +15,7 @@ class Enterprise < ActiveRecord::Base
   # validates :zip_code, presence: true, format:{with:/^[\d]{5}-[\d]{3}$/}
   validates :district, presence: true, length:{maximum: 50}
   validates :state, presence: true, length:{maximum: 50}
-
+  #validates :cnpj, presence: true
   
   def plain_password=(password)
     return if password.blank?

@@ -2,10 +2,10 @@ require 'spec_helper'
 
 describe Enterprise do
   
-    # #Enterprise create?
-    # let(:enterprise) do
-    #     enterprise = FactoryGirl.create(:enterprise)
-    # end
+    #Enterprise create?
+    let(:enterprise) do
+        enterprise = FactoryGirl.create(:enterprise)
+    end
 
     # it "should has a enterprise" do
     #    enterprise = FactoryGirl.create(:enterprise)
@@ -125,6 +125,22 @@ describe Enterprise do
    FactoryGirl.build(:enterprise, telephone: 'X'*11).should be_valid
   end
 
+  # #cnpj
+  # it "should not have empty cnpj" do
+  #   enterprise = FactoryGirl.build(:enterprise, cnpj: '')
+  #   enterprise.should_not be_valid
+  # end
+
+  # it "should not have nil cnpj" do
+  #   enterprise = FactoryGirl.build(:enterprise, cnpj: nil)
+  #   enterprise.should_not be_valid
+  # end
+
+  # it "cnpj should has 11 caracters" do
+  #  FactoryGirl.build(:enterprise, cnpj: 'X'*10).should_not be_valid
+  #  FactoryGirl.build(:enterprise, cnpj: 'X'*12).should_not be_valid
+  #  FactoryGirl.build(:enterprise, cnpj: 'X'*11).should be_valid
+  # end
 
   # # #zip_code
   # # it "should not have empty zip_code" do

@@ -25759,3 +25759,286 @@ Served asset /people.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-25 17:32:10 -0300
 Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-07-25 20:49:27 -0300
+Served asset /rails.png - 200 OK (4ms)
+
+
+Started GET "/enterprises" for 127.0.0.1 at 2013-07-25 20:49:31 -0300
+Processing by EnterprisesController#index as HTML
+  [1m[36mEnterprise Load (1.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" [0m
+  Rendered enterprises/index.html.erb within layouts/application (51.3ms)
+Compiled jquery.js  (5ms)  (pid 5700)
+Compiled jquery_ujs.js  (0ms)  (pid 5700)
+Compiled application.js  (90ms)  (pid 5700)
+Completed 200 OK in 313ms (Views: 237.5ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-25 20:49:32 -0300
+Served asset /application.css - 200 OK (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-25 20:49:32 -0300
+Served asset /jquery.js - 200 OK (10ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-25 20:49:32 -0300
+Served asset /scaffolds.css - 200 OK (4ms)
+
+
+Started GET "/assets/enterprises.css?body=1" for 127.0.0.1 at 2013-07-25 20:49:32 -0300
+Served asset /enterprises.css - 200 OK (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-25 20:49:32 -0300
+Served asset /jquery_ujs.js - 200 OK (4ms)
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2013-07-25 20:49:32 -0300
+Served asset /people.css - 200 OK (2ms)
+
+
+Started GET "/assets/enterprises.js?body=1" for 127.0.0.1 at 2013-07-25 20:49:32 -0300
+Served asset /enterprises.js - 200 OK (4ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2013-07-25 20:49:32 -0300
+Served asset /people.js - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-25 20:49:32 -0300
+Served asset /application.js - 200 OK (13ms)
+
+
+Started GET "/enterprises/new" for 127.0.0.1 at 2013-07-25 20:49:35 -0300
+Processing by EnterprisesController#new as HTML
+  Rendered enterprises/_form.html.erb (18.9ms)
+  Rendered enterprises/new.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 59ms (Views: 57.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-25 20:49:35 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/enterprises.css?body=1" for 127.0.0.1 at 2013-07-25 20:49:35 -0300
+Served asset /enterprises.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2013-07-25 20:49:35 -0300
+Served asset /people.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-25 20:49:35 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-25 20:49:35 -0300
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-25 20:49:35 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/enterprises.js?body=1" for 127.0.0.1 at 2013-07-25 20:49:35 -0300
+Served asset /enterprises.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2013-07-25 20:49:35 -0300
+Served asset /people.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-25 20:49:35 -0300
+Served asset /application.js - 304 Not Modified (77ms)
+
+
+Started POST "/enterprises" for 127.0.0.1 at 2013-07-25 20:49:39 -0300
+Processing by EnterprisesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CNVb6R24Pwfe5kFaMMQRGFZ8QebQGhYFCBuCCRWGZBQ=", "enterprise"=>{"name"=>"", "name_social"=>"", "email"=>"", "plain_password"=>"[FILTERED]", "cnpj"=>"", "zip_code"=>"", "address"=>"", "number"=>"", "district"=>"", "state"=>"", "city"=>"", "telephone"=>""}, "commit"=>"Create Enterprise"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mEnterprise Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "enterprises" WHERE "enterprises"."email" = '' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  Rendered enterprises/_form.html.erb (18.2ms)
+  Rendered enterprises/new.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 147ms (Views: 45.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-25 20:49:39 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2013-07-25 20:49:39 -0300
+Served asset /people.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-25 20:49:39 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/enterprises.css?body=1" for 127.0.0.1 at 2013-07-25 20:49:39 -0300
+Served asset /enterprises.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-25 20:49:39 -0300
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-25 20:49:39 -0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2013-07-25 20:49:39 -0300
+Served asset /people.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/enterprises.js?body=1" for 127.0.0.1 at 2013-07-25 20:49:39 -0300
+Served asset /enterprises.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-25 20:49:39 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started POST "/enterprises" for 127.0.0.1 at 2013-07-25 22:02:26 -0300
+Processing by EnterprisesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CNVb6R24Pwfe5kFaMMQRGFZ8QebQGhYFCBuCCRWGZBQ=", "enterprise"=>{"name"=>"", "name_social"=>"", "email"=>"", "plain_password"=>"[FILTERED]", "cnpj"=>"", "zip_code"=>"", "address"=>"", "number"=>"", "district"=>"", "state"=>"", "city"=>"", "telephone"=>""}, "commit"=>"Create Enterprise"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mEnterprise Exists (0.3ms)[0m  SELECT 1 AS one FROM "enterprises" WHERE "enterprises"."email" = '' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  Rendered enterprises/_form.html.erb (20.6ms)
+  Rendered enterprises/new.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 300ms (Views: 179.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-25 22:02:28 -0300
+Served asset /application.css - 304 Not Modified (31ms)
+
+
+Started GET "/assets/enterprises.css?body=1" for 127.0.0.1 at 2013-07-25 22:02:28 -0300
+Served asset /enterprises.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-25 22:02:28 -0300
+Served asset /jquery.js - 304 Not Modified (58ms)
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2013-07-25 22:02:28 -0300
+Served asset /people.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-25 22:02:28 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-25 22:02:28 -0300
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/enterprises.js?body=1" for 127.0.0.1 at 2013-07-25 22:02:28 -0300
+Served asset /enterprises.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2013-07-25 22:02:28 -0300
+Served asset /people.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-25 22:02:28 -0300
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started POST "/enterprises" for 127.0.0.1 at 2013-07-25 22:02:36 -0300
+Processing by EnterprisesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CNVb6R24Pwfe5kFaMMQRGFZ8QebQGhYFCBuCCRWGZBQ=", "enterprise"=>{"name"=>"", "name_social"=>"", "email"=>"", "plain_password"=>"[FILTERED]", "cnpj"=>"", "zip_code"=>"", "address"=>"", "number"=>"", "district"=>"", "state"=>"", "city"=>"", "telephone"=>""}, "commit"=>"Create Enterprise"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mEnterprise Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "enterprises" WHERE "enterprises"."email" = '' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  rollback transaction
+  Rendered enterprises/_form.html.erb (19.9ms)
+  Rendered enterprises/new.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 66ms (Views: 52.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-25 22:02:36 -0300
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-25 22:02:36 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-25 22:02:36 -0300
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-25 22:02:36 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/enterprises.css?body=1" for 127.0.0.1 at 2013-07-25 22:02:36 -0300
+Served asset /enterprises.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2013-07-25 22:02:36 -0300
+Served asset /people.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/enterprises.js?body=1" for 127.0.0.1 at 2013-07-25 22:02:36 -0300
+Served asset /enterprises.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2013-07-25 22:02:36 -0300
+Served asset /people.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-25 22:02:36 -0300
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/enterprises" for 127.0.0.1 at 2013-07-25 22:03:34 -0300
+Processing by EnterprisesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CNVb6R24Pwfe5kFaMMQRGFZ8QebQGhYFCBuCCRWGZBQ=", "enterprise"=>{"name"=>"", "name_social"=>"", "email"=>"", "plain_password"=>"[FILTERED]", "cnpj"=>"", "zip_code"=>"", "address"=>"", "number"=>"", "district"=>"", "state"=>"", "city"=>"", "telephone"=>""}, "commit"=>"Create Enterprise"}
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mEnterprise Exists (0.5ms)[0m  SELECT 1 AS one FROM "enterprises" WHERE "enterprises"."email" = '' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  Rendered enterprises/_form.html.erb (23.1ms)
+  Rendered enterprises/new.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 75ms (Views: 57.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-07-25 22:03:34 -0300
+Served asset /application.css - 304 Not Modified (24ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-07-25 22:03:34 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-07-25 22:03:34 -0300
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/enterprises.css?body=1" for 127.0.0.1 at 2013-07-25 22:03:34 -0300
+Served asset /enterprises.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/people.css?body=1" for 127.0.0.1 at 2013-07-25 22:03:34 -0300
+Served asset /people.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-07-25 22:03:34 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/enterprises.js?body=1" for 127.0.0.1 at 2013-07-25 22:03:34 -0300
+Served asset /enterprises.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/people.js?body=1" for 127.0.0.1 at 2013-07-25 22:03:34 -0300
+Served asset /people.js - 304 Not Modified (58ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-07-25 22:03:34 -0300
+Served asset /application.js - 304 Not Modified (1ms)

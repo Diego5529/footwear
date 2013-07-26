@@ -15,7 +15,6 @@ FactoryGirl.define do
     name_social 'Nome Social'
     email 'foo@bar.com'
     password '123456'
-    # cnpj '123456789102345'
     # zip_code '16200-000'
     address 'rua ssss, 885'
     # number '1332'
@@ -23,5 +22,6 @@ FactoryGirl.define do
     state 'Rio de Janeiro'
     # city 'Birigui'
     telephone '12345698745'
+    #cnpj '12345678912'
    end
 end
