@@ -31,12 +31,11 @@ ActiveRecord::Schema.define(:version => 20130724163749) do
   end
 
   create_table "people", :force => true do |t|
-    t.string   "name",       :limit => 50,  :null => false
-    t.string   "email",      :limit => 100
-    t.string   "password",   :limit => 50,  :null => false
+    t.string   "name",       :limit => 50, :null => false
+    t.string   "password",   :limit => 50
     t.boolean  "admin"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
 end

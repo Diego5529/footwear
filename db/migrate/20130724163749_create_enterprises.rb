@@ -6,7 +6,7 @@ class CreateEnterprises < ActiveRecord::Migration
       t.string :email
       t.string :password
       t.string :cnpj
-      t.string :zip_code, :limit=>9, :null=>false
+      t.string :zip_code
       t.string :address
       t.string :number
       t.string :district

@@ -1,4 +1,4 @@
-c# encoding: utf-8
+# encoding: utf-8
 require 'spec_helper'
 
 describe Person do
@@ -23,6 +23,12 @@ describe Person do
     person = FactoryGirl.build(:person, name: nil)
     person.should_not be_valid
   end
+
+   it "should be uniquennes name" do
+    person = FactoryGirl.build(:person, name: "admin.new_person")
+    new_person = FactoryGirl.build(:person, name: "admin")
+    new_person.should_not be_valid if person.name == new_person.name
+  end 
 
    #PASSWORD
   it "should not have a blank password" do

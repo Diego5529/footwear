@@ -6,9 +6,9 @@ class Person < ActiveRecord::Base
 	attr_protected :password
   attr_accessible :admin, :name, :plain_password
 
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, presence: true,uniqueness: true, length: { maximum: 50 }
   validates :password, presence: true, length: {maximum: 10}, length: {minimum: 5}
-  validates :admin, presence: true
+  validate :admin
 
   	
 #scope :admins, -> { where(["admin=?",true]) }

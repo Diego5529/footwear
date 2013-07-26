@@ -1,6 +1,6 @@
 FactoryGirl.define do 
   factory :person do
-    name 'Diego'
+    name 'admin'
     #email 'treicyfelton@msn.com'
     #nick 'treicy'
     password '123456' 
@@ -15,13 +15,13 @@ FactoryGirl.define do
     name_social 'Nome Social'
     email 'foo@bar.com'
     password '123456'
-    # zip_code '16200-000'
+    zip_code '16200-000'
     address 'rua ssss, 885'
-    # number '1332'
+    number '1332'
     district 'Centro'
     state 'Rio de Janeiro'
-    # city 'Birigui'
-    telephone '12345698745'
-    #cnpj '12345678912'
+    city 'Birigui'
+    telephone '12345678910'
+    cnpj '12345678987456'
    end
 end
