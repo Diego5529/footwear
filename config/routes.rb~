@@ -4,10 +4,6 @@ Footwear::Application.routes.draw do
   get "login/logout"
   post "login/logout"
 
- match "login" => "login#login"
- match "logout" => "login#logout"
-
-
   resources :enterprises
 
 

@@ -9,18 +9,24 @@ class Enterprise < ActiveRecord::Base
   validates :name, presence: true,uniqueness: true, length: { maximum: 50 }
   validates :name_social, presence: true, uniqueness: true, length: { maximum: 50 }
   validates :email, presence: true, uniqueness: true, format: {with:/^[a-zA-Z0-9_.-]+@([a-zA-Z0-9_ -]+\.)+[a-zA-Z]{2,4}$/}
-  validates :password, presence: true, length: {maximum: 10}, length: {minimum: 6}
+  validates :password, presence: true, length: {maximum: 15}, length: {minimum: 5}
   validates :telephone, allow_blank: true, allow_nil: true, length:{is: 11}
   validates :address, presence: true, length:{maximum: 200}
   validates :number, presence: true, length:{maximum: 5}
   validates :district, presence: true, length:{maximum: 50}
   validates :city, presence: true, length:{maximum: 100}
   validates :state, presence: true, length:{maximum: 50}
-  validates :cnpj, presence: true, uniqueness: true, length:{is: 14}
+  validates :cnpj, presence: true, uniqueness: true, length:{is: 18}, format: {with:/^\d{2}.[\d]{3}.[\d]{3}\/[\d]{4}-[\d]{2}$/}
   validates :zip_code, presence: true, format:{with:/^[\d]{5}-[\d]{3}$/}
   
+  # def plain_password=(password)
+  #   return if password.blank?
+  #   self.password = self.class.encrypt_password(password)
+  # end
+
   def plain_password=(password)
     return if password.blank?
+    raise StandardError.new("Tamanho de senha inválido!") if !(5..15).include?(password.size)
     self.password = self.class.encrypt_password(password)
   end
 

@@ -22,6 +22,6 @@ FactoryGirl.define do
     state 'Rio de Janeiro'
     city 'Birigui'
     telephone '12345678910'
-    cnpj '12345678987456'
+    cnpj '13.456.789/8745-66'
    end
 end

@@ -1,4 +1,11 @@
 class PeopleController < ApplicationController
+
+  respond_to :html
+  before_filter :logged?
+
+  def logged?
+  redirect_to "/login" if !session[:id]
+  end
   # GET /people
   # GET /people.json
   def index
@@ -40,7 +47,10 @@ class PeopleController < ApplicationController
   # POST /people
   # POST /people.json
   def create
+    
+    begin
     @person = Person.new(params[:person])
+    
 
     respond_to do |format|
       if @person.save
@@ -50,6 +60,11 @@ class PeopleController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @person.errors, status: :unprocessable_entity }
       end
+    end
+    rescue => e
+      @person = Person.new
+      flash[:notice] = e.to_s
+      render :new
     end
   end
 
@@ -67,6 +82,9 @@ class PeopleController < ApplicationController
         format.json { render json: @person.errors, status: :unprocessable_entity }
       end
     end
+    rescue => e
+    flash[:notice] = e.to_s  
+    render :edit
   end
 
   # DELETE /people/1

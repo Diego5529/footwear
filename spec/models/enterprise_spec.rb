@@ -182,10 +182,10 @@ describe Enterprise do
     enterprise.should_not be_valid
   end
 
-  it "cnpj should has 14 caracters" do
-   FactoryGirl.build(:enterprise, cnpj: 'X'*15).should_not be_valid
-   FactoryGirl.build(:enterprise, cnpj: 'X'*16).should_not be_valid
-   FactoryGirl.build(:enterprise, cnpj: 'X'*14).should be_valid
+  it "cnpj should has certify caracters" do
+  # FactoryGirl.build(:enterprise, cnpj: 'X'*17).should_not be_valid
+    FactoryGirl.build(:enterprise, cnpj: '011.111.111/1111-11').should_not be_valid
+    FactoryGirl.build(:enterprise, cnpj: '13.456.789/8745-66').should be_valid
   end
 
   #zip_code

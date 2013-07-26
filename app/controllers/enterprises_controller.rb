@@ -40,6 +40,7 @@ class EnterprisesController < ApplicationController
   # POST /enterprises
   # POST /enterprises.json
   def create
+    begin
     @enterprise = Enterprise.new(params[:enterprise])
 
     respond_to do |format|
@@ -50,6 +51,11 @@ class EnterprisesController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @enterprise.errors, status: :unprocessable_entity }
       end
+    end    
+    rescue => e
+      @enterprise = Enterprise.new(params[:enterprise].except(:plain_password))
+      flash[:notice] = e.to_s
+      render :new
     end
   end
 
@@ -67,6 +73,12 @@ class EnterprisesController < ApplicationController
         format.json { render json: @enterprise.errors, status: :unprocessable_entity }
       end
     end
+    
+    rescue => e
+      @enterprise = Enterprise.new(params[:enterprise].except(:plain_password))
+      flash[:notice] = e.to_s
+      render :edit
+
   end
 
   # DELETE /enterprises/1
