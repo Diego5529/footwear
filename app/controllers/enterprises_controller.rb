@@ -1,4 +1,5 @@
 class EnterprisesController < ApplicationController
+  layout "public"
   # GET /enterprises
   # GET /enterprises.json
   def index

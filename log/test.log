@@ -34858,3 +34858,4 @@ Connecting to database specified by database.yml
   [1m[35mEnterprise Exists (0.1ms)[0m  SELECT 1 AS one FROM "enterprises" WHERE "enterprises"."email" = 'foo@bar.com' LIMIT 1
   [1m[36mEnterprise Exists (0.0ms)[0m  [1mSELECT 1 AS one FROM "enterprises" WHERE "enterprises"."cnpj" = '13.456.789/8745-66' LIMIT 1[0m
   [1m[35m (0.0ms)[0m  rollback transaction
+Connecting to database specified by database.yml
