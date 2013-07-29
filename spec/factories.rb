@@ -24,4 +24,19 @@ FactoryGirl.define do
     telephone '12345678910'
     cnpj '13.456.789/8745-66'
    end
+
+   factory :client do
+    name 'Usuario'
+    email 'foo@bar.com'
+    password '123456'
+    zip_code '16200-000'
+    address 'Rua ssss'
+    number '1332'
+    district 'Centro'
+    state 'Rio de Janeiro'
+    city 'Birigui'
+    telephone '12345678910'
+    cpf '445.153.509-83'
+   end
+
 end

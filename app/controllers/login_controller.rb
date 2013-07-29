@@ -29,7 +29,7 @@ class LoginController < ApplicationController
 	return
 	end
 
-	if person.admin == false
+	if !person.admin
 	flash[:notice] = "You are not Administrator"
 	return
 	end
@@ -39,7 +39,6 @@ class LoginController < ApplicationController
 	session[:name]	= person.name
 	session[:admin]	= person.admin
 	redirect_to people_path
-	
 
 
 	end

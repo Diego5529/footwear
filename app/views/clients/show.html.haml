@@ -1,0 +1,39 @@
+!!! html5
+%html
+%p#notice= notice
+%p
+  %b Name:
+  = @client.name
+%p
+  %b Email:
+  = @client.email
+%p
+  %b Password:
+  = @client.password
+%p
+  %b CPF:
+  = @client.cpf
+%p
+  %b Zip code:
+  = @client.zip_code
+%p
+  %b Address:
+  = @client.address
+%p
+  %b Number:
+  = @client.number
+%p
+  %b District:
+  = @client.district
+%p
+  %b City:
+  = @client.city
+%p
+  %b State:
+  = @client.state
+%p
+  %b Telephone:
+  = @client.telephone
+= link_to 'Edit', edit_client_path(@client)
+|
+\#{link_to 'Back', clients_path}

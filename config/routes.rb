@@ -1,8 +1,11 @@
 Footwear::Application.routes.draw do
-  get "login/login"
-  post "login/login"
-  get "login/logout"
-  post "login/logout"
+  resources :clients
+
+
+  # get "login/login"
+  # post "login/login"
+  # get "login/logout"
+  # post "login/logout"
   # get "login//"
   # post "login//"
 
@@ -14,8 +17,6 @@ Footwear::Application.routes.draw do
 
 
   resources :enterprises
-
-
   resources :people
 
 
