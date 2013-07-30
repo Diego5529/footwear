@@ -3,4 +3,6 @@
 <%= render 'form' %>
 
 <%= link_to 'Show', @enterprise %> |
+<%= if session[:admin] %>
 <%= link_to 'Back', enterprises_path %>
+<%= end %>

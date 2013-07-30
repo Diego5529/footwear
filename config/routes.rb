@@ -1,5 +1,5 @@
 Footwear::Application.routes.draw do
-  resources :clients
+  
 
 
   # get "login/login"
@@ -12,12 +12,13 @@ Footwear::Application.routes.draw do
  
  match "login" => "login#login"
  match "logout" => "login#logout"
- # match "/" => "login#/"
+ #match "/" => "login#/"
 
 
 
   resources :enterprises
   resources :people
+  resources :clients
 
 
   # The priority is based upon order of creation:
@@ -69,7 +70,7 @@ Footwear::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  #root :to => 'welcome#enterprises'
 
   # See how all your routes lay out with "rake routes"
 

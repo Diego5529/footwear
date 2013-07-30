@@ -1,8 +1,14 @@
 #encoding: utf-8
 class ClientsController < ApplicationController
-  layout "public"
+  #layout "public"
   # GET /clients
   # GET /clients.json
+  respond_to :html
+  before_filter :logged?
+
+  def logged?
+  redirect_to "/login" if !session[:id]
+  end
   def index
     @clients = Client.all
 

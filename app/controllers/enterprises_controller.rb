@@ -1,7 +1,13 @@
 class EnterprisesController < ApplicationController
-  layout "public"
+  #layout "public"
   # GET /enterprises
   # GET /enterprises.json
+  respond_to :html
+  before_filter :logged?
+
+  def logged?
+  redirect_to "/login" if !session[:id]
+  end
   def index
     @enterprises = Enterprise.all
 
