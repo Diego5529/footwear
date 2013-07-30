@@ -1,5 +1,5 @@
 class EnterprisesController < ApplicationController
-  #layout "public"
+  layout "enterprise"
   # GET /enterprises
   # GET /enterprises.json
   respond_to :html

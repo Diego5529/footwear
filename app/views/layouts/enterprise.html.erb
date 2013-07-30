@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>-Footwear- Login Admin</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<header>
+	<ul>
+		<li><%= link_to "Home", "/" %></li>
+	</ul>
+</header>
+<%= yield %>
+
+<footer>
+	Hello, here is layout Enterprises
+</footer>
+
+</body>
+</html>

@@ -148,32 +148,30 @@ describe Client do
    FactoryGirl.build(:client, telephone: 'X'*11).should be_valid
   end
 
-  # # #cnpj
-  # # it "should not have empty cnpj" do
-  # #   enterprise = FactoryGirl.build(:enterprise, cnpj: '')
-  # #   enterprise.should_not be_valid
-  # # end
+  #CPF
+  it "should not have empty cnpj" do
+    client = FactoryGirl.build(:client, cpf: '')
+    client.should_not be_valid
+  end
 
-  # # it "should not have nil cnpj" do
-  # #   enterprise = FactoryGirl.build(:enterprise, cnpj: nil)
-  # #   enterprise.should_not be_valid
-  # # end
+  it "should not have nil cnpj" do
+    client = FactoryGirl.build(:client, cpf: nil)
+    client.should_not be_valid
+  end
 
-  # # it "cnpj should has certify caracters" do
-  # # # FactoryGirl.build(:enterprise, cnpj: 'X'*17).should_not be_valid
-  # #   FactoryGirl.build(:enterprise, cnpj: '011.111.111/1111-11').should_not be_valid
-  # #   FactoryGirl.build(:enterprise, cnpj: '13.456.789/8745-66').should be_valid
-  # # end
+  it "cnpj should has certify caracters" do
+    FactoryGirl.build(:client, cpf: '123.456.789-XX').should be_valid
+  end
 
-  # #zip_code
-  # it "should not have empty zip_code" do
-  #   enterprise = FactoryGirl.build(:enterprise, zip_code: '')
-  #   enterprise.should_not be_valid
-  # end
+  #zip_code
+  it "should not have empty zip_code" do
+    client = FactoryGirl.build(:client, zip_code: '')
+    client.should_not be_valid
+  end
 
-  # it "should not have nil zip_code" do
-  #   enterprise = FactoryGirl.build(:enterprise, zip_code: nil)
-  #   enterprise.should_not be_valid
-  # end
+  it "should not have nil zip_code" do
+    client = FactoryGirl.build(:client, zip_code: nil)
+    client.should_not be_valid
+  end
 
 end

@@ -1,6 +1,6 @@
 #encoding: utf-8
 class ClientsController < ApplicationController
-  #layout "public"
+  layout "client"
   # GET /clients
   # GET /clients.json
   respond_to :html
