@@ -1,14 +1,19 @@
 #encoding: utf-8
 class ClientsController < ApplicationController
   layout "client"
-  # GET /clients
-  # GET /clients.json
+
   respond_to :html
   before_filter :logged?
+  #before_filter :login?
 
   def logged?
-  redirect_to "/login" if !session[:id]
+  redirect_to "/people" if !session[:admin]
   end
+  
+  # def login?
+  # redirect_to "/clients" if !session[:id]
+  # end
+
   def index
     @clients = Client.all
 
@@ -48,6 +53,7 @@ class ClientsController < ApplicationController
   # POST /clients
   # POST /clients.json
   def create
+    begin
     @client = Client.new(params[:client])
 
     respond_to do |format|
@@ -58,6 +64,11 @@ class ClientsController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @client.errors, status: :unprocessable_entity }
       end
+    end    
+    rescue => e
+      @client = Client.new(params[:client].except(:plain_password))
+      flash[:notice] = e.to_s
+      render :new
     end
   end
 
@@ -65,7 +76,7 @@ class ClientsController < ApplicationController
   # PUT /clients/1.json
   def update
     @client = Client.find(params[:id])
-
+    
     respond_to do |format|
       if @client.update_attributes(params[:client])
         format.html { redirect_to @client, notice: 'Client was successfully updated.' }
@@ -75,6 +86,12 @@ class ClientsController < ApplicationController
         format.json { render json: @client.errors, status: :unprocessable_entity }
       end
     end
+    
+    rescue => e
+      @client = Client.new(params[:client].except(:plain_password))
+      flash[:notice] = e.to_s
+      render :edit
+
   end
 
   # DELETE /clients/1

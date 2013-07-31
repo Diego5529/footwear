@@ -1,0 +1,47 @@
+#encoding: utf-8
+class LoginClientController < ApplicationController
+  layout "public"
+
+        def login_client
+            if request.post?
+              email   = params[:email]
+              password = params[:password]
+
+            if email.blank? && password.blank?
+              flash[:notice] = "Enter the email and password"
+            return
+            end
+
+            if email.blank?
+              flash[:notice] = "Enter the email"
+              return
+            end
+
+            if password.blank?
+            flash[:notice] = "Enter the password"
+            return
+            end
+
+            client = Client.auth(email,password)
+            if  !client
+            flash[:notice] = "Failed Login"
+            return
+            end
+
+            flash[:notice]  = "Welcome, #{client.email}!"
+            session[:id]  = client.id
+            session[:email]  = client.email
+            redirect_to clients_path
+          end
+        end
+
+        def logout_client
+          session[:id]  = nil
+          session[:email]  = nil
+          redirect_to :action=>:login_client
+        end
+
+        def index
+          redirect_to :action=>"/"
+        end
+end

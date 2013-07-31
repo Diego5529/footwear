@@ -1,0 +1,17 @@
+<h1>Login Enterprise</h1>
+
+<p id="notice"><%= notice %></p>
+
+<%= form_tag "login_user" do %>
+<p>
+<label for="email">E-mail:</label>
+<input type="text" id="email" name="email"/>
+</p>
+<p>
+<label for="password">Password:</label>
+<input type="password" id="password" name="password"/>
+</p>
+<p>
+<input type="submit" value="Enter"/>
+</p>
+<% end %>

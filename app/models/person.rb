@@ -15,7 +15,6 @@ class Person < ActiveRecord::Base
 
   default_scope -> { order(:name) }
  
-
   def plain_password=(password)
     return if password.blank?
     raise StandardError.new("Tamanho de senha inválido!") if !(5..15).include?(password.size)

@@ -1,0 +1,11 @@
+%h1 Autenticação no sistema
+%p#notice= notice
+= form_tag "/login" do
+  %p
+    %label{:for => "name"} Login:
+    %input#name{:name => "name", :type => "text"}/
+  %p
+    %label{:for => "password"} Password:
+    %input#password{:name => "password", :type => "password"}/
+  %p
+    %input{:type => "submit", :value => "Enter"}/

@@ -4,7 +4,7 @@ class PeopleController < ApplicationController
   before_filter :logged?
 
   def logged?
-  redirect_to "/login" if !session[:id]
+  redirect_to "/login" if !session[:admin]
   end
   # GET /people
   # GET /people.json

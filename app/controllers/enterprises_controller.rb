@@ -1,13 +1,29 @@
 class EnterprisesController < ApplicationController
+  #before_filter :teste?, :only => [:index,:show,:edit]
   layout "enterprise"
+
+
+  # def teste?
+  #   if session[:id] && !session[:admin]
+  #     redirect_to "/"
+  #   else
+  #     if !session[:id]
+  #       redirect_to "/"
+  #   end
+  # end
   # GET /enterprises
   # GET /enterprises.json
   respond_to :html
   before_filter :logged?
+  #before_filter :login?, :only => [:index,:show,:edit]
 
   def logged?
-  redirect_to "/login" if !session[:id]
+  redirect_to "/people" if !session[:admin]
   end
+  # def login?
+  # redirect_to "/enterprises" if !session[:id]
+  # end
+
   def index
     @enterprises = Enterprise.all
 

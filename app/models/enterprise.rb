@@ -19,10 +19,6 @@ class Enterprise < ActiveRecord::Base
   validates :cnpj, presence: true, uniqueness: true, length:{is: 18}, format: {with:/^\d{2}.[\d]{3}.[\d]{3}\/[\d]{4}-[\d]{2}$/}
   validates :zip_code, presence: true, format:{with:/^[\d]{5}-[\d]{3}$/}
   
-  # def plain_password=(password)
-  #   return if password.blank?
-  #   self.password = self.class.encrypt_password(password)
-  # end
 
   def plain_password=(password)
     return if password.blank?

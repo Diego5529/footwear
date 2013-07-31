@@ -1,0 +1,55 @@
+= form_for(@client) do |f|
+  - if @client.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@client.errors.count, "error")
+        prohibited this client from being saved:
+      %ul
+        - @client.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .field
+    = f.label :email
+    %br/
+    = f.text_field :email
+  .field
+    = f.label :password
+    %br/
+    = f.password_field :plain_password
+  .field
+    = f.label :cpf
+    %br/
+    = f.text_field :cpf
+  .field
+    = f.label :zip_code
+    %br/
+    = f.text_field :zip_code
+  .field
+    = f.label :address
+    %br/
+    = f.text_field :address
+  .field
+    = f.label :number
+    %br/
+    = f.text_field :number
+  .field
+    = f.label :district
+    %br/
+    = f.text_field :district
+  .field
+    = f.label :city
+    %br/
+    = f.text_field :city
+  .field
+    = f.label :state
+    %br/
+    = f.text_field :state
+  .field
+    = f.label :telephone
+    %br/
+    = f.text_field :telephone
+  .actions
+    = f.submit

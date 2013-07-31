@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @person.name
+%p
+  %b Password:
+  = @person.password
+%p
+  %b Admin:
+  = @person.admin
+= link_to 'Edit', edit_person_path(@person)
+|
+\#{link_to 'Back', people_path}

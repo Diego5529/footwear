@@ -1,0 +1,11 @@
+%h1 Login Client
+%p#notice= notice
+= form_tag "login_client" do
+  %p
+    %label{:for => "email"} E-mail:
+    %input#email{:name => "email", :type => "text"}/
+  %p
+    %label{:for => "password"} Password:
+    %input#password{:name => "password", :type => "password"}/
+  %p
+    %input{:type => "submit", :value => "Enter"}/

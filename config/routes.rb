@@ -1,24 +1,37 @@
 Footwear::Application.routes.draw do
-  
+
+  resources :publics
+  resources :enterprises
+  resources :people
+  resources :clients
 
 
-  # get "login/login"
-  # post "login/login"
+  # get "login"
+  # post "login"
   # get "login/logout"
   # post "login/logout"
   # get "login//"
   # post "login//"
+  get "login_user/login_user"
+  post "login_user/login_user"
+  get "login_client/login_client"
+  post "login_client/login_client"
 
- 
+  get "login_user/home_enterprise"
+  post "login_client/login_client"
+
+
  match "login" => "login#login"
  match "logout" => "login#logout"
- #match "/" => "login#/"
+ match "login_user" => "login_user#logout_user"
+ match "login_client" => "login_client#logout_client"
+ root to: "publics#index"
 
 
 
-  resources :enterprises
-  resources :people
-  resources :clients
+
+
+  
 
 
   # The priority is based upon order of creation:

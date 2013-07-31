@@ -1,0 +1,35 @@
+%h1 Listing clients
+%table
+  %tr
+    %th Name
+    %th Email
+    %th Password
+    %th CPF
+    %th Zip code
+    %th Address
+    %th Number
+    %th District
+    %th City
+    %th State
+    %th Telephone
+    %th
+    %th
+    %th
+  - @clients.each do |client|
+    %tr
+      %td= client.name
+      %td= client.email
+      %td= client.password
+      %td= client.cpf
+      %td= client.zip_code
+      %td= client.address
+      %td= client.number
+      %td= client.district
+      %td= client.city
+      %td= client.state
+      %td= client.telephone
+      %td= link_to 'Show', client
+      %td= link_to 'Edit', edit_client_path(client)
+      %td= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Client', new_client_path

@@ -1,0 +1,40 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @enterprise.name
+%p
+  %b Name social:
+  = @enterprise.name_social
+%p
+  %b Email:
+  = @enterprise.email
+%p
+  %b Password:
+  = @enterprise.password
+%p
+  %b Cnpj:
+  = @enterprise.cnpj
+%p
+  %b zip_code
+  = @enterprise.zip_code
+%p
+  %b Address:
+  = @enterprise.address
+%p
+  %b Number:
+  = @enterprise.number
+%p
+  %b District:
+  = @enterprise.district
+%p
+  %b State:
+  = @enterprise.state
+%p
+  %b City:
+  = @enterprise.city
+%p
+  %b Telephone:
+  = @enterprise.telephone
+= link_to 'Edit', edit_enterprise_path(@enterprise)
+|
+\#{link_to 'Back', enterprises_path}

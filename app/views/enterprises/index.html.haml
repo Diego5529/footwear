@@ -1,0 +1,37 @@
+%h1 Listing enterprises
+%table
+  %tr
+    %th Name
+    %th Name social
+    %th Email
+    %th Password
+    %th CNPJ
+    %th zip_code
+    %th Address
+    %th Number
+    %th District
+    %th State
+    %th City
+    %th Telephone
+    %th
+    %th
+    %th
+  - @enterprises.each do |enterprise|
+    %tr
+      %td= enterprise.name
+      %td= enterprise.name_social
+      %td= enterprise.email
+      %td= enterprise.password
+      %td= enterprise.cnpj
+      %td= enterprise.zip_code
+      %td= enterprise.address
+      %td= enterprise.number
+      %td= enterprise.district
+      %td= enterprise.state
+      %td= enterprise.city
+      %td= enterprise.telephone
+      %td= link_to 'Show', enterprise
+      %td= link_to 'Edit', edit_enterprise_path(enterprise)
+      %td= link_to 'Destroy', enterprise, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Enterprise', new_enterprise_path
