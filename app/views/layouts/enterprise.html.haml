@@ -7,8 +7,10 @@
     = csrf_meta_tags
   %body
     %header
+      Welcome: #{session[:name]}
       %ul
         %li= link_to "Home", "/"
+        %li= link_to "Exit", "/logout_user"
     = yield
     %footer
       Hello, here is layout Enterprises

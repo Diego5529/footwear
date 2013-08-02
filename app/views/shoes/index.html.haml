@@ -1,0 +1,29 @@
+%h1 Listing shoes
+%table
+  %tr
+    %th Name
+    %th Value
+    %th Promotion
+    %th Enterprise
+    %th Audience
+    %th Stock
+    %th Registed
+    %th Description
+    %th
+    %th
+    %th
+  - @shoes.each do |shoe|
+    %tr
+      %td= shoe.name
+      %td= shoe.value
+      %td= shoe.promotion
+      %td= shoe.enterprise_id
+      %td= shoe.audience
+      %td= shoe.stock
+      %td= shoe.registed
+      %td= shoe.description
+      %td= link_to 'Show', shoe
+      %td= link_to 'Edit', edit_shoe_path(shoe)
+      %td= link_to 'Destroy', shoe, method: :delete, data: { confirm: 'Are you sure?' }
+%br/
+= link_to 'New Shoe', new_shoe_path

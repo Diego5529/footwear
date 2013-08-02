@@ -31,7 +31,8 @@ class LoginUserController < ApplicationController
             flash[:notice]  = "Welcome, #{enterprise.email}!"
             session[:id]  = enterprise.id
             session[:email]  = enterprise.email
-            redirect_to home_enterprises_path
+            session[:name]  = enterprise.name
+            redirect_to shoes_path
           end
         end
 

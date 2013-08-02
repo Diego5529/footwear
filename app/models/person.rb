@@ -1,6 +1,5 @@
 # encoding: utf-8
 require "digest/sha1"
-
 class Person < ActiveRecord::Base
 
 	attr_protected :password
@@ -14,6 +13,7 @@ class Person < ActiveRecord::Base
   scope :by_domain, ->(domain) { where(["name like ?","#{domain}"]) }
 
   default_scope -> { order(:name) }
+  
  
   def plain_password=(password)
     return if password.blank?

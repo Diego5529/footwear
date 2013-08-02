@@ -1,8 +1,6 @@
 class EnterprisesController < ApplicationController
   #before_filter :teste?, :only => [:index,:show,:edit]
   layout "enterprise"
-
-
   # def teste?
   #   if session[:id] && !session[:admin]
   #     redirect_to "/"
@@ -11,8 +9,6 @@ class EnterprisesController < ApplicationController
   #       redirect_to "/"
   #   end
   # end
-  # GET /enterprises
-  # GET /enterprises.json
   respond_to :html
   before_filter :logged?
   #before_filter :login?, :only => [:index,:show,:edit]
@@ -115,4 +111,20 @@ class EnterprisesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def image_title_ref
+    "Enterprise Picture"
+  end
+
+
+  # def save_image
+  #   if params[:data_stream]
+  #     @image = @enterprise.image ? @enterprise.image : Image.new(:title=>@enterprise.name)
+  #     @image.data_stream = params[:data_stream]
+  #     @image.height = 200
+  #     @enterprise.image = @image if @image.save
+  #     end
+  #   end
+
+
 end

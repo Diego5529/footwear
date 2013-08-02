@@ -1,0 +1,30 @@
+%p#notice= notice
+%p
+  = @shoe.image(true)
+%p
+  %b Name:
+  = @shoe.name
+%p
+  %b Value:
+  = @shoe.value
+%p
+  %b Promotion:
+  = @shoe.promotion
+%p
+  %b Enterprise:
+  = @shoe.enterprise_id
+%p
+  %b Audience:
+  = @shoe.audience
+%p
+  %b Stock:
+  = @shoe.stock
+%p
+  %b Registed:
+  = @shoe.registed
+%p
+  %b Description:
+  = @shoe.description
+= link_to 'Edit', edit_shoe_path(@shoe)
+|
+\#{link_to 'Back', shoes_path}

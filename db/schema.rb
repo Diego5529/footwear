@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130729164214) do
+ActiveRecord::Schema.define(:version => 20130801173223) do
 
   create_table "clients", :force => true do |t|
     t.string   "name"
@@ -46,12 +46,34 @@ ActiveRecord::Schema.define(:version => 20130729164214) do
     t.datetime "updated_at",  :null => false
   end
 
+  create_table "images", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.integer  "imageable_id"
+    t.string   "imageable_type"
+  end
+
   create_table "people", :force => true do |t|
-    t.string   "name",       :limit => 50, :null => false
-    t.string   "password",   :limit => 50
+    t.string   "name",       :limit => 50,  :null => false
+    t.string   "email",      :limit => 100
+    t.string   "password",   :limit => 50,  :null => false
     t.boolean  "admin"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  create_table "shoes", :force => true do |t|
+    t.string   "name"
+    t.decimal  "value",         :precision => 10, :scale => 2
+    t.decimal  "promotion",     :precision => 10, :scale => 2
+    t.integer  "enterprise_id"
+    t.string   "audience"
+    t.integer  "stock"
+    t.date     "registed"
+    t.text     "description"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
   end
 
 end

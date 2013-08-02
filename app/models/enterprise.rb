@@ -1,7 +1,7 @@
 # encoding: utf-8
 require "digest/sha1"
-
 class Enterprise < ActiveRecord::Base
+  include ImageSaver
   
   attr_protected :password
   attr_accessible :zip_code, :cnpj, :telephone, :address, :city, :district, :email, :name, :name_social, :number, :plain_password, :state
@@ -19,6 +19,8 @@ class Enterprise < ActiveRecord::Base
   validates :cnpj, presence: true, uniqueness: true, length:{is: 18}, format: {with:/^\d{2}.[\d]{3}.[\d]{3}\/[\d]{4}-[\d]{2}$/}
   validates :zip_code, presence: true, format:{with:/^[\d]{5}-[\d]{3}$/}
   
+  has_many :shoes#, :dependent => :restrict
+  has_one  :image, :as => :imageable
 
   def plain_password=(password)
     return if password.blank?
@@ -36,6 +38,10 @@ class Enterprise < ActiveRecord::Base
 
   def self.auth(email,password)
     where(["email=? and password=?",email,encrypt_password(password)]).first
+  end
+
+  def self.for_select
+    self.all.map {|p| [p.name,p.id]}
   end
 
 end
