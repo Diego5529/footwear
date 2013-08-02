@@ -31,7 +31,7 @@ class LoginClientController < ApplicationController
             flash[:notice]  = "Welcome, #{client.email}!"
             session[:id]  = client.id
             session[:email]  = client.email
-            redirect_to clients_path
+            redirect_to "/"
           end
         end
 

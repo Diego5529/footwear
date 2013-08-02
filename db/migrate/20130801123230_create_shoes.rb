@@ -6,7 +6,6 @@ class CreateShoes < ActiveRecord::Migration
       t.decimal :promotion, precision: 10, scale: 2
       t.integer :enterprise_id
       t.string :audience
-      t.integer :stock
       t.date :registed
       t.text :description
 

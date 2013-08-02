@@ -1,3 +1,59 @@
-// Place all the styles related to the publics controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+	margin: 50;
+	font-size: 14px;
+}
+
+nav, footer {
+	background: white;
+	color: blue;
+}
+
+#mini_shoes {
+	list-style-type: none;
+	padding: 0;
+}
+
+#mini_shoes li {
+	display: table-cell;
+	padding-right: 7em;
+}
+
+#mini_shoes h1 {
+	color: maroon;
+	margin-bottom: 0;
+}
+
+#mini_shoes h2 {
+	margin-top: 0;
+	font-size: 1em;
+}
+
+a.more_shoe_info:visited,
+a.buy_book:visited {
+color: white;
+}
+
+a.more_shoe_info, a.buy_shoe {
+background: green;
+color: white;
+font-weight: bold;
+
+border-radius: 15px;
+padding: 0.5em 1em;
+margin-left: 3em;
+text-decoration: none;
+
+}
+
+span.shoe_value {
+color: green;
+font-weight: bold;
+font-size: 1.5em;
+}
+
+a.buy_shoe {
+display: block;
+margin: 0;
+margin: 1em 0;
+width: 5em;
+}

@@ -7,8 +7,15 @@
     = csrf_meta_tags
   %body
     %header
+      %h1 Footwear
+    %nav
+      /%h3 Welcome: #{session[:name]}
       %ul
         %li= link_to "Home", "/"
-    = yield
-    %footer
-      OI, AQUI É O LAYOUT DESLOGADO
+        %li= link_to "Exit", "logout_user"
+      = yield
+      %footer
+        %h2 Advertise Your shoes here!
+
+
+      

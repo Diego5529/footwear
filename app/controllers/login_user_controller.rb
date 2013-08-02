@@ -32,6 +32,7 @@ class LoginUserController < ApplicationController
             session[:id]  = enterprise.id
             session[:email]  = enterprise.email
             session[:name]  = enterprise.name
+            session[:admin] = false
             redirect_to shoes_path
           end
         end
@@ -39,6 +40,7 @@ class LoginUserController < ApplicationController
         def logout_user
           session[:id]  = nil
           session[:email]  = nil
+          session[:admin] = nil
           redirect_to :action=>:login_user
         end
 

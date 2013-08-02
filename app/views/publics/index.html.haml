@@ -3,14 +3,17 @@
   %head
     %title Home page - Footwear
   %body
-    %h1 INDEX
+    %h1 All Shoes
+    %ul#mini_shoes
+      %center
+      .field
+      = render :partial=>"mini_shoe", :collection=>@shoes
+    
+
+
     %h2 Admin
     %a{:href => "login"} Admins
     %br/
-    / %a{:href => "/enterprises"} Enterprises
-    / %br/
-    / %a{:href => "/clients"} Clients
-    / %br/
     %h2 Users
     %a{:href => "login_user"} Enterprises
     %br/

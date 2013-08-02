@@ -1,14 +1,7 @@
 class EnterprisesController < ApplicationController
-  #before_filter :teste?, :only => [:index,:show,:edit]
   layout "enterprise"
-  # def teste?
-  #   if session[:id] && !session[:admin]
-  #     redirect_to "/"
-  #   else
-  #     if !session[:id]
-  #       redirect_to "/"
-  #   end
-  # end
+
+  #before_filter :load_enterprises :only => [:new,:edit,:create, :update]  
   respond_to :html
   before_filter :logged?
   #before_filter :login?, :only => [:index,:show,:edit]
@@ -116,15 +109,9 @@ class EnterprisesController < ApplicationController
     "Enterprise Picture"
   end
 
-
-  # def save_image
-  #   if params[:data_stream]
-  #     @image = @enterprise.image ? @enterprise.image : Image.new(:title=>@enterprise.name)
-  #     @image.data_stream = params[:data_stream]
-  #     @image.height = 200
-  #     @enterprise.image = @image if @image.save
-  #     end
-  #   end
+  def load_enterprise
+    @enterprises = Enterprise.all
+  end
 
 
 end

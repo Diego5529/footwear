@@ -8,6 +8,12 @@ Footwear::Application.routes.draw do
  match "logout_client" => "login_client#logout_client"
  root to: "publics#index"
 
+ match "shoe/:id" => "publics#shoe"
+ match "enterprise/:id" => "publics#enterprise"
+ match "buy/:id" => "publics#buy", :via=>:post
+ match "car" => "publics#cart"
+ match "cadastrar" => "publics#signup"
+
   resources :shoes
   resources :publics
   resources :enterprises

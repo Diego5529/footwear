@@ -1,0 +1,10 @@
+%section#shoe_detail
+  %h1
+  = @shoe.name
+  %h2
+  = link_to @shoe.enterprise.name, "/enterprise/#{@shoe.enterprise.id}"
+  = image_tag(@shoe.image)
+  = simple_format(@shoe.description)
+  %span.shoe_value= number_to_currency(@shoe.value)
+  %br/
+  = link_to "Buy", "/buy/#{@shoe.id}", :class=>"buy_shoe"

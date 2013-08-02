@@ -1,5 +1,6 @@
 class ShoesController < ApplicationController
 layout"enterprise"
+
 respond_to :html
 before_filter :logged?
 
@@ -8,12 +9,9 @@ def logged?
 end
 
   def index
-    @shoes = Shoe.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @shoes }
-    end
+    @shoes = session[:admin] ? Shoe.all : Shoe.by_enterprise(session[:id])
+    @enterprise = Enterprise.find(session[:id]) rescue nil
+    #@shoes = Shoe.find(params[:id])
   end
 
   # GET /shoes/1
@@ -41,6 +39,7 @@ end
   # GET /shoes/1/edit
   def edit
     @shoe = Shoe.find(params[:id])
+    return if !check_allowed_shoe(@shoe)
   end
 
   def currentEnterprise
@@ -53,8 +52,6 @@ end
     respond_with @shoe
   end
 
-  # PUT /shoes/1
-  # PUT /shoes/1.json
   def update
     @shoe = Shoe.find(params[:id])
 
@@ -88,5 +85,13 @@ end
 
   def image_title_ref
     "Shoes Picture"
+  end
+
+  def check_allowed_shoe(shoe)
+    if !session[:admin] && shoe.enterprise_id != session[:id]
+      redirect_to action: "index"
+      return false
+    end
+    true
   end
 end
