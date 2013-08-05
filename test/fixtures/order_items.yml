@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  order_id: 1
+  shoe_id: 1
+  value: 9.99
+
+two:
+  order_id: 1
+  shoe_id: 1
+  value: 9.99

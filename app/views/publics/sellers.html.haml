@@ -1,0 +1,61 @@
+= form_for(@enterprise,{url: "/register_enterprise"}) do |f|
+  - if @enterprise.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@enterprise.errors.count, "error")
+        prohibited this enterprise from being saved:
+      %ul
+        - @enterprise.errors.full_messages.each do |msg|
+          %li= msg
+  .field
+    = f.label :name
+    %br/
+    = f.text_field :name
+  .field
+    = f.label :name_social
+    %br/
+    = f.text_field :name_social
+  .field
+    = f.label :email
+    %br/
+    = f.text_field :email
+  .field
+    = f.label :password
+    %br/
+    = f.password_field :plain_password
+  .field
+    = f.label :cnpj
+    %br/
+    = f.text_field :cnpj
+  .field
+    = f.label :zip_code
+    %br/
+    = f.text_field :zip_code
+  .field
+    = f.label :address
+    %br/
+    = f.text_field :address
+  .field
+    = f.label :number
+    %br/
+    = f.text_field :number
+  .field
+    = f.label :district
+    %br/
+    = f.text_field :district
+  .field
+    = f.label :state
+    %br/
+    = f.text_field :state
+  .field
+    = f.label :city
+    %br/
+    = f.text_field :city
+  .field
+    = f.label :Telephone
+    %br/
+    = f.text_field :telephone
+    .field
+    = render partial: 'shared/image_field', locals: { f: f }
+  .actions
+    = f.submit

@@ -6,6 +6,7 @@ class LoginClientController < ApplicationController
             if request.post?
               email   = params[:email]
               password = params[:password]
+              name = params[:name]
 
             if email.blank? && password.blank?
               flash[:notice] = "Enter the email and password"
@@ -38,6 +39,7 @@ class LoginClientController < ApplicationController
         def logout_client
           session[:id]  = nil
           session[:email]  = nil
+          session[:name] = nil
           redirect_to :action=>:login_client
         end
 

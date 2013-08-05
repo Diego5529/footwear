@@ -1,0 +1,15 @@
+%h1
+  You request
+%h2
+  Number #{@order.id}
+%h2
+  Items:
+%ul#order_items
+  - for item in @order.order_items
+    %li
+      item.shoe.name
+      \-
+      = number_to_currency(item.value)
+%p
+  Total:
+  %span.shoe_value= number_to_currency(@order.total)

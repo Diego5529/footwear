@@ -17,4 +17,10 @@ class Shoe < ActiveRecord::Base
    def sold_out?
    	self.stock < 1
 	end
+
+  def sell
+    raise Exception, "Sold out" if sold_out?
+    self.stock -= 1
+    self.save!
+  end
 end

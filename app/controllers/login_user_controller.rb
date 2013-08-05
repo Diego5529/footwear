@@ -1,7 +1,7 @@
 #encoding: utf-8
 class LoginUserController < ApplicationController
       layout "public"
-
+      
         def login_user
             if request.post?
               email   = params[:email]

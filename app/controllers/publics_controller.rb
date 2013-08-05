@@ -1,23 +1,36 @@
 # encoding: utf-8
-
 class PublicsController < ApplicationController
   layout"public"
   # GET /publics
   # GET /publics.json
   def index
-    # respond_to do |format|
-    #   format.html # index.html.erb
-    #   format.json { render json: @publics }
-
-      @shoes = Shoe.all
-    # end
+    @shoes = Shoe.all
   end
 
-  def signup
+  def logout
+    session[:id]  = nil
+    session[:email]  = nil
+    session[:name] = nil
+    redirect_to "/"
+  end
+
+  def buyers
     @client = Client.new
     if request.post?
       @client = Client.new(params[:client])
+      redirect_to "/"
       if !@client.save
+        flash[:notice] = "Não consegui salvar"
+      end
+    end
+  end
+
+  def sellers
+    @enterprise = Enterprise.new
+    if request.post?
+      @enterprise = Enterprise.new(params[:enterprise])
+      redirect_to "/"
+      if !@enterprise.save
         flash[:notice] = "Não consegui salvar"
       end
     end
@@ -53,4 +66,50 @@ class PublicsController < ApplicationController
     @cart << @shoe
     redirect_to :action=>:cart
   end
+
+  def find_cart
+      session[:cart] ||= Cart.new
+  end
+
+  def cart
+    @cart = find_cart
+  end
+
+  def remove
+    @shoe = Shoe.find(params[:id]) rescue nil
+    @cart = find_cart
+    @cart - @shoe
+  end
+
+  
+
+  def create_order
+    order = Order.new
+    cart = find_cart
+    for item in cart.items
+      order.order_items << OrderItem.new(shoe_id: item.id, value: item.value)
+      item.sell
+    end
+    order.save ? order : nil
+    end
+
+    def close_order
+      @order = create_order
+      if !@order
+        flash[:notice] = "Unable to create request"
+        redirect_to "/"
+        return
+      end
+      find_cart.clear
+      redirect_to :action=>:order, :id=>@order.id
+    end
+
+    def order
+      @order = Order.find(params[:id]) rescue nil
+      if !@order
+        flash[:notice] = "Not Found"
+        redirect_to "/"
+        end
+    end
+
 end

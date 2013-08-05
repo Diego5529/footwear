@@ -1,5 +1,5 @@
 class EnterprisesController < ApplicationController
-  layout "enterprise"
+  layout "admin"
 
   #before_filter :load_enterprises :only => [:new,:edit,:create, :update]  
   respond_to :html
@@ -37,11 +37,6 @@ class EnterprisesController < ApplicationController
   # GET /enterprises/new.json
   def new
     @enterprise = Enterprise.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @enterprise }
-    end
   end
 
   # GET /enterprises/1/edit

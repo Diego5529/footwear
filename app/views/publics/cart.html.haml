@@ -1,0 +1,7 @@
+%h1
+  Your Cart
+%ul#cart_items
+  = render :partial=>"cart_item", :collection=>@cart.items
+%p
+  Total:
+  %span#cart_total.shoe_value= number_to_currency(@cart.total)

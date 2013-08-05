@@ -10,9 +10,14 @@ Footwear::Application.routes.draw do
 
  match "shoe/:id" => "publics#shoe"
  match "enterprise/:id" => "publics#enterprise"
+ match "register" => "publics#buyers"
+ match "register_enterprise" => "publics#sellers"
  match "buy/:id" => "publics#buy", :via=>:post
- match "car" => "publics#cart"
- match "cadastrar" => "publics#signup"
+ match "cart" => "publics#cart"
+ match "remove/:id" => "publics#remove", :via=>:delete
+ match "checkout" => "publics#close_order"
+ match "request/:id" => "publics#order"
+
 
   resources :shoes
   resources :publics

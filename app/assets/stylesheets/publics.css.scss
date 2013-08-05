@@ -29,8 +29,9 @@ nav, footer {
 }
 
 a.more_shoe_info:visited,
-a.buy_book:visited {
+a.buy_shoe:visited {
 color: white;
+text-align: center;
 }
 
 a.more_shoe_info, a.buy_shoe {
@@ -41,6 +42,20 @@ font-weight: bold;
 border-radius: 15px;
 padding: 0.5em 1em;
 margin-left: 3em;
+text-decoration: none;
+text-align: center;
+
+}
+
+h4 {
+background: red;
+color: white;
+font-weight: bold;
+
+border-radius: 15px;
+padding: 0.5em 1em;
+margin-left: 2em;
+margin-right: 2em;
 text-decoration: none;
 
 }

@@ -1,5 +1,6 @@
 class PeopleController < ApplicationController
-
+  layout"admin"
+  
   respond_to :html
   before_filter :logged?
 

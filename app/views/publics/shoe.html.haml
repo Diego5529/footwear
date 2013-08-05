@@ -7,4 +7,9 @@
   = simple_format(@shoe.description)
   %span.shoe_value= number_to_currency(@shoe.value)
   %br/
-  = link_to "Buy", "/buy/#{@shoe.id}", :class=>"buy_shoe"
+  - if @shoe.sold_out?
+    %p
+    %h4.sold_out Esgotado!
+  - else
+    %p
+    = link_to "Buy", "/buy/#{@shoe.id}", :class=>"buy_shoe", :method=> :post

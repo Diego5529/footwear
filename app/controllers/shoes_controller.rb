@@ -1,5 +1,5 @@
 class ShoesController < ApplicationController
-layout"enterprise"
+layout"admin"
 
 respond_to :html
 before_filter :logged?
@@ -11,6 +11,7 @@ end
   def index
     @shoes = session[:admin] ? Shoe.all : Shoe.by_enterprise(session[:id])
     @enterprise = Enterprise.find(session[:id]) rescue nil
+
     #@shoes = Shoe.find(params[:id])
   end
 
@@ -18,22 +19,12 @@ end
   # GET /shoes/1.json
   def show
     @shoe = Shoe.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @shoe }
-    end
   end
 
   # GET /shoes/new
   # GET /shoes/new.json
   def new
     @shoe = Shoe.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @shoe }
-    end
   end
 
   # GET /shoes/1/edit
@@ -91,6 +82,7 @@ end
     if !session[:admin] && shoe.enterprise_id != session[:id]
       redirect_to action: "index"
       return false
+      
     end
     true
   end

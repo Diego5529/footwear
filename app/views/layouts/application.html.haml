@@ -7,12 +7,12 @@
     = csrf_meta_tags
   %body
     %header
-      Welcome: #{session[:name]}
+      Welcome: #{session[:name]} 
       %ul
         %li= link_to "Home", "/"
         %li= link_to "Exit", logout_path
         %li= link_to "Enterprises", "enterprises"
         %li= link_to "Clients", "clients"
-    = yield
-    %footer
+      = yield
+      %footer
       OI, AQUI É O LAYOUT LOGADO

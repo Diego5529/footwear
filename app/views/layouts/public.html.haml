@@ -9,10 +9,18 @@
     %header
       %h1 Footwear
     %nav
-      /%h3 Welcome: #{session[:name]}
+    - if session[:id]
+      %h3 Welcome: #{session[:name]}
+    %end
+      %h3
+        = link_to "I am a customer", "login_client"
+        = link_to "I am a seller", "login_user"
       %ul
-        %li= link_to "Home", "/"
-        %li= link_to "Exit", "logout_user"
+        %li
+          = link_to "Home", "/"
+          = link_to "Register", "register"
+          = link_to "Register Enterprise", "register_enterprise"
+          = link_to "Exit", "logout"
       = yield
       %footer
         %h2 Advertise Your shoes here!

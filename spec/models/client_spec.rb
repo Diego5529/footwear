@@ -9,14 +9,12 @@ describe Client do
     #  end
 
     it "should has a client" do
-       client = FactoryGirl.create(:client)
-       client.should be_valid
+       client = FactoryGirl.create(:client).should be_valid
     end
     
     #NAME
     it "should not have a blank name" do
-      client = FactoryGirl.build(:client, name: '')
-      client.should_not be_valid
+      client = FactoryGirl.build(:client, name: '').should_not be_valid
     end
 
     it "should not have nil name" do

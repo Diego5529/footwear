@@ -1,6 +1,6 @@
 #encoding: utf-8
 class ClientsController < ApplicationController
-  layout "client"
+  layout "admin"
 
   respond_to :html
   before_filter :logged?
@@ -16,33 +16,18 @@ class ClientsController < ApplicationController
 
   def index
     @clients = Client.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @clients }
-    end
   end
 
   # GET /clients/1
   # GET /clients/1.json
   def show
     @client = Client.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @client }
-    end
   end
 
   # GET /clients/new
   # GET /clients/new.json
   def new
     @client = Client.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @client }
-    end
   end
 
   # GET /clients/1/edit
