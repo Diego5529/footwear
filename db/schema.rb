@@ -89,14 +89,13 @@ ActiveRecord::Schema.define(:version => 20130805143652) do
   create_table "shoes", :force => true do |t|
     t.string   "name"
     t.decimal  "value",         :precision => 10, :scale => 2
-    t.decimal  "promotion",     :precision => 10, :scale => 2
     t.integer  "enterprise_id"
     t.string   "audience"
-    t.integer  "stock"
     t.date     "registed"
     t.text     "description"
     t.datetime "created_at",                                   :null => false
     t.datetime "updated_at",                                   :null => false
+    t.integer  "stock"
   end
 
 end

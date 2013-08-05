@@ -4,6 +4,7 @@ class PublicsController < ApplicationController
   # GET /publics
   # GET /publics.json
   def index
+    #flash[:notice] = "#{params[:redirect]} não encontrado" if params[:redirect]
     @shoes = Shoe.all
   end
 

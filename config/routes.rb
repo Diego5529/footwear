@@ -17,6 +17,7 @@ Footwear::Application.routes.draw do
  match "remove/:id" => "publics#remove", :via=>:delete
  match "checkout" => "publics#close_order"
  match "request/:id" => "publics#order"
+ #match "/:redirect" => "publics#index"
 
 
   resources :shoes

@@ -1,7 +1,7 @@
 #encoding: utf-8
 class LoginUserController < ApplicationController
       layout "public"
-      
+
         def login_user
             if request.post?
               email   = params[:email]
@@ -41,7 +41,7 @@ class LoginUserController < ApplicationController
           session[:id]  = nil
           session[:email]  = nil
           session[:admin] = nil
-          redirect_to :action=>:login_user
+          redirect_to "/" #:action=>:login_user
         end
 
         def index

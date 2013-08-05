@@ -39,4 +39,13 @@ FactoryGirl.define do
     cpf '445.153.509-83'
    end
 
+   # factory :shoe do
+   #  name 'Sapato'
+   #  value '100,00'
+   #  stock ''
+
+
+
+   # end
+
 end

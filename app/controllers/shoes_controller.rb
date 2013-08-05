@@ -1,5 +1,6 @@
+#encoding: utf-8
 class ShoesController < ApplicationController
-layout"admin"
+  layout"admin"
 
 respond_to :html
 before_filter :logged?
@@ -25,6 +26,11 @@ end
   # GET /shoes/new.json
   def new
     @shoe = Shoe.new
+
+    # respond_to do |format|
+    #   format.html # new.html.erb
+    #   format.json { render json: @shoe }
+    # end
   end
 
   # GET /shoes/1/edit

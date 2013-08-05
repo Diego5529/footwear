@@ -3,7 +3,6 @@ class CreateShoes < ActiveRecord::Migration
     create_table :shoes do |t|
       t.string :name
       t.decimal :value, precision: 10, scale: 2
-      t.decimal :promotion, precision: 10, scale: 2
       t.integer :enterprise_id
       t.string :audience
       t.date :registed

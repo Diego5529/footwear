@@ -48,7 +48,7 @@ end
 		session[:id]	= nil
 		session[:name]	= nil
 		session[:admin] = nil
-		redirect_to :action=>:login
+		redirect_to "/" #:action=>:index
 	end
 
 	def index
