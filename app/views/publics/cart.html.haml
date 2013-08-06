@@ -1,9 +1,13 @@
 %h1
   Your Cart
+%hr
 %ul#cart_items
   = render :partial=>"cart_item", :collection=>@cart.items
 %p
-  Total:
-  %span#cart_total.shoe_value= number_to_currency(@cart.total)
-  \-
-  = link_to "Checkout", "/checkout"
+  %li
+    %h2
+      Total:
+      %span#cart_total.shoe_value= number_to_currency(@cart.total)
+    %h2
+      = link_to "Checkout", "/checkout"
+%hr

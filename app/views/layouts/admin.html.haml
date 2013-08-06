@@ -8,21 +8,23 @@
   %body
     %header
       %h1 -FOOTWEAR-
+      %hr
       %h3 Welcome: #{session[:name]}
-      %ul
-        %li= link_to "Home", "/"
+      %div
+        = link_to "Home", "/"
         - if !session[:admin]
-          %li= link_to "Exit", "logout_user"
-        %end        
+          %li= link_to "Exit", "logout_user"         
         - if session[:admin]
-          %li= link_to "Exit", logout_path
-          %li= link_to "Enterprises", "enterprises"
-          %li= link_to "Clients", "clients"
-          %li= link_to "Shoes", "shoes"
-        %end
-          
+          = link_to "Exit", logout_path
+          = link_to "Enterprises", "enterprises"
+          = link_to "Clients", "clients"
+          = link_to "Shoes", "shoes"
+          = link_to "Admins", "/people"
+        %div
+        %hr
           = yield
-          %footer
+        %footer
+        %hr
           - if session[:admin]
             OI, AQUI É O LAYOUT LOGADO COMO ADMIN
           %end

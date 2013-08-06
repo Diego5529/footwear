@@ -5,16 +5,16 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
     %header
       %h1 Footwear
-    %nav
     - if session[:id]
-      %h3 Welcome: #{session[:name]}
+      %h3 Welcome: #{session[:email]}
     %end
+    %body
       %h3
         = link_to "I am a customer", "login_client"
         = link_to "I am a seller", "login_user"
+        = link_to "My cart", "cart"
       %ul
         %li
           = link_to "Home", "/"

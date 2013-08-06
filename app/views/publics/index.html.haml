@@ -2,12 +2,12 @@
 %html
   %head
     %title Home page - Footwear
-  %body
-    
+  %body    
     %h1 All Shoes
     %ul#mini_shoes
       %center 
       .field
+      %ul
       = render :partial=>"mini_shoe", :collection=>@shoes   
 
 

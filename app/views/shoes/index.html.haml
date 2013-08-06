@@ -1,10 +1,8 @@
 /= session[:admin]
-
 - if @enterprise
-  %h2= @enterprise.name
-
+  /%h2= @enterprise.name
 %h1 Listing shoes
-%table
+%table{:align => "center"}
   %tr
     %th Name
     %th Value
@@ -25,6 +23,7 @@
       %td= link_to 'Show', shoe
       %td= link_to 'Edit', edit_shoe_path(shoe)
       %td= link_to 'Destroy', shoe, method: :delete, data: { confirm: 'Are you sure?' }
-      %br/
+  %hr
+%hr
   - if !session[:admin]
-    = link_to 'New Shoe', new_shoe_path
+    %h2= link_to 'New Shoe', new_shoe_path

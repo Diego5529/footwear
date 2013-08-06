@@ -13,3 +13,9 @@
   - else
     %p
     = link_to "Buy", "/buy/#{@shoe.id}", :class=>"buy_shoe", :method=> :post
+  %end
+  %hr
+  %ul#mini_shoes
+    %center 
+  %ul
+  = render :partial=>"mini_shoe", :collection=>@shoes

@@ -1,8 +1,12 @@
 # encoding: utf-8
 class PublicsController < ApplicationController
   layout"public"
-  # GET /publics
-  # GET /publics.json
+
+  rescue_from Exception do |e|
+    flash[:notice] = "Erro: #{e}"
+    redirect_to "/"
+  end
+
   def index
     #flash[:notice] = "#{params[:redirect]} não encontrado" if params[:redirect]
     @shoes = Shoe.all
@@ -87,18 +91,27 @@ class PublicsController < ApplicationController
   def create_order
     order = Order.new
     cart = find_cart
-    for item in cart.items
-      order.order_items << OrderItem.new(shoe_id: item.id, value: item.value)
-      item.sell
-    end
-    order.save ? order : nil
-    end
+    Shoe.transaction do
+      for item in cart.items
+        order.order_items << OrderItem.new(shoe_id: item.id, value: item.value)
+        item.reload.sell
+        end
+        order.save ? order : nil
+        end
+      rescue Exception => e
+        flash[:notice] = "Erro: #{e}"
+        false
+      end
+
 
     def close_order
+
+      # redirect_to "/login_client" if !session[:id]
+      
       @order = create_order
       if !@order
         flash[:notice] = "Unable to create request"
-        redirect_to "/"
+        redirect_to "/login_client"
         return
       end
       find_cart.clear

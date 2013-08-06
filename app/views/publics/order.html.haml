@@ -8,6 +8,7 @@
   - for item in @order.order_items
     %li
       item.shoe.name
+      item.shoe.id
       \-
       = number_to_currency(item.value)
 %p

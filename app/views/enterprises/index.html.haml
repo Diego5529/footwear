@@ -1,5 +1,5 @@
 %h1 Listing enterprises
-%table
+%table{:align => "center"}
   %tr
     %th Name
     %th Name social
@@ -34,4 +34,4 @@
       %td= link_to 'Edit', edit_enterprise_path(enterprise)
       %td= link_to 'Destroy', enterprise, method: :delete, data: { confirm: 'Are you sure?' }
 %br/
-= link_to 'New Enterprise', new_enterprise_path
+%h2= link_to 'New Enterprise', new_enterprise_path
