@@ -2,10 +2,10 @@
 class PublicsController < ApplicationController
   layout"public"
 
-  rescue_from Exception do |e|
-    flash[:notice] = "Erro: #{e}"
-    redirect_to "/"
-  end
+  # rescue_from Exception do |e|
+  #   flash[:notice] = "Erro: #{e}"
+  #   redirect_to "/"
+  # end
 
   def index
     #flash[:notice] = "#{params[:redirect]} não encontrado" if params[:redirect]
@@ -23,7 +23,7 @@ class PublicsController < ApplicationController
     @client = Client.new
     if request.post?
       @client = Client.new(params[:client])
-      redirect_to "/"
+      # redirect_to "/"
       if !@client.save
         flash[:notice] = "Não consegui salvar"
       end
@@ -34,7 +34,7 @@ class PublicsController < ApplicationController
     @enterprise = Enterprise.new
     if request.post?
       @enterprise = Enterprise.new(params[:enterprise])
-      redirect_to "/"
+      # redirect_to "/"
       if !@enterprise.save
         flash[:notice] = "Não consegui salvar"
       end
