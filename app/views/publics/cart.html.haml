@@ -9,5 +9,11 @@
       Total:
       %span#cart_total.shoe_value= number_to_currency(@cart.total)
     %h2
-      = link_to "Checkout", "/checkout"
+    - if session[:id]  && @cart.total 
+      %h2
+        = link_to "Checkout", "/checkout"
+    - else
+      %h2
+      You need to identify
+      = link_to "Login", "login_client"
 %hr

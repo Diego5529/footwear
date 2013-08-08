@@ -16,6 +16,8 @@ class Client < ActiveRecord::Base
   validates :cpf, presence: true, uniqueness: true, length:{is: 14}, format: {with:/^\d{3}.[\d]{3}.[\d]{3}-[\w]{2}$/}
   validates :zip_code, presence: true, format:{with:/^[\d]{5}-[\d]{3}$/}
 
+  
+
   def plain_password=(password)
     return if password.blank?
     raise StandardError.new("Tamanho de senha inválido!") if !(5..15).include?(password.size)

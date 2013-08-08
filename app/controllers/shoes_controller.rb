@@ -63,6 +63,8 @@ end
     end
   end
 
+  
+
   # DELETE /shoes/1
   # DELETE /shoes/1.json
   def destroy

@@ -10,6 +10,7 @@ class PublicsController < ApplicationController
   def index
     #flash[:notice] = "#{params[:redirect]} não encontrado" if params[:redirect]
     @shoes = Shoe.all
+    @clients = Client.all
   end
 
   def logout
@@ -69,6 +70,7 @@ class PublicsController < ApplicationController
     end
     @cart = find_cart
     @cart << @shoe
+    @quantity = :quantity
     redirect_to :action=>:cart
   end
 
@@ -106,8 +108,7 @@ class PublicsController < ApplicationController
 
     def close_order
 
-      # redirect_to "/login_client" if !session[:id]
-      
+      # redirect_to "/login_client" if !session[:id]      
       @order = create_order
       if !@order
         flash[:notice] = "Unable to create request"

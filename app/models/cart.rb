@@ -17,6 +17,9 @@ class Cart
 		@items.inject(0) {|m,i| m += i.value}
 	end
 
+	
+
+
 	def clear
 		@items = []
 	end

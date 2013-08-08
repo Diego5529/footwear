@@ -9,9 +9,10 @@ class Shoe < ActiveRecord::Base
   validates :value, presence: true
   #validates :image_title, presence: true, uniqueness: true
   
-  belongs_to :enterprise 
+  belongs_to :enterprise
+
   
-  has_one  :image, :as => :imageable
+  has_one  :image, dependent: :destroy, :as => :imageable
 
   scope :by_enterprise, ->(id) { where(["enterprise_id=?",id]) }
 

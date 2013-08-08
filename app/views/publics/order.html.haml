@@ -3,14 +3,9 @@
 %h2
   Number #{@order.id}
 %h2
-  Items:
-%ul#order_items
-  - for item in @order.order_items
-    %li
-      item.shoe.name
-      item.shoe.id
-      \-
-      = number_to_currency(item.value)
+  Your request has been sent successfully
+  %p
+  We sent an email to you and to the company's footwear
 %p
   Total:
   %span.shoe_value= number_to_currency(@order.total)
