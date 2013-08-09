@@ -55,7 +55,11 @@
     = f.label :Telephone
     %br/
     = f.text_field :telephone
-    .field
+  .field
+    = f.label :permit
+    %br/
+    = f.check_box :permit
+  .field
     = render partial: 'shared/image_field', locals: { f: f }
   .actions
     = f.submit

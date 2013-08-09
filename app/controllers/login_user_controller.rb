@@ -6,6 +6,7 @@ class LoginUserController < ApplicationController
             if request.post?
               email   = params[:email]
               password = params[:password]
+              permit = params[:permit]
 
             if email.blank? && password.blank?
               flash[:notice] = "Enter the email and password"
@@ -41,6 +42,7 @@ class LoginUserController < ApplicationController
           session[:id]  = nil
           session[:email]  = nil
           session[:admin] = nil
+          session[:permit] = nil
           redirect_to "/" #:action=>:login_user
         end
 

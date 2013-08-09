@@ -6,6 +6,7 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
+    %img{:width => "100", :height => "100",:src =>"startup.jpg"}
     %header
       %h1 -CATALOG FOOTWEAR-
       %hr
@@ -15,10 +16,11 @@
         = link_to "Enterprises", "enterprises"
         = link_to "Clients", "clients"
         = link_to "Shoes", "shoes"
-        = link_to "Admins", "/people"
+        = link_to "Admins", "people"
         = link_to "Exit", logout_path
         %div
         %hr
+        - if session[:admin]
           = yield
         %footer
           OI, AQUI É O LAYOUT LOGADO COMO ADMIN

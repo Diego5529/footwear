@@ -2,21 +2,7 @@
 class PublicsController < ApplicationController
 
   caches_page :shoe, :enterprise, :client
-  layout :layout
-
-  def layout
-    if session[:admin]
-      "admin"
-      else
-        if session[:id] && !session[:admin]
-            "client"
-          else
-            if !session[:id]
-              "public"
-            end            
-          end
-        end
-      end
+  layout "public"
 
 
   def index
