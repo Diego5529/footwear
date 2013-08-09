@@ -1,12 +1,8 @@
 FactoryGirl.define do 
+  
   factory :person do
     name 'admin'
-    #email 'treicyfelton@msn.com'
-    #nick 'treicy'
-    password '123456' 
-    #born_at '2013-05-04'
-    #situation 'on'
-    #hobby 'sei la'
+    password '1234567'
     admin true
    end
    
@@ -39,13 +35,9 @@ FactoryGirl.define do
     cpf '445.153.509-83'
    end
 
-   # factory :shoe do
-   #  name 'Sapato'
-   #  value '100,00'
-   #  stock ''
-
-
-
-   # end
+   factory :shoe do
+    name 'Sapato'
+    stock '1'
+   end
 
 end

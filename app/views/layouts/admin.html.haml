@@ -12,22 +12,15 @@
       %h3 Welcome: #{session[:name]}
       %div
         = link_to "Home", "/"
-        - if !session[:admin]
-          %li= link_to "Exit", "logout_user"         
-        - if session[:admin]
-          = link_to "Exit", logout_path
-          = link_to "Enterprises", "enterprises"
-          = link_to "Clients", "clients"
-          = link_to "Shoes", "shoes"
-          = link_to "Admins", "/people"
+        = link_to "Enterprises", "enterprises"
+        = link_to "Clients", "clients"
+        = link_to "Shoes", "shoes"
+        = link_to "Admins", "/people"
+        = link_to "Exit", logout_path
         %div
         %hr
           = yield
         %footer
-        %hr
-          - if session[:admin]
-            OI, AQUI É O LAYOUT LOGADO COMO ADMIN
-          %end
-          - if !session[:admin]
-            OI, AQUI É O LAYOUT LOGADO COMO ENTERPRISE
-          %end
+          OI, AQUI É O LAYOUT LOGADO COMO ADMIN
+        
+  %hr/

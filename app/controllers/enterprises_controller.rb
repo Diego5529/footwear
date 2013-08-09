@@ -3,15 +3,11 @@ class EnterprisesController < ApplicationController
 
   #before_filter :load_enterprises :only => [:new,:edit,:create, :update]  
   respond_to :html
-  before_filter :logged?
-  #before_filter :login?, :only => [:index,:show,:edit]
+  before_filter :logged?,:only => [:index,:show,:edit]
 
   def logged?
   redirect_to "/people" if !session[:admin]
   end
-  # def login?
-  # redirect_to "/enterprises" if !session[:id]
-  # end
 
   def index
     @enterprises = Enterprise.all

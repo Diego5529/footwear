@@ -110,6 +110,47 @@ width: 100%;}
   display: table;
 }
 
+#shoes{
+  font-size: 20pt;
+  text-align: justify;
+  color:red;
+}
+
+#shoes_rand{
+  float: left;
+}
+
+#clear {
+  clear: both;
+}
+
+/*#items_shoe{
+    float: left;
+    width:5%;
+    margin-left: 5%;
+    margin-top: 7px;
+    margin-bottom: 7px;}*/
+
+
+/*div{text-align: center}*/
+
+a.buy_shoe {
+display: block;
+margin: 0;
+margin: 1em 0;
+width: 5em;
+}
+
+.shoes{margin-right: 20%;
+margin-left: 30%;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -128,7 +169,8 @@ width: 100%;}
     color: #fff;
   }
   ul li {
-    font-size: 12px;
+    font-size: 15px;
     list-style: square;
   }
+  
 }

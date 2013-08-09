@@ -1,12 +1,14 @@
 Footwear::Application.routes.draw do
 
+
+
  match "login" => "login#login"
  match "logout" => "login#logout"
  match "login_user" => "login_user#login_user"
  match "logout_user" => "login_user#logout_user"
  match "login_client" => "login_client#login_client"
  match "logout_client" => "login_client#logout_client"
- root to: "publics#index"
+
 
  match "shoe/:id" => "publics#shoe"
  match "enterprise/:id" => "publics#enterprise"
@@ -20,9 +22,20 @@ Footwear::Application.routes.draw do
  #match "/:redirect" => "publics#index"
 
 
+ root to: "publics#index"
+
+ namespace :enterprises do
+  resources :shoes 
+end
+
+  resources :enterprises do
+    member do
+      get :shoes
+    end
+  end
+
   resources :shoes
   resources :publics
-  resources :enterprises
   resources :people
   resources :clients
 

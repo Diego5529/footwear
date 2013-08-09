@@ -5,12 +5,17 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
     %header
-      Welcome: #{session[:name]}
-      %ul
-        %li= link_to "Home", "/"
-        %li= link_to "Exit", "/logout_user"
-    = yield
-    %footer
-      Hello, here is layout Enterprises
+      %h1 -CATALOG FOOTWEAR-
+      <img src="app/assets/images/startup.png" />
+      %h3
+        Welcome: #{session[:name]}
+        = link_to "Exit", "logout_user"
+        = link_to "Exit c", "logout_client"
+        = link_to "Home", "/"
+        = link_to "Shoes", "/shoes"
+      = yield
+      %hr
+      %footer
+        %h2 Advertise Your shoes here!
+        %hr/

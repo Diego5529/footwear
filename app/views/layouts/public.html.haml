@@ -1,29 +1,29 @@
 !!!
 %html
   %head
-    %title -Footwear- Login Admin
+    %title -Footwear- Home
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
     %header
+      <img src="app/assets/images/startup.png" />
       %h1 -CATALOG FOOTWEAR-
-    - if session[:id]
-      %h3 Welcome: #{session[:email]}
     %end
     %body
       %h3
-        = link_to "I am a customer", "login_client"
-        = link_to "I am a seller", "login_user"
+        Welcome!
+        = link_to "Register", "register"
+        = link_to "Register Enterprise", "register_enterprise"
+      %h3
+        = link_to "Home", "/"
+        = link_to "I am customer", "login_client"
+        = link_to "I am seller", "login_user"
         = link_to "My cart", "cart"
-      %ul
-        %li
-          = link_to "Home", "/"
-          = link_to "Register", "register"
-          = link_to "Register Enterprise", "register_enterprise"
-          = link_to "Exit", "logout"
       = yield
+      %hr
       %footer
         %h2 Advertise Your shoes here!
+        %hr/
 
 
       

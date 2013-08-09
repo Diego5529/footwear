@@ -1,16 +1,28 @@
 # encoding: utf-8
 class PublicsController < ApplicationController
-  layout"public"
 
-  # rescue_from Exception do |e|
-  #   flash[:notice] = "Erro: #{e}"
-  #   redirect_to "/"
-  # end
+  caches_page :shoe, :enterprise, :client
+  layout :layout
+
+  def layout
+    if session[:admin]
+      "admin"
+      else
+        if session[:id] && !session[:admin]
+            "client"
+          else
+            if !session[:id]
+              "public"
+            end            
+          end
+        end
+      end
+
 
   def index
-    #flash[:notice] = "#{params[:redirect]} não encontrado" if params[:redirect]
-    @shoes = Shoe.all
-    @clients = Client.all
+    flash[:notice] = "#{params[:redirect]} não encontrado" if params[:redirect]
+    @shoes = Shoe.all unless fragment_exist?(action:"index")
+    @shoes = Shoe.order("random()").all
   end
 
   def logout
@@ -24,7 +36,6 @@ class PublicsController < ApplicationController
     @client = Client.new
     if request.post?
       @client = Client.new(params[:client])
-      # redirect_to "/"
       if !@client.save
         flash[:notice] = "Não consegui salvar"
       end
@@ -35,7 +46,6 @@ class PublicsController < ApplicationController
     @enterprise = Enterprise.new
     if request.post?
       @enterprise = Enterprise.new(params[:enterprise])
-      # redirect_to "/"
       if !@enterprise.save
         flash[:notice] = "Não consegui salvar"
       end
@@ -91,8 +101,10 @@ class PublicsController < ApplicationController
   
 
   def create_order
+    
     order = Order.new
     cart = find_cart
+
     Shoe.transaction do
       for item in cart.items
         order.order_items << OrderItem.new(shoe_id: item.id, value: item.value)
@@ -106,25 +118,25 @@ class PublicsController < ApplicationController
       end
 
 
-    def close_order
-
-      # redirect_to "/login_client" if !session[:id]      
-      @order = create_order
-      if !@order
-        flash[:notice] = "Unable to create request"
-        redirect_to "/login_client"
-        return
-      end
-      find_cart.clear
-      redirect_to :action=>:order, :id=>@order.id
+  def close_order
+    @order = create_order
+    if !@order
+      flash[:notice] = "Unable to create request"
+      redirect_to "/login_client"
+      return
     end
+    find_cart.clear
+    OrderMailer.order_created(@order).deliver  
+    redirect_to :action=>:order, :id=>@order.id
+  end
 
-    def order
-      @order = Order.find(params[:id]) rescue nil
-      if !@order
-        flash[:notice] = "Not Found"
-        redirect_to "/"
-        end
+  def order
+    @order = Order.find(params[:id])
+  rescue nil
+    if !@order
+      flash[:notice] = "Not Found"
+      redirect_to "/"
     end
+  end
 
 end

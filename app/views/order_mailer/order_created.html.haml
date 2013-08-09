@@ -1,0 +1,18 @@
+%h1 - Catalog Footwear -
+%h2 Recebemos o seu pedido!
+%p
+  Olá!
+%p
+  Seu pedido foi recebido em nosso sistema. Anote o número:
+  %strong= @order.id
+%p
+  Os items comprados foram:
+%ul
+  - for item in @order.order_items
+    %li
+      = item.shoe.name
+      \- #{number_to_currency(item.value)}
+      = image_tag(item.shoe.image,:height=>200)
+      = item.shoe.id
+%p
+  Thank you for using Catalog Footwear

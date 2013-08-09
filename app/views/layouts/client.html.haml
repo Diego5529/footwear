@@ -1,16 +1,24 @@
 !!!
 %html
   %head
-    %title -Footwear- Login Admin
+    %title -Footwear- Home
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
     %header
-      Welcome: #{session[:name]}
+      %h1 -CATALOG FOOTWEAR-
+      <img src="app/assets/images/startup.png" />
+      %h3
+        Welcome: #{session[:email]}
+        = link_to "My cart", "cart"
       %ul
-        %li= link_to "Home", "/"
-        %li= link_to "Exit", "/logout_client"
-    = yield
-    %footer
-      Hello, here is layout Clients
+        %li
+          = link_to "Home", "/"
+          = link_to "Register", "register"
+          = link_to "Register Enterprise", "register_enterprise"
+          = link_to "Exit", "logout_client"
+      = yield
+      %hr
+      %footer
+        %h2 Advertise Your shoes here!
+        %hr/

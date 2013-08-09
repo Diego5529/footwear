@@ -4,16 +4,11 @@ class ClientsController < ApplicationController
 
   respond_to :html
   before_filter :logged?
-  #before_filter :login?
 
   def logged?
   redirect_to "/people" if !session[:admin]
   end
   
-  # def login?
-  # redirect_to "/clients" if !session[:id]
-  # end
-
   def index
     @clients = Client.all
   end

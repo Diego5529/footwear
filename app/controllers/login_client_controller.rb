@@ -40,7 +40,7 @@ class LoginClientController < ApplicationController
           session[:id]  = nil
           session[:email]  = nil
           session[:name] = nil
-          redirect_to "/" #:action=>:login_client
+          redirect_to "/"
         end
 
         def index

@@ -27,6 +27,8 @@ gem 'jquery-rails'
 group :test do
 	gem 'factory_girl_rails'
 	gem 'rspec-rails','2.14.0'
+	gem 'rspec-rails-controller'
+	
 end
 
 

@@ -1,12 +1,25 @@
 #encoding: utf-8
 class ShoesController < ApplicationController
-  layout"admin"
+  respond_to :html
+  before_filter :logged?,
+  layout :layout
 
-respond_to :html
-before_filter :logged?
+  def layout
+    if session[:admin]
+      "admin"
+      else
+        if session[:id] && !session[:admin]
+          "enterprise"
+          else
+            if !session[:id]
+              "public"
+            end
+        end
+    end
+  end
 
 def logged?
-  redirect_to "/login_user" if !session[:id]
+  redirect_to "/login_user" if !session[:id] && !session[:cpf]
 end
 
   def index

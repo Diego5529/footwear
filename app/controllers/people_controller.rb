@@ -1,9 +1,9 @@
 #encoding: utf-8
 class PeopleController < ApplicationController
-  layout"admin"
 
   respond_to :html
   before_filter :logged?
+  layout "admin"    
 
   def logged?
   redirect_to "/login" if !session[:admin]

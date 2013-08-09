@@ -23,7 +23,7 @@ class LoginUserController < ApplicationController
             end
 
             enterprise = Enterprise.auth(email,password)
-            if  !enterprise
+            if  !enterprise 
             flash[:notice] = "Failed Login"
             return
             end

@@ -1,25 +1,18 @@
 require 'spec_helper'
 
 describe Enterprise do
-  
-    #Enterprise create?
-    let(:enterprise) do
-        enterprise = FactoryGirl.create(:enterprise)
-     end
 
-    # it "should has a enterprise" do
-    #    enterprise = FactoryGirl.create(:enterprise)
-    #    enterprise.should be_valid
-    # end
+  let(:enterprise) do
+    enterprise = FactoryGirl.create(:enterprise)
+  end
 
-    
-    #NAME
-    it "should not have a blank name" do
-      enterprise = FactoryGirl.build(:enterprise, name: '')
-      enterprise.should_not be_valid
-    end
+  #NAME
+  it "should not have a blank name" do
+    enterprise = FactoryGirl.build(:enterprise, name: '')
+    enterprise.should_not be_valid
+  end
 
-    it "should not have nil name" do
+  it "should not have nil name" do
     enterprise = FactoryGirl.build(:enterprise, name: nil)
     enterprise.should_not be_valid
   end
@@ -67,20 +60,20 @@ describe Enterprise do
     user = FactoryGirl.build(:enterprise, email: "foo@bar.newuser")
     new_user = FactoryGirl.build(:enterprise, email: "foo@bar.com")
     new_user.should_not be_valid if user.email == new_user.email
-  end 
-  
-   #PASSWORD
-    it "should not have a blank name" do
-      enterprise = FactoryGirl.build(:enterprise, password:'')
-      enterprise.should_not be_valid
-    end
+  end
 
-    it "should not have nil password" do
+  #PASSWORD
+  it "should not have a blank name" do
+    enterprise = FactoryGirl.build(:enterprise, password:'')
+    enterprise.should_not be_valid
+  end
+
+  it "should not have nil password" do
     enterprise = FactoryGirl.build(:enterprise, password: nil)
     enterprise.should_not be_valid
-   end
+  end
 
-   it "must return the correct encrypted password" do
+  it "must return the correct encrypted password" do
     enterprise = FactoryGirl.build(:enterprise, password: Digest::SHA1.hexdigest('abc_123456_123'))
     pass = Enterprise.encrypt_password('123456')
     enterprise.password.should eq pass
@@ -124,7 +117,7 @@ describe Enterprise do
   end  
 
   #address
-   it 'address should be up to 200 caracters' do
+  it 'address should be up to 200 caracters' do
     FactoryGirl.build(:enterprise, address: '').should_not be_valid
     FactoryGirl.build(:enterprise, address: 'X' * 201).should_not be_valid
     FactoryGirl.build(:enterprise, address: 'X' * 200).should be_valid

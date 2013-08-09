@@ -1,10 +1,15 @@
 %section#shoe_detail
   %h1
-  = @shoe.name
+    Item Details 
+  = image_tag(@shoe.enterprise.image,:height=>100)
+  = @shoe.enterprise.name
+  = @shoe.enterprise.state
   %h2
-  = link_to @shoe.enterprise.name, "/enterprise/#{@shoe.enterprise.id}"
-  = image_tag(@shoe.image,:height=>300)
-  = simple_format(@shoe.description)
+    = @shoe.name
+    = link_to @shoe.enterprise.name, "/enterprise/#{@shoe.enterprise.id}"
+    %ul
+      = image_tag(@shoe.image,:height=>300)
+    = simple_format(@shoe.description)
   %br/
   %span.shoe_value= number_to_currency(@shoe.value)
   %br/
@@ -15,8 +20,4 @@
     %p
     = link_to "Order", "/buy/#{@shoe.id}", :class=>"buy_shoe", :method=> :post
     %end
-    %hr
-    %ul#mini_shoes
-      %center 
-    %ul
-    = render :partial=>"mini_shoe", :collection=>@shoes
+%div#clear

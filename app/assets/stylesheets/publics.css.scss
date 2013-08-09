@@ -1,7 +1,6 @@
 body {
 	margin: 50;
 	font-size: 14px;
-	background: #E0FFFF;
 }
 
 nav, footer {
@@ -11,13 +10,9 @@ nav, footer {
 
 #mini_shoes {
 	list-style-type: none;
-	padding: 0;
+  padding: 0;
 }
 
-#mini_shoes li {
-	display: table-cell;
-	padding-right: 7em;
-}
 
 #mini_shoes h1 {
 	color: maroon;
@@ -27,6 +22,11 @@ nav, footer {
 #mini_shoes h2 {
 	margin-top: 0;
 	font-size: 1em;
+  float: left;
+  width: 200px;
+  margin-left: 15px;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 
 a.more_shoe_info:visited,
@@ -90,7 +90,7 @@ font-weight: bold;
 font-size: 1.5em;
 }
 
-table, td{
+/*table, td{
 background: #F5DEB3;
 color: black;
 font-weight: bold;
@@ -114,13 +114,35 @@ margin-left: 4em;
 margin-right: 4em;
 text-decoration: none;
 }
-
+*/
 h1{
 	background: orange;
 	font-size: 32pt;
 	text-align: center;
 
 }
+
+#shoes{
+  font-size: 20pt;
+  text-align: justify;
+  color:red;
+}
+
+#shoes_rand{
+  float: left;
+}
+
+#clear {
+  clear: both;
+}
+
+/*#items_shoe{
+    float: left;
+    width:5%;
+    margin-left: 5%;
+    margin-top: 7px;
+    margin-bottom: 7px;}*/
+
 
 /*div{text-align: center}*/
 
@@ -134,12 +156,6 @@ width: 5em;
 .shoes{margin-right: 20%;
 margin-left: 30%;
 }
-
-
-
-
-
-
 
 .field_with_errors {
   padding: 2px;
@@ -165,7 +181,7 @@ margin-left: 30%;
     color: #fff;
   }
   ul li {
-    font-size: 12px;
+    font-size: 15px;
     list-style: square;
   }
 }

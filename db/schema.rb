@@ -66,7 +66,6 @@ ActiveRecord::Schema.define(:version => 20130807144538) do
   create_table "orders", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "quantity"
   end
 
   create_table "people", :force => true do |t|
