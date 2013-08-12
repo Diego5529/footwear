@@ -13,7 +13,7 @@ describe Person do
      person.should be_valid
   end
 
-  #name
+  #Name
   it "should not have empty name" do
     person = FactoryGirl.build(:person, name: '')
     person.should_not be_valid

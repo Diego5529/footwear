@@ -4,4 +4,5 @@ class OrderItem < ActiveRecord::Base
   validates :shoe_id, :value, presence: true
   belongs_to :order
   belongs_to :shoe
+  
 end

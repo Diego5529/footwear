@@ -5,15 +5,15 @@
   = render :partial=>"cart_item", :collection=>@cart.items
 %p
   %h2
-    -if @cart.total <= 0
+    -if @cart.total == 0
       Your cart is empty. Select an Product
       %h2
         = link_to "Home", "/"
-    -if @cart.total >0
+    -if @cart.total > 0
       Total:
       %span#cart_total.shoe_value= number_to_currency(@cart.total)
       %h2
-      - if session[:id]  && @cart.total > 0
+      - if session[:id] && @cart.total > 0
         %h2
           = link_to "Checkout", "/checkout"
       - else

@@ -6,7 +6,7 @@ FactoryGirl.define do
     admin true
    end
    
-   factory :enterprise do
+  factory :enterprise do
     name 'Empresa'
     name_social 'Nome Social'
     email 'foo@bar.com'
@@ -19,9 +19,9 @@ FactoryGirl.define do
     city 'Birigui'
     telephone '12345678910'
     cnpj '13.456.789/8745-66'
-   end
+  end
 
-   factory :client do
+  factory :client do
     name 'Usuario'
     email 'foo@bar.com'
     password '123456'
@@ -33,9 +33,9 @@ FactoryGirl.define do
     city 'Birigui'
     telephone '12345678910'
     cpf '445.153.509-83'
-   end
+  end
 
-   factory :shoe do
+  factory :shoe do
     name 'Sapato'
     stock '1'
    end

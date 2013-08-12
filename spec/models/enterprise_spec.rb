@@ -6,6 +6,12 @@ describe Enterprise do
     enterprise = FactoryGirl.create(:enterprise)
   end
 
+  #Enterprise create ?
+  it "should has a enterprise" do
+     enterprise = FactoryGirl.create(:enterprise)
+     enterprise.should be_valid
+  end
+
   #NAME
   it "should not have a blank name" do
     enterprise = FactoryGirl.build(:enterprise, name: '')

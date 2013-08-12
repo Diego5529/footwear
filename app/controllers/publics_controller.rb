@@ -66,7 +66,6 @@ class PublicsController < ApplicationController
     end
     @cart = find_cart
     @cart << @shoe
-    @quantity = :quantity
     redirect_to :action=>:cart
   end
 
@@ -90,7 +89,6 @@ class PublicsController < ApplicationController
     
     order = Order.new
     cart = find_cart
-
     Shoe.transaction do
       for item in cart.items
         order.order_items << OrderItem.new(shoe_id: item.id, value: item.value)
@@ -111,13 +109,14 @@ class PublicsController < ApplicationController
       redirect_to "/login_client"
       return
     end
+    @email = session[:email]
     find_cart.clear
-    OrderMailer.order_created(@order).deliver  
+    OrderMailer.order_created(@order,@email).deliver  
     redirect_to :action=>:order, :id=>@order.id
   end
 
   def order
-    @order = Order.find(params[:id])
+    @order = Order.find(params[:id])  
   rescue nil
     if !@order
       flash[:notice] = "Not Found"

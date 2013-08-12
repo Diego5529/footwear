@@ -3,14 +3,14 @@ require 'spec_helper'
 
 describe Shoe do
 
-  let(:shoe) do
-     shoe = FactoryGirl.create(:shoe)
-  end
+  # let(:shoe) do
+  #    shoes = FactoryGirl.create(:shoe)
+  # end
 
   # #Shoe create ?
   # it "should has a shoe" do
-  #    shoe = FactoryGirl.create(:shoe)
-  #    shoe.should be_valid
+  #    shoes = FactoryGirl.create(:shoe)
+  #    shoes.should be_valid
   # end
 
   # #name

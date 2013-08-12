@@ -1,9 +1,22 @@
 %section#shoe_detail
   %h1
-    Item Details 
-  = image_tag(@shoe.enterprise.image,:height=>100)
-  = @shoe.enterprise.name
-  = @shoe.enterprise.state
+    Item Details
+  = image_tag(@shoe.enterprise.image,:height=>150)
+  %div
+  %br
+    Name:
+    = @shoe.enterprise.name
+  %br
+    City:
+    = @shoe.enterprise.city
+  %br
+    State:
+    = @shoe.enterprise.state
+  %br
+    Address:
+    = @shoe.enterprise.address
+    ,
+    = @shoe.enterprise.number 
   %h2
     = @shoe.name
     = link_to @shoe.enterprise.name, "/enterprise/#{@shoe.enterprise.id}"
