@@ -1,18 +1,21 @@
 %h1 - Catalog Footwear -
-%h2 Recebemos o seu pedido!
+%h2
+  We received your request!
 %p
-  Olá!
+  Hello!
 %p
-  Seu pedido foi recebido em nosso sistema. Anote o número:
+  Your request was received in our system. Write down the number:
   %strong= @order.id
 %p
-  Os items comprados foram:
+  The ordered items were:
 %ul
   - for item in @order.order_items
+    / - if item.value > 101 
     %li
       = item.shoe.name
       \- #{number_to_currency(item.value)}
-      = image_tag(item.shoe.image,:height=>200)
+      Code:
       = item.shoe.id
+    = image_tag(item.shoe.image,:height=>200)
 %p
   Thank you for using Catalog Footwear

@@ -1,6 +1,11 @@
 body {
-	margin: 50;
+	margin: 100;
 	font-size: 14px;
+  margin-left: 10px;
+  margin-right: 10
+  px;
+  margin-bottom: 50px;
+  margin-top: 10px;
 }
 
 nav, footer {
@@ -16,7 +21,7 @@ nav, footer {
 
 #mini_shoes h1 {
 	color: maroon;
-	margin-bottom: 0;
+	margin-bottom: 10;
 }
 
 #mini_shoes h2 {
@@ -35,6 +40,46 @@ color: white;
 text-align: center;
 }
 
+#enterprise_logo{
+  color: green;
+  float: left;
+  width: 160px;
+  margin-left: 5px;
+  /*margin-top: 7px;*/
+  margin-bottom: 7px;
+}
+
+#enterprise_info{
+  color: green;
+  font-weight: bold;
+  font-size: 13pt;
+  margin-top: 0;
+  float: left;
+  width: 250px;
+  list-style-type: none;
+  padding: 0;
+}
+
+#logo{
+  float:left;
+}
+
+/*#menu_top{
+  float:left;
+  font-size: 13pt;
+  font-weight: bold;
+  margin-top: 12px;
+  width: 150px;
+ /* height: 120px;
+  padding: 0;
+}*/
+/*#menu_sub{
+  float:left;
+  font-size: 13pt;
+  font-weight: bold;
+  width: 45%;
+}*/
+
 a.more_shoe_info, a.buy_shoe {
 background: green;
 color: white;
@@ -50,11 +95,11 @@ text-align: center;
 
 form{text-align: justify;}
 
-/*header{ background-color:#FFD700;
-            text-align:center;
-            height:80px;
-            font-size:20pt;
-            padding-right:110px;
+/*header{
+  text-align:center;
+  height:80px;
+  font-size:10pt;
+  padding-right:110px;
 }*/
 
 a{
@@ -117,7 +162,7 @@ text-decoration: none;
 */
 h1{
 	background: orange;
-	font-size: 32pt;
+	font-size: 36pt;
 	text-align: center;
 
 }

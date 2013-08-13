@@ -1,24 +1,37 @@
 %section#shoe_detail
   %h1
     Item Details
-  = image_tag(@shoe.enterprise.image,:height=>150)
-  %div
+#enterprise_logo
+  = image_tag(@shoe.enterprise.image,:width => 150,:height=>150)
+%p#enterprise_info
+  Enterprise:
+  = @shoe.enterprise.name
+  %br/
+  Email:
+  = @shoe.enterprise.email
+  %br/
+  City:
+  = @shoe.enterprise.city
+  %br/
+  State:
+  = @shoe.enterprise.state
+  %br/
+  Address:
+  = @shoe.enterprise.address
+  ,
+  = @shoe.enterprise.number
+  %br/
+  District:
+  = @shoe.enterprise.district
+  %br/
+  Telephone:
+  = @shoe.enterprise.telephone
   %br
-    Name:
-    = @shoe.enterprise.name
-  %br
-    City:
-    = @shoe.enterprise.city
-  %br
-    State:
-    = @shoe.enterprise.state
-  %br
-    Address:
-    = @shoe.enterprise.address
-    ,
-    = @shoe.enterprise.number 
-  %h2
+%div#clear
+  %hr
+  #shoes
     = @shoe.name
+  %h2
     = link_to @shoe.enterprise.name, "/enterprise/#{@shoe.enterprise.id}"
     %ul
       = image_tag(@shoe.image,:height=>300)

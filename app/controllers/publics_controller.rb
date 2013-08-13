@@ -111,8 +111,12 @@ class PublicsController < ApplicationController
     end
     @email = session[:email]
     find_cart.clear
+    if @order.total > 0
     OrderMailer.order_created(@order,@email).deliver  
     redirect_to :action=>:order, :id=>@order.id
+  else
+    redirect_to '/'
+  end
   end
 
   def order
