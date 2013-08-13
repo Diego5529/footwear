@@ -5,6 +5,9 @@ class Order < ActiveRecord::Base
   belongs_to :clients
   has_many :enterprise
 
+  def grouped_by_enterprise
+  	order_items.inject({}) {|memo,item| memo[item.shoe.enterprise.email] ||= []; memo[item.shoe.enterprise.email] << item; memo}
+  end
 
   def total
   	order_items.inject(0) {|m,i| m += i.value}

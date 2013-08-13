@@ -5,8 +5,13 @@ class OrderMailer < ActionMailer::Base
   def order_created(order,email)
     @order = order
     @email = email
-    #@email_enterprises = email_enterprises
-    mail(to: @email, subject: "Pedido recebido!")
-    #mail(to: order.enterprise.email, subject: "Pedido recebido!")
+    mail(to: @email, subject: "Order received!")
+    
   end
+
+  def enterprise_order_created(email,items)
+  	@items = items
+  	mail(to: email, subject: "You received a request" )
+  end
+
 end

@@ -1,0 +1,11 @@
+%h1 - Catalog Footwear -
+%ul
+  - for item in @items
+    %li
+      = item.shoe.name
+      \- #{number_to_currency(item.value)}
+      Code:
+      = item.shoe.id
+    = image_tag(item.shoe.image,:height=>200)
+%p
+  Thank you for using Catalog Footwear

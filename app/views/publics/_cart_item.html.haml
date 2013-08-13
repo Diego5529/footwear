@@ -3,7 +3,10 @@
     = image_tag(cart_item.image,:height=>200)
     #shoes
       = cart_item.name
-      = cart_item.enterprise_id
+  %h3
+    Empresa:
+    = cart_item.enterprise.name
+    - cart_item.enterprise.email
     %h3
       = cart_item.description
     %span.shoe_value= number_to_currency(cart_item.value)
