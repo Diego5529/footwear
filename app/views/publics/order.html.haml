@@ -1,11 +1,11 @@
 %h1
-  You request
+  Sua Encomenda
 %h2
-  Order number: #{@order.id}
+  Numero do pedido: #{@order.id}
 %h3
-  Your request has been sent successfully
+  Seu pedido foi realizado com sucesso!
   %li
-    We sent an email to you and to the company's footwear
+    Enviaremos um email para você e para a(as) empresa(as) com seu pedido 
 %p
   Total:
   %span.shoe_value= number_to_currency(@order.total)

@@ -1,25 +1,23 @@
-%h1 Listing clients
+%h1 Lista de clientes
 %table{:align => "center"}
   %tr
-    %th Name
-    %th Email
-    %th Password
+    %th Nome
+    %th E-mail
+    / %th Password
     %th CPF
-    %th Zip code
-    %th Address
-    %th Number
-    %th District
-    %th City
-    %th State
-    %th Telephone
-    %th
-    %th
-    %th
+    %th CEP
+    %th Endereço
+    %th Numero
+    %th Bairro
+    %th Cidade
+    %th Estado
+    %th Telepone
+    %th{:colspan => "3"} Opções
   - @clients.each do |client|
     %tr
       %td= client.name
       %td= client.email
-      %td= client.password
+      / %td= client.password
       %td= client.cpf
       %td= client.zip_code
       %td= client.address
@@ -28,8 +26,8 @@
       %td= client.city
       %td= client.state
       %td= client.telephone
-      %td= link_to 'Show', client
-      %td= link_to 'Edit', edit_client_path(client)
-      %td= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to 'Mostrar', client
+      %td= link_to 'Editar', edit_client_path(client)
+      %td= link_to 'Apagar', client, method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' }
 %br/
-%h2= link_to 'New Client', new_client_path
+%h2= link_to 'Novo cliente', new_client_path

@@ -1,22 +1,22 @@
 %h1
-  Your Cart
+  Seu Carrinho
 %hr
 %ul#cart_items
   = render :partial=>"cart_item", :collection=>@cart.items
 %p
   %h2
     -if @cart.total == 0
-      Your cart is empty. Select an Product
+      Seu carrinho está vazio, selecione um produto.
       %h2
-        = link_to "Home", "/"
+        = link_to "Início", "/"
     -if @cart.total > 0
       Total:
       %span#cart_total.shoe_value= number_to_currency(@cart.total)
       %h2
       - if session[:id] && @cart.total > 0
         %h2
-          = link_to "Checkout", "/checkout"
+          = link_to "Fechar Encomenda", "/checkout"
       - else
         %h2
-        You need to identify
-        = link_to "Login", "login_client"
+        Você precisa estar logado
+        = link_to "Entrar", "login_client"

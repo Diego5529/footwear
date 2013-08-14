@@ -1,13 +1,12 @@
 %p#notice= notice
 %p
-  %b Name:
+  %b
+    = Person.human_attribute_name(:name)
+    \:
   = @person.name
-%p
-  %b Password:
-  = @person.password
 %p
   %b Admin:
   = @person.admin
-= link_to 'Edit', edit_person_path(@person)
+= link_to 'Editar', edit_person_path(@person)
 |
-\#{link_to 'Back', people_path}
+\#{link_to 'Voltar', people_path}

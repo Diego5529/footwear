@@ -1,0 +1,12 @@
+%h1
+  Minha empresa
+%p#notice= notice
+= form_tag "login_user" do
+  %p
+    %label{:for => "email"} E-mail:
+    %input#email{:name => "email", :type => "text"}/
+  %p
+    %label{:for => "password"} Senha:
+    %input#password{:name => "password", :type => "password"}/
+  %p
+    %input{:type => "submit", :value => "Entrar"}/

@@ -1,27 +1,28 @@
 !!!
 %html
   %head
-    %title -Footwear- Home Admin
+    %title -Footwear-
     = stylesheet_link_tag    "people", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
   %body
-    %img{:width => "100", :height => "100",:src =>"startup.jpg"}
+    //%img{:width => "100", :height => "100",:src =>"startup.jpg"}
     %header
-      %h1 -CATALOG FOOTWEAR-
-      %hr
-      %h3 Welcome: #{session[:name]}
+      %h1
+        CATALOG FOOTWEAR
+      %h3
+        Bem vindo, #{session[:name]}.
+        = link_to "Sair", logout_path
       %div
-        = link_to "Home", "/"
-        = link_to "Enterprises", "enterprises"
-        = link_to "Clients", "clients"
-        = link_to "Shoes", "shoes"
-        = link_to "Admins", "people"
-        = link_to "Exit", logout_path
+        = link_to "Início", "/"
+        = link_to "Empresas", "enterprises"
+        = link_to "Clientes", "clients"
+        = link_to "Produtos", "shoes"
+        = link_to "Administradores", "people"
         %div
         %hr
         - if session[:admin]
           = yield
         %hr
         %footer
-          Advertise already the products of your company to the world
+          Anuncie já os produtos de sua empresa para o mundo

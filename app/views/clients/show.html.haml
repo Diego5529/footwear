@@ -5,9 +5,9 @@
 %p
   %b Email:
   = @client.email
-%p
-  %b Password:
-  = @client.password
+/ %p
+/   %b Password:
+/   = @client.password
 %p
   %b CPF:
   = @client.cpf
@@ -32,6 +32,6 @@
 %p
   %b Telephone:
   = @client.telephone
-= link_to 'Edit', edit_client_path(@client)
+= link_to 'Editar', edit_client_path(@client)
 |
-\#{link_to 'Back', clients_path}
+\#{link_to 'Voltar', clients_path}

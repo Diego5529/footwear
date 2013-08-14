@@ -18,7 +18,11 @@
   .field
     = f.label :audience
     %br/
-    = f.text_field :audience
+    %select{:audience => :audience}
+      %option{:selected =>""} Infantil
+      %option Adulto
+      %option Social
+      %option Esporte
   .field
     = f.label :stock
     %br/

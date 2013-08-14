@@ -2,7 +2,7 @@
 %html
   %head
     %title -Footwear- Home Client
-    = stylesheet_link_tag    "application", :media => "all"
+    = stylesheet_link_tag    "publics", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
     %header
@@ -10,16 +10,15 @@
       %h1
         -CATALOG FOOTWEAR
       %h3
-        Welcome: #{session[:email]}
-        = link_to "My cart", "cart"
+        Bem vindo #{session[:email]}!
+        = link_to "Carrinho", "cart"
       %ul
         %li
-          = link_to "Home", "/"
+          = link_to "Início", "/"
           = link_to "Register", "register"
           = link_to "Register Enterprise", "register_enterprise"
           = link_to "Exit", "logout_client"
           = yield
       %hr
       %footer
-        %h2 Advertise Your shoes here!
-        %hr/
+        logado como cliente

@@ -1,30 +1,30 @@
 %section#shoe_detail
   %h1
-    Item Details
+    Detalhes do Produto
 #enterprise_logo
   = image_tag(@shoe.enterprise.image,:width => 150,:height=>150)
 %p#enterprise_info
-  Enterprise:
+  Empresa:
   = @shoe.enterprise.name
   %br/
-  Email:
+  E-mail:
   = @shoe.enterprise.email
   %br/
-  City:
+  Cidade:
   = @shoe.enterprise.city
   %br/
-  State:
+  Estado:
   = @shoe.enterprise.state
   %br/
-  Address:
+  Endereço:
   = @shoe.enterprise.address
   ,
   = @shoe.enterprise.number
   %br/
-  District:
+  Bairro:
   = @shoe.enterprise.district
   %br/
-  Telephone:
+  Telefone:
   = @shoe.enterprise.telephone
   %br
 %div#clear
@@ -44,6 +44,6 @@
     %h4.sold_out Esgotado!
   - else
     %p
-    = link_to "Order", "/buy/#{@shoe.id}", :class=>"buy_shoe", :method=> :post
+    = link_to "Comprar", "/buy/#{@shoe.id}", :class=>"buy_shoe", :method=> :post
     %end
 %div#clear

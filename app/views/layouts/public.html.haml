@@ -1,31 +1,32 @@
 !!!
 %html
   %head
-    %title -Footwear- Home
-    = stylesheet_link_tag    "application", :media => "all"
+    %title -Footwear-
+    = stylesheet_link_tag    "publics", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
     %header
-      %h1 -CATALOG FOOTWEAR-
-    %end
-    %body
+      %h1 CATALOG FOOTWEAR
+    #total
+      %body
+      #imagem
+        %img{:width => 100, :height => 100,:src =>"startup.jpg"}
+      #menu_top
       %h3
-        //%img{:width => 100, :height => 100,:src =>"startup.jpg"}
-        Welcome #{session[:email]}
-        = link_to "Exit", "logout_client"
-        = link_to "Register", "register"
-        = link_to "Register Enterprise", "register_enterprise"
+        Bem vindo #{session[:email]}!
+        = link_to "Sair", "logout_client"
+      .bottom
+        = link_to "Quero comprar", "register"
+        = link_to "Quero vender", "register_enterprise"
       #menu_sub
-        = link_to "Home", "/"
-        = link_to "I am customer", "login_client"
-        = link_to "I am seller", "login_user"
-        = link_to "My cart", "cart"
-      %div#clear
+        = link_to "Início", "/"
+        = link_to "Sou Cliente", "login_client"
+        = link_to "Sou Empresa", "login_user"
+        = link_to "Meu Carrinho", "cart"
+    %div#clear
       = yield
-      %hr
       %footer
-        %h2 Advertise Your shoes here!
-        %hr/
+        ANÚNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO
 
 
       

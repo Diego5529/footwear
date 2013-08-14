@@ -36,7 +36,7 @@ module Footwear
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :de
+    config.i18n.default_locale = "pt-BR"
 
     # Configure the default encoding used in templates for Ruby 1.9.
     config.encoding = "utf-8"
@@ -64,7 +64,7 @@ module Footwear
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.autoload_paths += %W(#{Rails.root}/config/extras/)
+    config.autoload_paths += %W(#{Rails.root}/config/extras/ #{Rails.root}/app/presenters/)
     
     
   end

@@ -1,27 +1,30 @@
+%section#shoe_detail
+  %h1
+    Detalhes do Produto
 %p#notice= notice
 %p
   %img{:src => @shoe.image}
 %p
-  %b Name:
+  %b Nome:
   = @shoe.name
 %p
-  %b Value:
+  %b Preço:
   = @shoe.value
 %p
-  %b Enterprise:
+  %b Empresa:
   = @shoe.enterprise_id
 %p
-  %b Audience:
+  %b Publico Alvo:
   = @shoe.audience
 %p
-  %b Stock:
+  %b Estoque:
   = @shoe.stock
 %p
-  %b Registed:
+  %b Data de registro:
   = @shoe.registed
 %p
-  %b Description:
+  %b Descrição:
   = @shoe.description
-= link_to 'Edit', edit_shoe_path(@shoe)
+= link_to 'Editar', edit_shoe_path(@shoe)
 |
-\#{link_to 'Back', shoes_path}
+\#{link_to 'Voltar', shoes_path}

@@ -1,16 +1,17 @@
 /= session[:admin]
 - if @enterprise
   /%h2= @enterprise.name
-%h1 Listing shoes
+%h1 Lista de Produtos
 %table{:align => "center"}
   %tr
-    %th Name
-    %th Value
-    %th Enterprise
-    %th Audience
-    %th Stock
-    %th Registed
-    %th Description
+    %th Nome
+    %th Preço
+    %th Empresa
+    %th Publico
+    %th Estoque
+    %th Data
+    %th Descrição
+    %th{:colspan => "3"} Opções
   - @shoes.each do |shoe|
     %tr
       %td= shoe.name
@@ -20,10 +21,10 @@
       %td= shoe.stock
       %td= shoe.registed
       %td= shoe.description
-      %td= link_to 'Show', shoe
-      %td= link_to 'Edit', edit_shoe_path(shoe)
-      %td= link_to 'Destroy', shoe, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to 'Mostrar', shoe
+      %td= link_to 'Editar', edit_shoe_path(shoe)
+      %td= link_to 'Apagar', shoe, method: :delete, data: { confirm: 'Tem certeza?' }
   %hr
 %hr
   - if !session[:admin]
-    %h2= link_to 'New Shoe', new_shoe_path
+    %h2= link_to 'Novo produto', new_shoe_path

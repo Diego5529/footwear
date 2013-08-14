@@ -22,12 +22,14 @@ class PeopleController < ApplicationController
   # GET /people/1
   # GET /people/1.json
   def show
+    
+    
     @person = Person.find(params[:id])
 
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @person }
-    end
+    # respond_to do |format|
+    #   format.html # show.html.erb
+    #   format.json { render json: @person }
+    # end
   end
 
   # GET /people/new
