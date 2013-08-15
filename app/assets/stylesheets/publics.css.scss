@@ -3,26 +3,28 @@ body {
 	margin: 100;
 	font-size: 12px;
   margin-left: 10px;
-  margin-right: 10px;/*
-  margin-bottom: 50px;*/
-  /*margin-top: 5px;*/
+  margin-right: 10px;
+  margin-top: 5px;
 }
 
 footer {
   color: blue;
-  background: red;
-  font-size: 32pt;
+  background: orange;
+  font-size: 18pt;
   text-align: center;
   border-width: medium;
   border-style: solid;
-  border-color: #00f;
-
+  border-color: #000;
+  margin-top: 10px;
 }
 
-head{
-  border-width: medium;
-  border-style: solid;
-  border-color: #00f;
+#style{
+  /*border-style: solid;
+  border-color: #000;*/
+  text-align: center;
+  margin-left: 650px;
+  width: 690px;
+
 }
 
 #mini_shoes {
@@ -46,11 +48,11 @@ head{
   margin-bottom: 7px;
 }
 
-a.more_shoe_info:visited,
+/*a.more_shoe_info:visited,
 a.buy_shoe:visited {
 color: white;
 }
-
+*/
 #enterprise_logo{
   color: green;
   float: left;
@@ -69,48 +71,9 @@ color: white;
   width: 250px;
 }
 
-#logo{
-  float:left;
-  width: 10%;
-}
-
-#imagem{float:right;}
-
-#menu_top{
-  float:right;
-  font-weight: bold;
-  margin-top: 12px;
-  padding: 0;
-  border-width: 2px;
-  border-color: red;
-}
-#menu_sub{
-  float:left;
-  font-size: 18pt;
-  font-weight: bold;
-  color: blue;
-  text-align: center;
-  border-width: medium;
-  border-style: solid;
-  border-color: #000;
-}
-
 a.more_shoe_info, a.buy_shoe {
-background: green;
-color: white;
-font-weight: bold;
-
-border-radius: 15px;
-padding: 0.5em 1em;
-margin-left: 3em;
-text-decoration: none;
-text-align: center;
-
-}
-
-/*.bottom:hover{
-  background: orange;
-  color: #fff;
+  background: green;
+  color: white;
   font-weight: bold;
 
   border-radius: 15px;
@@ -118,28 +81,82 @@ text-align: center;
   margin-left: 3em;
   text-decoration: none;
   text-align: center;
-}*/
+  &:visited {
+      color: white;
+    }
+    &:hover {
+      color: #fff;
+      background-color: #000;
+    }
 
-#total{
+}
+
+a.bottom{
+  background: orange;
+  color: white;
+  font-weight: bold;
+
+  border-radius: 15px;
+  padding: 0.5em 1em;
+  margin-left: 3em;
+  text-decoration: none;
+  text-align: center;
+  &:visited {
+    color: white;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+
+#menu_sub{
   float:left;
   font-size: 14pt;
+  font-weight: bold;
+  color: blue;
+  border-width: medium;
+  border-style: solid;
+  border-color: #000;
+}
+
+a.menus{
+  background: blue;
+  color: white;
+  font-weight: bold;
+
+  border-radius: 15px;
+  padding: 0.5em 1em;
+  margin-left: 3em;
+  text-decoration: none;
+  text-align: center;
+  &:visited {
+    color: white;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+#total{
   font-weight: bold;
   text-align: center;
   border-width: medium;
   border-style: solid;
   border-color: #000;
-  width:100%;
 
 }
 
 a {
-  color: black;
+  color: blue;
   &:visited {
     color: blue;
   }
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: black;
+    background-color: white;
   }
 }
 
@@ -156,17 +173,18 @@ header{
 
 
 h4 {
-background: red;
-color: white;
+color:black;
 font-weight: bold;
+font-size: 12pt;
+}
 
-border-radius: 15px;
+/*border-radius: 15px;
 padding: 0.5em 1em;
 margin-left: 2em;
 margin-right: 2em;
 text-decoration: none;
 
-}
+}*/
 
 span.shoe_value {
 color: green;
@@ -204,15 +222,20 @@ margin-right: 4em;
 text-decoration: none;
 }
 h1{
-background: orange;
+background: #FF6347;
   font-size: 32pt;
   text-align: center;
 }
 
 #shoes{
-  font-size: 20pt;
+  font-size: 16pt;
   text-align: justify;
   color:red;
+}
+h4.shoes{
+  font-size: 12pt;
+  text-align: left;
+  color :black;
 }
 
 #shoes_rand{

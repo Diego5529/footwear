@@ -2,13 +2,13 @@
   %ul{:id => "item_#{cart_item.id}"}
     = image_tag(cart_item.image,:height=>200)
     #shoes
-      = cart_item.name
-  %h3
-    Empresa:
-    = cart_item.enterprise.name
-    - cart_item.enterprise.email
-    %h3
-      = cart_item.description
+      %h3
+        = cart_item.name 
+      %h5
+        = cart_item.description
+      %h5
+        Empresa:
+        = cart_item.enterprise.name
     %span.shoe_value= number_to_currency(cart_item.value)
     %br
     = link_to("Remover item", {:action=>"remove",:id=>cart_item.id},:remote=>true,:method=>:delete,:class=>"remove_shoe",:confirm=>"Tem ceteza ?")

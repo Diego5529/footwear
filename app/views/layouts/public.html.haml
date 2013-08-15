@@ -7,26 +7,17 @@
     = csrf_meta_tags
     %header
       %h1 CATALOG FOOTWEAR
-    #total
-      %body
-      #imagem
-        %img{:width => 100, :height => 100,:src =>"startup.jpg"}
-      #menu_top
-      %h3
-        Bem vindo #{session[:email]}!
-        = link_to "Sair", "logout_client"
-      .bottom
-        = link_to "Quero comprar", "register"
-        = link_to "Quero vender", "register_enterprise"
       #menu_sub
-        = link_to "Início", "/"
-        = link_to "Sou Cliente", "login_client"
-        = link_to "Sou Empresa", "login_user"
-        = link_to "Meu Carrinho", "cart"
+        = link_to "Início", "/",:class=>"menus"
+        = link_to "Quero comprar", "register",:class=>"bottom"
+        = link_to "Quero vender", "register_enterprise",:class=>"bottom"
+        = link_to "Sou Cliente", "login_client",:class=>"menus"
+        = link_to "Sou Empresa", "login_user",:class=>"menus"
+        = link_to "Meu Carrinho", "cart",:class=>"menus"
     %div#clear
-      = yield
-      %footer
-        ANÚNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO
+    = yield
+    %footer
+      ANÚNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO
 
 
       

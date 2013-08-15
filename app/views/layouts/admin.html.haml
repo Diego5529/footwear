@@ -15,10 +15,10 @@
         = link_to "Sair", logout_path
       %div
         = link_to "Início", "/"
-        = link_to "Empresas", "enterprises"
-        = link_to "Clientes", "clients"
-        = link_to "Produtos", "shoes"
         = link_to "Administradores", "people"
+        = link_to "Clientes", "clients"
+        = link_to "Empresas", "enterprises"
+        = link_to "Produtos", "shoes"
         %div
         %hr
         - if session[:admin]

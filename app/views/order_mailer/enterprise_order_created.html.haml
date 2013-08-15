@@ -1,11 +1,32 @@
-%h1 - Catalog Footwear -
-%ul
-  - for item in @items
-    %li
-      = item.shoe.name
-      \- #{number_to_currency(item.value)}
-      Code:
-      = item.shoe.id
-    = image_tag(item.shoe.image,:height=>200)
-%p
-  Thank you for using Catalog Footwear
+!!!
+%html
+  %head
+  %title Email
+  %style{:media => "screen", :type => "text/css"}
+  #tudo
+    %body{ style: "background-color: #000; border: 2px solid green;" }
+      %h1 - Catalog Footwear -
+      %h2
+        Nós recebemos uma encomenda para sua empresa!
+      %p
+        Olá, foi feita uma solicitação de pedido com produtos de sua empresa.
+      %p
+        Anote o número de sua encomenda:
+        /%strong= @order.id
+      %p
+        Os itens solicitados foram:
+      %ul
+        - for item in @items
+          %li
+            = item.shoe.name
+            \- #{number_to_currency(item.value)}
+            Código do produto:
+            = item.shoe.id
+            %table
+              %th
+                %td
+                  = image_tag("http://localhost:3000#{item.shoe.image}",:height=>200)
+      %p
+        Obrigado por usar Catalog Footwear
+      %footer
+        ANÚNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO

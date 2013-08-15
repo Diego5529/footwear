@@ -1,57 +1,64 @@
 %h1
   Cadastro de cliente
-= form_for(@client,{url: "/register"}) do |f|
-  - if @client.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@client.errors.count, "error")
-        prohibited this client from being saved:
-      %ul
-        - @client.errors.full_messages.each do |msg|
-          %li= msg
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name
-  .field
-    = f.label :email
-  .field
-    = f.text_field :email
-  .field
-    = f.label :password
-    %br/
-    = f.password_field :plain_password
-  .field
-    = f.label :cpf
-    %br/
-    = f.text_field :cpf
-  .field
-    = f.label :zip_code
-    %br/
-    = f.text_field :zip_code
-  .field
-    = f.label :address
-    %br/
-    = f.text_field :address
-  .field
-    = f.label :number
-    %br/
-    = f.text_field :number
-  .field
-    = f.label :district
-    %br/
-    = f.text_field :district
-  .field
-    = f.label :city
-    %br/
-    = f.text_field :city
-  .field
-    = f.label :state
-    %br/
-    = f.text_field :state
-  .field
-    = f.label :telephone
-    %br/
-    = f.text_field :telephone
-  .actions
-    = f.submit    
+#style
+  = form_for(@client,{url: "/register"}) do |f|
+    - if @client.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@client.errors.count, "error")
+          prohibited this client from being saved:
+        %ul
+          - @client.errors.full_messages.each do |msg|
+            %li= msg
+    .field
+      = f.label "Informação obrigatória*"
+      %br/
+    .field
+      = f.label "Nome*"
+      %br/
+      = f.text_field :name
+    .field
+      = f.label "E-mail*"
+    .field
+      = f.text_field :email
+    .field
+      = f.label "Senha*"
+      %br/
+      = f.password_field :plain_password
+    .field
+      = f.label 'CPF*'
+      %br/
+      = f.text_field :cpf
+    .field
+      = f.label "CEP*"
+      %br/
+      = f.text_field :zip_code
+    .field
+      = f.label "Endereço*"
+      %br/
+      = f.text_field :address
+    .field
+      = f.label "Numero*"
+      %br/
+      = f.text_field :number
+    .field
+      = f.label "Bairro*"
+      %br/
+      = f.text_field :district
+    .field
+      = f.label "Cidade*"
+      %br/
+      = f.text_field :city
+    .field
+      = f.label "Estado*"
+      %br/
+      = f.text_field :state
+    .field
+      = f.label "Telefone*"
+      %br/
+      = f.text_field :telephone
+      %br/
+      %br/
+    .actions
+      = f.submit "Cadastrar" 
+%div#clear 

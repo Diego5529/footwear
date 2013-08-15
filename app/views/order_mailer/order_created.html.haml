@@ -1,21 +1,40 @@
-%h1 - Catalog Footwear -
-%h2
-  We received your request!
-%p
-  Hello!
-%p
-  Your request was received in our system. Write down the number:
-  %strong= @order.id
-%p
-  The ordered items were:
-%ul
-  - for item in @order.order_items
-    / - if item.value > 101 
-    %li
-      = item.shoe.name
-      \- #{number_to_currency(item.value)}
-      Code:
-      = item.shoe.id
-    = image_tag(item.shoe.image,:height=>200)
-%p
-  Thank you for using Catalog Footwear
+!!!
+%html
+  %head
+  %title Email
+  %style{:media => "screen", :type => "text/css"}
+    #tudo
+    {
+    background-color: #000;
+    border: 2px solid green;
+    }
+  #tudo
+    %body
+      %h1 - Catalog Footwear -
+      %h2
+        Recebemos seu pedido com sucesso!
+      %p
+        Olá, seu pedido já foi encaminhado para a(as) empresas(as) com sua encomenda.
+      %p
+        Anote o número de sua encomenda:
+        %strong= @order.id
+      %p
+        Os itens solicitados foram:
+      %ul
+        - for item in @order.order_items
+          %ul  
+            Empresa:
+            = item.shoe.enterprise.name
+          %ul
+            %li
+              Produto:
+              = item.shoe.name
+              \- #{number_to_currency(item.value)}
+              \- Código do produto:
+              = item.shoe.id
+              / %table
+              /   %th
+              /     %td
+              /       = image_tag(item.shoe.image,:height=>200)
+      %footer
+        Obrigado por usar a Catalog Footwear
