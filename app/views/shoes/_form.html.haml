@@ -18,11 +18,7 @@
   .field
     = f.label :audience
     %br/
-    %select{:audience => :audience}
-      %option{:selected =>""} Infantil
-      %option Adulto
-      %option Social
-      %option Esporte
+    = select(:shoe, :audience, options_for_select([['Infantil'],['Adulto'],['Social'],['Esporte']]))
   .field
     = f.label :stock
     %br/

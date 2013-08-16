@@ -2,11 +2,9 @@
 %html
   %head
     %title -Footwear-
-    = stylesheet_link_tag    "people", :media => "all"
+    = stylesheet_link_tag    "admins", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
-    //%img{:width => "100", :height => "100",:src =>"startup.jpg"}
     %header
       %h1
         CATALOG FOOTWEAR
@@ -20,9 +18,7 @@
         = link_to "Empresas", "enterprises"
         = link_to "Produtos", "shoes"
         %div
-        %hr
         - if session[:admin]
           = yield
-        %hr
         %footer
           Anuncie já os produtos de sua empresa para o mundo

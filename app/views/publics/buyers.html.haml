@@ -1,5 +1,5 @@
-%h1
-  Cadastro de cliente
+%body
+  %h1 Cadastro de cliente
 #style
   = form_for(@client,{url: "/register"}) do |f|
     - if @client.errors.any?

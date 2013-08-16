@@ -1,40 +1,34 @@
-!!!
-%html
-  %head
-  %title Email
-  %style{:media => "screen", :type => "text/css"}
-    #tudo
-    {
-    background-color: #000;
-    border: 2px solid green;
-    }
-  #tudo
-    %body
-      %h1 - Catalog Footwear -
-      %h2
-        Recebemos seu pedido com sucesso!
-      %p
-        Olá, seu pedido já foi encaminhado para a(as) empresas(as) com sua encomenda.
-      %p
-        Anote o número de sua encomenda:
-        %strong= @order.id
-      %p
-        Os itens solicitados foram:
+%div{ style: "color:blue; font-family: arial; background-color: #fff;border: 2px solid #000;" }
+  %h1{ style: "color:#000; background-color:#4682B4; text-align:center; font-size:24pt; height:40px; margin-top:5px;" } - Catalog Footwear -
+  %hr
+  %h2{ style: "font-size:16pt; " }
+    Recebemos seu pedido com sucesso!
+  %p
+    Olá, seu pedido já foi encaminhado para a(as) empresas(as) com sua encomenda.
+  %p
+    Anote o número de sua encomenda:
+    %strong= @order.id
+  %p
+    Os itens solicitados foram:
+    %ul
+    - for item in @order.order_items
+      %ul  
+      Empresa:
+      = item.shoe.enterprise.name
       %ul
-        - for item in @order.order_items
-          %ul  
-            Empresa:
-            = item.shoe.enterprise.name
-          %ul
-            %li
-              Produto:
-              = item.shoe.name
-              \- #{number_to_currency(item.value)}
-              \- Código do produto:
-              = item.shoe.id
-              / %table
-              /   %th
-              /     %td
-              /       = image_tag(item.shoe.image,:height=>200)
-      %footer
-        Obrigado por usar a Catalog Footwear
+        %li
+          Produto:
+          = item.shoe.name
+          \- #{number_to_currency(item.value)}
+          \- Código do produto:
+          = item.shoe.id
+          %table
+            %th
+              %td
+                = image_tag("http://localhost:3000#{item.shoe.image}",:height=>200)
+          %hr
+        %hr
+  %p{ style: "color:red; text-align:center; font-size:24pt; height:40px; margin-top:5px;" }
+    Obrigado por usar Catalog Footwear
+  %footer{ style: "color: #000; background-color:#4682B4; text-align:center; font-size:24pt; height:40px; margin-top:5px;" }
+    ANÚNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO

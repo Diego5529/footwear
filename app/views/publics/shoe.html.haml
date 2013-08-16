@@ -1,49 +1,44 @@
-%section#shoe_detail
-  %h1
-    Detalhes do Produto
-#enterprise_logo
-  = image_tag(@shoe.enterprise.image,:width => 150,:height=>150)
-%p#enterprise_info
-  Empresa:
-  = @shoe.enterprise.name
-  %br/
-  E-mail:
-  = @shoe.enterprise.email
-  %br/
-  Cidade:
-  = @shoe.enterprise.city
-  %br/
-  Estado:
-  = @shoe.enterprise.state
-  %br/
-  Endereço:
-  = @shoe.enterprise.address
-  ,
-  = @shoe.enterprise.number
-  %br/
-  Bairro:
-  = @shoe.enterprise.district
-  %br/
-  Telefone:
-  = @shoe.enterprise.telephone
-  %br
-%div#clear
-  %hr
-  #shoes
-    = @shoe.name
-  %h2
+%h1
+  Detalhes do Produto
+#shoe
+  = @shoe.name
+  %div#clear
     = link_to @shoe.enterprise.name, "/enterprise/#{@shoe.enterprise.id}"
-    %ul
-      = image_tag(@shoe.image,:height=>300)
+  %ul
+    = image_tag(@shoe.image,:width=>250)
+  %h5{ style: "color:black"}
     = simple_format(@shoe.description)
-  %br/
   %span.shoe_value= number_to_currency(@shoe.value)
   %br/
   - if @shoe.sold_out?
-    %p
     %h4.sold_out Esgotado!
   - else
-    %p
     = link_to "Comprar", "/buy/#{@shoe.id}", :class=>"buy_shoe", :method=> :post
     %end
+#enterprise_total
+  Empresa:
+  = @shoe.enterprise.name
+  %br
+  = image_tag(@shoe.enterprise.image,:width => 150,:height=>150)
+  #enterprise_details
+    %br/
+    E-mail:
+    = @shoe.enterprise.email
+    %br/
+    Cidade:
+    = @shoe.enterprise.city
+    %br/
+    Estado:
+    = @shoe.enterprise.state
+    %br/
+    Endereço:
+    = @shoe.enterprise.address
+    ,
+    = @shoe.enterprise.number
+    %br/
+    Bairro:
+    = @shoe.enterprise.district
+    %br/
+    Telefone:
+    = @shoe.enterprise.telephone
 %div#clear

@@ -1,32 +1,23 @@
-!!!
-%html
-  %head
-  %title Email
-  %style{:media => "screen", :type => "text/css"}
-  #tudo
-    %body{ style: "background-color: #000; border: 2px solid green;" }
-      %h1 - Catalog Footwear -
-      %h2
-        Nós recebemos uma encomenda para sua empresa!
-      %p
-        Olá, foi feita uma solicitação de pedido com produtos de sua empresa.
-      %p
-        Anote o número de sua encomenda:
-        /%strong= @order.id
-      %p
-        Os itens solicitados foram:
-      %ul
-        - for item in @items
-          %li
-            = item.shoe.name
-            \- #{number_to_currency(item.value)}
-            Código do produto:
-            = item.shoe.id
-            %table
-              %th
-                %td
-                  = image_tag("http://localhost:3000#{item.shoe.image}",:height=>200)
-      %p
-        Obrigado por usar Catalog Footwear
-      %footer
-        ANÚNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO
+%div{ style: "color:blue; font-family: arial; background-color: #fff;border: 2px solid #000;" }
+  %h1{ style: "color:blue; background-color:#4682B4; text-align:center; font-size:24pt; height:40px; margin-top:5px;" } - Catalog Footwear -
+  %hr
+  %h2{ style: "font-size:16pt; " }
+    Nós recebemos uma encomenda para sua empresa!
+  %p
+    Olá, foi feita uma solicitação de pedido com produtos de sua empresa.
+  %p
+    Os itens solicitados foram:
+    %ul
+      - for item in @items
+        %li
+          = item.shoe.name
+          \- #{number_to_currency(item.value)}
+          Código do produto:
+          = item.shoe.id
+          %table
+            %th
+              %td
+                = image_tag("http://localhost:3000#{item.shoe.image}",:height=>200)
+          %hr
+        %hr
+  
