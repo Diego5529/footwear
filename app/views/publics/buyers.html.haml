@@ -5,8 +5,8 @@
     - if @client.errors.any?
       #error_explanation
         %h2
-          = pluralize(@client.errors.count, "error")
-          prohibited this client from being saved:
+          = pluralize(@client.errors.count, "erro")
+          este cliente não pode ser Salvo.
         %ul
           - @client.errors.full_messages.each do |msg|
             %li= msg

@@ -1,8 +1,8 @@
 %body
-  %h1
-    Produtos cadastrados
-  #mini_shoes
-    = render :partial=>"mini_shoe", :collection=>@shoes
+  %h1 Produtos cadastrados
+  - cache do
+    #mini_shoes
+      = render :partial=>"mini_shoe", :collection=>@shoes
   %div#clear
   %hr
     %h2 Administrador
