@@ -8,21 +8,21 @@
     %header
       %h1
         CATALOG FOOTWEAR
-      %h3
-        Bem vindo #{session[:email]}
-        -if session[:id] 
-          = link_to "Sair", logout_client_path
       %div
-        = link_to "Início", "/",:class=>"bottom"
-        = link_to "Quero comprar", "register",:class=>"bottom"
-        = link_to "Quero vender", "register_enterprise",:class=>"bottom"
-        = link_to "Sou Cliente", "login_client",:class=>"bottom"
-        = link_to "Sou Empresa", "login_user",:class=>"bottom"
-        = link_to "Meu Carrinho", "cart",:class=>"menus"
-        %div#clear
-          = yield
-        %footer
-          ANÚNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO
+        %h3
+          Bem vindo #{session[:id]}
+          -if session[:id] 
+            = link_to "Sair", logout_client_path
+          = link_to "Início", "/",:class=>"bottom"
+          = link_to "Quero comprar", "register",:class=>"bottom"
+          = link_to "Quero vender", "register_enterprise",:class=>"bottom"
+          = link_to "Sou Cliente", "login_client",:class=>"bottom"
+          = link_to "Sou Empresa", "login_user",:class=>"bottom"
+          = link_to "Meu Carrinho", "cart",:class=>"menus"
+          %div#clear
+            = yield
+          %footer
+            ANÚNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO
   %div#clear
 
 

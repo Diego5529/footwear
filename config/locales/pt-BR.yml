@@ -205,9 +205,11 @@ pt-BR:
     pm: ''
   # remove these aliases after 'activemodel' and 'activerecord' namespaces are removed from Rails repository
   activemodel:
-    errors:
-      <<: *errors
+    error:
+      <<: *error
   activerecord:
+    error:
+      <<: *error
     models:
       person: "Admin"
     attributes:

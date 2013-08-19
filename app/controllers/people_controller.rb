@@ -33,7 +33,6 @@ class PeopleController < ApplicationController
   end
 
   # GET /people/new
-  # GET /people/new.json
   def new
     @person = Person.new
 
@@ -48,8 +47,6 @@ class PeopleController < ApplicationController
     @person = Person.find(params[:id])
   end
 
-  # POST /people
-  # POST /people.json
   def create
     
     begin
@@ -72,8 +69,6 @@ class PeopleController < ApplicationController
     end
   end
 
-  # PUT /people/1
-  # PUT /people/1.json
   def update
     @person = Person.find(params[:id])
 
@@ -91,8 +86,6 @@ class PeopleController < ApplicationController
     render :edit
   end
 
-  # DELETE /people/1
-  # DELETE /people/1.json
   def destroy
     @person = Person.find(params[:id])
     @person.destroy

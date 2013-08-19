@@ -8,16 +8,16 @@
         - @person.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label :name
+    = f.label "Nome"
     %br/
     = f.text_field :name
   .field
-    = f.label :password
+    = f.label "Senha"
     %br/
     = f.text_field :plain_password
   .field
-    = f.label :admin
+    = f.label "Administrador"
     %br/
     = f.check_box :admin
   .actions
-    = f.submit
+    = f.submit "Novo Administrador"

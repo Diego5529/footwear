@@ -3,7 +3,7 @@ class EnterprisesController < ApplicationController
 
   #before_filter :load_enterprises :only => [:new,:edit,:create, :update]  
   respond_to :html
-  before_filter :logged?,:only => [:index,:show,:edit]
+  before_filter :logged?#,:only => [:index,:show,:edit]
 
   def logged?
   redirect_to "/people" if !session[:admin]

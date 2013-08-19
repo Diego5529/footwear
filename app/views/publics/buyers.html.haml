@@ -6,7 +6,7 @@
       #error_explanation
         %h2
           = pluralize(@client.errors.count, "erro")
-          este cliente não pode ser Salvo.
+          este cliente não pode ser criado:
         %ul
           - @client.errors.full_messages.each do |msg|
             %li= msg

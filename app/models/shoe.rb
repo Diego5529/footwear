@@ -2,7 +2,7 @@
 class Shoe < ActiveRecord::Base
 	include ImageSaver
   
-  attr_protected :stock
+  # attr_protected :stock
   attr_accessible :audience, :description, :enterprise_id, :name, :registed, :value, :stock, :image_title, :data_stream
   validates :name, presence: true, uniqueness: true, length: { maximum: 50 }
   validates :audience, presence: true, length: { maximum: 50 }

@@ -1,32 +1,38 @@
 Footwear::Application.routes.draw do
 
+  get "login/login"
+  get "login/logout"
+
+  post "login/login"
+  post "login/logout"
 
 
- match "login" => "login#login"
- match "logout" => "login#logout"
- match "login_user" => "login_user#login_user"
- match "logout_user" => "login_user#logout_user"
- match "login_client" => "login_client#login_client"
- match "logout_client" => "login_client#logout_client"
+
+  match "login" => "login#login"
+  match "logout" => "login#logout"
+  match "login_user" => "login_user#login_user"
+  match "logout_user" => "login_user#logout_user"
+  match "login_client" => "login_client#login_client"
+  match "logout_client" => "login_client#logout_client"
 
 
- match "shoe/:id" => "publics#shoe"
- match "enterprise/:id" => "publics#enterprise"
- match "register" => "publics#buyers"
- match "register_enterprise" => "publics#sellers"
- match "buy/:id" => "publics#buy", :via=>:post
- match "cart" => "publics#cart"
- match "remove/:id" => "publics#remove", :via=>:delete
- match "checkout" => "publics#close_order"
- match "request/:id" => "publics#order"
+  match "shoe/:id" => "publics#shoe"
+  match "enterprise/:id" => "publics#enterprise"
+  match "register" => "publics#buyers"
+  match "register_enterprise" => "publics#sellers"
+  match "buy/:id" => "publics#buy", :via=>:post
+  match "cart" => "publics#cart"
+  match "remove/:id" => "publics#remove", :via=>:delete
+  match "checkout" => "publics#close_order"
+  match "request/:id" => "publics#order"
  #match "/:redirect" => "publics#index"
 
 
- root to: "publics#index"
+  root to: "publics#index"
 
- namespace :enterprises do
-  resources :shoes 
-end
+  namespace :enterprises do
+   resources :shoes 
+  end
 
   resources :enterprises do
     member do
