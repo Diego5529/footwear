@@ -58,6 +58,9 @@ end
   def create
     @shoe = currentEnterprise.shoes.new(params[:shoe])
     @shoe.save
+    if !@shoe.image
+      @shoe.destroy
+    end
     respond_with @shoe
   end
 

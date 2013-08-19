@@ -10,7 +10,7 @@
         CATALOG FOOTWEAR
       %div
         %h3
-          Bem vindo #{session[:id]}
+          Bem vindo #{session[:name]}
           -if session[:id] 
             = link_to "Sair", logout_client_path
           = link_to "Início", "/",:class=>"bottom"

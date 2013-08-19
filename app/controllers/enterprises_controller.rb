@@ -50,6 +50,9 @@ class EnterprisesController < ApplicationController
       if @enterprise.save
         format.html { redirect_to @enterprise, notice: 'Enterprise was successfully created.' }
         format.json { render json: @enterprise, status: :created, location: @enterprise }
+        if !@enterprise.image
+          @enterprise.destroy
+        end
       else
         format.html { render action: "new" }
         format.json { render json: @enterprise.errors, status: :unprocessable_entity }

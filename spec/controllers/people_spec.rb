@@ -63,12 +63,12 @@ describe PeopleController do
     end
   end
 
-  describe "new" do
-    it "assigns all people as @people" do
-     person = Person.new valid_attributes
-     person.should_not be_valid
-    end
-  end
+  # describe "new" do
+  #   it "assigns all people as @people" do
+  #    person = Person.new valid_attributes
+  #    person.should_not be_valid
+  #   end
+  # end
 
   private
   def filtered_attributes(person)

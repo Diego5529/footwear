@@ -42,16 +42,6 @@ describe LoginUserController do
     end
   end
 
-  # context "when not enterprise" do
-  #   it "should login_user with valid information" do
-  #     enterprise = FactoryGirl.create(:enterprise, plain_password: "123456")
-  #     match :login_user, { email: enterprise.email, password: "123456" }
-  #     session[:id].should eql enterprise.id
-  #     session[:name].should eql enterprise.name
-  #     response.should redirect_to login_user
-  #   end
-  # end
-
   it "should logout" do
     get :logout_user
     session[:id].should eql nil

@@ -32,6 +32,7 @@ class LoginClientController < ApplicationController
             flash[:notice]  = "Welcome, #{client.email}!"
             session[:id]  = client.id
             session[:email]  = client.email
+            session[:name] = client.name
             redirect_to "/cart"
           end
         end

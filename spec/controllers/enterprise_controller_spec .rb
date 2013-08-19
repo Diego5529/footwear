@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Footwear::EnterpriseController do
+describe EnterpriseController do
 
   # # This should return the minimal set of attributes required to create a valid
   # # Enterprise. As you add validations to Enterprise, be sure to
@@ -12,6 +12,23 @@ describe Footwear::EnterpriseController do
   # # in order to pass any filters (e.g. authentication) defined in
   # # EnterpriseControler. Be sure to keep this updated too.
   # let(:valid_session) { {:id} }
+
+  describe "GET index" do
+    context "when not logged" do
+      it 'should redirect to login' do
+        get :index
+        response.should redirect_to login_path
+      end
+    end
+  end
+
+
+   describe "GET new" do
+  it 'assigns a new object to the enterprise' do
+      get :new
+      assigns(:enterprise).should
+    end
+  end
 
   # it "should be valid" do
   #   @enterprise.should be_valid

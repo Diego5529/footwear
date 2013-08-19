@@ -4,7 +4,7 @@ describe LoginController do
 
   it 'should get login' do
     get :login
-    response.should be_success
+    response.should be_successful
   end
 
   it "should not login without name and password" do
