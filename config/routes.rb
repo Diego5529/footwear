@@ -2,11 +2,8 @@ Footwear::Application.routes.draw do
 
   get "login/login"
   get "login/logout"
-
   post "login/login"
   post "login/logout"
-
-
 
   match "login" => "login#login"
   match "logout" => "login#logout"
@@ -15,7 +12,7 @@ Footwear::Application.routes.draw do
   match "login_client" => "login_client#login_client"
   match "logout_client" => "login_client#logout_client"
 
-
+  match "edit" => "puclics#buyers"
   match "shoe/:id" => "publics#shoe"
   match "enterprise/:id" => "publics#enterprise"
   match "register" => "publics#buyers"
@@ -25,10 +22,9 @@ Footwear::Application.routes.draw do
   match "remove/:id" => "publics#remove", :via=>:delete
   match "checkout" => "publics#close_order"
   match "request/:id" => "publics#order"
+  match "empresa" => "publics#empresa"
  #match "/:redirect" => "publics#index"
 
-
-  root to: "publics#index"
 
   namespace :enterprises do
    resources :shoes 
@@ -44,6 +40,8 @@ Footwear::Application.routes.draw do
   resources :publics
   resources :people
   resources :clients
+
+  root to: "publics#index"
 
 
 

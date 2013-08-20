@@ -12,9 +12,9 @@ class ShoesController < ApplicationController
     end
   end
 
-def logged?
-  redirect_to "/login_user" if !session[:id]
-end
+  def logged?
+    redirect_to "/login_user" if !session[:id]
+  end
 
   def index
     @shoes = session[:admin] ? Shoe.all : Shoe.by_enterprise(session[:id])
@@ -58,9 +58,6 @@ end
   def create
     @shoe = currentEnterprise.shoes.new(params[:shoe])
     @shoe.save
-    if !@shoe.image
-      @shoe.destroy
-    end
     respond_with @shoe
   end
 

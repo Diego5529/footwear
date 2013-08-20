@@ -261,5 +261,6 @@ pt-BR:
         registed: "Data de Registro* "
         description: "Descrição do produto:* "
         image_title: "Titulo da Imagem"
+        data_stream: "Produto"
 
 

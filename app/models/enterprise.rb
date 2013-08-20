@@ -4,7 +4,7 @@ class Enterprise < ActiveRecord::Base
   include ImageSaver
   
   attr_protected :password
-  attr_accessible :zip_code, :cnpj, :telephone, :address, :city, :district, :email, :name, :name_social, :number, :plain_password, :state, :permit
+  attr_accessible :zip_code, :cnpj, :telephone, :address, :city, :district, :email, :name, :name_social, :number, :plain_password, :state, :data_stream, :permit
   validates :name, presence: true,uniqueness: true, length: { maximum: 50 }
   validates :name_social, presence: true, uniqueness: true, length: { maximum: 50 }
   validates :email, presence: true, uniqueness: true, format: {with:/^[a-zA-Z0-9_.-]+@([a-zA-Z0-9_ -]+\.)+[a-zA-Z]{2,4}$/}
@@ -42,6 +42,13 @@ class Enterprise < ActiveRecord::Base
 
   def self.for_select
     self.all.map {|p| [p.name,p.id]}
+  end
+
+  before_create :check_image
+  
+  private
+  def check_image
+    errors.add(:data_stream,"deve ter imagem") if self.data_stream.to_s.size<1
   end
 
 end

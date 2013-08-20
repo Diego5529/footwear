@@ -24,11 +24,11 @@ describe Shoe do
     shoe.should_not be_valid
   end
 
-   it "should be uniquennes name" do
-    shoe = FactoryGirl.build(:shoe, name: "shoe.new_shoe")
-    new_shoe = FactoryGirl.build(:shoe, name: "name")
-    new_shoe.should_not be_valid if shoe.name == new_shoe.name
-  end
+  #  it "should be uniquennes name" do
+  #   shoe = FactoryGirl.build(:shoe, name: "shoe.new_shoe")
+  #   new_shoe = FactoryGirl.build(:shoe, name: "name")
+  #   new_shoe.should_not be_valid if shoe.name == new_shoe.name
+  # end
 
   # it 'value should not be zero' do
   #   FactoryGirl.build(:shoe, value: 0).should_not be_valid
@@ -36,7 +36,7 @@ describe Shoe do
   #   FactoryGirl.build(:shoe, value: nil).should_not be_valid
   # end
 
-  # #audience
+  #audience
   # it "should not have empty audience" do
   #   shoe = FactoryGirl.build(:shoe, audience: '')
   #   shoe.should_not be_valid

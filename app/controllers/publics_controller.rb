@@ -7,7 +7,7 @@ class PublicsController < ApplicationController
 
   def index
     flash[:notice] = "#{params[:redirect]} não encontrado" if params[:redirect]
-    @shoes = Shoe.all unless fragment_exist?(action:"index")
+    #@shoes = Shoe.all unless fragment_exist?(action:"index")
     @shoes = Shoe.order("random()").all
   end
 
@@ -48,7 +48,7 @@ class PublicsController < ApplicationController
   	end
 
   	def enterprise
-		@enterprise = Enterprise.find(params[:id]) rescue nil
+		  @enterprise = Enterprise.find(params[:id]) rescue nil
 		if !@enterprise
 			flash[:notice] = "Enterprise Not Found"
 			redirect_to "/"
@@ -83,7 +83,12 @@ class PublicsController < ApplicationController
     @cart - @shoe
   end
 
-  
+  def empresa
+    @enterprise = Enterprise.find(session[:id])
+    if request.put?
+      flash[:notice] = "Dados atualizados" if @enterprise.update_attributes(params[:enterprise])
+    end
+  end  
 
   def create_order
     
@@ -103,6 +108,7 @@ class PublicsController < ApplicationController
 
 
   def close_order
+    
     @order = create_order
     if !@order
       flash[:notice] = "Unable to create request"
@@ -125,6 +131,7 @@ class PublicsController < ApplicationController
   end
 
   def order
+
     @order = Order.find(params[:id])  
   rescue nil
     if !@order

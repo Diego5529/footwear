@@ -6,8 +6,9 @@ class PeopleController < ApplicationController
   layout "admin"    
 
   def logged?
-  redirect_to "/login" if !session[:admin]
+    redirect_to "/login" if !session[:admin]
   end
+
   # GET /people
   # GET /people.json
   def index
@@ -21,9 +22,7 @@ class PeopleController < ApplicationController
 
   # GET /people/1
   # GET /people/1.json
-  def show
-    
-    
+  def show    
     @person = Person.find(params[:id])
 
     # respond_to do |format|

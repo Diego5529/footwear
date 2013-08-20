@@ -36,12 +36,11 @@ FactoryGirl.define do
   end
 
   factory :shoe, class: Enterprise do
-    name 'Sapato'
-    #audience 'Infantil'
+    name 'Name'
+    #value 100.00
+    # audience 'Infantil'
     # stock 10
     # description 'Text decription'
-
-
    end
 
 end

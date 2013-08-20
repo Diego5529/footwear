@@ -1,36 +1,33 @@
 %p#notice= notice
 %p
-  %b Name:
+  %b Nome:
   = @client.name
 %p
-  %b Email:
+  %b E-mail:
   = @client.email
-/ %p
-/   %b Password:
-/   = @client.password
 %p
   %b CPF:
   = @client.cpf
 %p
-  %b zip_code
+  %b CEP:
   = @client.zip_code
 %p
-  %b Address:
+  %b Endereço:
   = @client.address
 %p
-  %b Number:
+  %b Numero:
   = @client.number
 %p
-  %b District:
+  %b Bairro:
   = @client.district
 %p
-  %b State:
+  %b Estado:
   = @client.state
 %p
-  %b City:
+  %b Cidade:
   = @client.city
 %p
-  %b Telephone:
+  %b Telefone:
   = @client.telephone
 = link_to 'Editar', edit_client_path(@client)
 |

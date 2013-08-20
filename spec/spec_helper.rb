@@ -5,6 +5,7 @@ require 'rspec/rails'
 require 'rspec/autorun'
 require "digest/sha1"
 require 'factory_girl_rails'
+require 'capybara/rspec'
 
 # Requires supporting ruby files with custom matchers and macros, etc,
 # in spec/support/ and its subdirectories.

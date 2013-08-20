@@ -61,13 +61,11 @@ ActiveRecord::Schema.define(:version => 20130809181103) do
     t.decimal  "value",      :precision => 10, :scale => 2
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
-    t.integer  "quantity"
   end
 
   create_table "orders", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-    t.integer  "quantity"
   end
 
   create_table "people", :force => true do |t|
@@ -99,8 +97,7 @@ ActiveRecord::Schema.define(:version => 20130809181103) do
     t.datetime "created_at",                                                  :null => false
     t.datetime "updated_at",                                                  :null => false
     t.integer  "stock"
-    t.integer  "lock_version",                                 :default => 0
-    t.boolean  "permit"
+    t.integer  "lock_version"
   end
 
 end

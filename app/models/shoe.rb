@@ -19,6 +19,8 @@ class Shoe < ActiveRecord::Base
 
   scope :by_enterprise, ->(id) { where(["enterprise_id=?",id]) }
 
+  before_create :check_image
+
    def sold_out?
    	self.stock < 1
 	end
@@ -27,5 +29,10 @@ class Shoe < ActiveRecord::Base
     raise Exception, "Sold out" if sold_out?
     self.stock -= 1
     self.save!
+  end
+
+  private
+  def check_image
+    errors.add(:data_stream,"deve ter imagem") if self.data_stream.to_s.size<1
   end
 end
