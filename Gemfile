@@ -29,7 +29,8 @@ group :test do
 	gem 'factory_girl_rails'
 	gem 'rspec-rails','2.14.0'
 	gem 'rspec-rails-controller'
-  gem 'capybara'	
+  gem 'capybara', '2.1.0'
+  gem 'capybara-webkit', '1.0.0'
 end
 
 

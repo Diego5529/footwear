@@ -2,8 +2,21 @@
 class PublicsController < ApplicationController
 
   caches_page :shoe, :enterprise, :client
-  layout "public"
+  layout :layout
 
+  def layout
+    if session[:admin]
+      "admin"
+    end
+    if !session[:admin] && session[:permit]
+      "enterprise"
+    end
+    if !session[:admin] && session[:id]
+      "public"
+    else
+      "public"
+    end
+  end
 
   def index
     flash[:notice] = "#{params[:redirect]} não encontrado" if params[:redirect]

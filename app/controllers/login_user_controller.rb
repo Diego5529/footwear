@@ -34,7 +34,7 @@ class LoginUserController < ApplicationController
       session[:id]  = enterprise.id
       session[:email]  = enterprise.email
       session[:name]  = enterprise.name
-      session[:admin] = false
+      session[:permit] = true
       redirect_to shoes_path
     end
   end

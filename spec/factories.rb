@@ -38,7 +38,7 @@ FactoryGirl.define do
   factory :shoe, class: Enterprise do
     name 'Name'
     #value 100.00
-    # audience 'Infantil'
+    #audience 'Infantil'
     # stock 10
     # description 'Text decription'
    end

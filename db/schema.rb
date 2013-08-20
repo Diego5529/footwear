@@ -94,8 +94,8 @@ ActiveRecord::Schema.define(:version => 20130809181103) do
     t.string   "audience"
     t.date     "registed"
     t.text     "description"
-    t.datetime "created_at",                                                  :null => false
-    t.datetime "updated_at",                                                  :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
     t.integer  "stock"
     t.integer  "lock_version"
   end

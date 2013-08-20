@@ -23,6 +23,7 @@ Footwear::Application.routes.draw do
   match "checkout" => "publics#close_order"
   match "request/:id" => "publics#order"
   match "empresa" => "publics#empresa"
+  match "client" => "publics#empresa"
  #match "/:redirect" => "publics#index"
 
 

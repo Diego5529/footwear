@@ -1,5 +1,5 @@
 %h1
-  Seu Carrinho
+  Carrinho
 %hr
 %ul#cart_items
   = render :partial=>"cart_item", :collection=>@cart.items
@@ -19,4 +19,5 @@
       - else
         %h2
         Você precisa estar logado
-        = link_to "Entrar", "login_client"
+        = link_to "Entrar.", "login_client"
+        = link_to "Cadastre-se", "register"
