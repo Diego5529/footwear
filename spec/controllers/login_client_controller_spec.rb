@@ -42,16 +42,6 @@ describe LoginClientController do
     end
   end
 
-  # context "when not client" do
-  #   it "should login_client with valid information" do
-  #     client = FactoryGirl.create(:client, plain_password: "123456")
-  #     match :login_client, { email: client.email, password: "123456" }
-  #     session[:id].should eql client.id
-  #     session[:name].should eql client.name
-  #     response.should redirect_to login_client
-  #   end
-  # end
-
   it "should logout" do
     get :logout_client
     session[:id].should eql nil

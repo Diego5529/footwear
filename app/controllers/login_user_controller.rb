@@ -41,8 +41,7 @@ class LoginUserController < ApplicationController
         def logout_user
           session[:id]  = nil
           session[:email]  = nil
-          session[:admin] = nil
-          session[:permit] = nil
+          session[:name] = nil
           redirect_to "/" #:action=>:login_user
         end
 
