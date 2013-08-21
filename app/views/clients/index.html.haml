@@ -3,7 +3,6 @@
   %tr
     %th Nome
     %th E-mail
-    / %th Password
     %th CPF
     %th CEP
     %th Endereço
@@ -17,7 +16,6 @@
     %tr
       %td= client.name
       %td= client.email
-      / %td= client.password
       %td= client.cpf
       %td= client.zip_code
       %td= client.address
@@ -26,7 +24,7 @@
       %td= client.city
       %td= client.state
       %td= client.telephone
-      %td= link_to 'Mostrar', client
+      %td= link_to 'Detalhes', client
       %td= link_to 'Editar', edit_client_path(client)
       %td= link_to 'Apagar', client, method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' }
   %hr

@@ -20,7 +20,6 @@ class PublicsController < ApplicationController
 
   def index
     flash[:notice] = "#{params[:redirect]} não encontrado" if params[:redirect]
-    #@shoes = Shoe.all unless fragment_exist?(action:"index")
     @shoes = Shoe.order("random()").all
   end
 
@@ -60,8 +59,8 @@ class PublicsController < ApplicationController
   		end
   	end
 
-  	def enterprise
-		  @enterprise = Enterprise.find(params[:id]) rescue nil
+  def enterprise
+		@enterprise = Enterprise.find(params[:id]) rescue nil
 		if !@enterprise
 			flash[:notice] = "Enterprise Not Found"
 			redirect_to "/"
@@ -83,11 +82,12 @@ class PublicsController < ApplicationController
   end
 
   def find_cart
-      session[:cart] ||= Cart.new
+    session[:cart] ||= Cart.new
   end
 
   def cart
     @cart = find_cart
+    @shoes = Shoe.order("random()").all
   end
 
   def remove
@@ -111,24 +111,22 @@ class PublicsController < ApplicationController
   end  
 
   def create_order
-    
     order = Order.new
     cart = find_cart
     Shoe.transaction do
       for item in cart.items
         order.order_items << OrderItem.new(shoe_id: item.id, value: item.value)
         item.reload.sell
-        end
+      end
         order.save ? order : nil
-        end
+      end
       rescue Exception => e
         flash[:notice] = "Erro: #{e}"
         false
-      end
+  end
 
 
-  def close_order
-    
+  def close_order    
     @order = create_order
     if !@order
       flash[:notice] = "Unable to create request"
@@ -136,8 +134,7 @@ class PublicsController < ApplicationController
       return
     end
     @email = session[:email]
-    find_cart.clear
-    
+    find_cart.clear    
     if @order.total > 0
       OrderMailer.order_created(@order,@email).deliver
       grouped = @order.grouped_by_enterprise
@@ -151,7 +148,6 @@ class PublicsController < ApplicationController
   end
 
   def order
-
     @order = Order.find(params[:id])  
   rescue nil
     if !@order
@@ -159,5 +155,4 @@ class PublicsController < ApplicationController
       redirect_to "/"
     end
   end
-
 end

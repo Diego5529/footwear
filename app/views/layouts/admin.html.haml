@@ -6,8 +6,7 @@
     = javascript_include_tag "application"
     = csrf_meta_tags
     %header
-      %h1
-        CATALOG FOOTWEAR
+      %h1 CATALOG FOOTWEAR
       %h3
         Bem vindo, #{session[:name]}.
         = link_to "Sair", logout_path
@@ -21,4 +20,4 @@
         - if session[:admin]
           = yield
         %footer
-          Anuncie já os produtos de sua empresa para o mundo
+          ANÚNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO

@@ -2,7 +2,7 @@
   - if @client.errors.any?
     #error_explanation
       %h2
-        = pluralize(@client.errors.count, "erro")
+        =pluralize(@client.errors.count, "erro")
         este cliente não pode ser criado:
       %ul
         - @client.errors.full_messages.each do |msg|

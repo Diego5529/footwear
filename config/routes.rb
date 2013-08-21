@@ -24,7 +24,6 @@ Footwear::Application.routes.draw do
   match "request/:id" => "publics#order"
   match "edit_enterprise" => "publics#edit_enterprise"
   match "edit_client" => "publics#edit_client"
-  match "client" => "publics#empresa"
  #match "/:redirect" => "publics#index"
 
 

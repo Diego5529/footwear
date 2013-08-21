@@ -4,6 +4,7 @@ class Client < ActiveRecord::Base
   attr_protected :password  
   attr_accessible :address, :city, :district, :email, :name, :number, :password, :state, :telephone, :zip_code, :cpf, :plain_password 
   
+  #validates
   validates :name, presence: true, length: { maximum: 50 }
   validates :email, presence: true, uniqueness: true, format: {with:/^[a-zA-Z0-9_.-]+@([a-zA-Z0-9_ -]+\.)+[a-zA-Z]{2,4}$/}
   validates :password, presence: true, length: {maximum: 15}, length: {minimum: 5}
@@ -17,8 +18,6 @@ class Client < ActiveRecord::Base
   validates :zip_code, presence: true, format:{with:/^[\d]{5}-[\d]{3}$/}
 
   has_one :order
-
-  
 
   def plain_password=(password)
     return if password.blank?

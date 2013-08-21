@@ -5,20 +5,14 @@ class EnterprisesController < ApplicationController
   before_filter :logged?
 
   def logged?
-  redirect_to "/people" if !session[:admin]
+    redirect_to "/people" if !session[:admin]
   end
 
   def index
     @enterprises = Enterprise.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @enterprises }
-    end
   end
 
   # GET /enterprises/1
-  # GET /enterprises/1.json
   def show
     @enterprise = Enterprise.find(params[:id])
 
@@ -29,7 +23,6 @@ class EnterprisesController < ApplicationController
   end
 
   # GET /enterprises/new
-  # GET /enterprises/new.json
   def new
     @enterprise = Enterprise.new
   end
@@ -40,7 +33,6 @@ class EnterprisesController < ApplicationController
   end
 
   # POST /enterprises
-  # POST /enterprises.json
   def create
     begin
     @enterprise = Enterprise.new(params[:enterprise])
@@ -62,7 +54,6 @@ class EnterprisesController < ApplicationController
   end
 
   # PUT /enterprises/1
-  # PUT /enterprises/1.json
   def update
     @enterprise = Enterprise.find(params[:id])
 
@@ -80,11 +71,9 @@ class EnterprisesController < ApplicationController
       @enterprise = Enterprise.new(params[:enterprise].except(:plain_password))
       flash[:notice] = e.to_s
       render :edit
-
   end
 
   # DELETE /enterprises/1
-  # DELETE /enterprises/1.json
   def destroy
     @enterprise = Enterprise.find(params[:id])
     @enterprise.destroy
@@ -102,6 +91,4 @@ class EnterprisesController < ApplicationController
   def load_enterprise
     @enterprises = Enterprise.all
   end
-
-
 end

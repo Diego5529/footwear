@@ -1,44 +1,45 @@
+%h1 Detalhes da Empresa
 %p#notice= notice
 %p
   %img{:src => @enterprise.image}
 %p
-  %b Name:
+  %b Nome:
   = @enterprise.name
 %p
-  %b Name social:
+  %b Nome social:
   = @enterprise.name_social
 %p
-  %b Email:
+  %b E-mail:
   = @enterprise.email
 %p
-  %b Password:
+  %b Senha:
   = @enterprise.password
 %p
-  %b Cnpj:
+  %b CNPJ:
   = @enterprise.cnpj
 %p
-  %b zip_code
+  %b CEP:
   = @enterprise.zip_code
 %p
-  %b Address:
+  %b Endereço:
   = @enterprise.address
 %p
-  %b Number:
+  %b Numero:
   = @enterprise.number
 %p
-  %b District:
+  %b Bairro:
   = @enterprise.district
 %p
-  %b State:
+  %b Estado:
   = @enterprise.state
 %p
-  %b City:
+  %b Cidade:
   = @enterprise.city
 %p
-  %b Telephone:
+  %b Telefone:
   = @enterprise.telephone
 %p
-  %b Permit:
+  %b Permição:
   = @enterprise.permit
 = link_to 'Editar', edit_enterprise_path(@enterprise)
 |

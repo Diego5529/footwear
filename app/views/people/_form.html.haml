@@ -2,8 +2,8 @@
   - if @person.errors.any?
     #error_explanation
       %h2
-        = pluralize(@person.errors.count, "error")
-        prohibited this person from being saved:
+        = pluralize(@person.errors.count, "erro")
+        este admin não pode ser salvo:
       %ul
         - @person.errors.full_messages.each do |msg|
           %li= msg

@@ -4,6 +4,7 @@ class Shoe < ActiveRecord::Base
   
   attr_protected :stock
   attr_accessible :audience, :description, :enterprise_id, :name, :registed, :value, :stock, :image_title, :data_stream
+  
   validates :name, presence: true, uniqueness: true, length: { maximum: 50 }
   validates :audience, presence: true, length: { maximum: 50 }
   validates :value, presence: true
@@ -12,17 +13,16 @@ class Shoe < ActiveRecord::Base
   has_many :order_items
   has_many :orders, through: :order_items 
   has_many :clients, :through => :orders, :source=>:person, :uniq=>true
+  has_one  :image, dependent: :destroy, :as => :imageable
 
   belongs_to :enterprise
   
-  has_one  :image, dependent: :destroy, :as => :imageable
-
   scope :by_enterprise, ->(id) { where(["enterprise_id=?",id]) }
 
   before_create :check_image
 
-   def sold_out?
-   	self.stock < 1
+  def sold_out?
+    self.stock < 1
 	end
 
   def sell

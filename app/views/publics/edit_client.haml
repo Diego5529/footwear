@@ -1,6 +1,5 @@
 %h1 Editar Dados
-%p
-  =notice
+%p#notice= notice
 = form_for(@client,:url => "/edit_client", :html=> {:multipart=>true}) do |f|
   - if @client.errors.any?
     #error_explanation
@@ -62,3 +61,5 @@
     %br/
   .actions
     = f.submit "Cadastrar" 
+%br
+= link_to 'Voltar', '/'

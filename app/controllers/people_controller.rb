@@ -10,7 +10,6 @@ class PeopleController < ApplicationController
   end
 
   # GET /people
-  # GET /people.json
   def index
     @people = Person.all
 
@@ -21,7 +20,6 @@ class PeopleController < ApplicationController
   end
 
   # GET /people/1
-  # GET /people/1.json
   def show    
     @person = Person.find(params[:id])
 
@@ -50,8 +48,6 @@ class PeopleController < ApplicationController
     
     begin
     @person = Person.new(params[:person])
-    
-
     respond_to do |format|
       if @person.save
         format.html { redirect_to @person, notice: 'Person was successfully created.' }

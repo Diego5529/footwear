@@ -1,17 +1,16 @@
 #encoding: utf-8
 class LoginUserController < ApplicationController
-
   layout "public"
 
-    def login_user
-      if request.post?
-        email   = params[:email]
-        password = params[:password]
-        permit = params[:permit]
+  def login_user
+    if request.post?
+      email   = params[:email]
+      password = params[:password]
+      permit = params[:permit]
 
       if email.blank? && password.blank?
         flash[:notice] = "Enter the email and password"
-      return
+        return
       end
 
       if email.blank?
@@ -20,14 +19,14 @@ class LoginUserController < ApplicationController
       end
 
       if password.blank?
-      flash[:notice] = "Enter the password"
-      return
+        flash[:notice] = "Enter the password"
+        return
       end
 
       enterprise = Enterprise.auth(email,password)
       if  !enterprise 
-      flash[:notice] = "Failed Login"
-      return
+        flash[:notice] = "Failed Login"
+        return
       end
 
       flash[:notice]  = "Welcome, #{enterprise.email}!"
@@ -39,14 +38,14 @@ class LoginUserController < ApplicationController
     end
   end
 
-    def logout_user
-      session[:id]  = nil
-      session[:email]  = nil
-      session[:name] = nil
-      redirect_to "/" #:action=>:login_user
-    end
+  def logout_user
+    session[:id]  = nil
+    session[:email]  = nil
+    session[:name] = nil
+    redirect_to "/"
+  end
 
-    def index
-      redirect_to :action=>"/"
-    end
+  def index
+    redirect_to :action=>"/"
+  end
 end

@@ -2,64 +2,68 @@
   - if @enterprise.errors.any?
     #error_explanation
       %h2
-        = pluralize(@enterprise.errors.count, "error")
-        Esta empresa não pode ser salva:
+        = pluralize(@enterprise.errors.count, "erro")
+        esta empresa não pode ser salva:
       %ul
         - @enterprise.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label :name
+    = f.label "Informação obrigatória*"
+    %br/
+  .field
+    = f.label "Nome*"
     %br/
     = f.text_field :name
   .field
-    = f.label :name_social
+    = f.label "Nome Social*"
     %br/
     = f.text_field :name_social
   .field
-    = f.label :email
+    = f.label "E-mail*"
     %br/
     = f.text_field :email
   .field
-    = f.label :password
+    = f.label "Senha*"
     %br/
     = f.password_field :plain_password
   .field
-    = f.label :cnpj
+    = f.label "CNPJ*"
     %br/
     = f.text_field :cnpj
   .field
-    = f.label :zip_code
+    = f.label "CEP*"
     %br/
     = f.text_field :zip_code
   .field
-    = f.label :address
+    = f.label "Endereço*"
     %br/
     = f.text_field :address
   .field
-    = f.label :number
+    = f.label "Numero*"
     %br/
     = f.text_field :number
   .field
-    = f.label :district
+    = f.label "Bairro*"
     %br/
     = f.text_field :district
   .field
-    = f.label :state
+    = f.label "Estado*"
     %br/
     = f.text_field :state
   .field
-    = f.label :city
+    = f.label "Cidade*"
     %br/
     = f.text_field :city
   .field
-    = f.label :Telephone
+    = f.label "Telefone*"
     %br/
     = f.text_field :telephone
   .field
-    = f.label :permit
+    = f.label "Permição"
     %br/
     = f.check_box :permit
   .field
     = render partial: 'shared/image_field', locals: { f: f }
+  %br
   .actions
-    = f.submit
+    = f.submit "Cadastrar"

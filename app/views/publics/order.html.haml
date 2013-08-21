@@ -1,11 +1,6 @@
-%h1
-  Sua Encomenda
-%h2
-  Numero do pedido: #{@order.id}
-%h3
-  Seu pedido foi realizado com sucesso!
-  %li
-    Enviaremos um email para você e para a(as) empresa(as) com seu pedido 
-%p
-  Total:
-  %span.shoe_value= number_to_currency(@order.total)
+%h1 Sua Encomenda
+%h2 Numero do pedido: #{@order.id}
+%h3 Seu pedido foi realizado com sucesso!
+%li Enviaremos um email para você e para a(as) empresa(as) com seu pedido 
+%p Total:
+%span.shoe_value= number_to_currency(@order.total)

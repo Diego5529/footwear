@@ -14,13 +14,16 @@ class ClientsController < ApplicationController
   end
 
   # GET /clients/1
-  # GET /clients/1.json
   def show
     @client = Client.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @client }
+    end
   end
 
   # GET /clients/new
-  # GET /clients/new.json
   def new
     @client = Client.new
   end
@@ -31,7 +34,6 @@ class ClientsController < ApplicationController
   end
 
   # POST /clients
-  # POST /clients.json
   def create
     begin
     @client = Client.new(params[:client])
@@ -53,7 +55,6 @@ class ClientsController < ApplicationController
   end
 
   # PUT /clients/1
-  # PUT /clients/1.json
   def update
     @client = Client.find(params[:id])
     
@@ -75,7 +76,6 @@ class ClientsController < ApplicationController
   end
 
   # DELETE /clients/1
-  # DELETE /clients/1.json
   def destroy
     @client = Client.find(params[:id])
     @client.destroy

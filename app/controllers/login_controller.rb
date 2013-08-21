@@ -1,56 +1,55 @@
 #encoding: utf-8
 class LoginController < ApplicationController
-    layout "public"
-	  
-	  def login
-		if request.post?
-		name	 = params[:name]
-		password = params[:password]
-		admin	 = params[:admin]
+  layout "public"
 
-		if name.blank? && password.blank?
-		flash[:notice] = "Enter the name and password"
-		return
-		end
+  def login
+  	if request.post?
+	  name = params[:name]
+	  password = params[:password]
+	  admin	 = params[:admin]
 
-		if name.blank?
-		flash[:notice] = "Enter the name"
-		return
-		end
-		
-		if password.blank?
-		flash[:notice] = "Enter the password"
-		return
-		end
+	  if name.blank? && password.blank?
+	    flash[:notice] = "Enter the name and password"
+	    return
+	  end
 
-		
-		person = Person.auth(name,password)
-		if !person
-		flash[:notice] = "Failed Login"
-		return
-		end
-
-		if !person.admin
-		flash[:notice] = "You are not Administrator"
-		return
-		end
-		
-		flash[:notice]	= "Welcome, #{person.name}!"
-		session[:id]	= person.id
-		session[:name]	= person.name
-		session[:admin]	= person.admin
-		redirect_to people_path
-	    end
-    end
+	  if name.blank?
+	    flash[:notice] = "Enter the name"
+	    return
+	  end
 	
-	def logout
-	  session[:id]	= nil
-	  session[:name]	= nil
-      session[:admin] = nil
-	  redirect_to "/" #:action=>:index
-	end
+	  if password.blank?
+	    flash[:notice] = "Enter the password"
+	    return
+	  end
 
-	def index
-	  redirect_to :action=>"/"
-	end
+	  person = Person.auth(name,password)
+	  if !person
+	    flash[:notice] = "Failed Login"
+	    return
+	  end
+
+	  if !person.admin
+	    flash[:notice] = "You are not Administrator"
+	    return
+	  end
+	
+	  flash[:notice]	= "Welcome, #{person.name}!"
+	  session[:id]	= person.id
+	  session[:name]	= person.name
+	  session[:admin]	= person.admin
+	  redirect_to people_path
+    end
+  end
+
+  def logout
+    session[:id]	= nil
+	session[:name]	= nil
+	session[:admin] = nil
+	redirect_to "/"
+  end
+
+  def index
+    redirect_to :action=>"/"
+  end
 end

@@ -2,15 +2,15 @@
 class LoginClientController < ApplicationController
   layout "public"
 
-    def login_client
-      if request.post?
-        email   = params[:email]
-        password = params[:password]
-        name = params[:name]
+  def login_client
+    if request.post?
+      email   = params[:email]
+      password = params[:password]
+      name = params[:name]
 
       if email.blank? && password.blank?
         flash[:notice] = "Enter the email and password"
-      return
+        return
       end
 
       if email.blank?
@@ -19,14 +19,14 @@ class LoginClientController < ApplicationController
       end
 
       if password.blank?
-      flash[:notice] = "Enter the password"
-      return
+        flash[:notice] = "Enter the password"
+        return
       end
 
       client = Client.auth(email,password)
       if  !client
-      flash[:notice] = "Failed Login"
-      return
+        flash[:notice] = "Failed Login"
+        return
       end
 
       flash[:notice]  = "Welcome, #{client.email}!"
