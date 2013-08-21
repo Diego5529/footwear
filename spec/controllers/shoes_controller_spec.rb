@@ -55,15 +55,15 @@ describe ShoesController do
       end
   end
 
-  it "should show shoe" do
-    get :show, id: @shoe
-    assert_response :success
-  end
+  # it "should show shoe" do
+  #   get :show, id: @shoe
+  #   assert_response :success
+  # end
 
-  it "should get edit" do
-    get :edit, id: @shoe
-    assert_response :success
-  end
+  # it "should get edit" do
+  #   get :edit, id: @shoe
+  #   assert_response :success
+  # end
 
   # describe 'DELETE destroy' do
 

@@ -1,10 +1,10 @@
 body
   font-family: arial, verdana, helvetica, sans-serif
   font-size: 12px
-  margin: 100
   margin-left: 10px
   margin-right: 10px
   margin-top: 10px
+  margin: 100
   
   header
     background-color: #000
@@ -12,42 +12,51 @@ body
     border-style: solid
     margin-top: 10px
     margin-bottom: 10px
-    height: 50px
+    height: 55px
 
   footer
-    color: #000
     background: #FF6347 /*#FF4040*/
+    border-color: #000
+    border-style: solid
+    border-width: medium
     font-size: 18pt
     font-weight: bold
-    text-align: center
-    border-width: medium
-    border-style: solid
-    border-color: #000
     margin-top: 10px
+    text-align: center
 
   h1
-    background: #FF6347 /*#FF4040 *//*#1E90FF *//*#104E8B *//*#FF4500*/
-    font-size: 24pt
+    background: #FF6347
+    border: solid 1px 
     color: #000
+    font-size: 26pt
     margin-bottom 10px
     margin-top: 7px
+    text-align: center       
+
+  a
+    color: blue
+    font-size: 10pt
+    font-weight: bold
+    padding: 0.5em 1em
     text-align: center
+    text-align: justify
+    text-decoration: none
 
   h4
     background: red
-    color: white
-    font-weight: bold
-    float: left
     border-radius: 15px
-    padding: 0.2em 3em
+    color: white
+    float: left
+    font-weight: bold
     margin-left: 1em
-    text-decoration: none
+    padding: 0.2em 3em
     text-align: center
+    text-decoration: none
 
   #names
     background: #FF4500
-    font-weight: bold
     font-size: 24pt
+    font-weight: bold
     margin-top: 7px
     text-align: center
 
@@ -64,8 +73,8 @@ body
 
   #enterprise_total
     float: right
-    width: 50%
     font-size: 16pt
+    width: 50%
 
   #enterprise_details
     font-size: 16pt
@@ -74,128 +83,115 @@ body
   #enterprise_logo
     float: left
 
-  a
-    color: blue
-    font-weight: bold
-    text-align: justify
-    font-size: 10pt
-    padding: 0.5em 1em
-    text-decoration: none
-    text-align: center
-
   a.menus
     background: green
-    color: white
-    font-weight: bold
-    float: right
     border-radius: 15px
-    padding: 0.1em 1em
+    color: white
+    float: right
+    font-weight: bold
     margin-left: 3em
-    text-decoration: none
+    padding: 0.1em 1em
     text-align: center
+    text-decoration: none
 
   // a.bottom
   //   background: red
-  //   color: white
-  //   font-weight: bold
-  //   float: left
   //   border-radius: 15px
-  //   padding: 0.1em 2em
+  //   color: white
+  //   float: left
+  //   font-weight: bold
   //   margin-left: 1em
-  //   text-decoration: none
+  //   padding: 0.1em 2em
   //   text-align: center
+  //   text-decoration: none
 
   a
     &.more_shoe_info, &.buy_shoe
       background: green
+      border-radius: 15px
       color: white
       font-weight: bold
-      border-radius: 15px
-      padding: 0.2em 1em
       margin-left: 3em
-      text-decoration: none
+      padding: 0.2em 1em
       text-align: center
+      text-decoration: none
 
   #mini_shoes
     list-style-type: none
-    padding: 0
     margin-top: 10px
+    padding: 0
     h1
       color: maroon
       margin-bottom: 10
     h2
-      margin-top: 0
-      font-size: 1em
       float: left
-      width: 200px
-      margin-left: 15px
-      margin-top: 7px
+      font-size: 1em
       margin-bottom: 7px
+      margin-left: 15px
+      margin-top: 0
+      margin-top: 7px
+      width: 200px
 
   span.shoe_value
     color: green
-    font-weight: bold
     font-size: 1.5em
+    font-weight: bold
 
   table
-    width: 100%
     background: #F5DEB3
-    color: black
-    font-weight: bold
     border-radius: 10px
     border: 2px solid black
+    color: black
+    font-weight: bold
+    padding: 0.2em
     text-align: center
     text-decoration: none
-    padding: 0.2em
+    width: 100%
     td
       background: #F5DEB3
+      border-radius: 10px
+      border: 2px solid black
       color: black
       font-weight: bold
-      border-radius: 10px
-      border: 2px solid black
+      padding: 0.2em
       text-align: center
       text-decoration: none
-      padding: 0.2em
     th
-      background: #FFA500
-      color: blue
-      font-weight: bold
-      border-radius: 10px
+      background: #FF6347
       border-color: black
+      border-radius: 10px
       border: 2px solid black
-      padding: 0.2em
+      color: #000
+      font-size: 12pt
+      font-weight: bold
       margin-left: 4em
       margin-right: 4em
+      padding: 0.2em
       text-decoration: none
 
   #shoes
-    font-size: 16pt
-    text-align: justify
     color: red
+    font-size: 16pt
     font-weight: bold
-
-  #shoe
-    font-size: 16pt
     text-align: justify
+
+  #show_details
+    border-color: red
+    border-style: solid
+    border-width: medium
     color: red
+    float: left
+    font-size: 16pt
     font-weight: bold
     margin-left: 50px
-    border-width: medium
-    border-style: solid
-    border-color: red
-    float: left
-    width: 43%
+    text-align: justify
+    width: 44%
 
   h4.shoes
-    font-size: 12pt
-    text-align: left
     color: black
+    font-size: 12pt
     margin-left: -500px
-
-  p, ol, ul, td
-    font-family: verdana, arial, helvetica, sans-serif
-    font-size: 13px
-    line-height: 18px
+    text-align: left
 
   #shoes_rand
     float: left
@@ -213,31 +209,31 @@ body
     width: 5em
 
   .shoes
-    margin-right: 20%
     margin-left: 30%
+    margin-right: 20%
 
   .field_with_errors 
-    padding: 2px
     background-color: red
     display: table
+    padding: 2px
 
 
   #error_explanation 
-    width: 450px
-    border: 2px solid red
-    padding: 7px
-    padding-bottom: 0
-    margin-bottom: 20px
     background-color: #f0f0f0
+    border: 2px solid red
+    margin-bottom: 20px
+    padding-bottom: 0
+    padding: 7px
+    width: 450px
     h2 
-      text-align: left
-      font-weight: bold
-      padding: 5px 5px 5px 15px
-      font-size: 12px
-      margin: -7px
-      margin-bottom: 0px
       background-color: #c00
       color: #fff
+      font-size: 12px
+      font-weight: bold
+      margin-bottom: 0px
+      margin: -7px
+      padding: 5px 5px 5px 15px
+      text-align: left
     ul li
       font-size: 15px
       list-style: circle
