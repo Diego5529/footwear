@@ -1,5 +1,5 @@
-%div{ style: "color:blue; font-family: arial; background-color: #fff;border: 2px solid #000;" }
-  %h1{ style: "color:#000; background-color:#4682B4; text-align:center; font-size:24pt; height:40px; margin-top:5px;" } - Catalog Footwear -
+%div{ style: "color:#000; font-family: arial; background-color: #fff;border: 2px solid #000;" }
+  %h1{ style: "color:#000; background-color:#104E8B; text-align:center; font-size:24pt; height:40px; margin-top:5px;" } - Catalog Footwear -
   %hr
   %h2{ style: "font-size:16pt; " }
     Recebemos seu pedido com sucesso!
@@ -25,7 +25,7 @@
           %table
             %th
               %td
-                = image_tag("http://localhost:3000#{item.shoe.image}",:height=>200)
+                = image_tag("http://localhost:3000#{item.shoe.image}",height: 200)
           %hr
         %hr
   %p{ style: "color:red; text-align:center; font-size:24pt; height:40px; margin-top:5px;" }

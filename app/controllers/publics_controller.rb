@@ -96,10 +96,17 @@ class PublicsController < ApplicationController
     @cart - @shoe
   end
 
-  def empresa
+  def edit_enterprise
     @enterprise = Enterprise.find(session[:id])
     if request.put?
-      flash[:notice] = "Dados atualizados" if @enterprise.update_attributes(params[:enterprise])
+      flash[:notice] = "Dados atualizados" if      @enterprise.update_attributes(params[:enterprise])
+    end
+  end
+
+  def edit_client
+    @client = Client.find(session[:id])
+    if request.put?
+      flash[:notice] = "Dados atualizados" if @client.update_attributes(params[:client])
     end
   end  
 

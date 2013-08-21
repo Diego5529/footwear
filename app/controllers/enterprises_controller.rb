@@ -2,7 +2,7 @@ class EnterprisesController < ApplicationController
   layout "admin"
   
   respond_to :html
-  before_filter :logged?#,:only => [:index,:show,:edit]
+  before_filter :logged?
 
   def logged?
   redirect_to "/people" if !session[:admin]

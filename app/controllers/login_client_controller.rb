@@ -45,6 +45,6 @@ class LoginClientController < ApplicationController
   end
 
   def index
-    redirect_to :action=>"/"
+    redirect_to action: "/"
   end
 end

@@ -1,19 +1,31 @@
 !!!
 %html
   %head
-    %title -Footwear- Home Admin
-    = stylesheet_link_tag    "application", :media => "all"
+    %title -Footwear-
+    = stylesheet_link_tag    "publics", media: "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %body
     %header
-      <img src="startup.jpg" />
-      Welcome: #{session[:name]} 
-      %ul
-        %li= link_to "Home", "/"
-        %li= link_to "Exit", logout_path
-        %li= link_to "Enterprises", "enterprises"
-        %li= link_to "Clients", "clients"
-      = yield
-      %footer
-        Anuncie já os produtos de sua empresa para o mundo
+      %h1
+        CATALOG FOOTWEAR
+      %div
+        %h3
+          Bem vindo #{session[:name]}
+          -if session[:id] 
+            = link_to "Sair", logout_client_path
+          = link_to "Início", "/",class: "bottom"
+          = link_to "Quero comprar", "register",class: "bottom"
+          = link_to "Quero vender", "register_enterprise",class: "bottom"
+          = link_to "Sou Cliente", "login_client",class: "bottom"
+          = link_to "Sou Empresa", "login_user",class: "bottom"
+          = link_to "Editar dados", "/edit_client",class: "bottom"
+          = link_to "Meu Carrinho", "cart",class: "menus"
+          %div#clear
+            = yield
+          %footer
+            ANÚNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO
+  %div#clear
+
+
+
+      
