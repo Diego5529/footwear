@@ -8,6 +8,7 @@ class Shoe < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true, length: { maximum: 50 }
   validates :audience, presence: true, length: { maximum: 50 }
   validates :value, presence: true
+  validates :description, presence: true, length: { maximum: 200 }
   validates :stock, presence: true, length:{maximum: 5}
 
   has_many :order_items

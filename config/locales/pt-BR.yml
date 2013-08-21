@@ -251,7 +251,7 @@ pt-BR:
         city: "Cidade* "
         telephone: "Telephone para contato*"
     models:    
-      shoes: "Produto"
+      shoe: "Shoe"
     attributes:
       shoe:
         name: "Nome:* "
@@ -262,5 +262,3 @@ pt-BR:
         description: "Descrição do produto:* "
         image_title: "Titulo da Imagem"
         data_stream: "Produto"
-
-

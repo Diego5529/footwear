@@ -33,7 +33,7 @@ describe LoginController do
     flash[:notice].should eql "Failed Login"
   end
 
-  context "when admin" do
+  context "admin login" do
     it "should login with valid information" do
       person = FactoryGirl.create(:person, plain_password: "123456", admin: true)
       post :login, { name: person.name, password: "123456" }

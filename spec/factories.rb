@@ -35,12 +35,12 @@ FactoryGirl.define do
     cpf '445.153.509-83'
   end
 
-  factory :shoe, class: Enterprise do
+  factory :shoe do
     name 'Name'
-    #value 100.00
-    #audience 'Infantil'
-    # stock 10
-    # description 'Text decription'
+    value 9.99
+    audience 'Infantil'
+    stock 10
+    description 'Text decription'
    end
 
 end
