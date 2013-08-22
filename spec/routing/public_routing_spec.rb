@@ -21,7 +21,7 @@ describe PublicsController do
     end
 
     it 'should have register enterprise' do
-      get('enterprise/4').should route_to('publics#enterprise',id:'4')
+      get('enterprise/1').should route_to('publics#enterprise',id:'1')
     end
 
     it 'should have buy' do

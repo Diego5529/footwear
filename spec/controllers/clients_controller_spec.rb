@@ -2,15 +2,8 @@ require 'spec_helper'
 
 describe ClientsController do
 
-  # # This should return the minimal set of attributes required to create a valid
-  # # Enterprise. As you add validations to Enterprise, be sure to
-  # # adjust the attributes here as well.
-  let(:valid_attributes) { { "name" => "MyString" } }
+  let(:valid_attributes) { { "email" => "MyString" } }
   let(:valid_attributes) { { "plain_password" => "123456"} } 
-
-  # # This should return the minimal set of values that should be in the session
-  # # in order to pass any filters (e.g. authentication) defined in
-  # # EnterpriseControler. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
   before :each do

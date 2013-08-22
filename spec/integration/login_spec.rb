@@ -48,12 +48,18 @@ describe 'login' do
     expect(page).to have_text("Falha no login")
   end
 
-  it 'should login' do
-    person = FactoryGirl.create(:person)
-    visit login_path
-    fill_in 'name', with: person.name
-    fill_in 'password', with: person.password
-    click_button 'Entrar'
-    p page.text
-  end
+  # it 'should login' do
+  #   person = FactoryGirl.create(:person)
+  #   visit login_path
+  #   fill_in 'name', with: person.name
+  #   fill_in 'password', with: person.password
+  #   click_button 'Entrar'
+  #   p current_path
+  #   p page.text
+  # end
+
+  # it 'should be able to open the root path' do
+  #   visit('/people')
+  #   current_path.should == '/people'
+  # end
 end

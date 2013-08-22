@@ -116,7 +116,6 @@ describe Enterprise do
     enterprise.should_not be_valid
   end
 
-
   it "should not have nil city" do
     enterprise = FactoryGirl.build(:enterprise, city: nil)
     enterprise.should_not be_valid
@@ -146,7 +145,6 @@ describe Enterprise do
     enterprise = FactoryGirl.build(:enterprise, district: '')
     enterprise.should_not be_valid
   end
-
 
   it "should not have nil district" do
     enterprise = FactoryGirl.build(:enterprise, district: nil)
@@ -197,5 +195,4 @@ describe Enterprise do
     enterprise = FactoryGirl.build(:enterprise, zip_code: nil)
     enterprise.should_not be_valid
   end
-
 end

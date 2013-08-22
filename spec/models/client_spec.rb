@@ -4,8 +4,8 @@ require 'spec_helper'
 describe Client do
 
   let(:client) do
-        client = FactoryGirl.create(:client)
-      end
+    client = FactoryGirl.create(:client)
+  end
 
   #Client create?
   it "should has a client" do
@@ -123,7 +123,6 @@ describe Client do
     client.should_not be_valid
   end
 
-
   it "should not have nil district" do
     client = FactoryGirl.build(:client, district: nil)
     client.should_not be_valid
@@ -171,5 +170,4 @@ describe Client do
     client = FactoryGirl.build(:client, zip_code: nil)
     client.should_not be_valid
   end
-
 end

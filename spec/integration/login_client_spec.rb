@@ -5,7 +5,7 @@ describe 'Client' do
   describe 'login_client' do
 
   it 'should not login with wrong pass' do
-    client = FactoryGirl.create(:client)
+    client = create(:client)
     visit login_client_path
     fill_in 'email', with: client.email
     fill_in 'password', with: '12'
@@ -14,7 +14,7 @@ describe 'Client' do
   end
 
   it 'should not login with blank pass' do
-    client = FactoryGirl.create(:client)
+    client = create(:client)
     visit login_client_path
     fill_in 'email', with: client.email
     fill_in 'password', with: ''
@@ -23,7 +23,7 @@ describe 'Client' do
   end
 
   it 'should not login with blank email' do
-    client = FactoryGirl.create(:client)
+    client = create(:client)
     visit login_client_path
     fill_in 'email', with: ''
     fill_in 'password', with: client.password
@@ -32,7 +32,7 @@ describe 'Client' do
   end
 
   it 'should not login with blank email and password' do
-    client = FactoryGirl.create(:client)
+    client = create(:client)
     visit login_client_path
     fill_in 'email', with: ''
     fill_in 'password', with: ''
@@ -50,7 +50,7 @@ describe 'Client' do
   end
 
   it 'should login' do
-    client = FactoryGirl.create(:client)
+    client = create(:client)
     visit login_client_path
     fill_in 'email', with: client.email
     fill_in 'password', with: client.password

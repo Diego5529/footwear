@@ -2,19 +2,10 @@ require 'spec_helper'
 
 describe ShoesController do
 
-  # This should return the minimal set of attributes required to create a valid
-  # Person. As you add validations to Person, be sure to
-  # adjust the attributes here as well.
-  let(:valid_attributes) { { "name" => "MyString" } }
-
-  # This should return the minimal set of values that should be in the session
-  # in order to pass any filters (e.g. authentication) defined in
-  # PeopleController. Be sure to keep this updated too.
+  let(:valid_attributes) { {} } 
   let(:valid_session) { {} }
 
   before :each do
-    #@admin = FactoryGirl.create(:person)
-    #@enterprise = FactoryGirl.create(:enterprise)
     @shoe = FactoryGirl.create(:shoe)
   end
 
@@ -26,7 +17,6 @@ describe ShoesController do
       end
     end
   end
-
 
   describe "GET new" do
     it 'assigns a new object to the shoe' do
@@ -91,5 +81,4 @@ describe ShoesController do
   def filtered_attributes(shoe)
     shoe.attributes.except("id","created_at","updated_at","password","admin")
   end
-
 end

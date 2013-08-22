@@ -41,8 +41,6 @@ describe Person do
       person.should_not be_valid
   end
 
-  
-
   #tests for secure password
   it "must return the correct encrypted password" do
     person = FactoryGirl.build(:person, password: Digest::SHA1.hexdigest('abc_123456_123'))
@@ -63,5 +61,4 @@ describe Person do
     person = FactoryGirl.build(:person, plain_password: '123456')
     person.password.should eq Person.encrypt_password('123456')
   end
-
 end

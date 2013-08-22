@@ -1,4 +1,4 @@
-o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1377198625.7045774:@value"¸[I"ª/* line 1, ../../app/assets/stylesheets/publics.css.sass */
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1377202799.7499824:@value"¸[I"ª/* line 1, ../../app/assets/stylesheets/publics.css.sass */
 body {
   font-family: arial, verdana, helvetica, sans-serif;
   font-size: 12px;
