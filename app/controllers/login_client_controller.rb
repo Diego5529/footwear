@@ -1,6 +1,5 @@
 #encoding: utf-8
 class LoginClientController < ApplicationController
-  respond_to :html
   layout 'public'
 
   def login_client

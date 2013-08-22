@@ -1,6 +1,5 @@
 #encoding: utf-8
 class LoginController < ApplicationController
-  respond_to :html
   layout "public"
 
   def login

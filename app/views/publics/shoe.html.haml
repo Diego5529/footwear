@@ -2,17 +2,17 @@
 #show_details
   = @shoe.name
   %div#clear
-    = link_to @shoe.enterprise.name, '/enterprise/#{@shoe.enterprise.id}'
+    = link_to @shoe.enterprise.name, "/enterprise/#{@shoe.enterprise.id}"
   %ul
     = image_tag(@shoe.image,:width=>250)
-  %h5{ style: 'color:black'}
+  %h5{ style: "color:black"}
     = simple_format(@shoe.description)
   %span.shoe_value= number_to_currency(@shoe.value)
   %br/
   - if @shoe.sold_out?
     %h4.sold_out Esgotado!
   - else
-    = link_to 'Comprar', "/buy/#{@shoe.id}", :class=>'buy_shoe', :method=> :post
+    = link_to "Comprar", "/buy/#{@shoe.id}", :class=>"buy_shoe", :method=> :post
     %end
 #enterprise_total
   Empresa:

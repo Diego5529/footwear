@@ -1,7 +1,6 @@
 # encoding: utf-8
 class PublicsController < ApplicationController
-  respond_to :html
-  #caches_page :shoe, :enterprise, :client
+  caches_page :shoe, :enterprise, :client
   layout :layout
 
   def layout

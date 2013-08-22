@@ -12,7 +12,7 @@ Footwear::Application.routes.draw do
   match 'login_client' => 'login_client#login_client'
   match 'logout_client' => 'login_client#logout_client'
 
-  #match 'edit' => 'puclics#buyers'
+  match 'edit' => 'puclics#buyers'
   match 'shoe/:id' => 'publics#shoe'
   match 'enterprise/:id' => 'publics#enterprise'
   match 'register' => 'publics#buyers'
