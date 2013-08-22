@@ -2,24 +2,24 @@
   - if @client.errors.any?
     #error_explanation
       %h2
-        =pluralize(@client.errors.count, "erro")
+        =pluralize(@client.errors.count, 'erro')
         este cliente não pode ser criado:
       %ul
         - @client.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label "Informação obrigatória*"
+    = f.label 'Informação obrigatória*'
     %br/
   .field
-    = f.label "Nome*"
+    = f.label 'Nome*'
     %br/
     = f.text_field :name
   .field
-    = f.label "E-mail*"
+    = f.label 'E-mail*'
   .field
     = f.text_field :email
   .field
-    = f.label "Senha*"
+    = f.label 'Senha*'
     %br/
     = f.password_field :plain_password
   .field
@@ -27,34 +27,34 @@
     %br/
     = f.text_field :cpf
   .field
-    = f.label "CEP*"
+    = f.label 'CEP*'
     %br/
     = f.text_field :zip_code
   .field
-    = f.label "Endereço*"
+    = f.label 'Endereço*'
     %br/
     = f.text_field :address
   .field
-    = f.label "Numero*"
+    = f.label 'Numero*'
     %br/
     = f.text_field :number
   .field
-    = f.label "Bairro*"
+    = f.label 'Bairro*'
     %br/
     = f.text_field :district
   .field
-    = f.label "Cidade*"
+    = f.label 'Cidade*'
     %br/
     = f.text_field :city
   .field
-    = f.label "Estado*"
+    = f.label 'Estado*'
     %br/
     = f.text_field :state
   .field
-    = f.label "Telefone*"
+    = f.label 'Telefone*'
     %br/
     = f.text_field :telephone
     %br/
     %br/
   .actions
-    = f.submit "Cadastrar" 
+    = f.submit 'Cadastrar' 

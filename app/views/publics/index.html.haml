@@ -1,8 +1,8 @@
-%body
+#content
   %h1 Produtos cadastrados
   - cache do
     #mini_shoes
-      = render :partial=>"mini_shoe", :collection=>@shoes
+      = render :partial=>'mini_shoe', :collection=>@shoes
   %div#clear
   %hr
-  %a{:href => "login"} Administrador
+  %a{:href => 'login'} Administrador

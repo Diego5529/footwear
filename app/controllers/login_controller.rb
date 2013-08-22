@@ -1,5 +1,6 @@
 #encoding: utf-8
 class LoginController < ApplicationController
+  respond_to :html
   layout "public"
 
   def login
@@ -9,32 +10,32 @@ class LoginController < ApplicationController
 	  admin	 = params[:admin]
 
 	  if name.blank? && password.blank?
-	    flash[:notice] = "Enter the name and password"
+	    flash[:notice] = "Digite o nome e senha"
 	    return
 	  end
 
 	  if name.blank?
-	    flash[:notice] = "Enter the name"
+	    flash[:notice] = "Digite o nome"
 	    return
 	  end
 	
 	  if password.blank?
-	    flash[:notice] = "Enter the password"
+	    flash[:notice] = "Digite a senha"
 	    return
 	  end
 
 	  person = Person.auth(name,password)
 	  if !person
-	    flash[:notice] = "Failed Login"
+	    flash[:notice] = "Falha no login"
 	    return
 	  end
 
 	  if !person.admin
-	    flash[:notice] = "You are not Administrator"
+	    flash[:notice] = "Você não é administrador"
 	    return
 	  end
 	
-	  flash[:notice]	= "Welcome, #{person.name}!"
+	  flash[:notice]	= "Bem-vindo, #{person.name}!"
 	  session[:id]	= person.id
 	  session[:name]	= person.name
 	  session[:admin]	= person.admin

@@ -2,8 +2,8 @@
 %html
   %head
     %title -Footwear-
-    = stylesheet_link_tag    "publics", media: "all"
-    = javascript_include_tag "application"
+    = stylesheet_link_tag    'publics', media: 'all'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
     %header
       %h1 CATALOG FOOTWEAR
@@ -11,14 +11,14 @@
         %h3
           Bem vindo #{session[:name]}
           -if session[:id] 
-            = link_to "Sair", logout_client_path
-          = link_to "Início", "/",class: "bottom"
-          = link_to "Quero comprar", "register",class: "bottom"
-          = link_to "Quero vender", "register_enterprise",class: "bottom"
-          = link_to "Sou Cliente", "login_client",class: "bottom"
-          = link_to "Sou Empresa", "login_user",class: "bottom"
-          = link_to "Editar dados", "/edit_client",class: "bottom"
-          = link_to "Meu Carrinho", "cart",class: "menus"
+            = link_to 'Sair', logout_client_path
+          = link_to 'Início', '/',class: 'bottom'
+          = link_to 'Quero comprar', 'register',class: 'bottom'
+          = link_to 'Quero vender', 'register_enterprise',class: 'bottom'
+          = link_to 'Sou Cliente', 'login_client',class: 'bottom'
+          = link_to 'Sou Empresa', 'login_user',class: 'bottom'
+          = link_to 'Editar dados', '/edit_client',class: 'bottom'
+          = link_to 'Meu Carrinho', 'cart',class: 'menus'
           %div#clear
             = yield
           %footer

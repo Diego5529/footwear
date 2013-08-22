@@ -9,12 +9,8 @@ if defined?(Bundler)
   # Bundler.require(:default, :assets, Rails.env)
 end
 
-
-
 module Footwear
-  class Application < Rails::Application
-
-    
+  class Application < Rails::Application   
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -64,8 +60,6 @@ module Footwear
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
 
-    config.autoload_paths += %W(#{Rails.root}/config/extras/ #{Rails.root}/app/presenters/)
-    
-    
+    config.autoload_paths += %W(#{Rails.root}/config/extras/ #{Rails.root}/app/presenters/)     
   end
 end

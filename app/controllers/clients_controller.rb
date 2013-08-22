@@ -1,12 +1,12 @@
 #encoding: utf-8
 class ClientsController < ApplicationController
-  layout "admin"
+  layout 'admin'
 
   respond_to :html
   before_filter :logged?
 
   def logged?
-  redirect_to "/people" if !session[:admin]
+  redirect_to '/people' if !session[:admin]
   end
   
   def index
@@ -37,13 +37,13 @@ class ClientsController < ApplicationController
   def create
     begin
     @client = Client.new(params[:client])
-
+    
     respond_to do |format|
       if @client.save
         format.html { redirect_to @client, notice: 'Client was successfully created.' }
         format.json { render json: @client, status: :created, location: @client }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @client.errors, status: :unprocessable_entity }
       end
     end    
@@ -63,7 +63,7 @@ class ClientsController < ApplicationController
         format.html { redirect_to @client, notice: 'Client was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit'}
         format.json { render json: @client.errors, status: :unprocessable_entity }
       end
     end
@@ -72,7 +72,6 @@ class ClientsController < ApplicationController
       @client = Client.new(params[:client].except(:plain_password))
       flash[:notice] = e.to_s
       render :edit
-
   end
 
   # DELETE /clients/1

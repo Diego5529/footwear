@@ -5,14 +5,14 @@
       %p
         %h3
           = cart_item.name
-        %h6{ style:"color:#000"}
+        %h6{ style:'color:#000'}
           = cart_item.description
           %br
           Empresa:
           = cart_item.enterprise.email
       %span.shoe_value= number_to_currency(cart_item.value)
     %br
-    = link_to("Remover item", {:action=>"remove",:id=>cart_item.id},:remote=>true,:method=>:delete,:class=>"remove_shoe",:confirm=>"Tem ceteza ?")
+    = link_to('Remover item', {:action=>'remove',:id=>cart_item.id},:remote=>true,:method=>:delete,:class=>'remove_shoe',:confirm=>'Tem ceteza ?')
     \-
-    = link_to "Continuar comprando", "/"
+    = link_to 'Continuar comprando', '/'
     %hr

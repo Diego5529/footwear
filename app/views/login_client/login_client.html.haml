@@ -1,13 +1,13 @@
 %h1 Minha conta
 %p#notice= notice
-= form_tag "login_client" do
+= form_tag 'login_client' do
   %p
-    %label{:for => "email"} E-mail:
-    %input#email{:name => "email", :type => "text"}/
+    %label{:for => 'email'} E-mail:
+    %input#email{:name => 'email', :type => 'text'}/
   %p
-    %label{:for => "password"} Senha:
-    %input#password{:name => "password", :type => "password"}/
+    %label{:for => 'password'} Senha:
+    %input#password{:name => 'password', :type => 'password'}/
   %p
-    %input{:type => "submit", :value => "Entrar"}/
+    %input{:type => 'submit', :value => 'Entrar'}/
   %p
-    = link_to "Cadastre-se", "/register"
+    = link_to 'Cadastre-se', '/register'

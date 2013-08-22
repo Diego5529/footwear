@@ -9,28 +9,28 @@ describe LoginUserController do
 
   it "should not login_user without email and password" do
     post :login_user
-    flash[:notice].should eql "Enter the email and password"
+    flash[:notice].should eql "Digite o e-mail e senha"
   end
 
   it "should not login_user without password" do
     post :login_user, {email: "foo@bar.com"}
-    flash[:notice].should eql "Enter the password"
+    flash[:notice].should eql "Digite a senha"
   end
 
   it "should not login_user without email" do
     post :login_user, {password:"XXX"}
-    flash[:notice].should eql "Enter the email"
+    flash[:notice].should eql "Digite o e-mail"
   end
 
   it "should not login_user with invalid password" do
     enterprise = FactoryGirl.build(:enterprise)
     post :login_user, {email: enterprise.email, password:"invalid"}
-    flash[:notice].should eql "Failed Login"
+    flash[:notice].should eql "Falha no login"
   end
 
   it "should not login_user with invalid email" do
     post :login_user, {email: "foo@bar.com", password: "123456"}
-    flash[:notice].should eql "Failed Login"
+    flash[:notice].should eql "Falha no login"
   end
 
   context "when permit" do

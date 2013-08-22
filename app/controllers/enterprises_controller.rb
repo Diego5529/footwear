@@ -1,11 +1,11 @@
 class EnterprisesController < ApplicationController
-  layout "admin"
+  layout 'admin'
   
   respond_to :html
   before_filter :logged?
 
   def logged?
-    redirect_to "/people" if !session[:admin]
+    redirect_to '/people' if !session[:admin]
   end
 
   def index
@@ -42,7 +42,7 @@ class EnterprisesController < ApplicationController
         format.html { redirect_to @enterprise, notice: 'Enterprise was successfully created.' }
         format.json { render json: @enterprise, status: :created, location: @enterprise }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @enterprise.errors, status: :unprocessable_entity }
       end
     end    
@@ -62,7 +62,7 @@ class EnterprisesController < ApplicationController
         format.html { redirect_to @enterprise, notice: 'Enterprise was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @enterprise.errors, status: :unprocessable_entity }
       end
     end
@@ -85,7 +85,7 @@ class EnterprisesController < ApplicationController
   end
 
   def image_title_ref
-    "Enterprise Picture"
+    'Enterprise Picture'
   end
 
   def load_enterprise

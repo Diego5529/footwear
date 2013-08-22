@@ -2,22 +2,24 @@
 %html
   %head
     %title -Footwear-
-    = stylesheet_link_tag    "admins", media: "all"
-    = javascript_include_tag "application"
+    = stylesheet_link_tag    'admins', media: 'all'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
+  %head
     %header
       %h1 CATALOG FOOTWEAR
       %h3
         Bem vindo, #{session[:name]}.
-        = link_to "Sair", logout_path
+        = link_to 'Sair', logout_path
       %div
-        = link_to "Início", "/"
-        = link_to "Administradores", "people"
-        = link_to "Clientes", "clients"
-        = link_to "Empresas", "enterprises"
-        = link_to "Produtos", "shoes"
-        %div
-        - if session[:admin]
-          = yield
-        %footer
-          ANÚNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO
+        = link_to 'Início', '/'
+        = link_to 'Administradores', 'people'
+        = link_to 'Clientes', 'clients'
+        = link_to 'Empresas', 'enterprises'
+        = link_to 'Produtos', 'shoes'
+%body
+  - if session[:admin]
+    = yield
+  %footer
+    ANÚNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO
+  %div#clear

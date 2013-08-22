@@ -21,12 +21,12 @@ class Client < ActiveRecord::Base
 
   def plain_password=(password)
     return if password.blank?
-    raise StandardError.new("Tamanho de senha inválido!") if !(5..15).include?(password.size)
+    raise StandardError.new('Tamanho de senha inválido!') if !(5..15).include?(password.size)
     self.password = self.class.encrypt_password(password)
   end
 
   def plain_password
-    ""
+    ''
   end
 
   def self.encrypt_password(password)
@@ -34,6 +34,6 @@ class Client < ActiveRecord::Base
   end
 
   def self.auth(email,password)
-    where(["email=? and password=?",email,encrypt_password(password)]).first
+    where(['email=? and password=?',email,encrypt_password(password)]).first
   end
 end

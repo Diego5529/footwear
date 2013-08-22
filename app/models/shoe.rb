@@ -1,6 +1,6 @@
 # encoding: utf-8
 class Shoe < ActiveRecord::Base
-	include ImageSaver
+  include ImageSaver
   
   attr_protected :stock
   attr_accessible :audience, :description, :enterprise_id, :name, :registed, :value, :stock, :image_title, :data_stream
@@ -13,8 +13,8 @@ class Shoe < ActiveRecord::Base
 
   has_many :order_items
   has_many :orders, through: :order_items 
-  has_many :clients, :through => :orders, :source=>:person, :uniq=>true
-  has_one  :image, dependent: :destroy, :as => :imageable
+  has_many :clients, through: :orders, source: :person, uniq: true
+  has_one  :image, dependent: :destroy, as: :imageable
 
   belongs_to :enterprise
   
@@ -24,7 +24,7 @@ class Shoe < ActiveRecord::Base
 
   def sold_out?
     self.stock < 1
-	end
+  end
 
   def sell
     raise Exception, "Sold out" if sold_out?

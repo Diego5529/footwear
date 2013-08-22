@@ -2,18 +2,18 @@
 %html
   %head
     %title -Footwear- Login Admin
-    = stylesheet_link_tag    "publics", media: "all"
-    = javascript_include_tag "application"
+    = stylesheet_link_tag    'publics', media: 'all'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
     %header
       %h1 CATALOG FOOTWEAR
       %body
       %h3
         Bem vindo, #{session[:name]}!
-        = link_to "Sair", "logout_user"
-        = link_to "Início", "/"
-        = link_to "Meus Produtos", "/shoes"
-        = link_to 'Editar dados', "/edit_enterprise"
+        = link_to 'Sair', 'logout_user'
+        = link_to 'Início', '/'
+        = link_to 'Meus Produtos', '/shoes'
+        = link_to 'Editar dados', '/edit_enterprise'
         = yield
       %hr
       %footer

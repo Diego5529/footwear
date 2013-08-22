@@ -2,18 +2,19 @@
 class ShoesController < ApplicationController
   respond_to :html
   before_filter :logged?
+  cache_sweeper :shoe_sweeper, only: [:update,:destroy]
   layout :layout
 
   def layout
     if session[:admin]
-      "admin"
+      'admin'
     else
-      "enterprise"
+      'enterprise'
     end
   end
 
   def logged?
-    redirect_to "/login_user" if !session[:id]
+    redirect_to '/login_user' if !session[:id]
   end
 
   def index
@@ -38,7 +39,7 @@ class ShoesController < ApplicationController
   end
 
   def edit_enterprise
-    redirect_to "/"
+    redirect_to '/'
     @enterprise = Enterprise.find(params[:id])
   end
 
@@ -60,7 +61,7 @@ class ShoesController < ApplicationController
         format.html { redirect_to @shoe, notice: 'Shoe was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @shoe.errors, status: :unprocessable_entity }
       end
     end
@@ -83,12 +84,12 @@ class ShoesController < ApplicationController
   end
 
   def image_title_ref
-    "Shoes Picture"
+    'Shoes Picture'
   end
 
   def check_allowed_shoe(shoe)
     if !session[:admin] && shoe.enterprise_id != session[:id]
-      redirect_to action: "index"
+      redirect_to action: 'index'
       return false
     end
     true

@@ -1,8 +1,8 @@
 FactoryGirl.define do 
   
   factory :person do
-    name 'admin'
-    password '1234567'
+    name 'Diego'
+    password '123456'
     admin true
    end
    

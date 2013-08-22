@@ -1,33 +1,33 @@
 # encoding: utf-8
 class PublicsController < ApplicationController
-
-  caches_page :shoe, :enterprise, :client
+  respond_to :html
+  #caches_page :shoe, :enterprise, :client
   layout :layout
 
   def layout
     if session[:admin]
-      "admin"
+      'admin'
     end
     if !session[:admin] && session[:permit]
-      "enterprise"
+      'enterprise'
     end
     if !session[:admin] && session[:id]
-      "public"
+      'public'
     else
-      "public"
+      'public'
     end
   end
 
   def index
-    flash[:notice] = "#{params[:redirect]} não encontrado" if params[:redirect]
-    @shoes = Shoe.order("random()").all
+    flash[:notice] = '#{params[:redirect]} não encontrado' if params[:redirect]
+    @shoes = Shoe.order('random()').all
   end
 
   def logout
     session[:id]  = nil
     session[:email]  = nil
     session[:name] = nil
-    redirect_to "/"
+    redirect_to '/'
   end
 
   def buyers
@@ -35,7 +35,7 @@ class PublicsController < ApplicationController
     if request.post?
       @client = Client.new(params[:client])
       if !@client.save
-        flash[:notice] = "Não consegui salvar"
+        flash[:notice] = 'Não consegui salvar'
       end
     end
   end
@@ -45,7 +45,7 @@ class PublicsController < ApplicationController
     if request.post?
       @enterprise = Enterprise.new(params[:enterprise])
       if !@enterprise.save
-        flash[:notice] = "Não consegui salvar"
+        flash[:notice] = 'Não consegui salvar'
       end
     end
   end
@@ -53,8 +53,8 @@ class PublicsController < ApplicationController
   def shoe
   	@shoe = Shoe.find(params[:id]) rescue nil
   	if !@shoe
-  		flash[:notice] = "Shoe not Found"
-  		redirect_to"/"
+  		flash[:notice] = 'Shoe not Found'
+  		redirect_to'/'
   		return
   		end
   	end
@@ -62,8 +62,8 @@ class PublicsController < ApplicationController
   def enterprise
 		@enterprise = Enterprise.find(params[:id]) rescue nil
 		if !@enterprise
-			flash[:notice] = "Enterprise Not Found"
-			redirect_to "/"
+			flash[:notice] = 'Enterprise Not Found'
+			redirect_to '/'
 			return
 		end
 		@shoes = Shoe.by_enterprise(@enterprise.id)
@@ -72,8 +72,8 @@ class PublicsController < ApplicationController
   def buy
     @shoe = Shoe.find(params[:id]) rescue nil
     if !@shoe
-      flash[:notice] = "Shoe Not Found"
-      redirect_to "/"
+      flash[:notice] = 'Shoe Not Found'
+      redirect_to '/'
       return
     end
     @cart = find_cart
@@ -87,7 +87,7 @@ class PublicsController < ApplicationController
 
   def cart
     @cart = find_cart
-    @shoes = Shoe.order("random()").all
+    @shoes = Shoe.order('random()').all
   end
 
   def remove
@@ -99,14 +99,14 @@ class PublicsController < ApplicationController
   def edit_enterprise
     @enterprise = Enterprise.find(session[:id])
     if request.put?
-      flash[:notice] = "Dados atualizados" if      @enterprise.update_attributes(params[:enterprise])
+      flash[:notice] = 'Dados atualizados' if      @enterprise.update_attributes(params[:enterprise])
     end
   end
 
   def edit_client
     @client = Client.find(session[:id])
     if request.put?
-      flash[:notice] = "Dados atualizados" if @client.update_attributes(params[:client])
+      flash[:notice] = 'Dados atualizados' if @client.update_attributes(params[:client])
     end
   end  
 
@@ -121,7 +121,7 @@ class PublicsController < ApplicationController
         order.save ? order : nil
       end
       rescue Exception => e
-        flash[:notice] = "Erro: #{e}"
+        flash[:notice] = 'Erro: #{e}'
         false
   end
 
@@ -129,8 +129,8 @@ class PublicsController < ApplicationController
   def close_order    
     @order = create_order
     if !@order
-      flash[:notice] = "Unable to create request"
-      redirect_to "/login_client"
+      flash[:notice] = 'Unable to create request'
+      redirect_to '/login_client'
       return
     end
     @email = session[:email]
@@ -151,8 +151,8 @@ class PublicsController < ApplicationController
     @order = Order.find(params[:id])  
   rescue nil
     if !@order
-      flash[:notice] = "Not Found"
-      redirect_to "/"
+      flash[:notice] = 'Not Found'
+      redirect_to '/'
     end
   end
 end

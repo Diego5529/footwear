@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
   def record_not_found
-  	flash[:notice] = "Registro não encontrado"
-  	redirect_to "/"
+  	flash[:notice] = 'Registro não encontrado'
+  	redirect_to '/'
   end
 end

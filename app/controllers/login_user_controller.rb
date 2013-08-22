@@ -1,6 +1,6 @@
 #encoding: utf-8
 class LoginUserController < ApplicationController
-  layout "public"
+  layout 'public'
 
   def login_user
     if request.post?
@@ -9,27 +9,27 @@ class LoginUserController < ApplicationController
       permit = params[:permit]
 
       if email.blank? && password.blank?
-        flash[:notice] = "Enter the email and password"
+        flash[:notice] = 'Digite o e-mail e senha'
         return
       end
 
       if email.blank?
-        flash[:notice] = "Enter the email"
+        flash[:notice] = 'Digite o e-mail'
         return
       end
 
       if password.blank?
-        flash[:notice] = "Enter the password"
+        flash[:notice] = 'Digite a senha'
         return
       end
 
       enterprise = Enterprise.auth(email,password)
       if  !enterprise 
-        flash[:notice] = "Failed Login"
+        flash[:notice] = 'Falha no login'
         return
       end
 
-      flash[:notice]  = "Welcome, #{enterprise.email}!"
+      flash[:notice]  = 'Bem-vindo, #{enterprise.email}!'
       session[:id]  = enterprise.id
       session[:email]  = enterprise.email
       session[:name]  = enterprise.name
@@ -42,10 +42,10 @@ class LoginUserController < ApplicationController
     session[:id]  = nil
     session[:email]  = nil
     session[:name] = nil
-    redirect_to "/"
+    redirect_to '/'
   end
 
   def index
-    redirect_to :action=>"/"
+    redirect_to :action=>'/'
   end
 end

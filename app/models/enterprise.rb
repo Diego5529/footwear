@@ -1,5 +1,5 @@
 # encoding: utf-8
-require "digest/sha1"
+require 'digest/sha1'
 class Enterprise < ActiveRecord::Base
   include ImageSaver
   
@@ -18,18 +18,18 @@ class Enterprise < ActiveRecord::Base
   validates :cnpj, presence: true, uniqueness: true, length:{is: 18}, format: {with:/^\d{2}.[\d]{3}.[\d]{3}\/[\d]{4}-[\d]{2}$/}
   validates :zip_code, presence: true, format:{with:/^[\d]{5}-[\d]{3}$/}
   
-  has_many :shoes, :dependent => :destroy
-  has_one  :image, :dependent =>:destroy, :as => :imageable
+  has_many :shoes, dependent: :destroy
+  has_one  :image, dependent: :destroy, as: :imageable
   belongs_to :order
 
   def plain_password=(password)
     return if password.blank?
-    raise StandardError.new("Tamanho de senha inválido!") if !(5..15).include?(password.size)
+    raise StandardError.new('Tamanho de senha inválido!') if !(5..15).include?(password.size)
     self.password = self.class.encrypt_password(password)
   end
 
   def plain_password
-    ""
+    ''
   end
 
   def self.encrypt_password(password)
@@ -37,7 +37,7 @@ class Enterprise < ActiveRecord::Base
   end
 
   def self.auth(email,password)
-    where(["email=? and password=?",email,encrypt_password(password)]).first
+    where(['email=? and password=?',email,encrypt_password(password)]).first
   end
 
   def self.for_select
@@ -48,7 +48,6 @@ class Enterprise < ActiveRecord::Base
   
   private
   def check_image
-    errors.add(:data_stream,"deve ter imagem") if self.data_stream.to_s.size<1
+    errors.add(:data_stream,'deve ter imagem') if self.data_stream.to_s.size<1
   end
-
 end

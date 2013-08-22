@@ -9,28 +9,28 @@ describe LoginClientController do
 
   it "should not login_client without email and password" do
     post :login_client
-    flash[:notice].should eql "Enter the email and password"
+    flash[:notice].should eql "Digite o e-mail e senha"
   end
 
   it "should not login_client without password" do
     post :login_client, {email: "foo@bar.com"}
-    flash[:notice].should eql "Enter the password"
+    flash[:notice].should eql "Digite a senha"
   end
 
   it "should not login_client without email" do
     post :login_client, {password:"XXX"}
-    flash[:notice].should eql "Enter the email"
+    flash[:notice].should eql "Digite o e-mail"
   end
 
   it "should not login_client with invalid password" do
     client = FactoryGirl.build(:client)
     post :login_client, {email: client.email, password:"invalid"}
-    flash[:notice].should eql "Failed Login"
+    flash[:notice].should eql "Falha no login"
   end
 
   it "should not login_client with invalid email" do
     post :login_client, {email: "foo@bar.com", password: "123456"}
-    flash[:notice].should eql "Failed Login"
+    flash[:notice].should eql "Falha no login"
   end
 
   context "when permit" do

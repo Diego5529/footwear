@@ -2,8 +2,8 @@
   - if @shoe.errors.any?
     #error_explanation
       %h2
-        = pluralize(@shoe.errors.count, "error")
-        prohibited this shoe from being saved:
+        = pluralize(@shoe.errors.count, 'erro')
+        este produto não pode ser salvo:
       %ul
         - @shoe.errors.full_messages.each do |msg|
           %li= msg
@@ -34,4 +34,4 @@
   .field
     = render partial: 'shared/image_field', locals: { f: f }
   .actions
-    = f.submit
+    = f.submit 'Cadastrar'

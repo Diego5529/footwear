@@ -1,13 +1,13 @@
 %h1 Minha empresa
 %p#notice= notice
-= form_tag "login_user" do
+= form_tag 'login_user' do
   %p
-    %label{:for => "email"}E-mail:
-    %input#email{:name => "email", :type => "text"}/
+    %label{:for => 'email'}E-mail:
+    %input#email{:name => 'email', :type => 'text'}/
   %p
-    %label{:for => "password"}Senha:
-    %input#password{:name => "password", :type => "password"}/
+    %label{:for => 'password'}Senha:
+    %input#password{:name => 'password', :type => 'password'}/
   %p
-    %input{:type => "submit", :value => "Entrar"}/
+    %input{:type => 'submit', :value => 'Entrar'}/
   %p
-    = link_to "Cadastre-se", "/register_enterprise"
+    = link_to 'Cadastre-se', '/register_enterprise'
