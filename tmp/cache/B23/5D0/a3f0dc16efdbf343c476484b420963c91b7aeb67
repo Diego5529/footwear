@@ -1,0 +1,274 @@
+o: ActiveSupport::Cache::Entry	:@compressedF:@expires_in0:@created_atf1377275340.480831:@value"§[I"™/* line 1, ../../app/assets/stylesheets/publics.css.sass */
+body {
+  font-family: arial, verdana, helvetica, sans-serif;
+  font-size: 12px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin: 100;
+}
+/* line 9, ../../app/assets/stylesheets/publics.css.sass */
+body header {
+  background-color: black;
+  border-width: medium;
+  border-style: solid;
+  margin-top: 10px;
+  margin-bottom: 45px;
+  height: 55px;
+}
+/* line 17, ../../app/assets/stylesheets/publics.css.sass */
+body footer {
+  background: tomato;
+  border-color: black;
+  border-style: solid;
+  border-width: medium;
+  font-size: 18pt;
+  font-weight: bold;
+  margin-top: 10px;
+  text-align: center;
+}
+/* line 27, ../../app/assets/stylesheets/publics.css.sass */
+body h1 {
+  background: tomato;
+  border: solid 1px;
+  color: black;
+  font-size: 26pt;
+  margin-top: 7px;
+  text-align: center;
+}
+/* line 46, ../../app/assets/stylesheets/publics.css.sass */
+body a {
+  color: blue;
+  font-size: 11pt;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  text-align: center;
+  text-align: justify;
+  text-decoration: none;
+}
+/* line 55, ../../app/assets/stylesheets/publics.css.sass */
+body a.hover {
+  color: black;
+  background-color: black;
+}
+/* line 59, ../../app/assets/stylesheets/publics.css.sass */
+body h4 {
+  background: red;
+  border-radius: 15px;
+  color: white;
+  float: left;
+  font-weight: bold;
+  margin-left: 1em;
+  padding: 0.2em 3em;
+  text-align: center;
+  text-decoration: none;
+}
+/* line 70, ../../app/assets/stylesheets/publics.css.sass */
+body #names {
+  background: orangered;
+  font-size: 24pt;
+  font-weight: bold;
+  margin-top: 7px;
+  text-align: center;
+}
+/* line 77, ../../app/assets/stylesheets/publics.css.sass */
+body #menu_sub {
+  color: blue;
+  float: center;
+  font-size: 14pt;
+  font-weight: bold;
+  margin-top: 20px;
+}
+/* line 84, ../../app/assets/stylesheets/publics.css.sass */
+body #content {
+  margin-left: 200px;
+}
+/* line 89, ../../app/assets/stylesheets/publics.css.sass */
+body #content2 {
+  border: 5px solid blue;
+  float: left;
+  width: 10%;
+}
+/* line 95, ../../app/assets/stylesheets/publics.css.sass */
+body #enterprise_total {
+  float: right;
+  font-size: 16pt;
+  width: 50%;
+}
+/* line 100, ../../app/assets/stylesheets/publics.css.sass */
+body #enterprise_details {
+  font-size: 16pt;
+}
+/* line 104, ../../app/assets/stylesheets/publics.css.sass */
+body #enterprise_logo {
+  float: left;
+}
+/* line 107, ../../app/assets/stylesheets/publics.css.sass */
+body a.menus {
+  background: green;
+  border-radius: 15px;
+  color: white;
+  float: right;
+  font-weight: bold;
+  margin-left: 3em;
+  padding: 0.1em 1em;
+  text-align: center;
+  text-decoration: none;
+}
+/* line 130, ../../app/assets/stylesheets/publics.css.sass */
+body a.more_shoe_info, body a.buy_shoe {
+  background: green;
+  border-radius: 15px;
+  color: white;
+  font-weight: bold;
+  margin-left: 3em;
+  padding: 0.2em 1em;
+  text-align: center;
+  text-decoration: none;
+}
+/* line 140, ../../app/assets/stylesheets/publics.css.sass */
+body #mini_shoes {
+  list-style-type: none;
+  margin-top: 10px;
+  padding: 0;
+}
+/* line 144, ../../app/assets/stylesheets/publics.css.sass */
+body #mini_shoes h1 {
+  color: maroon;
+  margin-bottom: 10;
+}
+/* line 147, ../../app/assets/stylesheets/publics.css.sass */
+body #mini_shoes h2 {
+  float: left;
+  font-size: 1em;
+  margin-bottom: 7px;
+  margin-left: 15px;
+  margin-top: 0;
+  margin-top: 7px;
+  width: 200px;
+}
+/* line 156, ../../app/assets/stylesheets/publics.css.sass */
+body span.shoe_value {
+  color: green;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+/* line 161, ../../app/assets/stylesheets/publics.css.sass */
+body table {
+  background: wheat;
+  border-radius: 10px;
+  border: 2px solid black;
+  color: black;
+  font-weight: bold;
+  padding: 0.2em;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+}
+/* line 171, ../../app/assets/stylesheets/publics.css.sass */
+body table td {
+  background: wheat;
+  border-radius: 10px;
+  border: 2px solid black;
+  color: black;
+  font-weight: bold;
+  padding: 0.2em;
+  text-align: center;
+  text-decoration: none;
+}
+/* line 180, ../../app/assets/stylesheets/publics.css.sass */
+body table th {
+  background: tomato;
+  border-color: black;
+  border-radius: 10px;
+  border: 2px solid black;
+  color: black;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-left: 4em;
+  margin-right: 4em;
+  padding: 0.2em;
+  text-decoration: none;
+}
+/* line 193, ../../app/assets/stylesheets/publics.css.sass */
+body #shoes {
+  color: red;
+  font-size: 16pt;
+  font-weight: bold;
+  text-align: justify;
+}
+/* line 199, ../../app/assets/stylesheets/publics.css.sass */
+body #show_details {
+  border-color: red;
+  border-style: solid;
+  border-width: medium;
+  color: red;
+  float: left;
+  font-size: 16pt;
+  font-weight: bold;
+  margin-left: 50px;
+  text-align: justify;
+  width: 44%;
+}
+/* line 211, ../../app/assets/stylesheets/publics.css.sass */
+body h4.shoes {
+  color: black;
+  font-size: 12pt;
+  margin-left: -500px;
+  text-align: left;
+}
+/* line 217, ../../app/assets/stylesheets/publics.css.sass */
+body #shoes_rand {
+  float: left;
+}
+/* line 220, ../../app/assets/stylesheets/publics.css.sass */
+body #notice {
+  color: red;
+}
+/* line 223, ../../app/assets/stylesheets/publics.css.sass */
+body #clear {
+  clear: both;
+}
+/* line 226, ../../app/assets/stylesheets/publics.css.sass */
+body a.buy_shoe {
+  display: block;
+  margin: 0;
+  margin: 1em 0;
+  width: 5em;
+}
+/* line 232, ../../app/assets/stylesheets/publics.css.sass */
+body .shoes {
+  margin-left: 30%;
+  margin-right: 20%;
+}
+/* line 236, ../../app/assets/stylesheets/publics.css.sass */
+body .field_with_errors {
+  background-color: red;
+  display: table;
+  padding: 2px;
+}
+/* line 242, ../../app/assets/stylesheets/publics.css.sass */
+body #error_explanation {
+  background-color: #f0f0f0;
+  border: 2px solid red;
+  margin-bottom: 20px;
+  padding-bottom: 0;
+  padding: 7px;
+  width: 450px;
+}
+/* line 249, ../../app/assets/stylesheets/publics.css.sass */
+body #error_explanation h2 {
+  background-color: #cc0000;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 0px;
+  margin: -7px;
+  padding: 5px 5px 5px 15px;
+  text-align: left;
+}
+/* line 258, ../../app/assets/stylesheets/publics.css.sass */
+body #error_explanation ul li {
+  font-size: 15px;
+  list-style: circle;
+}
+:EF

@@ -1,6 +1,7 @@
 # encoding: utf-8
 class PublicsController < ApplicationController
-  caches_page :shoe, :enterprise, :client
+  respond_to :html
+  #caches_page :shoe, :enterprise, :client
   layout :layout
 
   def layout
@@ -20,6 +21,7 @@ class PublicsController < ApplicationController
   def index
     flash[:notice] = '#{params[:redirect]} não encontrado' if params[:redirect]
     @shoes = Shoe.order('random()').all
+    @enterprises = Enterprise.all
   end
 
   def logout
@@ -86,7 +88,7 @@ class PublicsController < ApplicationController
 
   def cart
     @cart = find_cart
-    @shoes = Shoe.order('random()').all
+    @shoes = Shoe.order('random()').first(6)
   end
 
   def remove

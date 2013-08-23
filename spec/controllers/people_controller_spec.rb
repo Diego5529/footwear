@@ -3,8 +3,6 @@ require 'spec_helper'
 describe PeopleController do
 
   let(:valid_attributes) { {} }
-  let(:valid_attributes) { {} }
-  let(:valid_session) { {} }
 
   before :each do
     @admin = FactoryGirl.create(:person)
@@ -48,31 +46,57 @@ describe PeopleController do
     end
   end
 
-  # describe 'DELETE destroy' do
+  describe 'PUT Update' do
+    it 'located the requested admin' do
+      login(@admin)
+      put :update, id: @admin.id
+      assigns(:person).should eq @admin
+    end
 
-  #   it 'admin to deletes the person' do
-  #     logged(@person)
-  #     expect{
-  #       delete :destroy, id: @person.id}.to change(Person, :count).by(-1)
-  #   end
+     it 'changes the admin attributes' do
+        login(@admin)
+        put :update, { id: @admin, person: { name: 'Administrador' } }
+        assigns(:person).should eq @admin
+      end
 
-  #   it 'person to not deletes the person' do
-  #     logged(@person)
-  #     expect{
-  #       delete :destroy, id: @person.id
-  #     }.to_not change(Person, :count).by(-1)
-  #   end
+    context 'with invalid attributes' do
+      it 'render the edit view' do
+        put :update, { id: @admin, person: { name: 'Administrador' } }
+        response.should_not be_success
+      end
+    end
 
-  #   it 'redirects to index' do
-  #     logged(@person)
-  #     delete :destroy, id: @people
-  #     response.should redirect_to :index
-  #   end
-  # end
+      it 'should not changes the enterprise attributes' do
+        put :update, { id: @admin, person: {name: 'Administrador' } }
+        @admin.reload
+        @admin.name.should == 'Administrador'
+      end
+  end
+
+  describe 'DELETE destroy' do
+
+    it 'admin to deletes the person' do
+      login(@admin)
+      expect{
+        delete :destroy, id: @admin.id}.to change(Person, :count).by(-1)
+    end
+
+    it 'person to not deletes the person' do
+      login(@admin)
+      expect{
+        delete :destroy, id: @admin.id
+      }.to_not change(Person, :count).by(0)
+    end
+
+    it 'redirects to index' do
+      login(@admin)
+      delete :destroy, id: @admin
+      response.should redirect_to "/people"
+    end
+  end
 
   private
   def filtered_attributes(person)
     person.attributes.except("id","created_at","updated_at","password","admin")
   end
-
 end

@@ -3,8 +3,7 @@ class ShoesController < ApplicationController
   respond_to :html
   before_filter :logged?
   layout :layout
-
-  
+    
   def layout
     if session[:admin]
       'admin'

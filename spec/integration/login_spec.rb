@@ -42,24 +42,27 @@ describe 'login' do
   it 'should not login with wrong name' do
     person = create(:person)
     visit login_path
-    fill_in 'name', with: 'Login:'
+    fill_in 'name', with: 'Login'
     fill_in 'password', with: person.password
     click_button 'Entrar'
     expect(page).to have_text("Falha no login")
   end
 
-  # it 'should login' do
-  #   person = FactoryGirl.create(:person)
-  #   visit login_path
-  #   fill_in 'name', with: person.name
-  #   fill_in 'password', with: person.password
-  #   click_button 'Entrar'
-  #   p current_path
-  #   p page.text
-  # end
+  it 'should login' do
+    person = FactoryGirl.create(:person)
+    visit login_path
+    fill_in 'name', with: person.name
+    fill_in 'password', with: person.password
+    click_button 'Entrar'
+    p current_path
+  end
 
-  # it 'should be able to open the root path' do
-  #   visit('/people')
-  #   current_path.should == '/people'
-  # end
+  it 'should login' do
+    client = create(:client)
+    visit login_path
+    fill_in 'name', with: 'Diego'
+    fill_in 'password', with: '123456'
+    click_button 'Entrar'
+    p current_path
+  end
 end

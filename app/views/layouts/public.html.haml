@@ -7,14 +7,15 @@
     = csrf_meta_tags
   %body
     %header
+      %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
       %h1
         CATALOG FOOTWEAR
       %div
         %h3
-          Bem vindo #{session[:name]}
-          -if session[:id] 
+          -if session[:id]
+            Bem vindo #{session[:name]} 
             = link_to 'Sair', logout_client_path
-          = link_to 'Início', '/',class: 'bottom'
+          = link_to "Início", '/',class: 'bottom'
           = link_to 'Quero comprar', 'register',class: 'bottom'
           = link_to 'Quero vender', 'register_enterprise',class: 'bottom'
           = link_to 'Sou Cliente', 'login_client',class: 'bottom'

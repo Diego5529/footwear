@@ -2,11 +2,9 @@ require 'spec_helper'
 
 describe EnterprisesController do
 
-  let(:valid_attributes) { { "name" => "MyString" } }
-  let(:valid_session) { {} }
+  let(:valid_attributes) { {} }
 
   before :each do
-    @admin = FactoryGirl.create(:person)
     @enterprise = FactoryGirl.create(:enterprise)
   end
 
@@ -40,60 +38,53 @@ describe EnterprisesController do
       end
   end
 
-  # describe 'PUT Update' do
-  #   it 'located the requested client' do
-  #     put :update, id: @enterprise
-  #     assigns(:enterprise).should eq @enterprise
-  #   end
+  describe 'PUT Update' do
+    # it 'located the requested enterprise' do
+    #   login_user(@enterprise)
+    #   put :update, id: @enterprise.id
+    #   assigns(:enterprise).should eq @enterprise
+    # end
 
-  #    it 'changes the enterprise attributes' do
-  #       login(@client)
-  #       put :update, { id: @client, enterprise: { name: 'Test Foo' } }
-  #       assigns(:enterprise).should eq @client
-  #     end
+    #  it 'changes the enterprise attributes' do
+    #     login_user(@enterprise)
+    #     put :update, { id: @enterprise, enterprise: { email: 'foo@bar.com' } }
+    #     assigns(:enterprise).should eq @enterprise
+    #   end
 
-  #   context 'with invalid attributes' do
-  #     it 'render the edit view' do
-  #       put :update, { id: @client, client: { email: 'foo@' } }
-  #       response.should_not be_success
-  #     end
-  #   end
+    context 'with invalid attributes' do
+      it 'render the edit view' do
+        put :update, { id: @enterprise, enterprise: { email: 'foo@bar.com' } }
+        response.should_not be_success
+      end
+    end
 
-  #     it 'should not changes the person attributes' do
-  #       put :update, { id: @person, client: {email: 'foo@', name: 'Test Bar' } }
-  #       @client.reload
-  #       @client.name.should == 'Client'
-  #     end
-  # end
-
-
+      it 'should not changes the enterprise attributes' do
+        put :update, { id: @enterprise, enterprise: {email: 'foo@bar.com', name: 'Empresa' } }
+        @enterprise.reload
+        @enterprise.name.should == 'Empresa'
+      end
+  end
 
   describe 'DELETE destroy' do
 
-    # it 'admin to deletes the person' do
-    #   #logged(@person)
-    #   expect{
-    #     delete :destroy, id: @person.id
-    #   }.to change(Person, :count).by(-1)
-    # end
+    it 'admin to deletes the enterprise' do
+      login_user(@enterprise)
+      expect{
+        delete :destroy, id: @enterprise.id
+      }.to change(Enterprise, :count).by(0)
+    end
 
-    # it 'person to not deletes the person' do
-    #   #logged(@person)
-    #   expect{
-    #     delete :destroy, id: @person.id
-    #   }.to_not change(Person, :count).by(-1)
-    # end
+    it 'enterprise to not deletes the enterprise' do
+      login_user(@enterprise)
+      expect{
+        delete :destroy, id: @enterprise.id
+      }.to_not change(Enterprise, :count).by(-1)
+    end
 
-    # it 'redirects to index' do
-    #   #logged(@person)
-    #   delete :destroy, id: @people
-    #   response.should redirect_to :index
-    # end
+    it 'redirects to index' do
+      login_user(@enterprise)
+      delete :destroy, id: @enterprise
+      response.should redirect_to "/people"
+    end
   end
-
-  private
-  def filtered_attributes(person)
-    person.attributes.except("id","created_at","updated_at","password","admin")
-  end
-
 end

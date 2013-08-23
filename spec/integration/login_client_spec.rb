@@ -55,7 +55,7 @@ describe 'Client' do
     fill_in 'email', with: client.email
     fill_in 'password', with: client.password
     click_button 'Entrar'
-    redirect_to '/cart'
+    p current_path
   end
 end
 end
