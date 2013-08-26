@@ -210,55 +210,62 @@ pt-BR:
   activerecord:
     error:
       <<: *error
-    models:
-      person: "Admin"
-    attributes:
-      person:
-        name: "Nome*"
-        password: "Senha*"
-        admin: "Administrador"
-    models:    
-      enterprise: "Empresa"
-    attributes:
-      enterprise:
-        name: "Nome:* "
-        name_social: "Nome Social* "
-        email: "E-mail* "
-        password: "Senha* "
-        cnpj: "CNPJ* "
-        zip_code: "CEP* "
-        address: "Endereço* "
-        number: "Numero* "
-        district: "Bairro* "
-        state: "Estado* "
-        city: "Cidade* "
-        telephone: "Telephone para contato "
-        permit: "Permição "
-        image_title: "Titulo da Imagem "
-    models:    
-      client: "Cliente"
-    attributes:
-      client:
-        name: "Nome:* "
-        email: "E-mail* "
-        password: "Senha* "
-        cpf: "CPF* "
-        zip_code: "CEP* "
-        address: "Endereço:* "
-        number: "Numero* "
-        district: "Bairro* "
-        state: "Estado* "
-        city: "Cidade* "
-        telephone: "Telephone para contato*"
-    models:    
-      shoe: "Shoe"
-    attributes:
-      shoe:
-        name: "Nome:* "
-        value: "Preço* "
-        audience: "Publico Alvo* "
-        stock: "Estoque* "
-        registed: "Data de Registro* "
-        description: "Descrição do produto:* "
-        image_title: "Titulo da Imagem"
-        data_stream: "Produto"
+  models:
+    person: "Admin"
+  attributes:
+    person:
+      name: "Nome*"
+      password: "Senha*"
+      admin: "Administrador"
+  models:    
+    enterprise: "Empresa"
+  attributes:
+    enterprise:
+      name: "Nome:* "
+      name_social: "Nome Social* "
+      email: "E-mail* "
+      password: "Senha* "
+      cnpj: "CNPJ* "
+      zip_code: "CEP* "
+      address: "Endereço* "
+      number: "Numero* "
+      district: "Bairro* "
+      state: "Estado* "
+      city: "Cidade* "
+      telephone: "Telephone para contato "
+      permit: "Permição "
+      image_title: "Titulo da Imagem "
+  models:    
+    client: "Cliente"
+  attributes:
+    client:
+      name: "Nome:* "
+      email: "E-mail* "
+      password: "Senha* "
+      cpf: "CPF* "
+      zip_code: "CEP* "
+      address: "Endereço:* "
+      number: "Numero* "
+      district: "Bairro* "
+      state: "Estado* "
+      city: "Cidade* "
+      telephone: "Telephone para contato*"
+  models:    
+    shoe: "Shoe"
+  attributes:
+    shoe:
+      name: "Nome:* "
+      value: "Preço* "
+      audience: "Publico Alvo* "
+      stock: "Estoque* "
+      registed: "Data de Registro* "
+      description: "Descrição do produto:* "
+      image_title: "Titulo da Imagem"
+      data_stream: "Produto"
+  views:
+    pagination:
+      previous: "&laquo; Anterior"
+      next: "Próxima &raquo;"
+      last: "Última"
+      first: "Primeira"
+      truncate: "..."

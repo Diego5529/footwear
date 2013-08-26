@@ -1,43 +1,51 @@
-%h1 Detalhes do Produto
-#show_details
-  = @shoe.name
-  %div#clear
-    = link_to @shoe.enterprise.name, "/enterprise/#{@shoe.enterprise.id}"
-  %ul
-    = image_tag(@shoe.image,:width=>250)
-  %h5{ style: "color:black"}
-    = simple_format(@shoe.description)
-  %span.shoe_value= number_to_currency(@shoe.value)
-  %br/
-  - if @shoe.sold_out?
-    %h4.sold_out Esgotado!
-  - else
-    = link_to "Comprar", "/buy/#{@shoe.id}", :class=>"buy_shoe", :method=> :post
-    %end
-#enterprise_total
-  Empresa:
-  = @shoe.enterprise.name
-  %br
-  = image_tag(@shoe.enterprise.image,:width => 150,:height=>150)
-  #enterprise_details
-    %br/
-    E-mail:
-    = @shoe.enterprise.email
-    %br/
-    Cidade:
-    = @shoe.enterprise.city
-    %br/
-    Estado:
-    = @shoe.enterprise.state
-    %br/
-    Endereço:
-    = @shoe.enterprise.address
-    ,
-    = @shoe.enterprise.number
-    %br/
-    Bairro:
-    = @shoe.enterprise.district
-    %br/
-    Telefone:
-    = @shoe.enterprise.telephone
-%div#clear
+#content
+  #menu_left
+    %h2
+      %li Empresas
+    - for enterprise in @enterprises
+      %li
+        = link_to enterprise.name, "/enterprise/#{enterprise.id}"
+  %h1 Detalhes do Produto
+  #content1
+    #show_details
+      = @shoe.name
+      #end
+      = link_to @shoe.enterprise.name, "/enterprise/#{@shoe.enterprise.id}"
+      %ul
+        = image_tag(@shoe.image,:width=>250)
+      %h5{ style: "color:black"}
+        = simple_format(@shoe.description)
+      %span.shoe_value= number_to_currency(@shoe.value)
+      %br/
+      - if @shoe.sold_out?
+        %h4.sold_out Esgotado!
+      - else
+        = link_to "Comprar", "/buy/#{@shoe.id}", :class=>"buy_shoe", :method=> :post
+        %end
+  #enterprise_total
+    Empresa:
+    = @shoe.enterprise.name
+    %br
+    = image_tag(@shoe.enterprise.image,:width => 150,:height=>150)
+    #enterprise_details
+      %br/
+      E-mail:
+      = @shoe.enterprise.email
+      %br/
+      Cidade:
+      = @shoe.enterprise.city
+      %br/
+      Estado:
+      = @shoe.enterprise.state
+      %br/
+      Endereço:
+      = @shoe.enterprise.address
+      ,
+      = @shoe.enterprise.number
+      %br/
+      Bairro:
+      = @shoe.enterprise.district
+      %br/
+      Telefone:
+      = @shoe.enterprise.telephone
+#end

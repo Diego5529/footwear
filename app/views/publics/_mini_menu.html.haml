@@ -1,2 +1,3 @@
 - for enterprise in @enterprises
-  = link_to enterprise.name, "/enterprise/#{enterprise.id}"
+  %li
+    = link_to enterprise.name, "/enterprise/#{enterprise.id}"

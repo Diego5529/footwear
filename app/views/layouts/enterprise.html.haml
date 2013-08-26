@@ -5,16 +5,17 @@
     = stylesheet_link_tag    'publics', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
+  %body
     %header
-      %h1 CATALOG FOOTWEAR
-      %body
-      %h3
-        Bem vindo, #{session[:name]}!
-        = link_to 'Sair', 'logout_user'
+      #menu_top
         = link_to 'Início', '/'
         = link_to 'Meus Produtos', '/shoes'
-        = link_to 'Editar dados', '/edit_enterprise'
-        = yield
-      %hr
-      %footer
-        ANÚNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO
+        = link_to 'Editar dados', 'edit_enterprise'
+      %h1 CATALOG FOOTWEAR
+      #message  
+        Bem vindo, #{session[:name]}!
+        = link_to 'Sair', 'logout_user'
+    = yield
+    %hr
+    %footer
+      ANÚNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO

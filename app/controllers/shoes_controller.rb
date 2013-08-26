@@ -37,11 +37,6 @@ class ShoesController < ApplicationController
     return if !check_allowed_shoe(@shoe)
   end
 
-  def edit_enterprise
-    redirect_to '/'
-    @enterprise = Enterprise.find(params[:id])
-  end
-
   def currentEnterprise
     Enterprise.find(session[:id])
   end

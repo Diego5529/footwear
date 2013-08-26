@@ -1,7 +1,6 @@
 # encoding: utf-8
 class PublicsController < ApplicationController
   respond_to :html
-  #caches_page :shoe, :enterprise, :client
   layout :layout
 
   def layout
@@ -12,7 +11,7 @@ class PublicsController < ApplicationController
       'enterprise'
     end
     if !session[:admin] && session[:id]
-      'public'
+      'client'
     else
       'public'
     end
@@ -21,7 +20,7 @@ class PublicsController < ApplicationController
   def index
     flash[:notice] = '#{params[:redirect]} não encontrado' if params[:redirect]
     @shoes = Shoe.order('random()').all
-    @enterprises = Enterprise.all
+    @enterprises = Enterprise.order("name ASC").all
   end
 
   def logout
@@ -34,11 +33,12 @@ class PublicsController < ApplicationController
   def buyers
     @client = Client.new
     if request.post?
-      @client = Client.new(params[:client])
+      @client = Client.new(params[:client])     
+      end
       if !@client.save
         flash[:notice] = 'Não consegui salvar'
       end
-    end
+      redirect_to '/'
   end
 
   def sellers
@@ -48,10 +48,12 @@ class PublicsController < ApplicationController
       if !@enterprise.save
         flash[:notice] = 'Não consegui salvar'
       end
+      redirect_to '/'  
     end
   end
 
   def shoe
+    @enterprises = Enterprise.all
   	@shoe = Shoe.find(params[:id]) rescue nil
   	if !@shoe
   		flash[:notice] = 'Shoe not Found'
@@ -61,6 +63,7 @@ class PublicsController < ApplicationController
   	end
 
   def enterprise
+    @enterprises = Enterprise.all
 		@enterprise = Enterprise.find(params[:id]) rescue nil
 		if !@enterprise
 			flash[:notice] = 'Enterprise Not Found'
@@ -88,7 +91,7 @@ class PublicsController < ApplicationController
 
   def cart
     @cart = find_cart
-    @shoes = Shoe.order('random()').first(6)
+    @shoes = Shoe.page(params[:page]).per(6)
   end
 
   def remove

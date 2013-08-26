@@ -1,13 +1,14 @@
-#content2
-  %h2
-    Empresas
-    - for enterprise in @enterprises
-      = link_to enterprise.name, "/enterprise/#{enterprise.id}"
-/= render partial: 'mini_menu', collection: @enterprises
 #content
+  #menu_left
+    %h2
+      %li Empresas
+    - for enterprise in @enterprises
+      %li
+        = link_to enterprise.name, "/enterprise/#{enterprise.id}"
   %h1 Produtos cadastrados
-  #mini_shoes
-    = render partial: 'mini_shoe', collection: @shoes
-  %div#clear
-  %hr
-  %a{href: 'login'} Administrador
+  #content1
+    #mini_shoes
+      = render partial: 'mini_shoe', collection: @shoes
+#end
+%hr
+%a{href: 'login'} Administrador

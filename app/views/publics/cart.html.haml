@@ -23,6 +23,7 @@
         = link_to "Cadastre-se", "register"
 %hr
 %h1 Outros Produtos
+= paginate @shoes
 #mini_shoes
   = render :partial=>"mini_shoe", :collection=>@shoes
-%div#clear
+#end

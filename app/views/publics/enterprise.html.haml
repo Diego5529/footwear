@@ -1,4 +1,11 @@
-%h1 Produtos da #{@enterprise.name}
-%ul#mini_shoes
-  = render :partial=>'mini_shoe', :collection=>@shoes
-  %div#clear
+#content
+  #menu_left
+    %h2
+      %li Empresas
+    - for enterprise in @enterprises
+      %li
+        = link_to enterprise.name, "/enterprise/#{enterprise.id}"
+  %h1 Produtos da #{@enterprise.name}
+  #mini_shoes
+    = render :partial=>'mini_shoe', :collection=>@shoes
+  #end

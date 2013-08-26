@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.13'
 gem "haml"
 gem 'mini_magick'
+gem 'kaminari'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -29,8 +30,8 @@ group :test do
 	gem 'factory_girl_rails'
 	gem 'rspec-rails','2.14.0'
 	gem 'rspec-rails-controller'
-  gem 'capybara', '2.1.0'
-  gem 'capybara-webkit', '1.0.0'
+    gem 'capybara', '2.1.0'
+    gem 'capybara-webkit', '1.0.0'
 end
 
 
