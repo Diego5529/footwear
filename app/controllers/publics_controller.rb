@@ -2,7 +2,7 @@
 class PublicsController < ApplicationController
   respond_to :html
   layout :layout
-  after_filter :expire_cache, :only=>[:update,:destroy]
+  #after_filter :expire_cache, :only=>[:update,:destroy]
 
   def layout
     if session[:admin]
@@ -41,6 +41,8 @@ class PublicsController < ApplicationController
       @client = Client.new(params[:client])     
       if !@client.save
         flash[:notice] = 'Não consegui salvar'
+      else
+        redirect_to '/'
       end
     end
   end
@@ -51,10 +53,9 @@ class PublicsController < ApplicationController
       @enterprise = Enterprise.new(params[:enterprise])
       if !@enterprise.save
         flash[:notice] = 'Não consegui salvar'
+      else
+        redirect_to '/'
       end
-    end
-    if @enterprise.save
-      redirect_to '/'
     end
   end
 
@@ -97,7 +98,7 @@ class PublicsController < ApplicationController
 
   def cart
     @cart = find_cart
-    @shoes = Shoe.page(params[:page]).per(6)
+    @shoes = Shoe.page(params[:page]).per(5)
   end
 
   def remove

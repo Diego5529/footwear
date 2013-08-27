@@ -1,5 +1,5 @@
-%h1
-  Cadastro de empresa
+%body
+  %h1 Cadastro de empresa
 #style
   = form_for(@enterprise,{url: '/register_enterprise'}) do |f|
     - if @enterprise.errors.any?
