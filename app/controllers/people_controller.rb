@@ -77,8 +77,9 @@ class PeopleController < ApplicationController
       end
     end
     rescue => e
-    flash[:notice] = e.to_s  
-    render :edit
+      @person = Person.new(params[:person].except(:plain_password))
+      flash[:notice] = e.to_s  
+      render :edit
   end
 
   def destroy

@@ -21,17 +21,14 @@ class ShoesController < ApplicationController
     @enterprise = Enterprise.find(session[:id]) rescue nil
   end
 
-  # GET /shoes/1
   def show
     @shoe = Shoe.find(params[:id])
   end
 
-  # GET /shoes/new
   def new
     @shoe = Shoe.new
   end
 
-  # GET /shoes/1/edit
   def edit
     @shoe = Shoe.find(params[:id])
     return if !check_allowed_shoe(@shoe)
@@ -61,7 +58,6 @@ class ShoesController < ApplicationController
     end
   end 
 
-  # DELETE /shoes/1
   def destroy
     @shoe = Shoe.find(params[:id])
     @shoe.destroy

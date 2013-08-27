@@ -11,6 +11,11 @@ class EnterprisesController < ApplicationController
 
   def index
     @enterprises = Enterprise.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @enterprises }
+    end
   end
 
   # GET /enterprises/1

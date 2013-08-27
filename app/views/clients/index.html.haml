@@ -1,32 +1,33 @@
-%h1 Lista de clientes
-%table{:align => 'center'}
-  %tr
-    %th Nome
-    %th E-mail
-    %th CPF
-    %th CEP
-    %th Endereço
-    %th Numero
-    %th Bairro
-    %th Cidade
-    %th Estado
-    %th Telepone
-    %th{:colspan => '3'} Opções
-  - @clients.each do |client|
+#content
+  %h1 Lista de clientes
+  %table{:align => 'center'}
     %tr
-      %td= client.name
-      %td= client.email
-      %td= client.cpf
-      %td= client.zip_code
-      %td= client.address
-      %td= client.number
-      %td= client.district
-      %td= client.city
-      %td= client.state
-      %td= client.telephone
-      %td= link_to 'Detalhes', client
-      %td= link_to 'Editar', edit_client_path(client)
-      %td= link_to 'Apagar', client, method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' }
+      %th Nome
+      %th E-mail
+      %th CPF
+      %th CEP
+      %th Endereço
+      %th Numero
+      %th Bairro
+      %th Cidade
+      %th Estado
+      %th Telepone
+      %th{:colspan => '3'} Opções
+    - @clients.each do |client|
+      %tr
+        %td= client.name
+        %td= client.email
+        %td= client.cpf
+        %td= client.zip_code
+        %td= client.address
+        %td= client.number
+        %td= client.district
+        %td= client.city
+        %td= client.state
+        %td= client.telephone
+        %td= link_to 'Detalhes', client
+        %td= link_to 'Editar', edit_client_path(client)
+        %td= link_to 'Apagar', client, method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' }
+    %hr
   %hr
-%hr
-%h2= link_to 'Novo cliente', new_client_path
+  %h2= link_to 'Novo cliente', new_client_path

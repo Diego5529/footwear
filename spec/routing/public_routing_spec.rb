@@ -37,11 +37,11 @@ describe PublicsController do
     end
 
     it 'should have edit_enterprise' do
-      post('/edit_enterprise').should route_to('publics#edit_enterprise')
+      post('/editar_empresa').should route_to('publics#editar_empresa')
     end
 
     it 'should have edit_client' do
-      post('/edit_client').should route_to('publics#edit_client')
+      post('/editar_cliente').should route_to('publics#editar_cliente')
     end
 
     it 'should have confirm request' do

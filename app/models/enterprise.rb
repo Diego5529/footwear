@@ -5,7 +5,7 @@ class Enterprise < ActiveRecord::Base
   
   attr_protected :password
   attr_accessible :zip_code, :cnpj, :telephone, :address, :city, :district, :email, :name, :name_social, :number, :plain_password, :state, :data_stream, :permit
-  validates :name, presence: true,uniqueness: true, length: { maximum: 50 }
+  validates :name, presence: true,uniqueness: true, length: { maximum: 50 }, format: {with: /^[a-zA-ZçÇà-úÀ-Ú ]+$/}
   validates :name_social, presence: true, uniqueness: true, length: { maximum: 50 }
   validates :email, presence: true, uniqueness: true, format: {with:/^[a-zA-Z0-9_.-]+@([a-zA-Z0-9_ -]+\.)+[a-zA-Z]{2,4}$/}
   validates :password, presence: true, length: {maximum: 15}, length: {minimum: 5}

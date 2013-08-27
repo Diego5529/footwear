@@ -8,27 +8,31 @@
         - @shoe.errors.full_messages.each do |msg|
           %li= msg
   .field
-    = f.label :name
+    = f.label 'Informações obrigatórias*'
     %br/
-    = f.text_field :name
-  .field
-    = f.label :value
     %br/
-    = f.text_field :value
   .field
-    = f.label :audience
+    = f.label 'Nome*'
+    %br/
+    = f.text_field :name 
+  .field
+    = f.label 'Valor*'
+    %br/
+    = f.text_field :value 
+  .field
+    = f.label 'Público Alvo*'
     %br/
     = select(:shoe, :audience, options_for_select([['Infantil'],['Adulto'],['Social'],['Esporte']]))
   .field
-    = f.label :stock
+    = f.label 'Estoque*'
     %br/
     = f.number_field :stock
   .field
-    = f.label :registed
+    = f.label 'Data de registro'
     %br/
     = f.date_select :registed,start_year: Date.today.year, end_year: Date.today.year
   .field
-    = f.label :description
+    = f.label 'Descrição*'
     %br/
     = f.text_area :description
   .field

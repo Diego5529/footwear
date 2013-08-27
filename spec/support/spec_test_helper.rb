@@ -7,8 +7,8 @@ module SpecTestHelper
 
   def login(person)
     person = Person.find(person.id)
-    request.session[:id] = person.id
-    request.session[:admin] = person.admin
+    session[:id] = person.id
+    session[:admin] = person.admin
   end
 
   def login_client(client)

@@ -2,6 +2,7 @@
 class PublicsController < ApplicationController
   respond_to :html
   layout :layout
+  after_filter :expire_cache, :only=>[:update,:destroy]
 
   def layout
     if session[:admin]
@@ -15,6 +16,10 @@ class PublicsController < ApplicationController
     else
       'public'
     end
+  end
+
+  def expire_cache
+    expire_page controller: "public", action: "shoe", id: @shoe.id
   end
 
   def index
@@ -34,11 +39,10 @@ class PublicsController < ApplicationController
     @client = Client.new
     if request.post?
       @client = Client.new(params[:client])     
-      end
       if !@client.save
         flash[:notice] = 'Não consegui salvar'
       end
-      redirect_to '/'
+    end
   end
 
   def sellers
@@ -48,12 +52,14 @@ class PublicsController < ApplicationController
       if !@enterprise.save
         flash[:notice] = 'Não consegui salvar'
       end
-      redirect_to '/'  
+    end
+    if @enterprise.save
+      redirect_to '/'
     end
   end
 
   def shoe
-    @enterprises = Enterprise.all
+    @enterprises = Enterprise.order("name ASC").all
   	@shoe = Shoe.find(params[:id]) rescue nil
   	if !@shoe
   		flash[:notice] = 'Shoe not Found'
@@ -63,7 +69,7 @@ class PublicsController < ApplicationController
   	end
 
   def enterprise
-    @enterprises = Enterprise.all
+    @enterprises = Enterprise.order("name ASC").all
 		@enterprise = Enterprise.find(params[:id]) rescue nil
 		if !@enterprise
 			flash[:notice] = 'Enterprise Not Found'
@@ -100,14 +106,14 @@ class PublicsController < ApplicationController
     @cart - @shoe
   end
 
-  def edit_enterprise
+  def editar_empresa
     @enterprise = Enterprise.find(session[:id])
     if request.put?
-      flash[:notice] = 'Dados atualizados' if      @enterprise.update_attributes(params[:enterprise])
+      flash[:notice] = 'Dados atualizados' if @enterprise.update_attributes(params[:enterprise])
     end
   end
 
-  def edit_client
+  def editar_cliente
     @client = Client.find(session[:id])
     if request.put?
       flash[:notice] = 'Dados atualizados' if @client.update_attributes(params[:client])
@@ -128,7 +134,6 @@ class PublicsController < ApplicationController
         flash[:notice] = 'Erro: #{e}'
         false
   end
-
 
   def close_order    
     @order = create_order

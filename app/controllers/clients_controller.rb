@@ -6,14 +6,18 @@ class ClientsController < ApplicationController
   before_filter :logged?
 
   def logged?
-  redirect_to '/people' if !session[:admin]
+    redirect_to '/people' if !session[:admin]
   end
   
   def index
     @clients = Client.all
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @clients }
+    end
   end
 
-  # GET /clients/1
   def show
     @client = Client.find(params[:id])
 
@@ -36,8 +40,8 @@ class ClientsController < ApplicationController
   # POST /clients
   def create
     begin
-    @client = Client.new(params[:client])
-    
+    @client = Client.new(params[:client])   
+     
     respond_to do |format|
       if @client.save
         format.html { redirect_to @client, notice: 'Client was successfully created.' }
@@ -67,7 +71,7 @@ class ClientsController < ApplicationController
         format.json { render json: @client.errors, status: :unprocessable_entity }
       end
     end
-    
+
     rescue => e
       @client = Client.new(params[:client].except(:plain_password))
       flash[:notice] = e.to_s
@@ -78,7 +82,6 @@ class ClientsController < ApplicationController
   def destroy
     @client = Client.find(params[:id])
     @client.destroy
-
     respond_to do |format|
       format.html { redirect_to clients_url }
       format.json { head :no_content }

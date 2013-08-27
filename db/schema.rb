@@ -61,11 +61,13 @@ ActiveRecord::Schema.define(:version => 20130809181103) do
     t.decimal  "value",      :precision => 10, :scale => 2
     t.datetime "created_at",                                :null => false
     t.datetime "updated_at",                                :null => false
+    t.integer  "quantity"
   end
 
   create_table "orders", :force => true do |t|
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+    t.integer  "quantity"
   end
 
   create_table "people", :force => true do |t|
@@ -84,6 +86,9 @@ ActiveRecord::Schema.define(:version => 20130809181103) do
     t.datetime "updated_at", :null => false
   end
 
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
   create_table "shoes", :force => true do |t|
     t.string   "name"
     t.decimal  "value",         :precision => 10, :scale => 2
@@ -91,10 +96,11 @@ ActiveRecord::Schema.define(:version => 20130809181103) do
     t.string   "audience"
     t.date     "registed"
     t.text     "description"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
+    t.datetime "created_at",                                                  :null => false
+    t.datetime "updated_at",                                                  :null => false
     t.integer  "stock"
-    t.integer  "lock_version"
+    t.integer  "lock_version",                                 :default => 0
+    t.boolean  "permit"
   end
 
 end

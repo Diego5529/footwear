@@ -49,15 +49,15 @@ describe PeopleController do
   describe 'PUT Update' do
     it 'located the requested admin' do
       login(@admin)
-      put :update, id: @admin.id
+      put :update, {id: @admin.id}, {id: @admin.id, admin: @admin.admin}
       assigns(:person).should eq @admin
     end
 
-     it 'changes the admin attributes' do
-        login(@admin)
-        put :update, { id: @admin, person: { name: 'Administrador' } }
-        assigns(:person).should eq @admin
-      end
+    it 'changes the admin attributes' do
+      login(@admin)
+      put :update, { id: @admin, person: { name: 'Administrador' } }
+      assigns(:person).should eq @admin
+    end
 
     context 'with invalid attributes' do
       it 'render the edit view' do
