@@ -27945,3 +27945,181 @@ Served asset /publics.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-27 17:48:16 -0300
 Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/register" for 127.0.0.1 at 2013-08-27 18:00:14 -0300
+Processing by PublicsController#buyers as HTML
+  Rendered publics/buyers.html.haml within layouts/public (52.4ms)
+Completed 500 Internal Server Error in 191ms
+
+ActionView::Template::Error (couldn't find file 'jquery.jqzoom'
+  (in /home/bootcamp/footwear/footwear/app/assets/stylesheets/application.css:4)):
+    2: %html
+    3:   %head
+    4:     %title -Footwear-
+    5:     = stylesheet_link_tag    'application', media: 'all'
+    6:     = javascript_include_tag 'application'
+    7:     = csrf_meta_tags
+    8:   %body
+  app/views/layouts/public.html.haml:5:in `_app_views_layouts_public_html_haml___1026740255120754233_27078580'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-27 18:00:17 -0300
+Processing by PublicsController#index as HTML
+  [1m[36mShoe Load (0.1ms)[0m  [1mSELECT "shoes".* FROM "shoes" ORDER BY random()[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" ORDER BY name ASC
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 15 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 42 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 40 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 45 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 16 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 44 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  Rendered publics/_mini_shoe.html.haml (235.9ms)
+  Rendered publics/index.html.haml within layouts/public (263.2ms)
+Completed 500 Internal Server Error in 306ms
+
+ActionView::Template::Error (couldn't find file 'jquery.jqzoom'
+  (in /home/bootcamp/footwear/footwear/app/assets/stylesheets/application.css:4)):
+    2: %html
+    3:   %head
+    4:     %title -Footwear-
+    5:     = stylesheet_link_tag    'application', media: 'all'
+    6:     = javascript_include_tag 'application'
+    7:     = csrf_meta_tags
+    8:   %body
+  app/views/layouts/public.html.haml:5:in `_app_views_layouts_public_html_haml___1026740255120754233_27078580'
+
+
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /usr/local/rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-27 18:01:19 -0300
+Processing by PublicsController#index as HTML
+  [1m[36mShoe Load (0.2ms)[0m  [1mSELECT "shoes".* FROM "shoes" ORDER BY random()[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" ORDER BY name ASC
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 16 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 44 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 45 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 15 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 42 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 40 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  Rendered publics/_mini_shoe.html.haml (7.8ms)
+  Rendered publics/index.html.haml within layouts/public (8.6ms)
+WARNING on line 28 of /home/bootcamp/footwear/footwear/app/assets/stylesheets/admins.css.sass:
+This selector doesn't have any properties and will not be rendered.
+Compiled admins.css  (60ms)  (pid 2779)
+WARNING on line 2 of /home/bootcamp/footwear/footwear/app/assets/stylesheets/publics.css.sass:
+This selector doesn't have any properties and will not be rendered.
+WARNING on line 52 of /home/bootcamp/footwear/footwear/app/assets/stylesheets/publics.css.sass:
+This selector doesn't have any properties and will not be rendered.
+Compiled publics.css  (40ms)  (pid 2779)
+Compiled application.css  (108ms)  (pid 2779)
+Compiled jquery.js  (1ms)  (pid 2779)
+Compiled jquery_ujs.js  (0ms)  (pid 2779)
+Compiled application.js  (42ms)  (pid 2779)
+Completed 200 OK in 195ms (Views: 192.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-08-27 18:01:20 -0300
+Served asset /application.js - 200 OK (19ms)
+
+
+Started GET "/assets/publics.css?body=1" for 127.0.0.1 at 2013-08-27 18:01:20 -0300
+Served asset /publics.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2013-08-27 18:01:20 -0300
+Served asset /admins.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-27 18:01:20 -0300
+Served asset /application.css - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-27 18:01:20 -0300
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-27 18:01:20 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/shoe/44" for 127.0.0.1 at 2013-08-27 18:01:22 -0300
+Processing by PublicsController#shoe as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mEnterprise Load (0.3ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" ORDER BY name ASC[0m
+  [1m[35mShoe Load (0.2ms)[0m  SELECT "shoes".* FROM "shoes" WHERE "shoes"."id" = ? LIMIT 1  [["id", "44"]]
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 16 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 44 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 16 AND "images"."imageable_type" = 'Enterprise' LIMIT 1[0m
+  Rendered publics/shoe.html.haml within layouts/public (8.9ms)
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2013-08-27 18:01:22 -0300
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/publics.css?body=1" for 127.0.0.1 at 2013-08-27 18:01:22 -0300
+Served asset /publics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-27 18:01:22 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-27 18:01:22 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-27 18:01:22 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-08-27 18:01:25 -0300
+Processing by PublicsController#index as HTML
+  [1m[35mShoe Load (0.3ms)[0m  SELECT "shoes".* FROM "shoes" ORDER BY random()
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" ORDER BY name ASC[0m
+  [1m[35mEnterprise Load (0.2ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 15 LIMIT 1
+  [1m[36mImage Load (0.2ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 42 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 40 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 45 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 16 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 44 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  Rendered publics/_mini_shoe.html.haml (8.5ms)
+  Rendered publics/index.html.haml within layouts/public (9.5ms)
+Completed 200 OK in 18ms (Views: 14.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/assets/admins.css?body=1" for 127.0.0.1 at 2013-08-27 18:01:25 -0300
+Served asset /admins.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-08-27 18:01:25 -0300
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-08-27 18:01:25 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/publics.css?body=1" for 127.0.0.1 at 2013-08-27 18:01:25 -0300
+Served asset /publics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-08-27 18:01:25 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
