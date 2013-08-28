@@ -17,7 +17,7 @@ FactoryGirl.define do
     district 'Centro'
     state 'Rio de Janeiro'
     city 'Birigui'
-    telephone '12345678910'
+    telephone '01897748686'
     cnpj '13.456.789/8745-66'
   end
 
@@ -31,7 +31,7 @@ FactoryGirl.define do
     district 'Centro'
     state 'Rio de Janeiro'
     city 'Birigui'
-    telephone '12345678910'
+    telephone '01897748686'
     cpf '445.153.509-83'
   end
 

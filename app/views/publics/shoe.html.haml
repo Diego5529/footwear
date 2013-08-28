@@ -12,9 +12,7 @@
       #end
       = link_to @shoe.enterprise.name, "/enterprise/#{@shoe.enterprise.id}"
       %ul
-        / %a.jqzoom{href: "/enterprise/#{enterprise.id}",rel: "gal1",title: "MYTITLE",class: "jqzoom"}
-        /   %img{src: "http://localhost:3000#{@shoe.image}",title: "IMAGE TITLE",class: "jqzoom"}
-        = image_tag(@shoe.image,width: 250, class: ".jqzoom", title: 'MYTITLE')
+        = image_tag(@shoe.image,width: 250)
       %h5{ style: "color:black"}
         = simple_format(@shoe.description)
       %span.shoe_value= number_to_currency(@shoe.value)

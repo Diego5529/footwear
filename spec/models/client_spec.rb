@@ -131,12 +131,17 @@ describe Client do
   #telephone
   it "could have empty telephone" do
     client = FactoryGirl.build(:client, telephone: '')
+    client.should_not be_valid
+  end
+
+  it "could have empty telephone" do
+    client = FactoryGirl.build(:client, telephone: '01897748686')
     client.should be_valid
   end
 
   it "could have nil telephone" do
     client = FactoryGirl.build(:client, telephone: nil)
-    client.should be_valid
+    client.should_not be_valid
   end
 
   it "telephone should has 11 caracters" do

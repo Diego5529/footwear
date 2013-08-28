@@ -17,7 +17,7 @@ class ShoesController < ApplicationController
   end
 
   def index
-    @shoes = session[:admin] ? Shoe.all : Shoe.by_enterprise(session[:id])
+    @shoes = session[:admin] ? Shoe.order("enterprise_id ASC").all : Shoe.by_enterprise(session[:id])
     @enterprise = Enterprise.find(session[:id]) rescue nil
   end
 
@@ -49,7 +49,7 @@ class ShoesController < ApplicationController
 
     respond_to do |format|
       if @shoe.update_attributes(params[:shoe])
-        format.html { redirect_to @shoe, notice: 'Shoe was successfully updated.' }
+        format.html { redirect_to @shoe, notice: 'Cadastrado com Sucesso!.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }

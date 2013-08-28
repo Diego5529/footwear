@@ -1,0 +1,12 @@
+%div#shoes_rand
+  #shoes
+    = releases.name
+  %h2
+    = link_to releases.enterprise.name, "/enterprise/#{releases.enterprise.id}"
+    = image_tag(releases.image,height: 210, :class => "img")
+    = simple_format(releases.audience)
+    %span.shoe_value= number_to_currency(releases.value)
+    %br/
+    = link_to "Mais Detalhes","/shoe/#{releases.id}",class: "more_shoe_info"
+    %br/
+    %br/

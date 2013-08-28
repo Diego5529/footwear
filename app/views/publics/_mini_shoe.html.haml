@@ -3,7 +3,7 @@
     = mini_shoe.name
   %h2
     = link_to mini_shoe.enterprise.name, "/enterprise/#{mini_shoe.enterprise.id}"
-    = image_tag(mini_shoe.image,height: 210, :class => "img")
+    = image_tag(mini_shoe.image,height: 150, :class => "img")
     = simple_format(mini_shoe.audience)
     %span.shoe_value= number_to_currency(mini_shoe.value)
     %br/

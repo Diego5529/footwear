@@ -11,7 +11,7 @@ class Enterprise < ActiveRecord::Base
   validates :name_social, presence: true, uniqueness: true, length: { maximum: 50 }
   validates :email, presence: true, uniqueness: true, format: {with:/^[a-zA-Z0-9_.-]+@([a-zA-Z0-9_ -]+\.)+[a-zA-Z]{2,4}$/}
   validates :password, presence: true, length: {maximum: 15}, length: {minimum: 5}
-  validates :telephone, allow_blank: true, allow_nil: true, length:{is: 11}
+  validates :telephone, presence: true, allow_blank: true, allow_nil: true, length:{is: 11}
   validates :address, presence: true, length:{maximum: 200}
   validates :number, presence: true, length:{maximum: 5}
   validates :district, presence: true, length:{maximum: 50}
