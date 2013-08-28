@@ -11,8 +11,8 @@
         = link_to "Início", '/'
         = link_to 'Editar dados', 'editar_cliente'
         = link_to 'Carrinho', 'cart',class: 'cart'
-      %h1
-        CATALOG FOOTWEAR
+      #name_page
+        %h1 CATALOG FOOTWEAR
       #message  
         Bem vindo, #{session[:name]}!
         = link_to 'Sair', 'logout_user'

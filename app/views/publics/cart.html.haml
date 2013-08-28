@@ -24,6 +24,8 @@
 %hr
 %h1 Outros Produtos
 = paginate @shoes
-#mini_shoes
+#mini_shoes{style: "margin-left: 10px;"}
   = render :partial=>"mini_shoe", :collection=>@shoes
+#end{style: "float: right;"}
+  = paginate @shoes
 #end

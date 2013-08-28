@@ -98,7 +98,7 @@ class PublicsController < ApplicationController
 
   def cart
     @cart = find_cart
-    @shoes = Shoe.page(params[:page]).per(5)
+    @shoes = Shoe.page(params[:page]).per(4).order("created_at DESC")
   end
 
   def remove
