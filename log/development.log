@@ -66681,3 +66681,358 @@ Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.8ms)
 
 Started GET "/assets/publics.css?body=1" for 192.168.0.55 at 2013-08-28 16:53:34 -0300
 Served asset /publics.css - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 192.168.0.140 at 2013-08-29 08:42:54 -0300
+Processing by PublicsController#index as HTML
+  [1m[36mShoe Load (0.2ms)[0m  [1mSELECT "shoes".* FROM "shoes" ORDER BY random()[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" ORDER BY name ASC
+  [1m[36mShoe Load (0.2ms)[0m  [1mSELECT "shoes".* FROM "shoes" ORDER BY created_at DESC LIMIT 4[0m
+  [1m[35mEnterprise Load (0.2ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 20 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 50 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 16 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 49 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 48 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 15 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 47 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  Rendered publics/_releases.html.haml (87.1ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 45 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 48 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 40 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 16 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 49 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 15 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 42 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 20 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 50 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 15 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 47 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 16 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 44 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  Rendered publics/_mini_shoe.html.haml (10.7ms)
+  Rendered publics/index.html.haml within layouts/public (133.2ms)
+WARNING on line 28 of /home/bootcamp/footwear/footwear/app/assets/stylesheets/admins.css.sass:
+This selector doesn't have any properties and will not be rendered.
+Compiled admins.css  (55ms)  (pid 3178)
+WARNING on line 2 of /home/bootcamp/footwear/footwear/app/assets/stylesheets/publics.css.sass:
+This selector doesn't have any properties and will not be rendered.
+WARNING on line 37 of /home/bootcamp/footwear/footwear/app/assets/stylesheets/publics.css.sass:
+This selector doesn't have any properties and will not be rendered.
+WARNING on line 82 of /home/bootcamp/footwear/footwear/app/assets/stylesheets/publics.css.sass:
+This selector doesn't have any properties and will not be rendered.
+Compiled publics.css  (45ms)  (pid 3178)
+Compiled application.css  (108ms)  (pid 3178)
+Compiled jquery.js  (1ms)  (pid 3178)
+Compiled jquery_ujs.js  (0ms)  (pid 3178)
+Compiled application.js  (38ms)  (pid 3178)
+Completed 200 OK in 429ms (Views: 349.8ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/assets/admins.css?body=1" for 192.168.0.140 at 2013-08-29 08:42:55 -0300
+Served asset /admins.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/publics.css?body=1" for 192.168.0.140 at 2013-08-29 08:42:55 -0300
+Served asset /publics.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.0.140 at 2013-08-29 08:42:55 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.0.140 at 2013-08-29 08:42:55 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.0.140 at 2013-08-29 08:42:55 -0300
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 192.168.0.140 at 2013-08-29 08:42:55 -0300
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/cart" for 192.168.0.140 at 2013-08-29 08:43:24 -0300
+Processing by PublicsController#cart as HTML
+  Rendered publics/_cart_item.html.haml (0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shoes" 
+  [1m[36mShoe Load (0.2ms)[0m  [1mSELECT "shoes".* FROM "shoes" ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 20 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 50 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 16 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 49 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 48 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 15 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 47 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  Rendered publics/_mini_shoe.html.haml (6.4ms)
+  Rendered publics/cart.html.haml within layouts/public (44.9ms)
+Completed 200 OK in 52ms (Views: 49.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/admins.css?body=1" for 192.168.0.140 at 2013-08-29 08:43:24 -0300
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.0.140 at 2013-08-29 08:43:24 -0300
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.0.140 at 2013-08-29 08:43:24 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 192.168.0.140 at 2013-08-29 08:43:24 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/publics.css?body=1" for 192.168.0.140 at 2013-08-29 08:43:24 -0300
+Served asset /publics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.0.140 at 2013-08-29 08:43:24 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/cart?page=2" for 192.168.0.140 at 2013-08-29 08:43:32 -0300
+Processing by PublicsController#cart as HTML
+  Parameters: {"page"=>"2"}
+  Rendered publics/_cart_item.html.haml (0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shoes" 
+  [1m[36mShoe Load (0.2ms)[0m  [1mSELECT "shoes".* FROM "shoes" ORDER BY created_at DESC LIMIT 4 OFFSET 4[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 45 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 16 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 44 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 15 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 42 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 40 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  Rendered publics/_mini_shoe.html.haml (6.1ms)
+  Rendered publics/cart.html.haml within layouts/public (30.5ms)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/admins.css?body=1" for 192.168.0.140 at 2013-08-29 08:43:32 -0300
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/publics.css?body=1" for 192.168.0.140 at 2013-08-29 08:43:32 -0300
+Served asset /publics.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.0.140 at 2013-08-29 08:43:32 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.0.140 at 2013-08-29 08:43:32 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 192.168.0.140 at 2013-08-29 08:43:32 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.0.140 at 2013-08-29 08:43:32 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/cart" for 192.168.0.140 at 2013-08-29 08:43:34 -0300
+Processing by PublicsController#cart as HTML
+  Rendered publics/_cart_item.html.haml (0.0ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "shoes" 
+  [1m[36mShoe Load (0.1ms)[0m  [1mSELECT "shoes".* FROM "shoes" ORDER BY created_at DESC LIMIT 4 OFFSET 0[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 20 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 50 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 16 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 49 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 48 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 15 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 47 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  Rendered publics/_mini_shoe.html.haml (5.9ms)
+  Rendered publics/cart.html.haml within layouts/public (17.9ms)
+Completed 200 OK in 24ms (Views: 22.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/publics.css?body=1" for 192.168.0.140 at 2013-08-29 08:43:34 -0300
+Served asset /publics.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/admins.css?body=1" for 192.168.0.140 at 2013-08-29 08:43:34 -0300
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.0.140 at 2013-08-29 08:43:34 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 192.168.0.140 at 2013-08-29 08:43:34 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.0.140 at 2013-08-29 08:43:34 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.0.140 at 2013-08-29 08:43:34 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/shoe/49" for 192.168.0.140 at 2013-08-29 08:44:02 -0300
+Processing by PublicsController#shoe as HTML
+  Parameters: {"id"=>"49"}
+  [1m[35mEnterprise Load (0.1ms)[0m  SELECT "enterprises".* FROM "enterprises" ORDER BY name ASC
+  [1m[36mShoe Load (0.1ms)[0m  [1mSELECT "shoes".* FROM "shoes" WHERE "shoes"."id" = ? LIMIT 1[0m  [["id", "49"]]
+  [1m[35mEnterprise Load (0.2ms)[0m  SELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 16 LIMIT 1
+  [1m[36mImage Load (0.1ms)[0m  [1mSELECT "images".* FROM "images" WHERE "images"."imageable_id" = 49 AND "images"."imageable_type" = 'Shoe' LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 16 AND "images"."imageable_type" = 'Enterprise' LIMIT 1
+  Rendered publics/shoe.html.haml within layouts/public (26.8ms)
+Completed 200 OK in 33ms (Views: 31.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/admins.css?body=1" for 192.168.0.140 at 2013-08-29 08:44:02 -0300
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/publics.css?body=1" for 192.168.0.140 at 2013-08-29 08:44:02 -0300
+Served asset /publics.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.0.140 at 2013-08-29 08:44:02 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.0.140 at 2013-08-29 08:44:02 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.0.140 at 2013-08-29 08:44:02 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 192.168.0.140 at 2013-08-29 08:44:02 -0300
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started POST "/buy/49" for 192.168.0.140 at 2013-08-29 08:44:04 -0300
+Processing by PublicsController#buy as HTML
+  Parameters: {"authenticity_token"=>"4pEeXG6AnHg9SpPpFmzywq1BzcV7ADVAmAuAqj3rMCg=", "id"=>"49"}
+  [1m[36mShoe Load (0.0ms)[0m  [1mSELECT "shoes".* FROM "shoes" WHERE "shoes"."id" = ? LIMIT 1[0m  [["id", "49"]]
+Redirected to http://localhost:3000/cart
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/cart" for 192.168.0.140 at 2013-08-29 08:44:04 -0300
+Processing by PublicsController#cart as HTML
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 49 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  Rendered publics/_cart_item.html.haml (6.2ms)
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "shoes" [0m
+  [1m[35mShoe Load (0.1ms)[0m  SELECT "shoes".* FROM "shoes" ORDER BY created_at DESC LIMIT 4 OFFSET 0
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 20 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 50 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 16 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 49 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 48 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 15 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 47 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  Rendered publics/_mini_shoe.html.haml (5.5ms)
+  Rendered publics/cart.html.haml within layouts/public (21.1ms)
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/admins.css?body=1" for 192.168.0.140 at 2013-08-29 08:44:04 -0300
+Served asset /admins.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.0.140 at 2013-08-29 08:44:04 -0300
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.0.140 at 2013-08-29 08:44:04 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/publics.css?body=1" for 192.168.0.140 at 2013-08-29 08:44:04 -0300
+Served asset /publics.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 192.168.0.140 at 2013-08-29 08:44:04 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.0.140 at 2013-08-29 08:44:04 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/remove/49" for 192.168.0.140 at 2013-08-29 08:44:30 -0300
+Processing by PublicsController#remove as JS
+  Parameters: {"id"=>"49"}
+  [1m[36mShoe Load (0.1ms)[0m  [1mSELECT "shoes".* FROM "shoes" WHERE "shoes"."id" = ? LIMIT 1[0m  [["id", "49"]]
+  Rendered publics/remove.js.erb (0.5ms)
+Completed 200 OK in 46ms (Views: 44.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 192.168.0.140 at 2013-08-29 08:44:32 -0300
+Processing by PublicsController#index as HTML
+  [1m[35mShoe Load (0.3ms)[0m  SELECT "shoes".* FROM "shoes" ORDER BY random()
+  [1m[36mEnterprise Load (0.3ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" ORDER BY name ASC[0m
+  [1m[35mShoe Load (0.3ms)[0m  SELECT "shoes".* FROM "shoes" ORDER BY created_at DESC LIMIT 4
+  [1m[36mEnterprise Load (0.2ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 20 LIMIT 1[0m
+  [1m[35mImage Load (0.2ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 50 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 16 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 49 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 48 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mEnterprise Load (0.1ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 15 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 47 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  Rendered publics/_releases.html.haml (9.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 45 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 16 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 44 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 20 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 50 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 16 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 49 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 40 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 15 LIMIT 1[0m
+  [1m[35mImage Load (0.1ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 42 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 15 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 47 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "enterprises".* FROM "enterprises" WHERE "enterprises"."id" = 13 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "images".* FROM "images" WHERE "images"."imageable_id" = 48 AND "images"."imageable_type" = 'Shoe' LIMIT 1
+  Rendered publics/_mini_shoe.html.haml (9.5ms)
+  Rendered publics/index.html.haml within layouts/public (20.3ms)
+Completed 200 OK in 30ms (Views: 25.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/admins.css?body=1" for 192.168.0.140 at 2013-08-29 08:44:32 -0300
+Served asset /admins.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.0.140 at 2013-08-29 08:44:32 -0300
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.0.140 at 2013-08-29 08:44:32 -0300
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 192.168.0.140 at 2013-08-29 08:44:32 -0300
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.0.140 at 2013-08-29 08:44:32 -0300
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/publics.css?body=1" for 192.168.0.140 at 2013-08-29 08:44:32 -0300
+Served asset /publics.css - 304 Not Modified (0ms)
