@@ -24,6 +24,19 @@ describe PeopleController do
     end
   end
 
+  # describe 'show' do
+
+  #   it 'should show admin' do
+  #     get :show, id: @admin, admin: true
+  #     response.should be_success
+  #   end
+
+  #   it 'renders the show view' do
+  #     get :show, id: @admin
+  #     response.should render_template :show
+  #   end
+  # end
+
   describe "GET new" do
 
     it 'assigns a new object to the person' do
@@ -47,8 +60,27 @@ describe PeopleController do
   end
 
   describe 'PUT Update' do
-    it 'located the requested admin' do
+    it 'changes the person attributes' do
       login(@admin)
+      put :update, { id: @admin, person: { name: 'Test Foo' } }
+      assigns(:person).should eq @admin
+    end
+
+    context 'with invalid attributes' do
+      it 'render the edit view' do
+        put :update, { id: @admin, person: { name: 'Administrador' } }
+        response.should_not be_success
+      end
+    end
+
+      it 'should not changes the person attributes' do
+        put :update, { id: @admin, person: {name: 'foo@', name: 'Test Bar' } }
+        @admin.reload
+        @admin.name.should == 'Administrador'
+      end
+
+    it 'located the requested admin' do
+      #login(@admin)
       put :update, {id: @admin.id}, {id: @admin.id, admin: @admin.admin}
       assigns(:person).should eq @admin
     end
@@ -66,7 +98,7 @@ describe PeopleController do
       end
     end
 
-      it 'should not changes the enterprise attributes' do
+      it 'should not changes the admin attributes' do
         put :update, { id: @admin, person: {name: 'Administrador' } }
         @admin.reload
         @admin.name.should == 'Administrador'

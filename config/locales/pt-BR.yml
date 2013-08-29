@@ -1,5 +1,13 @@
 pt-BR:
   Browse: "Procurar"
+  name: "Nome*"
+  value: "Preço*"
+  audience: "Publico Alvo* "
+  stock: "Estoque"
+  registed: "Data de Registro* "
+  description: "Descrição do produto* "
+  image_title: "Titulo da Imagem"
+  data_stream: "Produto*"
   date:
     abbr_day_names:
     - Dom
@@ -254,14 +262,14 @@ pt-BR:
     shoe: "Shoe"
   attributes:
     shoe:
-      name: "Nome:* "
+      name: "Nome*"
       value: "Preço* "
       audience: "Publico Alvo* "
       stock: "Estoque* "
       registed: "Data de Registro* "
-      description: "Descrição do produto:* "
+      description: "Descrição do produto* "
       image_title: "Titulo da Imagem"
-      data_stream: "Produto"
+      data_stream: "Produto*"
   views:
     pagination:
       previous: "&laquo; Anterior"

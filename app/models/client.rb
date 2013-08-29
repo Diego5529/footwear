@@ -18,6 +18,7 @@ class Client < ActiveRecord::Base
   validates :zip_code, presence: true, format:{with:/^[\d]{5}-[\d]{3}$/}
 
   has_one :order
+  belongs_to :order
 
   def plain_password=(password)
     return if password.blank?

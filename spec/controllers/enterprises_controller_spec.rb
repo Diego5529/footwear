@@ -5,6 +5,7 @@ describe EnterprisesController do
   let(:valid_attributes) { {} }
 
   before :each do
+    @admin = FactoryGirl.create(:person)
     @enterprise = FactoryGirl.create(:enterprise)
   end
 
@@ -40,16 +41,16 @@ describe EnterprisesController do
 
   describe 'PUT Update' do
     # it 'located the requested enterprise' do
-    #   login_user(@enterprise)
-    #   put :update, id: @enterprise.id
-    #   assigns(:enterprise).should eq @enterprise
+    #   #login_user(@enterprise)
+    #   put :update, {id: @enterprise.id}, {id: @enterprise.id, enterprise: @enterprise.enterprise}
+    #   assigns(:enterprise).should eq @admin
     # end
 
-    #  it 'changes the enterprise attributes' do
-    #     login_user(@enterprise)
-    #     put :update, { id: @enterprise, enterprise: { email: 'foo@bar.com' } }
-    #     assigns(:enterprise).should eq @enterprise
-    #   end
+    it 'changes the enterprise attributes' do
+      login(@enterprise)
+      put :update, { id: @enterprise, enterprise: { name: 'Administrador' } }
+      assigns(:enterprise).should eq @enterprise
+    end
 
     context 'with invalid attributes' do
       it 'render the edit view' do

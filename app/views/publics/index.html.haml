@@ -14,6 +14,10 @@
     #mini_shoes
       = render partial: 'mini_shoe', collection: @shoes
   #end
+  #bestsellers
+    %h1 Mais vendidos
+    #mini_shoes{style: "margin-left:20px"}
+      = render partial: 'bestsellers', collection: @bestsellers
 #end
 %hr
 %a{href: 'login'} Administrador

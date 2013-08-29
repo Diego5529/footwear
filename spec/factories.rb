@@ -41,6 +41,7 @@ FactoryGirl.define do
     audience 'Infantil'
     stock 10
     description 'Text decription'
+    enterprise_id 1
    end
 
 end

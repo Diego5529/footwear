@@ -27,6 +27,7 @@ class PublicsController < ApplicationController
     @shoes = Shoe.order('random()').all
     @enterprises = Enterprise.order("name ASC").all
     @releases = Shoe.order("created_at DESC").first(4)
+    @bestsellers = Shoe.order("lock_version DESC").first(2)
   end
 
   def logout
@@ -148,11 +149,11 @@ class PublicsController < ApplicationController
     find_cart.clear  
     if @order.total > 0
       Thread.new do
-      OrderMailer.order_created(@order,@email).deliver
-      grouped = @order.grouped_by_enterprise
-      for email,items,client in grouped
-        OrderMailer.enterprise_order_created(email,items).deliver
-      end
+        OrderMailer.order_created(@order,@email).deliver
+        grouped = @order.grouped_by_enterprise
+        for email,items,client in grouped
+          OrderMailer.enterprise_order_created(email,items).deliver
+        end
       end
       redirect_to :action=>:order, :id=>@order.id
     else
