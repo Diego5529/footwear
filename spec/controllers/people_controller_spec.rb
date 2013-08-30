@@ -53,10 +53,20 @@ describe PeopleController do
   end
 
   describe 'POST create' do
+
+    context 'with invalid attributes' do
+      it 'render the new view' do
+        put :new, { id: @admin, person: { name: 'Administrador' } }
+        response.should_not be_success
+      end
+    end
+
     it 'create person with valid attributes' do
       post :create, person: FactoryGirl.attributes_for(:person)
       response.should
     end
+
+
   end
 
   describe 'PUT Update' do

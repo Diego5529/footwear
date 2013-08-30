@@ -5,19 +5,21 @@
     - for enterprise in @enterprises
       %li
         = link_to enterprise.name, "/enterprise/#{enterprise.id}"
-  #realeases      
+  #realeases    
     %h1 Lançamentos
-    #mini_shoes{style: "margin-left: 20px"}
-      = render partial: 'releases', collection: @releases
-  #content1
+    #center_style
+      #mini_shoes
+        = render partial: 'releases', collection: @releases
+  #bestsellers
+    %h1 Mais vendidos
+    #center_style 
+      #mini_shoes
+        = render partial: 'bestsellers', collection: @bestsellers
+  #content_all
     %h1 Produtos cadastrados
     #mini_shoes
       = render partial: 'mini_shoe', collection: @shoes
   #end
-  #bestsellers
-    %h1 Mais vendidos
-    #mini_shoes{style: "margin-left:20px"}
-      = render partial: 'bestsellers', collection: @bestsellers
 #end
 %hr
 %a{href: 'login'} Administrador

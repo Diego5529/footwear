@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 describe 'login' do
-
+  
   it 'should not login with wrong pass' do
     person = FactoryGirl.create(:person)
     visit login_path

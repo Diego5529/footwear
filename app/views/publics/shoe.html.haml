@@ -5,8 +5,8 @@
     - for enterprise in @enterprises
       %li
         = link_to enterprise.name, "/enterprise/#{enterprise.id}"
-  %h1 Detalhes do Produto
-  #content1
+  #content_shoe
+    %h1 Detalhes do Produto
     #show_details
       = @shoe.name
       #end

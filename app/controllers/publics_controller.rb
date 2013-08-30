@@ -27,7 +27,7 @@ class PublicsController < ApplicationController
     @shoes = Shoe.order('random()').all
     @enterprises = Enterprise.order("name ASC").all
     @releases = Shoe.order("created_at DESC").first(4)
-    @bestsellers = Shoe.order("lock_version DESC").first(2)
+    @bestsellers = Shoe.order("lock_version DESC").first(4)
   end
 
   def logout
@@ -100,7 +100,7 @@ class PublicsController < ApplicationController
 
   def cart
     @cart = find_cart
-    @shoes = Shoe.page(params[:page]).per(4).order("created_at DESC")
+    @shoes = Shoe.page(params[:page]).per(5).order("lock_version DESC")
   end
 
   def remove
@@ -130,12 +130,12 @@ class PublicsController < ApplicationController
       for item in cart.items
         order.order_items << OrderItem.new(shoe_id: item.id, value: item.value)
         item.reload.sell
-      end
-        order.save ? order : nil
-      end
-      rescue Exception => e
-        flash[:notice] = 'Erro: #{e}'
-        false
+    end
+      order.save ? order : nil
+    end
+    rescue Exception => e
+      flash[:notice] = 'Erro: #{e}'
+      false
   end
 
   def close_order    

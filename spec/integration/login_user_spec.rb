@@ -52,11 +52,11 @@ describe 'Enterprise' do
   it 'should login' do
     enterprise = FactoryGirl.create(:enterprise)
     visit login_user_path
+    Enterprise.auth(enterprise.email, enterprise.password)
     #visit '/shoes'
     fill_in 'email', with: enterprise.email
     fill_in 'password', with: enterprise.password
     click_button 'Entrar'
-    Enterprise.auth(enterprise.email, enterprise.password)
     p current_path
   end
 end
