@@ -2,7 +2,7 @@
 class PublicsController < ApplicationController
   respond_to :html
   layout :layout
-  #after_filter :expire_cache, :only=>[:update,:destroy]
+  after_filter :expire_cache, :only=>[:update,:destroy]
 
   def layout
     if session[:admin]

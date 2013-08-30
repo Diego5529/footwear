@@ -12,21 +12,11 @@ class PeopleController < ApplicationController
   # GET /people
   def index
     @people = Person.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @people }
-    end
   end
 
   # GET /people/1
   def show    
     @person = Person.find(params[:id])
-
-    # respond_to do |format|
-    #   format.html # show.html.erb
-    #   format.json { render json: @person }
-    # end
   end
 
   # GET /people/new

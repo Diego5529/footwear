@@ -1,6 +1,6 @@
 # encoding: utf-8
 class OrderMailer < ActionMailer::Base
-  default from: 'footwear@gmail.com'
+  default from: 'footwear.clickjogos@gmail.com'
 
   def order_created(order,email)
     @order = order
@@ -13,5 +13,4 @@ class OrderMailer < ActionMailer::Base
   	@items = items
   	mail(to: email, subject: 'Encomenda para sua empresa!' )
   end
-
 end

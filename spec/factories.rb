@@ -49,4 +49,9 @@ FactoryGirl.define do
     value 9.99
   end
 
+  factory :order do
+    shoe_id 1
+    value 9.99
+  end
+
 end

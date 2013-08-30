@@ -40,8 +40,8 @@ Footwear::Application.configure do
     address:              'smtp.gmail.com', 
     port:                 587, 
     domain:               'gmail.com', 
-    user_name:            'diego.6.souza@gmail.com', 
-    password:             '55292345', 
+    user_name:            'footwear.clickjogos@gmail.com', 
+    password:             'clickjogos', 
     authentication:       'plain', 
     enable_starttls_auto: true  
 }

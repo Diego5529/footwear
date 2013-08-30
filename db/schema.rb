@@ -102,5 +102,4 @@ ActiveRecord::Schema.define(:version => 20130809181103) do
     t.integer  "lock_version",                                 :default => 0
     t.boolean  "permit"
   end
-
 end
