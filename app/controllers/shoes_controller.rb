@@ -13,7 +13,9 @@ class ShoesController < ApplicationController
   end
 
   def logged?
-    redirect_to '/login_user' if !session[:id]
+    if !session[:permit] && !session[:admin]
+      redirect_to '/login_user'
+    end
   end
 
   def index
@@ -40,6 +42,7 @@ class ShoesController < ApplicationController
 
   def create
     @shoe = currentEnterprise.shoes.new(params[:shoe])
+    @shoe.permit = true
     @shoe.save
     respond_with @shoe
   end

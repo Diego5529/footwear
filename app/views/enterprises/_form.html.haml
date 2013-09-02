@@ -59,6 +59,10 @@
     %br/
     = f.text_field :telephone
   .field
+    = f.label 'Permição'
+    %br/
+    = f.check_box :permit, {:checked=>true}
+  .field
     = render partial: 'shared/image_field', locals: { f: f }
   %br
   .actions

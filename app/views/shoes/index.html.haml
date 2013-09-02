@@ -11,6 +11,7 @@
     %th Estoque
     %th Data
     %th Descrição
+    %th Permição
     %th{:colspan => '3'} Opções
   - @shoes.each do |shoe|
     %tr
@@ -21,6 +22,7 @@
       %td= shoe.stock
       %td= shoe.registed
       %td= shoe.description
+      %td= shoe.permit
       %td= link_to 'Detalhes', shoe
       %td= link_to 'Editar', edit_shoe_path(shoe)
       %td= link_to 'Apagar', shoe, method: :delete, data: { confirm: 'Tem certeza?' }

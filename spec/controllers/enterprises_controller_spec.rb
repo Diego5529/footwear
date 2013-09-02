@@ -41,9 +41,9 @@ describe EnterprisesController do
 
   describe 'PUT Update' do
     # it 'located the requested enterprise' do
-    #   #login_user(@enterprise)
-    #   put :update, {id: @enterprise.id}, {id: @enterprise.id, enterprise: @enterprise.enterprise}
-    #   assigns(:enterprise).should eq @admin
+    #   login(@enterprise)
+    #   put :update, {id: @enterprise.id}, {id: @enterprise.id, email: @enterprise.email}
+    #   assigns(:enterprise).should eq @enterprise
     # end
 
     it 'changes the enterprise attributes' do

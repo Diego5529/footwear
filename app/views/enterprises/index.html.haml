@@ -12,6 +12,7 @@
     %th Estado
     %th Cidade
     %th Telefone
+    %th Permição
     %th{:colspan => '3'} Opções
   - @enterprises.each do |enterprise|
     %tr
@@ -26,6 +27,7 @@
       %td= enterprise.state
       %td= enterprise.city
       %td= enterprise.telephone
+      %td= enterprise.permit
       %td= link_to 'Detalhes', enterprise
       %td= link_to 'Editar', edit_enterprise_path(enterprise)
       %td= link_to 'Apagar', enterprise, method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' }

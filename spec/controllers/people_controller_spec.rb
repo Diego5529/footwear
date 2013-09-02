@@ -8,7 +8,7 @@ describe PeopleController do
     @admin = FactoryGirl.create(:person)
   end
 
-   describe "GET index" do
+  describe "GET index" do
     context "when not logged" do
       it 'should redirect to login' do
         get :index
@@ -23,20 +23,7 @@ describe PeopleController do
         response.should redirect_to login_path
     end
   end
-
-  # describe 'show' do
-
-  #   it 'should show admin' do
-  #     get :show, id: @admin, admin: true
-  #     response.should be_success
-  #   end
-
-  #   it 'renders the show view' do
-  #     get :show, id: @admin
-  #     response.should render_template :show
-  #   end
-  # end
-
+  
   describe "GET new" do
 
     it 'assigns a new object to the person' do
@@ -90,7 +77,7 @@ describe PeopleController do
       end
 
     it 'located the requested admin' do
-      #login(@admin)
+      login(@admin)
       put :update, {id: @admin.id}, {id: @admin.id, admin: @admin.admin}
       assigns(:person).should eq @admin
     end

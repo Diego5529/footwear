@@ -8,7 +8,7 @@ class PublicsController < ApplicationController
     if session[:admin]
       'admin'
     end
-    if !session[:admin] && session[:permit]
+    if !session[:admin] && session[:permit] && session[:id]
       'enterprise'
     end
     if !session[:admin] && session[:id]
@@ -24,16 +24,18 @@ class PublicsController < ApplicationController
 
   def index
     flash[:notice] = '#{params[:redirect]} não encontrado' if params[:redirect]
-    @shoes = Shoe.order('random()').all
-    @enterprises = Enterprise.order("name ASC").all
-    @releases = Shoe.order("created_at DESC").first(4)
-    @bestsellers = Shoe.order("lock_version DESC").first(4)
+    @shoes = Shoe.order('random()').where("permit = ?", true).all
+    @enterprises = Enterprise.order("name ASC").where("permit = ?", true).all
+    @releases = Shoe.order("created_at DESC").where("permit = ?", true).first(4)
+    @bestsellers = Shoe.order("lock_version DESC").where("permit = ?", true).first(4)
   end
 
   def logout
     session[:id]  = nil
     session[:email]  = nil
     session[:name] = nil
+    session[:admin] = nil
+    session[:permit] = nil
     redirect_to '/'
   end
 
@@ -53,6 +55,7 @@ class PublicsController < ApplicationController
     @enterprise = Enterprise.new
     if request.post?
       @enterprise = Enterprise.new(params[:enterprise])
+      @enterprise.permit = true
       if !@enterprise.save
         flash[:notice] = 'Não consegui salvar'
       else
@@ -62,7 +65,7 @@ class PublicsController < ApplicationController
   end
 
   def shoe
-    @enterprises = Enterprise.order("name ASC").all
+    @enterprises = Enterprise.order("name ASC").where("permit = ?", true).all
   	@shoe = Shoe.find(params[:id]) rescue nil
   	if !@shoe
   		flash[:notice] = 'Sapato não encontrado'
@@ -72,14 +75,14 @@ class PublicsController < ApplicationController
   	end
 
   def enterprise
-    @enterprises = Enterprise.order("name ASC").all
+    @enterprises = Enterprise.order("name ASC").where("permit = ?", true).all
 		@enterprise = Enterprise.find(params[:id]) rescue nil
 		if !@enterprise
 			flash[:notice] = 'Empresa não encontrada.'
 			redirect_to '/'
 			return
 		end
-		@shoes = Shoe.by_enterprise(@enterprise.id)
+		@shoes = Shoe.by_enterprise(@enterprise.id).order("name ASC").where("permit = ?", true)
 	end
 
   def buy
@@ -100,7 +103,7 @@ class PublicsController < ApplicationController
 
   def cart
     @cart = find_cart
-    @shoes = Shoe.page(params[:page]).per(5).order("lock_version DESC")
+    @shoes = Shoe.page(params[:page]).per(5).where("permit = ?", true).order("lock_version DESC")
   end
 
   def remove

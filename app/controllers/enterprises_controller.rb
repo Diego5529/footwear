@@ -42,7 +42,6 @@ class EnterprisesController < ApplicationController
   def create
     begin
     @enterprise = Enterprise.new(params[:enterprise])
-
     respond_to do |format|
       if @enterprise.save
         format.html { redirect_to @enterprise, notice: 'Enterprise was successfully created.' }

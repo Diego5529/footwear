@@ -22,7 +22,7 @@ class LoginUserController < ApplicationController
         flash[:notice] = 'Digite a senha'
         return
       end
-
+      
       enterprise = Enterprise.auth(email,password)
       if  !enterprise 
         flash[:notice] = 'Falha no login'
@@ -42,6 +42,7 @@ class LoginUserController < ApplicationController
     session[:id]  = nil
     session[:email]  = nil
     session[:name] = nil
+    session[:permit] = nil
     redirect_to '/'
   end
 

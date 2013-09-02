@@ -24,6 +24,9 @@
 %p
   %b Descrição:
   = @shoe.description
+%p
+  %b Permição:
+  = @shoe.permit
 = link_to 'Editar', edit_shoe_path(@shoe)
 |
 \#{link_to 'Voltar', shoes_path}
