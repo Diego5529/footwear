@@ -21,8 +21,11 @@ class Enterprise < ActiveRecord::Base
   validates :zip_code, presence: true, format:{with:/^[\d]{5}-[\d]{3}$/}
   validate :permit
 
+  before_create :check_logo
+
   has_many :shoes, dependent: :destroy
   has_one  :image, dependent: :destroy, as: :imageable
+  
   belongs_to :order
 
   def plain_password=(password)
@@ -46,11 +49,9 @@ class Enterprise < ActiveRecord::Base
   def self.for_select
     self.all.map {|p| [p.name,p.id]}
   end
-
-  before_create :check_image
   
   private
-  def check_image
-    errors.add(:data_stream,'deve ter imagem') if self.data_stream.to_s.size<1
+  def check_logo
+    errors.add(:data_stream,"deve ter logo") if self.data_stream.to_s.size<1
   end
 end

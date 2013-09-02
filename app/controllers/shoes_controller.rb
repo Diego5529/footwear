@@ -64,11 +64,6 @@ class ShoesController < ApplicationController
   def destroy
     @shoe = Shoe.find(params[:id])
     @shoe.destroy
-
-    respond_to do |format|
-      format.html { redirect_to shoes_url }
-      format.json { head :no_content }
-    end
   end
 
   private

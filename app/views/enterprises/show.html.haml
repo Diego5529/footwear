@@ -1,4 +1,5 @@
 %h1 Detalhes da Empresa
+- presenter = EnterprisePresenter.new(@enterprise)
 %p#notice= notice
 %p
   %img{:src => @enterprise.image}
@@ -38,6 +39,9 @@
 %p
   %b Telefone:
   = @enterprise.telephone
+%p
+  %b Permição:
+  = presenter.permit
 %br/
 = link_to 'Editar', edit_enterprise_path(@enterprise)
 |

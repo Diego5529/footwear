@@ -1,4 +1,5 @@
 %h1 Detalhes do Administrador
+- presenter = PersonPresenter.new(@person)
 %p#notice= notice
 %p
   %b
@@ -6,8 +7,8 @@
     \:
   = @person.name
 %p
-  %b Admin:
-  = @person.admin
+  %b Administrador:
+  = presenter.admin
 = link_to 'Editar', edit_person_path(@person)
 |
 \#{link_to 'Voltar', people_path}

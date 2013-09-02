@@ -11,21 +11,11 @@ class EnterprisesController < ApplicationController
 
   def index
     @enterprises = Enterprise.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @enterprises }
-    end
   end
 
   # GET /enterprises/1
   def show
     @enterprise = Enterprise.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @enterprise }
-    end
   end
 
   # GET /enterprises/new
@@ -82,11 +72,6 @@ class EnterprisesController < ApplicationController
   def destroy
     @enterprise = Enterprise.find(params[:id])
     @enterprise.destroy
-
-    respond_to do |format|
-      format.html { redirect_to enterprises_url }
-      format.json { head :no_content }
-    end
   end
 
   def image_title_ref

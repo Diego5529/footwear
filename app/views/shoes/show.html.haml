@@ -1,5 +1,6 @@
 %section#shoe_detail
   %h1 Detalhes do Produto
+- presenter = ShoePresenter.new(@shoe)
 %p#notice= notice
 %p
   %img{:src => @shoe.image}
@@ -26,7 +27,7 @@
   = @shoe.description
 %p
   %b Permição:
-  = @shoe.permit
+  = presenter.permit
 = link_to 'Editar', edit_shoe_path(@shoe)
 |
 \#{link_to 'Voltar', shoes_path}

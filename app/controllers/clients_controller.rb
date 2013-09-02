@@ -11,20 +11,10 @@ class ClientsController < ApplicationController
   
   def index
     @clients = Client.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @clients }
-    end
   end
 
   def show
     @client = Client.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @client }
-    end
   end
 
   # GET /clients/new
@@ -82,9 +72,5 @@ class ClientsController < ApplicationController
   def destroy
     @client = Client.find(params[:id])
     @client.destroy
-    respond_to do |format|
-      format.html { redirect_to clients_url }
-      format.json { head :no_content }
-    end
   end
 end
