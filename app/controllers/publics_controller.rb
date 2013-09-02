@@ -66,24 +66,24 @@ class PublicsController < ApplicationController
 
   def shoe
     @enterprises = Enterprise.order("name ASC").where("permit = ?", true).all
-  	@shoe = Shoe.find(params[:id]) rescue nil
-  	if !@shoe
-  		flash[:notice] = 'Sapato não encontrado'
-  		redirect_to'/'
-  		return
-  		end
-  	end
+    @shoe = Shoe.find(params[:id]) rescue nil
+    if !@shoe
+      flash[:notice] = 'Sapato não encontrado'
+      redirect_to'/'
+      return
+      end
+  end
 
   def enterprise
     @enterprises = Enterprise.order("name ASC").where("permit = ?", true).all
-		@enterprise = Enterprise.find(params[:id]) rescue nil
-		if !@enterprise
-			flash[:notice] = 'Empresa não encontrada.'
-			redirect_to '/'
-			return
-		end
-		@shoes = Shoe.by_enterprise(@enterprise.id).order("name ASC").where("permit = ?", true)
-	end
+    @enterprise = Enterprise.find(params[:id]) rescue nil
+    if !@enterprise
+      flash[:notice] = 'Empresa não encontrada.'
+      redirect_to '/'
+      return
+    end
+    @shoes = Shoe.by_enterprise(@enterprise.id).order("name ASC").where("permit = ?", true)
+  end
 
   def buy
     @shoe = Shoe.find(params[:id]) rescue nil

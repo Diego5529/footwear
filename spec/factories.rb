@@ -53,5 +53,4 @@ FactoryGirl.define do
     shoe_id 1
     value 9.99
   end
-
 end
