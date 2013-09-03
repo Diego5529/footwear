@@ -24,10 +24,10 @@ class PublicsController < ApplicationController
 
   def index
     flash[:notice] = '#{params[:redirect]} não encontrado' if params[:redirect]
-    @shoes = Shoe.order('random()').where("permit = ?", true).all
     @enterprises = Enterprise.order("name ASC").where("permit = ?", true).all
     @releases = Shoe.order("created_at DESC").where("permit = ?", true).first(4)
     @bestsellers = Shoe.order("lock_version DESC").where("permit = ?", true).first(4)
+    @shoes = Shoe.order('random()').where("permit = ?", true).all
   end
 
   def logout
@@ -103,7 +103,7 @@ class PublicsController < ApplicationController
 
   def cart
     @cart = find_cart
-    @shoes = Shoe.page(params[:page]).per(5).where("permit = ?", true).order("lock_version DESC")
+    @shoes = Shoe.page(params[:page]).per(5).order("lock_version DESC").where("permit = ?", true)
   end
 
   def remove

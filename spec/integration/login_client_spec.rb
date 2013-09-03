@@ -4,6 +4,10 @@ describe 'Client' do
 
   describe 'login_client' do
 
+    before do
+      @shoes = create(:shoe, :permit == true)
+    end
+
     it 'should not login with wrong pass' do
       client = create(:client)
       visit login_client_path
@@ -49,13 +53,13 @@ describe 'Client' do
       expect(page).to have_text("Falha no login")
     end
 
-    # it 'should login' do
-    #   client = create(:client)
-    #   visit login_client_path
-    #   fill_in 'email', with: client.email
-    #   fill_in 'password', with: '123456'
-    #   click_button 'Entrar'
-    #   p current_path
-    # end
+    it 'should login' do
+      client = create(:client)
+      visit login_client_path
+      fill_in 'email', with: client.email
+      fill_in 'password', with: '123456'
+      click_button 'Entrar'
+      p current_path
+    end
   end
 end

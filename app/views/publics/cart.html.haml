@@ -7,7 +7,7 @@
     -if @cart.total == 0
       Seu carrinho está vazio, selecione um produto.
       %h2
-        = link_to "Início", "/"
+        = link_to "Início", "/",class: 'Inicio'
     -if @cart.total > 0
       Total:
       %span#cart_total.shoe_value= number_to_currency(@cart.total)
