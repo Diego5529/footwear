@@ -54,7 +54,11 @@ describe Person do
   end
 
   it "should have attribute to return empty password" do
-    FactoryGirl.build(:person, plain_password: '').should be_valid
+    FactoryGirl.build(:person, plain_password: '').should_not be_valid
+  end
+
+  it "should have attribute to return empty password" do
+    FactoryGirl.build(:person, plain_password: nil).should_not be_valid
   end
 
   it "should save the encrypt password in password" do

@@ -2,14 +2,37 @@ require 'spec_helper'
 
 describe ShoesController do
 
-  let(:valid_attributes) { {} } 
-  let(:valid_session) { {} }
+  let(:valid_attributes) { {} }
 
   before :each do
+    @admin = FactoryGirl.create(:person)
+    @enterprise = FactoryGirl.create(:enterprise)
     @shoe = FactoryGirl.create(:shoe)
   end
 
-   describe "GET index" do
+  describe 'Show' do
+
+    it 'should show shoe' do
+      login(@admin)
+        get :show, id: @shoe
+        response.should be_success
+    end
+
+    it 'renders the show view' do
+      login(@admin)
+        get :show, id: @shoe
+        response.should render_template :show
+    end
+
+    context "when not admin" do
+      it 'should redirect to login again' do
+        get :show, id: @shoe
+        response.should redirect_to login_user_path
+      end
+    end
+  end
+
+  describe "GET index" do
     context "when not logged" do
       it 'should redirect to login' do
         get :index
@@ -39,46 +62,63 @@ describe ShoesController do
   end
 
   describe 'POST create' do
+    
     it 'create shoe with valid attributes' do
-        post :create, shoe: FactoryGirl.attributes_for(:shoe)
-        response.should
+      post :create, shoe: FactoryGirl.attributes_for(:shoe)
+      response.should
+    end
+
+    it 'should create shoe' do
+    login_user(@enterprise)
+      @new_shoe = Shoe.new(@shoe.attributes.except("id", "created_at","updated_at"))
+      @new_shoe.name = "NewTitle"
+      should_not eq('Shoe.count') do
+        post :create, shoe: { name: @shoe.name}
       end
+      response.should be_success
+    end
   end
 
-  # it "should show shoe" do
-  #   get :show, id: @shoe
-  #   assert_response :success
-  # end
+  describe 'DELETE destroy' do
 
-  # it "should get edit" do
-  #   get :edit, id: @shoe
-  #   assert_response :success
-  # end
+    it 'admin to deletes the shoe' do
+      login(@admin)
+      expect{
+        delete :destroy, id: @shoe
+        }.to change(Shoe, :count).by(-1)
+    end
 
-  # describe 'DELETE destroy' do
+    it 'shoe to not deletes the shoe' do
+      login(@admin)
+      expect{
+        delete :destroy, id: @shoe.id
+      }.to_not change(Shoe, :count).by(0)
+    end
 
-  #   it 'admin to deletes the shoe' do
-  #     login_user(@shoe)
-  #     expect{
-  #       delete :destroy, id: @shoe.id}.to change(Person, :count).by(-1)
-  #   end
+    it 'redirects to index' do
+      login(@admin)
+      delete :destroy, id: @shoe
+      response.should redirect_to shoe_path
+    end
 
-  #   it 'shoe to not deletes the shoe' do
-  #     login_user(@shoe)
-  #     expect{
-  #       delete :destroy, id: @shoe.id
-  #     }.to_not change(Person, :count).by(-1)
-  #   end
+    it 'enterprise to deletes the shoe' do
+      login(@enterprise)
+      expect{
+        delete :destroy, id: @shoe
+        }.to change(Shoe, :count).by(-1)
+    end
 
-  #   it 'redirects to index' do
-  #     login_user(@shoe)
-  #     delete :destroy, id: @shoe
-  #     response.should redirect_to :index
-  #   end
-  # end
+    it 'shoe to not deletes the shoe' do
+      login(@enterprise)
+      expect{
+        delete :destroy, id: @shoe.id
+      }.to_not change(Shoe, :count).by(0)
+    end
 
-  private
-  def filtered_attributes(shoe)
-    shoe.attributes.except("id","created_at","updated_at","password","admin")
+    it 'redirects to index' do
+      login(@enterprise)
+      delete :destroy, id: @shoe
+      response.should redirect_to shoe_path
+    end
   end
 end

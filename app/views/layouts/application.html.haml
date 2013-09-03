@@ -8,14 +8,15 @@
   %body
     %header
       #menu_top
-        = link_to "Início", '/',class: 'bottom'
-        = link_to 'Quero comprar', 'register',class: 'bottom'
-        = link_to 'Quero vender', 'register_enterprise',class: 'bottom'
-        = link_to 'Sou Cliente', 'login_client',class: 'bottom'
-        = link_to 'Sou Empresa', 'login_user',class: 'bottom'
+        = link_to "Início", '/'
+        = link_to 'Quero comprar', 'register'
+        = link_to 'Quero vender', 'register_enterprise'
+        = link_to 'Sou Cliente', 'login_client'
+        = link_to 'Sou Empresa', 'login_user'
         = link_to 'Carrinho', 'cart',class: 'cart'
       #name_page
-        %h1 CATALOG FOOTWEAR
+        %h1
+          CATALOG FOOTWEAR
     = yield
     %hr
     %footer

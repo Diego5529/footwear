@@ -4,7 +4,7 @@ class Enterprise < ActiveRecord::Base
   include ImageSaver
   
   attr_protected :password
-  attr_accessible :zip_code, :cnpj, :telephone, :address, :city, :district, :email, :name, :name_social, :number, :plain_password, :state, :data_stream, :permit
+  attr_accessible :zip_code, :cnpj, :telephone,:password, :address, :city, :district, :email, :name, :name_social, :number, :plain_password, :state, :data_stream, :permit
   
   #validates
   validates :name, presence: true,uniqueness: true, length: { maximum: 50 }, format: {with: /^[a-zA-ZçÇà-úÀ-Ú ]+$/}

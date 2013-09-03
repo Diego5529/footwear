@@ -2,7 +2,7 @@ FactoryGirl.define do
   
   factory :person do
     name 'Administrador'
-    password '123456'
+    plain_password '123456'
     admin true
    end
    
@@ -10,7 +10,7 @@ FactoryGirl.define do
     name 'Empresa'
     name_social 'Nome Social'
     email 'foo@bar.com'
-    password '123456'
+    plain_password '123456'
     zip_code '16200-000'
     address 'rua ssss, 885'
     number '1332'
@@ -24,7 +24,7 @@ FactoryGirl.define do
   factory :client do
     name 'Usuario'
     email 'foo@bar.com'
-    password '123456'
+    plain_password '123456'
     zip_code '16200-000'
     address 'Rua ssss'
     number '1332'
@@ -45,11 +45,6 @@ FactoryGirl.define do
    end
 
   factory :order_item do
-    shoe_id 1
-    value 9.99
-  end
-
-  factory :order do
     shoe_id 1
     value 9.99
   end

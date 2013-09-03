@@ -25,6 +25,11 @@ class ShoesController < ApplicationController
 
   def show
     @shoe = Shoe.find(params[:id])
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @shoe }
+    end
   end
 
   def new
@@ -64,11 +69,11 @@ class ShoesController < ApplicationController
   def destroy
     @shoe = Shoe.find(params[:id])
     @shoe.destroy
-  end
 
-  private
-  def load_enterprises
-    @enterprises = Enterprise.for_select
+    respond_to do |format|
+      format.html { redirect_to shoe_url }
+      format.json { head :no_content }
+    end
   end
 
   def image_title_ref
@@ -81,5 +86,10 @@ class ShoesController < ApplicationController
       return false
     end
     true
+  end
+
+  private
+  def load_enterprises
+    @enterprises = Enterprise.for_select
   end
 end

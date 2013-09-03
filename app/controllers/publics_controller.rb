@@ -1,10 +1,10 @@
 # encoding: utf-8
 class PublicsController < ApplicationController
   respond_to :html
-  layout :layout
+  layout :layout_public
   after_filter :expire_cache, :only=>[:update,:destroy]
 
-  def layout
+  def layout_public
     if session[:admin]
       'admin'
     end

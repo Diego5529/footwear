@@ -91,7 +91,7 @@ describe Enterprise do
   end
 
   it "should have attribute to return empty password" do
-     FactoryGirl.build(:enterprise, plain_password: '').should be_valid
+     FactoryGirl.build(:enterprise, plain_password: '').should_not be_valid
   end
 
   it "should save the encrypt password in password" do

@@ -5,6 +5,7 @@ describe ClientsController do
   let(:valid_attributes) { {} }
 
   before :each do
+    @admin = FactoryGirl.create(:person)
     @client = FactoryGirl.create(:client)
   end
 
@@ -13,6 +14,28 @@ describe ClientsController do
       it 'should redirect to login' do
         get :index
         response.should
+      end
+    end
+  end
+
+  describe 'Show' do
+
+    it 'should show admin' do
+      login(@admin)
+        get :show, id: @client
+        response.should be_success
+    end
+
+    it 'renders the show view' do
+      login(@client)
+        get :show, id: @client
+        response.should render_template :show
+    end
+
+    context "when not admin" do
+      it 'should redirect to login again' do
+        get :show, id: @client
+        response.should redirect_to people_path
       end
     end
   end
@@ -36,20 +59,30 @@ describe ClientsController do
       post :create, client: FactoryGirl.attributes_for(:client)
       response.should_not render_template :new
     end
+
+    it 'should create client' do
+    login(@admin)
+      @new_client = Client.new(@client.attributes.except("id", "created_at","updated_at"))
+      @new_client.name = "NewClient"
+      should_not eq('Client.count') do
+        post :create, client: { name: @client.name}
+      end
+      response.should be_success
+    end
   end
 
   describe 'PUT Update' do
-    # it 'located the requested client' do
-    #   login_client(@client)
-    #   put :update, id: @client
-    #   assigns(:client).should eq @client
-    # end
+    it 'located the requested client' do
+      login(@admin)
+      put :update, id: @client
+      assigns(:client).should eq @client
+    end
 
-    #  it 'changes the client attributes' do
-    #     login_client(@client)
-    #     put :update, { id: @client, client: { name: 'Usuario' } }
-    #     assigns(:client).should eq @client
-    #   end
+     it 'changes the client attributes' do
+        login(@admin)
+        put :update, { id: @client, client: { name: 'Usuario' } }
+        assigns(:client).should eq @client
+      end
 
     context 'with invalid attributes' do
       it 'render the edit view' do
@@ -86,10 +119,5 @@ describe ClientsController do
       delete :destroy, id: @client
       response.should redirect_to "/people"
     end
-  end
-
-  private
-  def filtered_attributes(client)
-    client.attributes.except("id","created_at","updated_at","password")
   end
 end

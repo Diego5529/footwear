@@ -43,7 +43,7 @@ describe 'login' do
     person = create(:person)
     visit login_path
     fill_in 'name', with: 'Login'
-    fill_in 'password', with: person.password
+    fill_in 'password', with: '123456'
     click_button 'Entrar'
     expect(page).to have_text("Falha no login")
   end
@@ -52,15 +52,15 @@ describe 'login' do
     person = FactoryGirl.create(:person)
     visit login_path
     fill_in 'name', with: person.name
-    fill_in 'password', with: person.password
+    fill_in 'password', with: '123456'
     click_button 'Entrar'
     p current_path
   end
 
   it 'should login' do
-    client = create(:client)
+    person = create(:person)
     visit login_path
-    fill_in 'name', with: 'Diego'
+    fill_in 'name', with: 'Administrador'
     fill_in 'password', with: '123456'
     click_button 'Entrar'
     p current_path

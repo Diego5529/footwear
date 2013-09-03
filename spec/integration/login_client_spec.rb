@@ -49,13 +49,13 @@ describe 'Client' do
       expect(page).to have_text("Falha no login")
     end
 
-    it 'should login' do
-      client = create(:client)
-      visit login_client_path
-      fill_in 'email', with: client.email
-      fill_in 'password', with: client.password
-      click_button 'Entrar'
-      p current_path
-    end
+    # it 'should login' do
+    #   client = create(:client)
+    #   visit login_client_path
+    #   fill_in 'email', with: client.email
+    #   fill_in 'password', with: '123456'
+    #   click_button 'Entrar'
+    #   p current_path
+    # end
   end
 end

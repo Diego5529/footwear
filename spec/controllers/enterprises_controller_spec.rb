@@ -18,6 +18,28 @@ describe EnterprisesController do
     end
   end
 
+  describe 'Show' do
+
+    it 'should show admin' do
+      login(@admin)
+        get :show, id: @enterprise
+        response.should be_success
+    end
+
+    it 'renders the show view' do
+      login(@enterprise)
+        get :show, id: @enterprise
+        response.should render_template :show
+    end
+
+    context "when not admin" do
+      it 'should redirect to login again' do
+        get :show, id: @enterprise
+        response.should redirect_to people_path
+      end
+    end
+  end
+
   describe "GET new" do
     it 'assigns a new object to the enterprise' do
       get :new
@@ -37,17 +59,27 @@ describe EnterprisesController do
         post :create, enterprise: FactoryGirl.attributes_for(:enterprise)
         response.should_not render_template :new
       end
+
+    it 'should create enterprise' do
+    login(@admin)
+      @new_enterprise = Enterprise.new(@enterprise.attributes.except("id", "created_at","updated_at"))
+      @new_enterprise.name = "NewEnterprise"
+      should_not eq('Enterprise.count') do
+        post :create, enterprise: { name: @enterprise.name}
+      end
+      response.should be_success
+    end
   end
 
   describe 'PUT Update' do
-    # it 'located the requested enterprise' do
-    #   login(@enterprise)
-    #   put :update, {id: @enterprise.id}, {id: @enterprise.id, email: @enterprise.email}
-    #   assigns(:enterprise).should eq @enterprise
-    # end
+    it 'located the requested enterprise' do
+      login(@admin)
+      put :update, { id: @enterprise, enterprise: { name: 'Test Foo' } }
+      assigns(:enterprise).should eq @enterprise
+    end
 
     it 'changes the enterprise attributes' do
-      login(@enterprise)
+      login(@admin)
       put :update, { id: @enterprise, enterprise: { name: 'Administrador' } }
       assigns(:enterprise).should eq @enterprise
     end
