@@ -5,8 +5,35 @@
     - for enterprise in @enterprises
       %li
         = link_to enterprise.name, "/enterprise/#{enterprise.id}"
-  #content_shoe
-    %h1 Produtos da #{@enterprise.name}
-    #mini_shoes
-      = render :partial=>'mini_shoe', :collection=>@shoes
+  #enterprise
+    %h1
+      = @enterprise.name
+    #center_style  
+      #enterprise_total_info
+        = image_tag(@enterprise.image,width: 150,height: 150)
+        #enterprise_details_info
+          E-mail:
+          = @enterprise.email
+          %br/
+          Cidade:
+          = @enterprise.city
+          %br/
+          Estado:
+          = @enterprise.state
+          %br/
+          Endereço:
+          = @enterprise.address
+          ,
+          = @enterprise.number
+          %br/
+          Bairro:
+          = @enterprise.district
+          %br/
+          Telefone:
+          = @enterprise.telephone
+  #content_shoe_enterprise  
+    %h1 Produtos da #{@enterprise.name} 
+    #center_style   
+      #mini_shoes
+        = render :partial=>'mini_shoe', :collection=>@shoes
   #end

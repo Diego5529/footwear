@@ -24,10 +24,26 @@ class PublicsController < ApplicationController
 
   def index
     flash[:notice] = '#{params[:redirect]} não encontrado' if params[:redirect]
-    @enterprises = Enterprise.order("name ASC").where("permit = ?", true).all
-    @releases = Shoe.order("created_at DESC").where("permit = ?", true).first(4)
-    @bestsellers = Shoe.order("lock_version DESC").where("permit = ?", true).first(4)
+    shoes
+    enterprises    
+    bestsellers
+    realeases
+  end
+
+  def shoes
     @shoes = Shoe.order('random()').where("permit = ?", true).all
+  end
+
+  def enterprises
+    @enterprises = Enterprise.order("name ASC").where("permit = ?", true).all    
+  end
+
+  def bestsellers
+    @bestsellers = Shoe.order("lock_version DESC").where("permit = ?", true).first(4)
+  end
+
+  def realeases
+    @releases = Shoe.order("created_at DESC").where("permit = ?", true).first(4)
   end
 
   def logout
@@ -75,16 +91,15 @@ class PublicsController < ApplicationController
   end
 
   def enterprise
-    @enterprises = Enterprise.order("name ASC").where("permit = ?", true).all
+    enterprises
     @enterprise = Enterprise.find(params[:id]) rescue nil
     if !@enterprise
       flash[:notice] = 'Empresa não encontrada.'
       redirect_to '/'
       return
     end
-    @shoes = Shoe.by_enterprise(@enterprise.id).order("name ASC").where("permit = ?", true)
-  end
-
+      @shoes = Shoe.by_enterprise(@enterprise.id).order("name ASC").where("permit = ?", true)
+    end
   def buy
     @shoe = Shoe.find(params[:id]) rescue nil
     if !@shoe
@@ -166,10 +181,10 @@ class PublicsController < ApplicationController
 
   def order
     @order = Order.find(params[:id])  
-  rescue nil
-    if !@order
-      flash[:notice] = 'Not Found'
-      redirect_to '/'
-    end
+    rescue nil
+      if !@order
+        flash[:notice] = 'Not Found'
+        redirect_to '/'
+      end
   end
 end

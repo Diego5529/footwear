@@ -17,17 +17,14 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])
   end
 
-  # GET /clients/new
   def new
     @client = Client.new
   end
 
-  # GET /clients/1/edit
   def edit
     @client = Client.find(params[:id])
   end
 
-  # POST /clients
   def create
     begin
     @client = Client.new(params[:client])   
@@ -48,7 +45,6 @@ class ClientsController < ApplicationController
     end
   end
 
-  # PUT /clients/1
   def update
     @client = Client.find(params[:id])
     
@@ -68,7 +64,6 @@ class ClientsController < ApplicationController
       render :edit
   end
 
-  # DELETE /clients/1
   def destroy
     @client = Client.find(params[:id])
     @client.destroy
