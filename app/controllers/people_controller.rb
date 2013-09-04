@@ -9,17 +9,14 @@ class PeopleController < ApplicationController
     redirect_to "/login" if !session[:admin]
   end
 
-  # GET /people
   def index
     @people = Person.all
   end
 
-  # GET /people/1
   def show    
     @person = Person.find(params[:id])
   end
 
-  # GET /people/new
   def new
     @person = Person.new
 
@@ -29,7 +26,6 @@ class PeopleController < ApplicationController
     end
   end
 
-  # GET /people/1/edit
   def edit
     @person = Person.find(params[:id])
   end

@@ -2,7 +2,7 @@
 class PublicsController < ApplicationController
   respond_to :html
   layout :layout_public
-  after_filter :expire_cache, :only=>[:update,:destroy]
+  #after_filter :expire_cache, :only=>[:update,:destroy]
 
   def layout_public
     if session[:admin]
@@ -18,9 +18,9 @@ class PublicsController < ApplicationController
     end
   end
 
-  def expire_cache
-    expire_page controller: "public", action: "shoe", id: @shoe.id
-  end
+  # def expire_cache
+  #   expire_page controller: "public", action: "shoe", id: @shoe.id
+  # end
 
   def index
     flash[:notice] = '#{params[:redirect]} não encontrado' if params[:redirect]
@@ -98,8 +98,9 @@ class PublicsController < ApplicationController
       redirect_to '/'
       return
     end
-      @shoes = Shoe.by_enterprise(@enterprise.id).order("name ASC").where("permit = ?", true)
-    end
+    @shoes = Shoe.by_enterprise(@enterprise.id).order("name ASC").where("permit = ?", true)
+  end
+  
   def buy
     @shoe = Shoe.find(params[:id]) rescue nil
     if !@shoe

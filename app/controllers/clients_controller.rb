@@ -27,8 +27,7 @@ class ClientsController < ApplicationController
 
   def create
     begin
-    @client = Client.new(params[:client])   
-     
+    @client = Client.new(params[:client])     
     respond_to do |format|
       if @client.save
         format.html { redirect_to @client, notice: 'Client was successfully created.' }
@@ -46,8 +45,7 @@ class ClientsController < ApplicationController
   end
 
   def update
-    @client = Client.find(params[:id])
-    
+    @client = Client.find(params[:id])    
     respond_to do |format|
       if @client.update_attributes(params[:client])
         format.html { redirect_to @client, notice: 'Client was successfully updated.' }

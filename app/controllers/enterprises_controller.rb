@@ -13,22 +13,18 @@ class EnterprisesController < ApplicationController
     @enterprises = Enterprise.all
   end
 
-  # GET /enterprises/1
   def show
     @enterprise = Enterprise.find(params[:id])
   end
 
-  # GET /enterprises/new
   def new
     @enterprise = Enterprise.new
   end
 
-  # GET /enterprises/1/edit
   def edit
     @enterprise = Enterprise.find(params[:id])
   end
 
-  # POST /enterprises
   def create
     begin
     @enterprise = Enterprise.new(params[:enterprise])
@@ -48,7 +44,6 @@ class EnterprisesController < ApplicationController
     end
   end
 
-  # PUT /enterprises/1
   def update
     @enterprise = Enterprise.find(params[:id])
 
@@ -68,7 +63,6 @@ class EnterprisesController < ApplicationController
       render :edit
   end
 
-  # DELETE /enterprises/1
   def destroy
     @enterprise = Enterprise.find(params[:id])
     @enterprise.destroy
