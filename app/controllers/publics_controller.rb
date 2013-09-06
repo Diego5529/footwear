@@ -2,20 +2,18 @@
 class PublicsController < ApplicationController
   respond_to :html
   layout :layout_public
+  before_filter :load_shoes, only: [:index]
+  before_filter :load_enterprises, only: [:index]
+  before_filter :load_bestsellers, only: [:index]
+  before_filter :load_releases, only: [:index]
+
   #after_filter :expire_cache, :only=>[:update,:destroy]
 
   def layout_public
-    if session[:admin]
-      'admin'
-    end
-    if !session[:admin] && session[:permit] && session[:id]
-      'enterprise'
-    end
-    if !session[:admin] && session[:id]
-      'client'
-    else
-      'public'
-    end
+    return "admin"      if  session[:admin]
+    return "enterprise" if !session[:admin] && session[:permit] && session[:id]
+    return "client"     if !session[:admin] && session[:id]
+    "public"
   end
 
   # def expire_cache
@@ -24,26 +22,6 @@ class PublicsController < ApplicationController
 
   def index
     flash[:notice] = '#{params[:redirect]} não encontrado' if params[:redirect]
-    shoes
-    enterprises    
-    bestsellers
-    realeases
-  end
-
-  def shoes
-    @shoes = Shoe.order('random()').where("permit = ?", true).all
-  end
-
-  def enterprises
-    @enterprises = Enterprise.order("name ASC").where("permit = ?", true).all    
-  end
-
-  def bestsellers
-    @bestsellers = Shoe.order("lock_version DESC").where("permit = ?", true).first(4)
-  end
-
-  def realeases
-    @releases = Shoe.order("created_at DESC").where("permit = ?", true).first(4)
   end
 
   def logout
@@ -187,5 +165,22 @@ class PublicsController < ApplicationController
         flash[:notice] = 'Not Found'
         redirect_to '/'
       end
+  end
+
+  private 
+  def load_shoes
+    @shoes = Shoe.order('random()').where("permit = ?", true).all
+  end
+
+  def load_enterprises
+    @enterprises = Enterprise.order("name ASC").where("permit = ?", true).all    
+  end
+
+  def load_bestsellers
+    @bestsellers = Shoe.order("lock_version DESC").where("permit = ?", true).first(4)
+  end
+
+  def load_releases
+    @releases = Shoe.order("created_at DESC").where("permit = ?", true).first(4)
   end
 end
