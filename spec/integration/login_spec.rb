@@ -54,7 +54,6 @@ describe 'login' do
     fill_in 'name', with: person.name
     fill_in 'password', with: '123456'
     click_button 'Entrar'
-    p current_path
   end
 
   it 'should login' do
@@ -63,6 +62,5 @@ describe 'login' do
     fill_in 'name', with: 'Administrador'
     fill_in 'password', with: '123456'
     click_button 'Entrar'
-    p current_path
   end
 end

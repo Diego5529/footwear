@@ -59,7 +59,6 @@ describe 'Client' do
       fill_in 'email', with: client.email
       fill_in 'password', with: '123456'
       click_button 'Entrar'
-      p current_path
     end
   end
 end
