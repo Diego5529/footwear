@@ -30,7 +30,7 @@ class ClientsController < ApplicationController
     @client = Client.new(params[:client])     
     respond_to do |format|
       if @client.save
-        format.html { redirect_to @client, notice: 'Client was successfully created.' }
+        format.html { redirect_to @client, notice: 'Cliente criado' }
         format.json { render json: @client, status: :created, location: @client }
       else
         format.html { render action: 'new' }
@@ -48,7 +48,7 @@ class ClientsController < ApplicationController
     @client = Client.find(params[:id])    
     respond_to do |format|
       if @client.update_attributes(params[:client])
-        format.html { redirect_to @client, notice: 'Client was successfully updated.' }
+        format.html { redirect_to @client, notice: 'Cliente atualizado.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit'}
