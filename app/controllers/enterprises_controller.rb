@@ -1,7 +1,7 @@
 #encoding: utf-8
 class EnterprisesController < ApplicationController
   layout 'admin'
-  
+
   respond_to :html
   before_filter :logged?
 
@@ -27,16 +27,16 @@ class EnterprisesController < ApplicationController
 
   def create
     begin
-    @enterprise = Enterprise.new(params[:enterprise])
-    respond_to do |format|
-      if @enterprise.save
-        format.html { redirect_to @enterprise, notice: 'Enterprise was successfully created.' }
-        format.json { render json: @enterprise, status: :created, location: @enterprise }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @enterprise.errors, status: :unprocessable_entity }
-      end
-    end    
+      @enterprise = Enterprise.new(params[:enterprise])
+      respond_to do |format|
+        if @enterprise.save
+          format.html { redirect_to @enterprise, notice: 'Empresa criada.' }
+          format.json { render json: @enterprise, status: :created, location: @enterprise }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @enterprise.errors, status: :unprocessable_entity }
+        end
+      end    
     rescue => e
       @enterprise = Enterprise.new(params[:enterprise].except(:plain_password))
       flash[:notice] = e.to_s
@@ -49,18 +49,18 @@ class EnterprisesController < ApplicationController
 
     respond_to do |format|
       if @enterprise.update_attributes(params[:enterprise])
-        format.html { redirect_to @enterprise, notice: 'Enterprise was successfully updated.' }
+        format.html { redirect_to @enterprise, notice: 'Empresa atualizada.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
         format.json { render json: @enterprise.errors, status: :unprocessable_entity }
       end
     end
-    
-    rescue => e
-      @enterprise = Enterprise.new(params[:enterprise].except(:plain_password))
-      flash[:notice] = e.to_s
-      render :edit
+
+  rescue => e
+    @enterprise = Enterprise.new(params[:enterprise].except(:plain_password))
+    flash[:notice] = e.to_s
+    render :edit
   end
 
   def destroy
