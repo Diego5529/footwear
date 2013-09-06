@@ -11,4 +11,8 @@ class Person < ActiveRecord::Base
   scope :by_domain, ->(domain) { where(['name like ?','#{domain}']) }
 
   default_scope -> { order(:name) }
+
+  def self.auth(name,password)
+    where(['name=? and password=?',name,encrypt_password(password)]).first
+  end
 end
