@@ -3,9 +3,9 @@ class PublicsController < ApplicationController
   respond_to :html
   layout :layout_public
   before_filter :load_shoes, only: [:index]
-  before_filter :load_enterprises, only: [:index]
-  before_filter :load_bestsellers, only: [:index]
-  before_filter :load_releases, only: [:index]
+  before_filter :load_enterprises
+  before_filter :load_bestsellers
+  before_filter :load_releases
 
   #after_filter :expire_cache, :only=>[:update,:destroy]
 
@@ -69,7 +69,6 @@ class PublicsController < ApplicationController
   end
 
   def enterprise
-    enterprises
     @enterprise = Enterprise.find(params[:id]) rescue nil
     if !@enterprise
       flash[:notice] = 'Empresa não encontrada.'
@@ -169,15 +168,15 @@ class PublicsController < ApplicationController
 
   private 
   def load_shoes
-    @shoes = Shoe.order('random()').where("permit = ?", true).all
+    @shoes = Shoe.permited.order('random()').all
   end
 
   def load_enterprises
-    @enterprises = Enterprise.order("name ASC").where("permit = ?", true).all    
+    @enterprises = Enterprise.permited.order("name ASC").all    
   end
 
   def load_bestsellers
-    @bestsellers = Shoe.order("lock_version DESC").where("permit = ?", true).first(4)
+    @bestsellers = Shoe.permited.order("lock_version DESC").first(4)
   end
 
   def load_releases

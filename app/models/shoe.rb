@@ -20,6 +20,7 @@ class Shoe < ActiveRecord::Base
   belongs_to :enterprise
   
   scope :by_enterprise, ->(id) { where(["enterprise_id=?",id]) }
+  scope :permited, -> { where(permit: true) }
 
   before_create :check_image
 

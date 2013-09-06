@@ -27,6 +27,8 @@ class Enterprise < ActiveRecord::Base
   
   belongs_to :order
 
+  scope :permited, -> { where(permit: true) }
+
   def self.for_select
     self.all.map {|p| [p.name,p.id]}
   end

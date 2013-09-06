@@ -67,4 +67,20 @@ describe Shoe do
     shoe = FactoryGirl.build(:shoe, description: nil)
     shoe.should_not be_valid
   end
+
+  context "permited" do
+    it "should have a scope to filter" do
+      Shoe.should respond_to :permited
+    end
+
+    it "should return empty when not permited doesn't exists" do
+      FactoryGirl.create(:shoe)
+      Shoe.permited.size.should == 0
+    end
+
+    it "should return shows when permited" do
+      FactoryGirl.create(:shoe, permit: true)
+      Shoe.permited.size.should == 1
+    end
+  end
 end
