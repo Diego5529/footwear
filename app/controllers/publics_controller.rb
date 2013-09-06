@@ -55,13 +55,13 @@ class PublicsController < ApplicationController
   end
 
   def shoe
-    @enterprises = Enterprise.order("name ASC").where("permit = ?", true).all
     @shoe = Shoe.find(params[:id]) rescue nil
     if !@shoe
       flash[:notice] = 'Sapato não encontrado'
       redirect_to'/'
       return
-      end
+    end
+    @enterprises = Enterprise.permited.order("name ASC").all
   end
 
   def enterprise
@@ -71,7 +71,7 @@ class PublicsController < ApplicationController
       redirect_to '/'
       return
     end
-    @shoes = Shoe.by_enterprise(@enterprise.id).order("name ASC").where("permit = ?", true)
+    @shoes = Shoe.by_enterprise(@enterprise.id).order("name ASC").permited
   end
   
   def buy
@@ -92,7 +92,7 @@ class PublicsController < ApplicationController
 
   def cart
     @cart = find_cart
-    @shoes = Shoe.page(params[:page]).per(5).order("lock_version DESC").where("permit = ?", true)
+    @shoes = Shoe.page(params[:page]).per(5).order("lock_version DESC").permited
   end
 
   def remove
@@ -125,9 +125,9 @@ class PublicsController < ApplicationController
     end
       order.save ? order : nil
     end
-    rescue Exception => e
-      flash[:notice] = 'Erro: #{e}'
-      false
+  rescue Exception => e
+    flash[:notice] = 'Erro: #{e}'
+    false
   end
 
   def close_order    
@@ -155,11 +155,11 @@ class PublicsController < ApplicationController
 
   def order
     @order = Order.find(params[:id])  
-    rescue nil
-      if !@order
-        flash[:notice] = 'Not Found'
-        redirect_to '/'
-      end
+  rescue nil
+    if !@order
+      flash[:notice] = 'Not Found'
+      redirect_to '/'
+    end
   end
 
   private 
