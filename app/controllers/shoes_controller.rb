@@ -3,13 +3,9 @@ class ShoesController < ApplicationController
   respond_to :html
   before_filter :logged?
   layout :layout
-    
+
   def layout
-    if session[:admin]
-      'admin'
-    else
-      'enterprise'
-    end
+    session[:admin] ? "admin" : "enterprise"
   end
 
   def logged?
@@ -25,7 +21,6 @@ class ShoesController < ApplicationController
 
   def show
     @shoe = Shoe.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @shoe }
