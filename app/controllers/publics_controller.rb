@@ -25,11 +25,7 @@ class PublicsController < ApplicationController
   end
 
   def logout
-    session[:id]  = nil
-    session[:email]  = nil
-    session[:name] = nil
-    session[:admin] = nil
-    session[:permit] = nil
+    [:id,:email,:name,:admin,:permit].each { |id| session[id] = nil }
     redirect_to '/'
   end
 
