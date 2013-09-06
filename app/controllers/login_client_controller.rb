@@ -4,43 +4,27 @@ class LoginClientController < ApplicationController
 
   def login_client
     if request.post?
-      email   = params[:email]
-      password = params[:password]
-      name = params[:name]
-
-      if email.blank? && password.blank?
-        flash[:notice] = 'Digite o e-mail e senha'
-        return
-      end
-
-      if email.blank?
-        flash[:notice] = 'Digite o e-mail'
-        return
-      end
-
-      if password.blank?
-        flash[:notice] = 'Digite a senha'
-        return
-      end
+      email     = params[:email]
+      password  = params[:password]
+      LoginParms.check_by_email(email,password)
 
       client = Client.auth(email,password)
-      if  !client
-        flash[:notice] = 'Falha no login'
-        return
-      end
+      raise LoginException.new("Falha no login") if !client
 
       flash[:notice]  = 'Bem-vindo, #{client.email}!'
-      session[:id]  = client.id
-      session[:email]  = client.email
-      session[:name] = client.name
+      session[:id]    = client.id
+      session[:email] = client.email
+      session[:name]  = client.name
       redirect_to '/cart'
     end
+  rescue LoginException => e
+    flash[:notice] = e.to_s
   end
 
   def logout_client
-    session[:id]  = nil
-    session[:email]  = nil
-    session[:name] = nil
+    session[:id]    = nil
+    session[:email] = nil
+    session[:name]  = nil
     redirect_to '/'
   end
 

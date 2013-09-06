@@ -4,44 +4,29 @@ class LoginUserController < ApplicationController
 
   def login_user
     if request.post?
-      email   = params[:email]
+      email    = params[:email]
       password = params[:password]
-      permit = params[:permit]
 
-      if email.blank? && password.blank?
-        flash[:notice] = 'Digite o e-mail e senha'
-        return
-      end
+      LoginParms.check_by_email(email,password)
 
-      if email.blank?
-        flash[:notice] = 'Digite o e-mail'
-        return
-      end
-
-      if password.blank?
-        flash[:notice] = 'Digite a senha'
-        return
-      end
-      
       enterprise = Enterprise.auth(email,password)
-      if  !enterprise 
-        flash[:notice] = 'Falha no login'
-        return
-      end
+      raise LoginException.new("Falha no login") if !enterprise 
 
-      flash[:notice]  = 'Bem-vindo, #{enterprise.email}!'
-      session[:id]  = enterprise.id
+      flash[:notice]   = 'Bem-vindo, #{enterprise.email}!'
+      session[:id]     = enterprise.id
       session[:email]  = enterprise.email
-      session[:name]  = enterprise.name
+      session[:name]   = enterprise.name
       session[:permit] = true
       redirect_to shoes_path
     end
+  rescue LoginException => e
+    flash[:notice] = e.to_s
   end
 
   def logout_user
-    session[:id]  = nil
+    session[:id]     = nil
     session[:email]  = nil
-    session[:name] = nil
+    session[:name]   = nil
     session[:permit] = nil
     redirect_to '/'
   end

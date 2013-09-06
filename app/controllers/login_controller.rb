@@ -4,47 +4,27 @@ class LoginController < ApplicationController
 
   def login
     if request.post?
-      name = params[:name]
+      name     = params[:name]
       password = params[:password]
-      admin = params[:admin]
-
-      if name.blank? && password.blank?
-        flash[:notice] = "Digite o nome e senha"
-        return
-      end
-
-      if name.blank?
-        flash[:notice] = "Digite o nome"
-        return
-      end
-
-      if password.blank?
-        flash[:notice] = "Digite a senha"
-        return
-      end
+      LoginParms.check_by_name(name,password)
 
       person = Person.auth(name,password)
-      if !person
-        flash[:notice] = "Falha no login"
-        return
-    end
+      raise LoginException.new("Falha no login") if !person
+      raise LoginException.new("Você não é administrador") if !person.admin
 
-    if !person.admin
-      flash[:notice] = "Você não é administrador"
-      return
-    end
-    
-      flash[:notice]	= "Bem-vindo, #{person.name}!"
-      session[:id]	= person.id
-      session[:name]	= person.name
-      session[:admin]	= person.admin
+      flash[:notice]  = "Bem-vindo, #{person.name}!"
+      session[:id]    = person.id
+      session[:name]  = person.name
+      session[:admin] = person.admin
       redirect_to people_path
     end
+  rescue LoginException => e
+    flash[:notice] = e.to_s
   end
 
   def logout
-    session[:id]	= nil
-    session[:name]	= nil
+    session[:id]    = nil
+    session[:name]  = nil
     session[:admin] = nil
     redirect_to "/"
   end
