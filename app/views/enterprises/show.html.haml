@@ -1,48 +1,50 @@
 %h1 Detalhes da Empresa
 - presenter = EnterprisePresenter.new(@enterprise)
 %p#notice= notice
-%p
-  %img{:src => @enterprise.image}
-%p
-  %b Nome:
-  = @enterprise.name
-%p
-  %b Nome social:
-  = @enterprise.name_social
-%p
-  %b E-mail:
-  = @enterprise.email
-%p
-  %b Senha:
-  = @enterprise.password
-%p
-  %b CNPJ:
-  = @enterprise.cnpj
-%p
-  %b CEP:
-  = @enterprise.zip_code
-%p
-  %b Endereço:
-  = @enterprise.address
-%p
-  %b Numero:
-  = @enterprise.number
-%p
-  %b Bairro:
-  = @enterprise.district
-%p
-  %b Estado:
-  = @enterprise.state
-%p
-  %b Cidade:
-  = @enterprise.city
-%p
-  %b Telefone:
-  = @enterprise.telephone
-%p
-  %b Permição:
-  = presenter.permit
-%br/
-= link_to 'Editar', edit_enterprise_path(@enterprise)
-|
-\#{link_to 'Voltar', enterprises_path}
+#img{style: 'margin-top: 70px '}
+  %img{:src => @enterprise.image, heigth: 300, width:300}
+#details 
+  %p
+    %b Nome:
+    = @enterprise.name
+  %p
+    %b Nome social:
+    = @enterprise.name_social
+  %p
+    %b E-mail:
+    = @enterprise.email
+  %p
+    %b Senha:
+    = @enterprise.password
+  %p
+    %b CNPJ:
+    = @enterprise.cnpj
+  %p
+    %b CEP:
+    = @enterprise.zip_code
+  %p
+    %b Endereço:
+    = @enterprise.address
+  %p
+    %b Numero:
+    = @enterprise.number
+  %p
+    %b Bairro:
+    = @enterprise.district
+  %p
+    %b Estado:
+    = @enterprise.state
+  %p
+    %b Cidade:
+    = @enterprise.city
+  %p
+    %b Telefone:
+    = @enterprise.telephone
+  %p
+    %b Permição:
+    = presenter.permit
+  %br/
+  = link_to 'Editar', edit_enterprise_path(@enterprise)
+  |
+  \#{link_to 'Voltar', enterprises_path}
+%hr

@@ -18,6 +18,7 @@ module ImageSaver
     @image.title = self.image_title
     @image.data_stream = self.data_stream
     @image.height = 200
+    @image.width = 200
     @image.save
   end
 end

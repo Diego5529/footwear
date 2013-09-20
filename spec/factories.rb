@@ -36,7 +36,7 @@ FactoryGirl.define do
   end
 
   factory :shoe do
-    audience 'Infantil'
+    category_id 1
     description 'Text decription'
     enterprise_id 1
     name 'Name'

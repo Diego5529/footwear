@@ -1,8 +1,8 @@
 !!!
 %html
   %head
-    %title -Footwear-
-    = stylesheet_link_tag    'publics', media: 'all'
+    %title -Footwear
+    = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
@@ -10,12 +10,13 @@
       #menu_top
         = link_to 'Início', '/'
         = link_to 'Meus Produtos', '/shoes'
+        = link_to 'Minhas vendas', '/mysales'
         = link_to 'Editar dados', 'editar_empresa'
       #name_page
         %h1 CATALOG FOOTWEAR
       #message  
         Bem vindo, #{session[:name]}!
-        = link_to 'Sair', 'logout_user'
+        = link_to 'Sair', logout_user_path
     = yield
     %hr
     %footer

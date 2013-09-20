@@ -1,8 +1,8 @@
 !!!
 %html
   %head
-    %title -Footwear-
-    = stylesheet_link_tag    'admins', media: 'all'
+    %title -Footwear
+    = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %head
@@ -14,7 +14,6 @@
         Bem vindo, #{session[:name]}.
         = link_to 'Sair', logout_path
         |
-      %div
         = link_to 'Início', logout_path
         |
         = link_to 'Administradores', 'people'
@@ -25,6 +24,9 @@
         |
         = link_to 'Produtos', 'shoes'
         |
+        = link_to 'Pedidos', 'orders'
+        |
+        = link_to 'Categorias', 'categories'
 %body
   - if session[:admin]
     = yield

@@ -1,15 +1,11 @@
 #encoding: utf-8
 class ShoesController < ApplicationController
   respond_to :html
-  before_filter :logged?
+  before_filter :logged?, :load_categories
   layout :layout
-    
+
   def layout
-    if session[:admin]
-      'admin'
-    else
-      'enterprise'
-    end
+    session[:admin] ? 'admin' : 'enterprise'
   end
 
   def logged?
@@ -19,13 +15,12 @@ class ShoesController < ApplicationController
   end
 
   def index
-    @shoes = session[:admin] ? Shoe.order("enterprise_id ASC").all : Shoe.by_enterprise(session[:id])
+    @shoes = session[:admin] ? Shoe.order('enterprise_id ASC').all : Shoe.by_enterprise(session[:id])
     @enterprise = Enterprise.find(session[:id]) rescue nil
   end
 
   def show
     @shoe = Shoe.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @shoe }
@@ -60,24 +55,28 @@ class ShoesController < ApplicationController
         format.html { redirect_to @shoe, notice: 'Cadastrado com Sucesso!.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit' }
         format.json { render json: @shoe.errors, status: :unprocessable_entity }
       end
     end
-  end 
+  end
 
   def destroy
     @shoe = Shoe.find(params[:id])
     @shoe.destroy
+    redirect_to '/shoes'
+  end
 
-    respond_to do |format|
-      format.html { redirect_to shoe_url }
-      format.json { head :no_content }
-    end
+  def mysales
+    @orders = OrderItem.order('created_at DESC').by_enterprise(session[:id])
+  end
+
+  def mysalesdetails
+    @orders = OrderItem.find(params[:id])
   end
 
   def image_title_ref
-    "Shoes Picture"
+    'Shoes Picture'
   end
 
   def check_allowed_shoe(shoe)
@@ -91,5 +90,9 @@ class ShoesController < ApplicationController
   private
   def load_enterprises
     @enterprises = Enterprise.for_select
+  end
+
+  def load_categories
+    @categories = Category.all
   end
 end

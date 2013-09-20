@@ -1,21 +1,22 @@
 !!!
 %html
   %head
-    %title -Footwear-
-    = stylesheet_link_tag    'publics', media: 'all'
+    %title -Footwear
+    = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
     %header
       #menu_top
-        = link_to "Início", '/'
+        = link_to 'Início', '/'
         = link_to 'Editar dados', 'editar_cliente'
+        = link_to 'Meus pedidos', 'myorders'
         = link_to 'Carrinho', 'cart',class: 'cart'
       #name_page
         %h1 CATALOG FOOTWEAR
       #message  
         Bem vindo, #{session[:name]}!
-        = link_to 'Sair', 'logout_client'
+        = link_to 'Sair', logout_client_path
     = yield
     %hr
     %footer

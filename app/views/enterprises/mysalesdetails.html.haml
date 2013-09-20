@@ -1,0 +1,14 @@
+%h1
+  Detalhe do Pedido
+%p
+  Código do pedido:
+  = @orders.id
+  %br/
+  Data:
+  = @orders.created_at
+  %br/
+  = @orders.shoe.name
+  %br/
+  = @orders.shoe.enterprise.name
+  %br/
+  = @orders.shoe.client.name

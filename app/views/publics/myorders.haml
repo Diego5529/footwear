@@ -1,0 +1,25 @@
+%h1 Todos os pedidos
+%table{:align => 'center'}
+  %tr
+    %th Código do pedido
+    %th Data
+    %th Código do produto
+    %th Nome do produto
+    %th Empresa
+    %th Cliente
+    %th Opções
+  - @orders.each do |orders|
+    %tr
+      %td= orders.id
+      %td
+        = (orders.created_at.to_formatted_s(:short))
+      %td
+        = orders.shoe_id
+      %td
+        = orders.shoe.name
+      %td
+        = orders.shoe.enterprise.name
+      %td
+        = orders.client.name
+      %td
+        = link_to "Detalhes", "/myorderdetails/#{orders.id}"

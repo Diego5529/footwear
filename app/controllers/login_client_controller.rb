@@ -1,6 +1,8 @@
 #encoding: utf-8
 class LoginClientController < ApplicationController
   layout 'public'
+  before_filter :load_shoes, only: [:index]
+  
 
   def login_client
     if request.post?

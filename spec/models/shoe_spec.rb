@@ -46,14 +46,14 @@ describe Shoe do
     shoe.should_not be_valid
   end
 
-  #audience
-  it "should not have empty audience" do
-    shoe = FactoryGirl.build(:shoe, audience: '')
+  #category_id
+  it "should not have empty category_id" do
+    shoe = FactoryGirl.build(:shoe, category_id: '')
     shoe.should_not be_valid
   end
 
-  it "should not have nil audience" do
-    shoe = FactoryGirl.build(:shoe, audience: nil)
+  it "should not have nil category_id" do
+    shoe = FactoryGirl.build(:shoe, category_id: nil)
     shoe.should_not be_valid
   end
 

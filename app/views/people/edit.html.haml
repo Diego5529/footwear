@@ -1,6 +1,9 @@
 %h1 Editar Administrador
+%hr
 %p#notice= notice
 = render 'form'
-= link_to 'Detalhes', @person
-|
-\#{link_to 'Voltar', people_path}
+%hr
+#form
+  = link_to 'Detalhes', @person
+  |
+  \#{link_to 'Voltar', people_path}

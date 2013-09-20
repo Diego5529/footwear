@@ -3,10 +3,10 @@
     = releases.name
   %h2
     = link_to releases.enterprise.name, "/enterprise/#{releases.enterprise.id}"
-    = image_tag(releases.image,height: 210, :class => "img")
-    = simple_format(releases.audience)
+    = image_tag(releases.image,height: 150, :class => "img")
+    = simple_format(releases.category.name)
     %span.shoe_value= number_to_currency(releases.value)
     %br/
-    = link_to "Mais Detalhes","/shoe/#{releases.id}",class: "more_shoe_info"
+    = link_to "Detalhes","/shoe/#{releases.id}",class: "more_shoe_info"
     %br/
     %br/

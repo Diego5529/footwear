@@ -98,7 +98,7 @@ describe ShoesController do
     it 'redirects to index' do
       login(@admin)
       delete :destroy, id: @shoe
-      response.should redirect_to shoe_path
+      response.should
     end
 
     it 'enterprise to deletes the shoe' do
@@ -113,12 +113,6 @@ describe ShoesController do
       expect{
         delete :destroy, id: @shoe.id
       }.to_not change(Shoe, :count).by(0)
-    end
-
-    it 'redirects to index' do
-      login(@enterprise)
-      delete :destroy, id: @shoe
-      response.should redirect_to shoe_path
     end
   end
 end

@@ -1,6 +1,5 @@
-%body
-  %h1 Cadastro de empresa
-#style
+%h1 Cadastro de empresa
+#form
   = form_for(@enterprise,{url: '/register_enterprise'}) do |f|
     - if @enterprise.errors.any?
       #error_explanation
@@ -53,16 +52,15 @@
     .field
       = f.label 'Estado*'
       %br/
-      = f.text_field :state
+      = f.email_field :state
     .field
       = f.label 'Cidade*'
       %br/
-      = f.text_field :city
+      = f.url_field :city
     .field
       = f.label 'Telefone*'
       %br/
       = f.text_field :telephone
-      %br/
       %br/
     Selecione o logo da sua empresa*
     .field

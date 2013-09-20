@@ -1,6 +1,5 @@
-%body
-  %h1 Cadastro de cliente
-#style
+%h1 Cadastro de cliente
+#form
   = form_for(@client,{url: '/register'}) do |f|
     - if @client.errors.any?
       #error_explanation

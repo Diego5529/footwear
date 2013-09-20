@@ -6,7 +6,7 @@
         %h2
           = cart_item.name
         %h6{ style:"color:#000"}
-          = cart_item.audience
+          = cart_item.category.name
           \-
           = cart_item.description
       %span.shoe_value= number_to_currency(cart_item.value)

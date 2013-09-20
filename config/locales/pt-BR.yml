@@ -2,7 +2,7 @@ pt-BR:
   Browse: "Procurar"
   name: "Nome"
   value: "Preço"
-  audience: "Publico Alvo "
+  category: "Categoria"
   stock: "Estoque"
   registed: "Data de Registro "
   description: "Descrição do produto "
@@ -223,6 +223,7 @@ pt-BR:
       enterprise: "Empresa"
       shoe: "Calçados"
       client: "Cliente"
+      category: "Categoria"
     attributes:
       person:
         name: "Nome"
@@ -258,12 +259,14 @@ pt-BR:
       shoe:
         name: "Nome"
         value: "Preço "
-        audience: "Publico Alvo "
+        category: "Categoria"
         stock: "Estoque "
         registed: "Data de Registro "
         description: "Descrição do produto "
         image_title: "Titulo da Imagem"
         data_stream: "Produto"
+      category:
+        name: "Nome"
   views:
     chosse_file: "Procurar"
     pagination:

@@ -3,10 +3,10 @@
     = bestsellers.name
   %h2
     = link_to bestsellers.enterprise.name, "/enterprise/#{bestsellers.enterprise.id}"
-    = image_tag(bestsellers.image,height: 210, :class => "img")
-    = simple_format(bestsellers.audience)
+    = image_tag(bestsellers.image,height: 150, :class => "img")
+    = simple_format(bestsellers.category.name)
     %span.shoe_value= number_to_currency(bestsellers.value)
     %br/
-    = link_to "Mais Detalhes","/shoe/#{bestsellers.id}",class: "more_shoe_info"
+    = link_to "Detalhes","/shoe/#{bestsellers.id}",class: "more_shoe_info"
     %br/
     %br/

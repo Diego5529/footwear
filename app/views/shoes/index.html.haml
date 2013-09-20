@@ -1,13 +1,13 @@
 /= session[:admin]
 - if @enterprise
-  /%h2= @enterprise.name
+  //%h2= @enterprise.name
 %h1 Lista de Produtos
 %table{:align => 'center'}
   %tr
     %th Nome
     %th Preço
     %th Empresa
-    %th Publico
+    %th Categoria
     %th Estoque
     %th Data
     %th Descrição
@@ -19,7 +19,7 @@
       %td= shoe.name
       %td= shoe.value
       %td= shoe.enterprise.name
-      %td= shoe.audience
+      %td= shoe.category.name
       %td= shoe.stock
       %td= shoe.registed
       %td= shoe.description

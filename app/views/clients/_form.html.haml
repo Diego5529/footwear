@@ -1,60 +1,62 @@
-= form_for(@client) do |f|
-  - if @client.errors.any?
-    #error_explanation
-      %h2
-        =pluralize(@client.errors.count, 'erro')
-        este cliente não pode ser criado:
-      %ul
-        - @client.errors.full_messages.each do |msg|
-          %li= msg
-  .field
-    = f.label 'Informação obrigatória*'
-    %br/
-  .field
-    = f.label 'Nome*'
-    %br/
-    = f.text_field :name
-  .field
-    = f.label 'E-mail*'
-  .field
-    = f.text_field :email
-  .field
-    = f.label 'Senha*'
-    %br/
-    = f.password_field :plain_password
-  .field
-    = f.label 'CPF*'
-    %br/
-    = f.text_field :cpf
-  .field
-    = f.label 'CEP*'
-    %br/
-    = f.text_field :zip_code
-  .field
-    = f.label 'Endereço*'
-    %br/
-    = f.text_field :address
-  .field
-    = f.label 'Numero*'
-    %br/
-    = f.text_field :number
-  .field
-    = f.label 'Bairro*'
-    %br/
-    = f.text_field :district
-  .field
-    = f.label 'Cidade*'
-    %br/
-    = f.text_field :city
-  .field
-    = f.label 'Estado*'
-    %br/
-    = f.text_field :state
-  .field
-    = f.label 'Telefone*'
-    %br/
-    = f.text_field :telephone
-    %br/
-    %br/
-  .actions
-    = f.submit 'Cadastrar' 
+#form 
+  = form_for(@client) do |f|
+    - if @client.errors.any?
+      #error_explanation
+        %h2
+          =pluralize(@client.errors.count, 'erro')
+          este cliente não pode ser criado:
+        %ul
+          - @client.errors.full_messages.each do |msg|
+            %li= msg
+    .field
+      %b Informação obrigatória*
+      %br/
+      %br/
+    .field
+      %b Nome*
+      %br/
+      = f.text_field :name
+    .field
+      %b E-mail*
+    .field
+      = f.text_field :email
+    .field
+      %b Senha*
+      %br/
+      = f.password_field :plain_password
+    .field
+      %b CPF*
+      %br/
+      = f.text_field :cpf
+    .field
+      %b CEP*
+      %br/
+      = f.text_field :zip_code
+    .field
+      %b Endereço*
+      %br/
+      = f.text_field :address
+    .field
+      %b Numero*
+      %br/
+      = f.text_field :number
+    .field
+      %b Bairro*
+      %br/
+      = f.text_field :district
+    .field
+      %b Cidade*
+      %br/
+      = f.text_field :city
+    .field
+      %b Estado*
+      %br/
+      = f.text_field :state
+    .field
+      %b Telefone*
+      %br/
+      = f.text_field :telephone
+      %br/
+      %br/
+    .actions
+      = f.submit 'Cadastrar' 

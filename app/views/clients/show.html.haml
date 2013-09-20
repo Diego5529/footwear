@@ -1,35 +1,38 @@
 %h1 Detalhes do Cliente
-%p#notice= notice
-%p
-  %b Nome:
-  = @client.name
-%p
-  %b E-mail:
-  = @client.email
-%p
-  %b CPF:
-  = @client.cpf
-%p
-  %b CEP:
-  = @client.zip_code
-%p
-  %b Endereço:
-  = @client.address
-%p
-  %b Numero:
-  = @client.number
-%p
-  %b Bairro:
-  = @client.district
-%p
-  %b Estado:
-  = @client.state
-%p
-  %b Cidade:
-  = @client.city
-%p
-  %b Telefone:
-  = @client.telephone
-= link_to 'Editar', edit_client_path(@client)
-|
-\#{link_to 'Voltar', clients_path}
+%hr
+#form
+  %p#notice= notice
+  %p
+    %b Nome:
+    = @client.name
+  %p
+    %b E-mail:
+    = @client.email
+  %p
+    %b CPF:
+    = @client.cpf
+  %p
+    %b CEP:
+    = @client.zip_code
+  %p
+    %b Endereço:
+    = @client.address
+  %p
+    %b Numero:
+    = @client.number
+  %p
+    %b Bairro:
+    = @client.district
+  %p
+    %b Estado:
+    = @client.state
+  %p
+    %b Cidade:
+    = @client.city
+  %p
+    %b Telefone:
+    = @client.telephone
+  = link_to 'Editar', edit_client_path(@client)
+  |
+  \#{link_to 'Voltar', clients_path}
+%hr

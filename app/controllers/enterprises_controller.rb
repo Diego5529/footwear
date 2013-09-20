@@ -66,8 +66,13 @@ class EnterprisesController < ApplicationController
   def destroy
     @enterprise = Enterprise.find(params[:id])
     @enterprise.destroy
-  end
 
+    respond_to do |format|
+      format.html { redirect_to enterprises_url }
+      format.json { head :no_content }
+    end
+  end
+  
   def image_title_ref
     'Enterprise Picture'
   end

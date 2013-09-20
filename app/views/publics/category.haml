@@ -1,0 +1,11 @@
+#content
+  = render partial: 'categories', collection: @categories
+  #menu_left
+    %h2
+      = render partial: 'enterprises', collection: @enterprises
+  #realeases
+    %h1
+      = @category.name
+    #center_style
+      #mini_shoes
+        = render partial: 'mini_shoe', collection: @shoes

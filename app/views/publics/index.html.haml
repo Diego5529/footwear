@@ -1,10 +1,11 @@
 #content
+  #name_page
+    %h1
+      CATALOG FOOTWEAR
+    = render partial: 'categories', collection: @categories
   #menu_left
     %h2
-      %li Empresas
-    - for enterprise in @enterprises
-      %li
-        = link_to enterprise.name, "/enterprise/#{enterprise.id}"
+      = render partial: 'enterprises', collection: @enterprises
   #realeases    
     %h1 Lançamentos
     #center_style
