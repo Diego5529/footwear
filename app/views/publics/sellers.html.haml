@@ -1,71 +1,74 @@
-%h1 Cadastro de empresa
-#form
-  = form_for(@enterprise,{url: '/register_enterprise'}) do |f|
-    - if @enterprise.errors.any?
-      #error_explanation
-        %h2
-          = pluralize(@enterprise.errors.count, 'erro')
-          esta empresa não pode ser salva.
-        %ul
-          - @enterprise.errors.full_messages.each do |msg|
-            %li= msg
-    .field
-      = f.label 'Informações obrigatórias*'
-      %br
-      %br/
-    .field
-      = f.label 'Nome*'
-      %br/
-      = f.text_field :name
-    .field
-      = f.label 'Nome Social*'
-      %br/
-      = f.text_field :name_social
-    .field
-      = f.label 'E-mail*'
-      %br/
-      = f.text_field :email
-    .field
-      = f.label 'Senha*'
-      %br/
-      = f.password_field :plain_password
-    .field
-      = f.label 'CNPJ*'
-      %br/
-      = f.text_field :cnpj
-    .field
-      = f.label 'CEP*'
-      %br/
-      = f.text_field :zip_code
-    .field
-      = f.label 'Endereço*'
-      %br/
-      = f.text_field :address
-    .field
-      = f.label 'Numero*'
-      %br/
-      = f.text_field :number
-    .field
-      = f.label 'Bairro*'
-      %br/
-      = f.text_field :district
-    .field
-      = f.label 'Estado*'
-      %br/
-      = f.email_field :state
-    .field
-      = f.label 'Cidade*'
-      %br/
-      = f.url_field :city
-    .field
-      = f.label 'Telefone*'
-      %br/
-      = f.text_field :telephone
-      %br/
-    Selecione o logo da sua empresa*
-    .field
-      = render partial: 'shared/image_field', locals: { f: f }
-      %br/
-    .actions
-      = f.submit 'Cadastrar', class: 'submit'
-#end 
+.container
+  #name_page
+    Cadastro de empresa
+  #form
+    = form_for(@enterprise,{url: '/register_enterprise'}) do |f|
+      - if @enterprise.errors.any?
+        #error_explanation
+          %h2
+            = pluralize(@enterprise.errors.count, 'erro')
+            esta empresa não pode ser salva.
+          %ul
+            - @enterprise.errors.full_messages.each do |msg|
+              %li= msg
+      .field
+        = f.label 'Informações obrigatórias*'
+        %br
+        %br/
+      .field
+        = f.label 'Nome*'
+        %br/
+        = f.text_field :name
+      .field
+        = f.label 'Nome Social*'
+        %br/
+        = f.text_field :name_social
+      .field
+        = f.label 'E-mail*'
+        %br/
+        = f.text_field :email
+      .field
+        = f.label 'Senha*'
+        %br/
+        = f.password_field :plain_password
+      .field
+        = f.label 'CNPJ*'
+        %br/
+        = f.text_field :cnpj
+      .field
+        = f.label 'CEP*'
+        %br/
+        = f.text_field :zip_code
+      .field
+        = f.label 'Endereço*'
+        %br/
+        = f.text_field :address
+      .field
+        = f.label 'Numero*'
+        %br/
+        = f.text_field :number
+      .field
+        = f.label 'Bairro*'
+        %br/
+        = f.text_field :district
+      .field
+        = f.label 'Estado*'
+        %br/
+        = f.email_field :state
+      .field
+        = f.label 'Cidade*'
+        %br/
+        = f.url_field :city
+      .field
+        = f.label 'Telefone*'
+        %br/
+        = f.text_field :telephone
+        %br/
+        %br/
+      Selecione o logo da sua empresa*
+      .field
+        = render partial: 'shared/image_field', locals: { f: f }
+        %br/
+      .actions
+        = f.submit 'Cadastrar', class: 'submit'
+  #end 

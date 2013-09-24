@@ -1,11 +1,13 @@
-%h1 Autenticação no Sistema
-#form
-  %p#notice= notice
-  = form_tag '/login' do
-    %label{for: 'name'} Login:
-    %input#name{name: 'name', type: 'text', class: 'name'}/
-    %ul
-    %label{for: 'password'} Senha:
-    %input#password{name: 'password', type: 'password', class: 'password'}/
-    %ul
-    %input{type: 'submit', value: 'Entrar', class: 'submit'}/
+.container
+  #name_page
+    Autenticação no Sistema
+  #form
+    %p#notice= notice
+    = form_tag '/login' do
+      %label{for: 'name'} Login:
+      %input#name{name: 'name', type: 'text', class: 'name'}/
+      %ul
+      %label{for: 'password'} Senha:
+      %input#password{name: 'password', type: 'password', class: 'password'}/
+      %ul
+      %input{type: 'submit', value: 'Entrar', class: 'submit'}/

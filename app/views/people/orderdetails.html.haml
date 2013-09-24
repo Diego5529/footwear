@@ -1,27 +1,26 @@
-%h1
-  Detalhe do Pedido
-%hr
-#form
-  %p
-    %b Código do pedido:
-    = @orders.id
-    %br/
-    %br/
-    %b Data:
-    = (@orders.created_at.to_formatted_s(:short))
-    %br/
-    %br/
-    %b Nome do produto:
-    = @orders.shoe.name
-    %br/
-    %br/
-    %b Empresa:
-    = @orders.shoe.enterprise.name
-    %br/
-    %br/
-    %b Cliente:
-    = @orders.client.name
-    %br/
-    %br/
-    %b= link_to 'Voltar' , people_path
-%hr
+.container
+  #name_page
+    Detalhe do Pedido
+  #form
+    %p
+      %b Código do pedido:
+      = @orders.id
+      %br/
+      %br/
+      %b Data:
+      = (@orders.created_at.to_formatted_s(:short))
+      %br/
+      %br/
+      %b Nome do produto:
+      = @orders.shoe.name
+      %br/
+      %br/
+      %b Empresa:
+      = @orders.shoe.enterprise.name
+      %br/
+      %br/
+      %b Cliente:
+      = @orders.client.name
+      %br/
+      %br/
+      %b= link_to 'Voltar' , people_path

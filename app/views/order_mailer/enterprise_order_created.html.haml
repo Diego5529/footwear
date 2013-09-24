@@ -1,25 +1,25 @@
-%div{ style: 'color:#000; font-family: arial; background-color: #fff;border: 4px solid #000;' }
-  %h1{ style: 'text-align:center;font-size:32pt; background-color:#FF6347;margin-top:0px;min-height:60px' } - Catalog Footwear -
-  %hr
+%div{ style: 'color:#000; font-family: arial; background-color: #fff;border: 1px solid #f1f1f1;' }
+  %h2{ style: 'text-align:center;font-size:16pt; background-color:#02314c;margin-top:0px; color:#fff' } - Catalog Footwear -
+  = link_to (image_tag("logo.png",height: 120, weight: 120)),'/'
   %h2{ style: 'font-size:16pt; ' }
     Nós recebemos uma encomenda para sua empresa!
   %p
     Olá, foi feita uma solicitação de pedido com produtos de sua empresa.
-  %p
-    Os itens solicitados foram:
-    %ul
-      - for item in @items
-        %li
-          = item.shoe.name
-          \- #{number_to_currency(item.value)}
-          Código do produto:
-          = item.shoe.id
+    %p
+      Os itens solicitados foram:
+      %ul
+        - for item in @items
+          %li
+            = item.shoe.name
+            \- #{number_to_currency(item.value)}
+            Código do produto:
+            = item.shoe.id
           %table
             %th
               %td
                 = image_tag("http://localhost:3000#{item.shoe.image}",height: 200)
-        %hr
+  %hr
   %p{ style: 'color:red; text-align:center; font-size:24pt; height:40px; margin-top:5px;' }
-    Obrigado por usar Catalog Footwear
-  %h1{ style: 'color: #000; background-color:#FF6347; text-align:center; font-size:22pt; height:40px; margin-bottom:0px;border: 2px solid #000;' }
+    %h3 Obrigado por usar Catalog Footwear
+  %h2{ style: 'color: #fff; background-color:#02314c; text-align:center; font-size:22pt; height:40px; margin-bottom:0px;border: 2px solid #000;' }
     ANÚNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO

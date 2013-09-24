@@ -1,6 +1,9 @@
-%h1 Editar Empresa
-%p#notice= notice
-= render 'form'
-= link_to 'Detalhes', @enterprise
-|
-= link_to 'Voltar', enterprises_path
+.container
+  #name_page
+    Editar Empresa
+  %p#notice= notice
+  = render 'form'
+  #form
+    = link_to 'Detalhes', @enterprise
+    |
+    = link_to 'Voltar', enterprises_path

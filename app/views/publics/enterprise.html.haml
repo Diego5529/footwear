@@ -1,8 +1,12 @@
-#content
-  = render partial: 'categories', collection: @categories
+.container
+  #name_page
+    = render partial: 'categories', collection: @categories
   #menu_left
-    %h2
+    #title
+      Empresas
+    %h3
       = render partial: 'enterprises', collection: @enterprises
+    = render "menu2"
   #enterprise
     %h1
       = @enterprise.name
@@ -29,7 +33,7 @@
           %br/
           Telefone:
           = @enterprise.telephone
-  #content_shoe_enterprise  
+  .content_shoe_enterprise  
     %h1 Produtos da #{@enterprise.name} 
     #center_style   
       #mini_shoes

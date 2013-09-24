@@ -8,16 +8,29 @@
   %body
     %header
       #menu_top
-        = link_to 'Início', '/'
-        = link_to 'Editar dados', 'editar_cliente'
-        = link_to 'Meus pedidos', 'myorders'
-        = link_to 'Carrinho', 'cart',class: 'cart'
-      #name_page
-        %h1 CATALOG FOOTWEAR
-      #message  
-        Bem vindo, #{session[:name]}!
-        = link_to 'Sair', logout_client_path
+        #logo
+          = link_to (image_tag("logo.png",height: 120, weight: 120)),'/', class: 'logo'
+        #cart2
+          = link_to (image_tag 'meu_carrinho.png'), 'cart', class: 'cart'
+        #buttons
+          = link_to "Início", '/'
+          = link_to 'Editar dados', '/editar_cliente'
+          = link_to 'Meus pedidos', '/myorders'
+        #search
+          =image_tag("tit_busca.png")
+          //=text_field placeholder: "search"
+          =link_to (image_tag("ok_busca.png")), '/'
+        #message  
+          Bem vindo, #{session[:name]}!
+          = link_to 'Sair', logout_client_path
+    .faixa1
+    .faixa2
     = yield
-    %hr
-    %footer
-      ANUNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO 
+    #end
+      %footer
+        Email: catalog_footwear@gmail.com
+        %br
+        Telefone: (018) 3541-4521
+        %br
+        %b Desenvolvedor: 
+        Diego Oliveira

@@ -1,17 +1,19 @@
-%h1 Detalhes do Administrador
-%hr
-#form 
-  - presenter = PersonPresenter.new(@person)
-  %p#notice= notice
-  %p
-    %b
-      = Person.human_attribute_name(:name)
-      \:
-    = @person.name
-  %p
-    %b Administrador:
-    = presenter.admin
-  = link_to 'Editar', edit_person_path(@person)
-  |
-  \#{link_to 'Voltar', people_path}
-%hr
+.container
+  #name_page
+    Detalhes do Administrador
+  %hr
+  #form 
+    - presenter = PersonPresenter.new(@person)
+    %p#notice= notice
+    %p
+      %b
+        = Person.human_attribute_name(:name)
+        \:
+      = @person.name
+    %p
+      %b Administrador:
+      = presenter.admin
+    = link_to 'Editar', edit_person_path(@person)
+    |
+    \#{link_to 'Voltar', people_path}
+  %hr

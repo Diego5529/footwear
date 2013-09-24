@@ -181,9 +181,26 @@ class PublicsController < ApplicationController
     @orders = OrderItem.find(params[:id])
   end
 
+  def all_releases
+    @all_releases = Shoe.order("created_at DESC").where("permit = ?", true).all
+  end
+
+  def all_bestsellers
+    @all_bestsellers = Shoe.permited.order("lock_version DESC").first(12)
+  end
+
+  def all_shoes
+    @all_shoes = Shoe.permited.order('random()').first(12)
+  end
+
+  def search
+    @search = Shoe.search params[:search]
+  end
+
   private
+
   def load_shoes
-    @shoes = Shoe.permited.order('random()').all
+    @shoes = Shoe.permited.order('random()').first(12)
   end
 
   def load_enterprises

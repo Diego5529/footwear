@@ -8,16 +8,26 @@
   %body
     %header
       #menu_top
-        = link_to 'Início', '/'
-        = link_to 'Meus Produtos', '/shoes'
-        = link_to 'Minhas vendas', '/mysales'
-        = link_to 'Editar dados', 'editar_empresa'
-      #name_page
-        %h1 CATALOG FOOTWEAR
-      #message  
-        Bem vindo, #{session[:name]}!
-        = link_to 'Sair', logout_user_path
+        #logo
+          = link_to (image_tag("logo.png",height: 120, weight: 120)),'/', class: 'logo'
+        #buttons
+          = link_to 'Início', '/'
+          = link_to 'Meus Produtos', '/shoes'
+          = link_to 'Minhas vendas', '/mysales'
+          = link_to 'Editar dados', 'editar_empresa'
+        #search
+          =image_tag("tit_busca.png")
+          //=text_field placeholder: "search"
+          =link_to (image_tag("ok_busca.png")), '/'
+        #message  
+          Bem vindo, #{session[:name]}!
+          = link_to 'Sair', logout_user_path
+    .faixa1
+    .faixa2
     = yield
+    #end
     %hr
     %footer
-      ANUNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO
+      Email: catalog_footwear@gmail.com
+      %br
+      Telefone: (018) 3541-4521

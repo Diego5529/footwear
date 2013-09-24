@@ -27,6 +27,11 @@ class Shoe < ActiveRecord::Base
 
   before_create :check_image
 
+  def self.search(search)
+    search_condition = "%" + search + "%"
+    find(:all, :conditions => ['name LIKE ?', search_condition])
+  end
+
   def sold_out?
     self.stock < 1
   end

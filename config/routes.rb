@@ -26,9 +26,14 @@ Footwear::Application.routes.draw do
   match 'cart' => 'publics#cart'
   match 'remove/:id' => 'publics#remove', via: :delete
   match 'checkout' => 'publics#close_order'
+  match 'all_releases' => 'publics#all_releases'
+  match 'all_shoes' => 'publics#all_shoes'
+  match 'all_bestsellers' => 'publics#all_bestsellers'
   match 'request/:id' => 'publics#order'
   match 'editar_empresa' => 'publics#editar_empresa'
   match 'editar_cliente' => 'publics#editar_cliente'
+
+  match 'search' => 'publics#search'
 
   match 'mysales' => 'shoes#mysales'
   match 'mysalesdetails/:id' => 'shoes#mysalesdetails', as: :order_id

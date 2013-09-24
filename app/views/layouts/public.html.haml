@@ -3,20 +3,30 @@
   %head
     %title -Footwear
     = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application'
+    = javascript_include_tag 'application', media: 'all'
     = csrf_meta_tags
   %body
     %header
       #menu_top
-        = link_to "Início", '/'
-        = link_to 'Quero comprar', 'register'
-        = link_to 'Quero vender', 'register_enterprise'
-        = link_to 'Sou Cliente', 'login_client'
-        = link_to 'Sou Empresa', 'login_user'
-        = link_to 'Carrinho', 'cart',class: 'cart'
-    #container
-      = yield
+        #logo
+          = link_to (image_tag("logo.png",height: 120, weight: 120)),'/', class: 'logo'
+        #cart1
+          = link_to (image_tag 'meu_carrinho.png'), 'cart', class: 'cart'
+        #buttons
+          = link_to "Início", '/'
+          = link_to 'Quero comprar','register'
+          = link_to 'Quero vender','register_enterprise'
+          = link_to 'Sou Cliente','login_client'
+          = link_to 'Sou Empresa','login_user'
+        #search
+          //=image_tag("tit_busca.png")
+          = render 'layouts/search'
+    .faixa1
+    .faixa2
+    = yield
     #end
     %hr
     %footer
-      ANUNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO
+      Email: catalog_footwear@gmail.com
+      %br
+      Telefone: (018) 3541-4521

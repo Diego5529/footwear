@@ -17,8 +17,8 @@ module ImageSaver
     @image = self.image ? self.image : Image.new(imageable_id: self.id, imageable_type: self.class.to_s)
     @image.title = self.image_title
     @image.data_stream = self.data_stream
-    @image.height = 200
-    @image.width = 200
+    @image.height = 1000
+    @image.width = 1000
     @image.save
   end
 end

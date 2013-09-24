@@ -1,0 +1,11 @@
+#title
+  Outros
+#menu2
+  =link_to '> Lançamentos','/all_releases'
+  %br
+  =link_to '> Mais vendidos','/all_bestsellers'
+  %br
+  -if session[:id]
+    =link_to '> Meus pedidos','/myorders'
+    %br
+  =link_to '> Todos','/all_shoes'

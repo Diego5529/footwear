@@ -1,8 +1,8 @@
-%h1
-  Detalhe do Pedido
-#form
+.container
+  #name_page
+    Detalhe do Pedido
   #form
-  %p
+    %p
     %b Código do pedido:
     = @orders.id
     %br/
@@ -23,5 +23,6 @@
     = @orders.client.name
     %br/
     %br/
+    |
     %b= link_to 'Voltar' , '/shoes'
-%hr
+    |

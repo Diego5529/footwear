@@ -7,29 +7,30 @@
     = csrf_meta_tags
   %head
     %header
-      #name_page
-        %h1 CATALOG FOOTWEAR
-      %h3
-        |
-        Bem vindo, #{session[:name]}.
-        = link_to 'Sair', logout_path
-        |
-        = link_to 'Início', logout_path
-        |
-        = link_to 'Administradores', 'people'
-        |
-        = link_to 'Clientes', 'clients'
-        |
-        = link_to 'Empresas', 'enterprises'
-        |
-        = link_to 'Produtos', 'shoes'
-        |
-        = link_to 'Pedidos', 'orders'
-        |
-        = link_to 'Categorias', 'categories'
-%body
-  - if session[:admin]
-    = yield
+      #menu_top
+        #logo
+          = link_to (image_tag("logo.png",height: 120, weight: 120)),logout_path, class: 'logo'
+        #buttons
+          = link_to 'Início', logout_path
+          |
+          = link_to 'Administradores', '/people'
+          |
+          = link_to 'Clientes', '/clients'
+          |
+          = link_to 'Empresas', '/enterprises'
+          |
+          = link_to 'Produtos', '/shoes'
+          |
+          = link_to 'Pedidos', '/orders'
+          |
+          = link_to 'Categorias', '/categories'
+        #search 
+          Bem vindo, #{session[:name]}.
+          = link_to 'Sair', logout_path
+  .faixa1
+  .faixa2
+  = yield
   %footer
-    ANUNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO
-  #end
+    Email: catalog_footwear@gmail.com
+    %br
+    Telefone: (018) 3541-4521

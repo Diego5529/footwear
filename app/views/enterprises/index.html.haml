@@ -1,37 +1,38 @@
-%h1 Lista de Empresas
-%table{:align => 'center'}
-  %tr
-    %th Nome
-    %th Nome Social
-    %th E-mail
-    %th CNPJ
-    %th CEP
-    %th Endereço
-    %th Numero
-    %th Bairro
-    %th Estado
-    %th Cidade
-    %th Telefone
-    %th Permição
-    %th{:colspan => '3'} Opções
-  - @enterprises.each do |enterprise|
-  - presenter = EnterprisePresenter.new(enterprise)
+.container
+  #name_page
+    Lista de Empresas
+  %table{:align => 'center'}
     %tr
-      %td= enterprise.name
-      %td= enterprise.name_social
-      %td= enterprise.email
-      %td= enterprise.cnpj
-      %td= enterprise.zip_code
-      %td= enterprise.address
-      %td= enterprise.number
-      %td= enterprise.district
-      %td= enterprise.state
-      %td= enterprise.city
-      %td= enterprise.telephone
-      %td= presenter.permit
-      %td= link_to 'Detalhes', enterprise
-      %td= link_to 'Editar', edit_enterprise_path(enterprise)
-      %td= link_to 'Apagar', enterprise, method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' }
-  %hr
-%hr
-%h2= link_to 'Nova Empresa', new_enterprise_path
+      %th Nome
+      %th Nome Social
+      %th E-mail
+      %th CNPJ
+      %th CEP
+      %th Endereço
+      %th Numero
+      %th Bairro
+      %th Estado
+      %th Cidade
+      %th Telefone
+      %th Permição
+      %th{:colspan => '3'} Opções
+    - @enterprises.each do |enterprise|
+    - presenter = EnterprisePresenter.new(enterprise)
+      %tr
+        %td= enterprise.name
+        %td= enterprise.name_social
+        %td= enterprise.email
+        %td= enterprise.cnpj
+        %td= enterprise.zip_code
+        %td= enterprise.address
+        %td= enterprise.number
+        %td= enterprise.district
+        %td= enterprise.state
+        %td= enterprise.city
+        %td= enterprise.telephone
+        %td= presenter.permit
+        %td= link_to 'Detalhes', enterprise
+        %td= link_to 'Editar', edit_enterprise_path(enterprise)
+        %td= link_to 'Apagar', enterprise, method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' }
+  #form
+    %h2= link_to 'Nova Empresa', new_enterprise_path

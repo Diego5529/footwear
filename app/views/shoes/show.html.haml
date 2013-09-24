@@ -1,34 +1,36 @@
-%section#shoe_detail
-  %h1 Detalhes do Produto
-  - presenter = ShoePresenter.new(@shoe)
-  %p#notice= notice
-  #img
-    %img{:src => @shoe.image, heigth: 270, width:270}
-#details 
-  %p
-    %b Nome:
-    = @shoe.name
-  %p
-    %b Preço:
-    = @shoe.value
-  %p
-    %b Empresa:
-    = @shoe.enterprise.name
-  %p
-    %b Categoria:
-    = @shoe.category.name
-  %p
-    %b Estoque:
-    = @shoe.stock
-  %p
-    %b Data de registro:
-    = @shoe.registed
-  %p
-    %b Descrição:
-    = @shoe.description
-  %p
-    %b Permição:
-    = presenter.permit
-  = link_to 'Editar', edit_shoe_path(@shoe)
-  |
-  \#{link_to 'Voltar', shoes_path}
+.container
+  %section#shoe_detail
+    #name_page
+      Detalhes do Produto
+    - presenter = ShoePresenter.new(@shoe)
+    %p#notice= notice
+    #img
+      %img{:src => @shoe.image, heigth: 270, width:270}
+  #details 
+    %p
+      %b Nome:
+      = @shoe.name
+    %p
+      %b Preço:
+      = @shoe.value
+    %p
+      %b Empresa:
+      = @shoe.enterprise.name
+    %p
+      %b Categoria:
+      = @shoe.category.name
+    %p
+      %b Estoque:
+      = @shoe.stock
+    %p
+      %b Data de registro:
+      = @shoe.registed
+    %p
+      %b Descrição:
+      = @shoe.description
+    %p
+      %b Permição:
+      = presenter.permit
+    = link_to 'Editar', edit_shoe_path(@shoe)
+    |
+    \#{link_to 'Voltar', shoes_path}

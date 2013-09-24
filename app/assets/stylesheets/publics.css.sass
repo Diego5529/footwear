@@ -1,98 +1,162 @@
 body
-  font-family: Arial, Verdana, Tahoma, Geneva, Helvetica, sans-serif
+  background-color: #f1f1f1
+  color: #02314C
+  font-family: Arial, Verdana, Tahoma, Helvetica, sans-serif
   font-size: 14px
-  margin-left: 10px
-  margin-right: 10px
-  font-color: #02314C
-  font-weight: bold
   /*#5c6241*/
 
-  #container
-    margin: 0 auto
-    margin-left: 10%
-    margin-right: 10%  
-  
   header
-    height: 130px
-    margin-bottom: 5px
-    margin-top: 10px
+    height: 152px
+    margin-left: 10%
+    margin-right: 10%
+    margin-top: 20px
 
   footer
-    background: #104E8B
+    background: #02314c //#104E8B
     color: #fff
     font-size: 18pt
+    height: 100px
     margin-top: 10px
     text-align: center
-    text-shadow: 0.1em 0.1em 0.2em #000
-    height: 100px
 
   h1
-    background: white
-    border-radius: 8px
+    border-radius: 20px 20pc
+    box-shadow: 0.1em 0.1em 0 #02314c
     color: #02314C
     font-size: 26pt
     margin-bottom 10px
+    margin-right: 10px
     margin-top: 7px
     text-align: center
-    box-shadow: 0.1em 0.1em #4682B4
 
+  .container
+    background: #fff
+    border: 1px solid lightgray
+    margin-left: 10%
+    margin-right: 10%
+
+  .faixa1
+    background: #02314c
+    float: left
+    height: 35px
+    margin-top: 17px
+    position: absolute
+    width: 9.99% 
+
+  .faixa2
+    background: #02314c
+    float: right
+    height: 36px
+    margin-top: 17px
+    position: relative
+    width: 10.1%
 
   #name_page
-    h1
+    background: #02314C
+    color: #fff
+    font-size: 14pt
+    font-weight: bold
+    padding: 8px
+    text-align: center
+    a
+      color: #fff
+      font-size: 14pt
+      margin-top: 7px
+    a:hover
+      background-color: #fff
+      color: #02314C
+
+  #menu_top
+    background: #fff
+    border: 1px solid lightgray
+    height: 155px
+
+  #menu_admin
+    margin-top: 30px
+    margin-left: 150px
+    position: absolute
+
+  #text
+    margin-left: 17%
+    margin-top: 6.4%
+    position: relative
+
+  #enter
+    margin-left: 20%
+    position: absolute
+
+    
+  #cart1
+    float: right
+    margin-top: 100px
+    position: relative
+    &:hover
+      -webkit-transform: scale(1.2)
+      transform: scale(0.9)
+
+  #cart2
+    float: right
+    margin-right: 20px
+    margin-top: 20px
+    position: relative
+    &:hover
+      -webkit-transform: scale(1.2)
+      transform: scale(1.2)
+  
+  #logo
+    margin-top: 13px
+    position: absolute
+
+  #buttons
+    margin-left: 200px
+    margin-top: 30px
+    position: absolute
+    a
       background: #02314C
       border-radius: 12px 10pc
       color: #fff
-      font-size: 28pt
-      margin-top: 7px
-      text-align: center
-      text-shadow: 0.1em 0.1em 0.2em #000
-
-  #menu_top
-    display: block  
-    text-shadow: 0.1em 0.1em 0.2em #4682B4
-    a,h3
-      color: #000
-      font-size: 14pt
+      font-size: 16px
+      margin-left: 15px
     a:hover
-      color: #02314c
-    .cart
-      text-shadow: 1px 1px 1px #00FF00
-      a:hover
-        color: black
+      background: #104e8b
+      color: #fff
 
-  .cart
-    a:hover
-      color: white
+  #search
+    color: #1874CD
+    font-size: 16pt
+    margin-left: 220px
+    margin-top: 100px
+    position: relative
+    a 
+      color: red
 
   #message
     color: #1874CD
     font-size: 16pt
-    margin-bottom: 20px
+    margin-right: 20px
+    margin-top: 99px
     text-align: right
     a
       color: tomato
       font-size: 16pt
-
     a:hover
       color: red
 
   nav.pagination
-  background: transparent
-  color: black
+    background: transparent
+    color: black
   
   span.current
     font-size: 1.5em
 
   a
-    color: #4682B4
-    font-size: 10pt
-    font-weight: bold
+    color: #02314c
+    font-size: 12pt
     padding: 0.5em 1em
     text-align: center
-    text-align: justify
     text-decoration: none
     &:hover
-      color: black
+      color: #1874cd
 
   h4
     background: red
@@ -104,6 +168,18 @@ body
     text-align: center
     text-decoration: none
 
+  .submit
+    border-radius: 5px
+    color: #1874CD
+    cursor:hand
+    font-size: 16px
+
+  .actions
+    border-radius: 5px
+    color: #1874CD
+    cursor:hand
+    font-size: 16px
+
   #names
     background: #FF4500
     font-size: 24pt
@@ -111,6 +187,7 @@ body
     text-align: center
 
   #content_all
+    margin-left: 30px
     margin-top: 400px
     position: relative
     h1
@@ -121,13 +198,13 @@ body
     h1
       text-align: center
 
-  #content_shoe_enterprise
+  .content_shoe_enterprise
     margin-top: 210px
     h1
       text-align: center
       margin-left: 210px
 
-  #realeases
+  #releases
     height: 436px
     margin-left: 210px
     position: relative
@@ -144,43 +221,57 @@ body
     margin: 0 auto
     width: 1000px
 
+  #title
+    background: #02314c
+    color: #fff
+    float: center
+    font-size: 18px
+    margin-top: 10px
+    padding-top: 4px
+    padding: 4px
+    text-align: center
+
   #menu_left
-    background-color: white
     border-radius: 12px
+    box-shadow: 0.1em 0.1em 0.1em #02314c
+    color: #5c6241
     float: left
-    height: 880px
-    box-shadow: 0.1em 0.1em #4682B4
-    text-align: left
-    text-shadow: 0.1em 0.1em 0.2em white
-    width: 200px
-    
+    height: 870px
+    padding: 2px   
+    width: 200px 
     a
-      color: black
+      color: #02314c
       font-size: 16pt
       text-shadow: 0.1em 0.1em 0.2em white
     a:hover
-      color: black
+      color: #1874cd
       text-shadow: 0.1em 0.1em 0.2em white
-    h2
-      font-size: 16pt
-      margin-left: 5px
     li
       list-style-type: none
+
+  #menu2
+    margin-top: 10px
+    a
+      color: #5c6241
+      font-size: 14pt
+      font-weight: bold
+      &.short
+        font-size: 12pt
 
   #enterprise_total
     float: left
     font-size: 16pt
     height: 570px
-    margin-left: 50px
-    width: 500px
+    margin-left: 10px
+    width: 400px
 
   #enterprise_total_info
     float: left
     font-size: 16pt
     height: 570px
     margin-left: 50px
-    width: 800px
     position: absolute
+    width: 800px
 
   #enterprise_details
     font-size: 16pt
@@ -207,20 +298,21 @@ body
   a
     &.more_shoe_info, &.buy_shoe
       background: green
-      border-radius: 15px
+      border-radius: 12px 10pc
       color: white
-      font-size: 18px
+      font-size: 16px
       margin-left: 3em
       padding: 0.2em 1em
       text-align: center
       text-decoration: none
       &:hover
-        background: #9ACD32
+        background: #32CD32
+        color: #000
 
   #mini_shoes
     list-style-type: none
-    margin-left: 10px
-    margin-top: 10px
+    margin-left: 50px
+    margin-top: 50px
     h1
       color: maroon
       margin-bottom: 10px
@@ -239,20 +331,18 @@ body
 
   table
     background: #fff
-    border-radius: 10px
     border: 2px solid black
     color: black
+    font-family: arial
+    font-size: 16px
     padding: 0.2em
     text-align: center
     text-decoration: none
     width: 100%
-    font-size: 16px
-    font-family: arial
     a 
-      color: blue
+      color: #02314c
     td
       background: #E0EEEE
-      border-radius: 10px
       border: 2px solid black
       color: black
       padding: 0.2em
@@ -261,7 +351,6 @@ body
     th
       background: #4682B4
       border-color: black
-      border-radius: 10px
       border: 2px solid black
       color: #000
       font-size: 12pt
@@ -276,26 +365,33 @@ body
     text-align: justify
 
   #details
-    margin: 0 auto
-    margin-left: 55%
     margin-bottom: 50px
+    margin-left: 55%
     margin-top: 50px
 
   #form
-    margin: 0 auto
-    margin-left: 40%
+    margin-bottom: 10px
+    margin-left: 44%
+    margin-top: 10px
+    h3
+      color: #000
+
+  #order
+    margin-bottom: 10px
+    margin-left: 5%
+    margin-right: 5%
+    margin-top: 10px
 
   #description
     float: right
-    position: relative
-    margin-left: 700px
     height: 350px
+    margin-left: 700px
+    position: relative
     width: 350px
 
   #img
-    margin: 0 auto
-    margin-left: 30%
     margin-bottom: 50px
+    margin-left: 27%
     position: absolute
 
   #Form
@@ -310,12 +406,12 @@ body
     height: 570px
     margin-left: 50px
     text-align: justify
-    width: 450px
+    width: 430px
     ul
       &:hover
-        border-radius: 15px
         -webkit-transform: scale(1.1)
         -webkit-transform: traslate(50px,20px)
+        border-radius: 15px
 
   h4.shoes
     color: black
@@ -325,12 +421,12 @@ body
 
   #shoes_rand
     float: left
-    width: 180px
     margin-right: 20px
+    width: 180px
     &:hover
+      -webkit-transform: scale(1.1)
       background-color: lightgray
       border-radius: 10px
-      -webkit-transform: scale(1.1)
 
   #notice
     color: red
@@ -365,7 +461,6 @@ body
       background-color: #c00
       color: #fff
       font-size: 12px
-
       margin-bottom: 0px
       margin: -7px
       padding: 5px 5px 5px 15px

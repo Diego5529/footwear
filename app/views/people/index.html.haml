@@ -1,5 +1,6 @@
-#content
-  %h1 Lista de Administradores
+.container
+  #name_page
+    Lista de Administradores
   %table{:align => 'center'}
     %tr
       %th Nome
@@ -15,6 +16,5 @@
         %td= link_to 'Detalhes', person
         %td= link_to 'Editar', edit_person_path(person)
         %td= link_to 'Apagar', person, method: :delete, data: { confirm: 'Tem certeza?' }
-    %hr
-  %hr
-  %h2= link_to 'Novo Administrador', new_person_path
+  #form
+    %h2= link_to 'Novo Administrador', new_person_path

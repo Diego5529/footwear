@@ -1,9 +1,9 @@
-%h1 Editar Administrador
-%hr
-%p#notice= notice
-= render 'form'
-%hr
-#form
-  = link_to 'Detalhes', @person
-  |
-  \#{link_to 'Voltar', people_path}
+.container
+  #name_page
+    Editar Administrador
+  %p#notice= notice
+  = render 'form'
+  #form
+    = link_to 'Detalhes', @person
+    |
+    \#{link_to 'Voltar', people_path}

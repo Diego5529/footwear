@@ -1,5 +1,6 @@
-#content
-  %h1 Lista de clientes
+.container
+  #name_page
+    Lista de clientes
   %table{:align => 'center'}
     %tr
       %th Nome
@@ -28,6 +29,5 @@
         %td= link_to 'Detalhes', client
         %td= link_to 'Editar', edit_client_path(client)
         %td= link_to 'Apagar', client, method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' }
-    %hr
-  %hr
-  %h2= link_to 'Novo cliente', new_client_path
+  #form
+    %h2= link_to 'Novo cliente', new_client_path

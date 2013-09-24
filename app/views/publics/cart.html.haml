@@ -1,31 +1,34 @@
-%h1 Carrinho
-%hr
-%ul#cart_items
-  = render :partial=>"cart_item", :collection=>@cart.items
-%p
-  %h2
-    -if @cart.total == 0
-      Seu carrinho está vazio, selecione um produto.
+.container
+  #name_page
+    = render partial: 'categories', collection: @categories
+  %h1 Carrinho
+  %ul#cart_items
+    = render :partial=>"cart_item", :collection=>@cart.items
+  %ul
+    #order
       %h2
-        = link_to "Início", "/",class: 'Inicio'
-    -if @cart.total > 0
-      Total:
-      %span#cart_total.shoe_value= number_to_currency(@cart.total)
-      %h2
-      - if session[:id] && @cart.total > 0
-        %h2
-          = link_to "Fechar Encomenda", "/checkout"
-      - else
-        %h2
-        Você precisa estar logado
-        = link_to "Entrar", "login_client"
-        |
-        = link_to "Cadastre-se", "register"
-%hr
-%h1 Outros Produtos
-= paginate @shoes
-#mini_shoes{style: "margin-left: 10px;"}
-  = render :partial=>"mini_shoe", :collection=>@shoes
-#end{style: "float: right;"}
-  = paginate @shoes
-#end
+        -if @cart.total == 0
+          Seu carrinho está vazio, selecione um produto.
+          %h2
+            = link_to "Início", "/",class: 'Inicio'
+        -if @cart.total > 0
+          Total:
+          %span#cart_total.shoe_value= number_to_currency(@cart.total)
+          - if session[:id] && @cart.total > 0
+            %h2
+              = link_to "Fechar Encomenda", "/checkout"
+          - else
+            %h2
+            Você precisa estar logado
+            = link_to "Entrar", "login_client"
+            |
+            = link_to "Cadastre-se", "register"
+  %hr
+  %h1 Outros Produtos
+  #order
+    = paginate @shoes
+    #mini_shoes{style: "margin-left: 10px;"}
+      = render :partial=>"mini_shoe", :collection=>@shoes
+    #end{style: "float: right;"}
+      = paginate @shoes
+    #end

@@ -7,6 +7,6 @@
     = simple_format(mini_shoe.category.name)
     %span.shoe_value= number_to_currency(mini_shoe.value)
     %br/
-    = link_to "Detalhes","/shoe/#{mini_shoe.id}",class: "more_shoe_info"
+    =link_to (image_tag("bt_comprar.gif")),"/shoe/#{mini_shoe.id}"
     %br/
     %br/

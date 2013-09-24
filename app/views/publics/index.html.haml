@@ -1,12 +1,13 @@
-#content
+.container
   #name_page
-    %h1
-      CATALOG FOOTWEAR
     = render partial: 'categories', collection: @categories
   #menu_left
-    %h2
+    #title
+      Empresas
+    %h3
       = render partial: 'enterprises', collection: @enterprises
-  #realeases    
+    = render "menu2"
+  #releases    
     %h1 Lançamentos
     #center_style
       #mini_shoes
