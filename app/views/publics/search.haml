@@ -1,13 +1,8 @@
 .container
   #name_page
-    = render partial: 'categories', collection: @categories
-  #menu_left
-    #title
-      Empresas
-    %h3
-      = render partial: 'enterprises', collection: @enterprises
-    = render "menu2"
-  #form
-    - @search.each do |shoe|
-      = render partial: 'mini_shoe', collection: @search
-      //%ul= link_to shoe.name, "/shoe/#{shoe.id}"
+    Procura
+  #searchs
+    %br/
+    %br/
+    = render partial: 'search', collection: @search
+#end

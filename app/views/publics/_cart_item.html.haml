@@ -13,5 +13,5 @@
     %br
     = link_to("Remover item", {:action=>"remove",:id=>cart_item.id},:remote=>true,:method=>:delete,:class=>"remove_shoe",:confirm=>"Tem certeza ?")
     \-
-    = link_to "Continuar comprando", "/"
+    %b= link_to "Continuar comprando", "/"
     %hr

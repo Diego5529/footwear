@@ -194,7 +194,7 @@ class PublicsController < ApplicationController
   end
 
   def search
-    @search = Shoe.search params[:search]
+    @search = Shoe.permited.search params[:search]
   end
 
   private
@@ -208,11 +208,11 @@ class PublicsController < ApplicationController
   end
 
   def load_bestsellers
-    @bestsellers = Shoe.permited.order("lock_version DESC").first(4)
+    @bestsellers = Shoe.permited.order("lock_version DESC").first(3)
   end
 
   def load_releases
-    @releases = Shoe.order("created_at DESC").where("permit = ?", true).first(4)
+    @releases = Shoe.order("created_at DESC").where("permit = ?", true).first(3)
   end
 
   def load_categories

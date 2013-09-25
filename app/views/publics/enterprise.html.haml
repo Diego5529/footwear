@@ -2,7 +2,7 @@
   #name_page
     = render partial: 'categories', collection: @categories
   #menu_left
-    #title
+    .title
       Empresas
     %h3
       = render partial: 'enterprises', collection: @enterprises
@@ -14,28 +14,29 @@
       #enterprise_total_info
         = image_tag(@enterprise.image,width: 150,height: 150)
         #enterprise_details_info
-          E-mail:
+          %b E-mail:
           = @enterprise.email
           %br/
-          Cidade:
-          = @enterprise.city
+          %b Telefone:
+          = @enterprise.telephone
           %br/
-          Estado:
-          = @enterprise.state
-          %br/
-          Endereço:
+          %b Endereço:
           = @enterprise.address
           ,
           = @enterprise.number
           %br/
-          Bairro:
+          %b Bairro:
           = @enterprise.district
           %br/
-          Telefone:
-          = @enterprise.telephone
+          %b Cidade:
+          = @enterprise.city
+          %br/
+          %b Estado:
+          = @enterprise.state
   .content_shoe_enterprise  
     %h1 Produtos da #{@enterprise.name} 
     #center_style   
       #mini_shoes
-        = render :partial=>'mini_shoe', :collection=>@shoes
+        %ul
+          = render :partial=>'mini_shoe', :collection=>@shoes
   #end

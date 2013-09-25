@@ -1,6 +1,6 @@
 class Order < ActiveRecord::Base
   attr_accessible :client_id
-  has_many :order_items
+  has_many :order_items, dependent: :destroy
   has_many :shoes, through: :ordem_items
   belongs_to :client
   has_one :client, dependent: :destroy

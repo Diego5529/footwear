@@ -4,31 +4,35 @@
     //%h2= @enterprise.name
   #name_page
     Lista de Produtos
-  %table{:align => 'center'}
-    %tr
-      %th Nome
-      %th Preço
-      %th Empresa
-      %th Categoria
-      %th Estoque
-      %th Data
-      %th Descrição
-      %th Permição
-      %th{:colspan => '3'} Opções
-    - @shoes.each do |shoe|
-    - presenter = ShoePresenter.new(shoe)
+  %table.tables
+    %thead
       %tr
-        %td= shoe.name
-        %td= shoe.value
-        %td= shoe.enterprise.name
-        %td= shoe.category.name
-        %td= shoe.stock
-        %td= shoe.registed
-        %td= shoe.description
-        %td= presenter.permit
-        %td= link_to 'Detalhes', shoe
-        %td= link_to 'Editar', edit_shoe_path(shoe)
-        %td= link_to 'Apagar', shoe, method: :delete, data: { confirm: 'Tem certeza?' }
+        %th Nome
+        %th Preço
+        %th Empresa
+        %th Categoria
+        %th Estoque
+        %th Data
+        %th Permição
+        %th Detalhes?
+        %th Editar?
+        %th Apagar?
+    %tbody     
+      - @shoes.each do |shoe|
+      - presenter = ShoePresenter.new(shoe)
+        %tr
+          %td= shoe.name
+          %td= shoe.value
+          %td= shoe.enterprise.name
+          %td= shoe.category.name
+          %td= shoe.stock
+          %td= shoe.registed
+          %td= presenter.permit
+          %td= link_to 'Detalhes', shoe
+          %td= link_to 'Editar', edit_shoe_path(shoe)
+          %td= link_to 'Apagar', shoe, method: :delete, data: { confirm: 'Tem certeza?' }
+  %br/
+  %br/
   #form
     - if !session[:admin]
       %h2= link_to 'Novo produto', new_shoe_path

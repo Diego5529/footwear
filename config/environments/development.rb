@@ -44,7 +44,7 @@ Footwear::Application.configure do
     password:             'clickjogos', 
     authentication:       'plain', 
     enable_starttls_auto: true  
-}
+  }
   config.action_mailer.raise_delivery_errors = true
   
 

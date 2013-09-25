@@ -1,10 +1,11 @@
-%div#shoes_rand
+#shoes_rand
   #shoes
     = bestsellers.name
   %h2
     = link_to bestsellers.enterprise.name, "/enterprise/#{bestsellers.enterprise.id}"
     = image_tag(bestsellers.image,height: 150, :class => "img")
-    = simple_format(bestsellers.category.name)
+    //= simple_format(bestsellers.category.name)
+    %br
     %span.shoe_value= number_to_currency(bestsellers.value)
     %br/
     =link_to (image_tag("bt_comprar.gif")),"/shoe/#{bestsellers.id}"

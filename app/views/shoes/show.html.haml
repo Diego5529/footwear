@@ -3,10 +3,10 @@
     #name_page
       Detalhes do Produto
     - presenter = ShoePresenter.new(@shoe)
-    %p#notice= notice
-    #img
-      %img{:src => @shoe.image, heigth: 270, width:270}
-  #details 
+  #img
+    %img{:src => @shoe.image, heigth: 270, width:270}
+  #details
+    #notice= notice
     %p
       %b Nome:
       = @shoe.name

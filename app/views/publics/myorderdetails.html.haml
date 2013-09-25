@@ -1,6 +1,7 @@
 .container
   #name_page
     = render partial: 'categories', collection: @categories
+  %br/
   %h1
     Detalhe do Pedido
   #form
@@ -17,11 +18,13 @@
       = @orders.shoe.name
       %br/
       %br/
+      %b Código do produto:
+      = @orders.id
+      %br/
+      %br/
       %b Empresa:
       = @orders.shoe.enterprise.name
       %br/
-      %br/
-      %b Cliente:
-      = @orders.client.name
-      %br/
+  %hr
+  #form
     %h2= link_to 'voltar', '/myorders'

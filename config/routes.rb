@@ -16,6 +16,9 @@ Footwear::Application.routes.draw do
   match 'login_client' => 'login_client#login_client'
   match 'logout_client' => 'login_client#logout_client'
 
+  match 'editar_empresa' => 'publics#editar_empresa'
+  match 'editar_cliente' => 'publics#editar_cliente'
+
   match 'edit' => 'puclics#buyers'
   match 'shoe/:id' => 'publics#shoe'
   match 'enterprise/:id' => 'publics#enterprise'
@@ -30,10 +33,8 @@ Footwear::Application.routes.draw do
   match 'all_shoes' => 'publics#all_shoes'
   match 'all_bestsellers' => 'publics#all_bestsellers'
   match 'request/:id' => 'publics#order'
-  match 'editar_empresa' => 'publics#editar_empresa'
-  match 'editar_cliente' => 'publics#editar_cliente'
 
-  match 'search' => 'publics#search'
+  match 'search' => 'publics#search', via: :post
 
   match 'mysales' => 'shoes#mysales'
   match 'mysalesdetails/:id' => 'shoes#mysalesdetails', as: :order_id
@@ -41,11 +42,8 @@ Footwear::Application.routes.draw do
   match 'myorders' => 'publics#myorders'
   match 'myorderdetails/:id' => 'publics#myorderdetails', as: :order_id
 
-
-
   match 'orders' => 'people#orders'
-  match 'orderdetails/:id' => 'people#orderdetails', as: :order_id
-  
+  match 'orderdetails/:id' => 'people#orderdetails', as: :order_id  
 
   resources :enterprises do
     member do
@@ -55,9 +53,11 @@ Footwear::Application.routes.draw do
 
   resources :shoes
   resources :publics
-  resources :people
   resources :clients
+
+  resources :people
   resources :categories
+
 
   root to: 'publics#index'
 end

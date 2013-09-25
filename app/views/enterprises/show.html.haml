@@ -2,10 +2,10 @@
   #name_page
     Detalhes da Empresa
   - presenter = EnterprisePresenter.new(@enterprise)
-  %p#notice= notice
   #img{style: 'margin-top: 70px '}
     %img{:src => @enterprise.image, heigth: 300, width:300}
-  #details 
+  #details
+    #notice= notice
     %p
       %b Nome:
       = @enterprise.name

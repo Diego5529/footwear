@@ -26,7 +26,7 @@ class Enterprise < ActiveRecord::Base
   has_one :image, dependent: :destroy, as: :imageable
   
   belongs_to :order
-  has_many :order_items
+  has_many :order_items, dependent: :destroy
   has_many :orders, through: :order_items
 
   scope :permited, -> { where(permit: true) }

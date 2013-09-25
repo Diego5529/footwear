@@ -16,9 +16,7 @@
           = link_to 'Minhas vendas', '/mysales'
           = link_to 'Editar dados', 'editar_empresa'
         #search
-          =image_tag("tit_busca.png")
-          //=text_field placeholder: "search"
-          =link_to (image_tag("ok_busca.png")), '/'
+          = render 'layouts/search'
         #message  
           Bem vindo, #{session[:name]}!
           = link_to 'Sair', logout_user_path

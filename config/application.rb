@@ -10,7 +10,19 @@ if defined?(Bundler)
 end
 
 module Footwear
-  class Application < Rails::Application   
+  class Application < Rails::Application
+
+    config.action_mailer.delivery_method = :smtp 
+    config.action_mailer.smtp_settings ={
+    address:              'smtp.gmail.com', 
+    port:                 587, 
+    domain:               'gmail.com', 
+    user_name:            'footwear.clickjogos@gmail.com', 
+    password:             'clickjogos', 
+    authentication:       'plain', 
+    enable_starttls_auto: true  
+    }
+    config.action_mailer.raise_delivery_errors = true 
 
    # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
     config.time_zone = 'Brasilia'
