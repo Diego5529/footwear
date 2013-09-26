@@ -4,5 +4,6 @@
   #searchs
     %br/
     %br/
-    = render partial: 'search', collection: @search
+    -if @search
+      = render partial: 'search', collection: @search
 #end

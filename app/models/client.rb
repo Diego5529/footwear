@@ -1,6 +1,10 @@
 # encoding: utf-8
 class Client < ActiveRecord::Base
   include Auth
+
+  has_many :order_items, dependent: :destroy
+  has_many :orders, through: :order_items
+
   attr_accessible :address, :city, :district, :email, :name, :number, :state, :telephone, :zip_code, :cpf
   
   #validates
@@ -14,7 +18,4 @@ class Client < ActiveRecord::Base
   validates :state, presence: true, length:{maximum: 50}
   validates :cpf, presence: true, uniqueness: true, length:{is: 14}, format: {with:/^\d{3}.[\d]{3}.[\d]{3}-[\w]{2}$/}
   validates :zip_code, presence: true, format:{with:/^[\d]{5}-[\d]{3}$/}
-
-  has_many :order_items
-  has_many :orders, through: :order_items
 end

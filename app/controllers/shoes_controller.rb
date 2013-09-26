@@ -62,6 +62,8 @@ class ShoesController < ApplicationController
   end
 
   def destroy
+    p params, Shoe.find(params[:id])
+    p '-------------------------------------'
     @shoe = Shoe.find(params[:id])
     @shoe.destroy
     redirect_to '/shoes'

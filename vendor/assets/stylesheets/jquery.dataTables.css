@@ -1,4 +1,3 @@
-
 /*
  * Table
  */
@@ -10,7 +9,7 @@ table.dataTable {
 
 table.dataTable thead th {
 	padding: 3px 18px 3px 10px;
-	border-bottom: 1px solid black;
+	/*border-bottom: 1px solid;*/
 	font-weight: bold;
 	cursor: pointer;
 	*cursor: hand;
@@ -18,7 +17,7 @@ table.dataTable thead th {
 
 table.dataTable tfoot th {
 	padding: 3px 18px 3px 10px;
-	border-top: 1px solid black;
+	/*border-top: 1px solid black;*/
 	font-weight: bold;
 }
 
@@ -31,14 +30,14 @@ table.dataTable td.dataTables_empty {
 	text-align: center;
 }
 
-table.dataTable tr.odd { background-color: #4682B4; }
+table.dataTable tr.odd { background-color: #5c6241; }
 table.dataTable tr.even { background-color: #4682B4; }
 
-table.dataTable tr.odd td.sorting_1 { background-color: #4682B4; }
+table.dataTable tr.odd td.sorting_1 { background-color: #5c6241; }
 table.dataTable tr.odd td.sorting_2 { background-color: #4682B4; }
 table.dataTable tr.odd td.sorting_3 { background-color: #4682B4; }
 table.dataTable tr.even td.sorting_1 { background-color: #f1f1f1; }
-table.dataTable tr.even td.sorting_2 { background-color: #4682B4; }
+table.dataTable tr.even td.sorting_2 { background-color: #5c6241; }
 table.dataTable tr.even td.sorting_3 { background-color: #4682B4; }
 
 
@@ -146,7 +145,7 @@ table.dataTable tr.even td.sorting_3 { background-color: #4682B4; }
 
 .paging_full_numbers a.paginate_button,
 .paging_full_numbers a.paginate_active {
-	border: 1px solid #aaa;
+	/*border: 1px solid #aaa;*/
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
 	border-radius: 5px;
@@ -183,11 +182,11 @@ table.dataTable tr.even td.sorting_3 { background-color: #4682B4; }
 	margin-left: -125px;
 	margin-top: -15px;
 	padding: 14px 0 2px 0;
-	border: 1px solid #ddd;
+	/*border: 1px solid #ddd;*/
 	text-align: center;
 	color: #999;
 	font-size: 14px;
-	background-color: white;
+	background-color: #f1f1f1;
 }
 
 

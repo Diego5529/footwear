@@ -8,9 +8,9 @@
         %th Nome Social
         %th E-mail
         %th Permição
-        %td Detalhes?
-        %td Editar?
-        %td Apagar?
+        %th Detalhes?
+        %th Editar?
+        %th Apagar?
     %tbody
       - @enterprises.each do |enterprise|
       - presenter = EnterprisePresenter.new(enterprise)

@@ -16,12 +16,7 @@
         %tr
           %td= orders.id
           %td
-            = orders.created_at.day
-            = orders.created_at
-            \/
-            = orders.created_at.month
-            \/
-            = orders.created_at.year
+            = (orders.created_at.to_formatted_s(:short))
           %td
             = orders.shoe_id
           %td
@@ -32,3 +27,5 @@
             = orders.client.name
           %td
             = link_to "Detalhes", "/mysalesdetails/#{orders.id}"
+  #end
+#end

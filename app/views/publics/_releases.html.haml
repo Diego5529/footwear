@@ -4,7 +4,6 @@
   %h2
     = link_to releases.enterprise.name, "/enterprise/#{releases.enterprise.id}"
     = image_tag(releases.image,height: 150, :class => "img")
-    //= simple_format(releases.category.name)
     %br
     %span.shoe_value= number_to_currency(releases.value)
     %br/
