@@ -3,7 +3,7 @@
   %head
     %title -Footwear
     = stylesheet_link_tag    'application', media: 'all'
-    = javascript_include_tag 'application', media: 'all'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
     %header
@@ -24,6 +24,7 @@
           = link_to (image_tag 'meu_carrinho.png'), 'cart', class: 'cart'
     .faixa1
     .faixa2
+      = link_to 'adm', '/people'
     = yield
     .faixa3
     .faixa4
@@ -31,4 +32,6 @@
       %b Email:
       catalog_footwear@gmail.com
       %br/
-      %i Desenvolvedor: Diego Oliveira
+      %b Desenvolvedor: Diego Oliveira
+    #gray
+      em

@@ -53,17 +53,13 @@ class ShoesController < ApplicationController
     respond_to do |format|
       if @shoe.update_attributes(params[:shoe])
         format.html { redirect_to @shoe, notice: 'Cadastrado com Sucesso!.' }
-        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @shoe.errors, status: :unprocessable_entity }
       end
     end
   end
 
   def destroy
-    p params, Shoe.find(params[:id])
-    p '-------------------------------------'
     @shoe = Shoe.find(params[:id])
     @shoe.destroy
     redirect_to '/shoes'

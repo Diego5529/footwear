@@ -6,12 +6,10 @@
       %tr
         %th Nome
         %th Editar?
-        %th Apagar?
     %tbody
       - @categories.each do |category|
         %tr
           %td= category.name
           %td= link_to 'Editar', edit_category_path(category)
-          %td= link_to 'Apagar', category, method: :delete, data: { confirm: 'Are you sure?' }
   #form
     %h2= link_to 'Nova categoria', new_category_path

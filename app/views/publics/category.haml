@@ -10,7 +10,11 @@
   #releases
     %h1
       = @category.name
-    #center_style
+    .center_style
       #mini_shoes
-        = render partial: 'mini_shoe', collection: @shoes
+        -if @shoes.size > 0
+          = render partial: 'mini_shoe', collection: @shoes
+        -else
+          #Form
+            %h5 Não há nenhum produto desta categoria.
   #end

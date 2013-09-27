@@ -4,6 +4,9 @@
   #searchs
     %br/
     %br/
-    -if @search
+    -if @search.size > 0 
       = render partial: 'search', collection: @search
+    -else
+      #img
+        %h5 Nada foi encontrado. Tente novamente por nome do produto, empresa ou categoria.
 #end

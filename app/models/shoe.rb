@@ -29,7 +29,7 @@ class Shoe < ActiveRecord::Base
 
   def self.search(search)
     search_condition = "%" + search + "%"
-    find(:all, :conditions => ['name LIKE ?', search_condition])
+    find(:all, :conditions => ['name LIKE ? or value LIKE?', search_condition, search_condition])
   end
 
   def sold_out?
