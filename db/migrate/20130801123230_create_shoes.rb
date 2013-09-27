@@ -9,6 +9,7 @@ class CreateShoes < ActiveRecord::Migration
       t.text :description
       t.integer :stock, :integer
       t.boolean :permit, :boolean
+      t.integer :lock_version, default: 0
 
       t.timestamps
     end

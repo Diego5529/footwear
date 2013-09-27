@@ -4,6 +4,8 @@ class CreateOrderItems < ActiveRecord::Migration
     	
       t.references :shoe
       t.decimal :value, precision: 10, scale:2
+      t.integer :enterprise_id
+      t.integer :client_id
 
       t.timestamps
     end
