@@ -7,6 +7,8 @@ class CreateShoes < ActiveRecord::Migration
       t.integer :category_id
       t.date :registed
       t.text :description
+      t.integer :stock, :integer
+      t.boolean :permit, :boolean
 
       t.timestamps
     end
