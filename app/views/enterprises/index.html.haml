@@ -1,6 +1,8 @@
 .container
   #name_page
     Lista de Empresas
+  %br/
+  %br/
   %table.tables
     %thead
       %tr
@@ -22,5 +24,6 @@
           %td= link_to 'Detalhes', enterprise
           %td= link_to 'Editar', edit_enterprise_path(enterprise)
           %td= link_to 'Apagar', enterprise, method: :delete, data: { confirm: 'Tem certeza que deseja apagar?' }
+  %br/
   #form
     %h2= link_to 'Nova Empresa', new_enterprise_path

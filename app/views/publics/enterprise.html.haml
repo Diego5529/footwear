@@ -10,7 +10,7 @@
   #enterprise
     %h1
       = @enterprise.name
-    .center_style  
+    .form 
       #enterprise_total_info
         = image_tag(@enterprise.image,width: 150,height: 150)
         #enterprise_details_info
@@ -35,7 +35,7 @@
           = @enterprise.state
   .content_shoe_enterprise  
     %h1 Produtos da #{@enterprise.name} 
-    .center_style   
+    #releases   
       #mini_shoes
         -if @shoes.size > 0
           %ul

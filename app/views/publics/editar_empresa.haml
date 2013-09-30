@@ -1,7 +1,6 @@
 .container
   #name_page
-    = render partial: 'categories', collection: @categories
-  %h1 Editar Dados
+    Editar Dados
   #form
     %p#notice= notice
     = form_for(@enterprise,:url => '/editar_empresa', :html=> {:multipart=>true}) do |f|

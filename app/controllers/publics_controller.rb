@@ -190,11 +190,11 @@ class PublicsController < ApplicationController
   end
 
   def all_shoes
-    @all_shoes = Shoe.permited.order('random()').first(12)
+    @all_shoes = Shoe.page(params[:page]).per(3).permited.order('random()').first(12)
   end
 
   def search
-    @search = Shoe.permited.search params[:search]
+    @search = Shoe.page(params[:page]).per(6).permited.search params[:search]
   end
 
   private

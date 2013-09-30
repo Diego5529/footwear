@@ -12,11 +12,13 @@
           %h2
             = link_to "Início", "/",class: 'Inicio'
         -if @cart.total > 0
-          Total:
-          %span#cart_total.shoe_value= number_to_currency(@cart.total)
+          %ul
+            Total:
+            %span#cart_total.shoe_value= number_to_currency(@cart.total)
           - if session[:id] && @cart.total > 0
-            %h2
-              = link_to "Fechar Encomenda", "/checkout"
+            %ul
+              %h2
+                = link_to "Fechar Encomenda", "/checkout"
           - else
             %h2
             Você precisa estar logado
