@@ -5,7 +5,6 @@
     = link_to search.enterprise.name, "/enterprise/#{search.enterprise.id}"
     = image_tag(search.image,height: 150, :class => "img")
     = simple_format(search.category.name)
-    %br
     %span.shoe_value= number_to_currency(search.value)
     %br/
     =link_to (image_tag("bt_comprar.gif")),"/shoe/#{search.id}"

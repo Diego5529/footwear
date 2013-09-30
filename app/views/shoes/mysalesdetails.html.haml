@@ -15,14 +15,14 @@
     = @orders.shoe.name
     %br/
     %br/
-    %b Empresa:
-    = @orders.shoe.enterprise.name
+    %b Código do produto:
+    = @orders.shoe.id
     %br/
     %br/
     %b Cliente:
     = @orders.client.name
     %br/
     %br/
-    |
+  %hr
+  #form
     %b= link_to 'Voltar' , '/shoes'
-    |

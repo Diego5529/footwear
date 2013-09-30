@@ -5,27 +5,28 @@
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
-  %head
-    %header
-      #menu_top
-        #logo
-          = link_to (image_tag("logo.png",height: 120, weight: 120)),logout_path, class: 'logo'
-        #buttons
-          = link_to 'Início', logout_path
-          = link_to 'Administradores', '/people'
-          = link_to 'Clientes', '/clients'
-          = link_to 'Empresas', '/enterprises'
-        #search
-          = link_to 'Produtos', '/shoes'
-          = link_to 'Pedidos', '/orders'
-          = link_to 'Categorias', '/categories'
-        #message 
-          Bem vindo, #{session[:name]}.
-          = link_to 'Sair', logout_path
-  .faixa1
-  = yield
-  %footer
-    %b Email:
-    catalog_footwear@gmail.com
-    %br/
-    %b Desenvolvedor: Diego Oliveira
+  %body
+    %head
+      %header
+        #menu_top
+          #logo
+            = link_to (image_tag("logo.png",height: 120, weight: 120)),logout_path, class: 'logo'
+          #buttons
+            = link_to 'Início', logout_path
+            = link_to 'Administradores', '/people'
+            = link_to 'Clientes', '/clients'
+            = link_to 'Empresas', '/enterprises'
+          #search
+            = link_to 'Produtos', '/shoes'
+            = link_to 'Pedidos', '/orders'
+            = link_to 'Categorias', '/categories'
+          #message 
+            Bem vindo, #{session[:name]}.
+            = link_to 'Sair', logout_path
+    .faixa1
+    = yield
+    %footer
+      %b Email:
+      catalog_footwear@gmail.com
+      %br/
+      %b Desenvolvedor: Diego Oliveira
