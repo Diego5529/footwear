@@ -58,6 +58,5 @@ Footwear::Application.routes.draw do
   resources :people
   resources :categories
 
-
   root to: 'publics#index'
 end
