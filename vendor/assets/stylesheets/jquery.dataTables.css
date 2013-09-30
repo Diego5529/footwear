@@ -4,7 +4,8 @@
 table.dataTable {
 	margin: 0 auto;
 	clear: both;
-	width: 100%;
+	width: 98%;
+	padding: 2px;
 }
 
 table.dataTable thead th {
@@ -13,6 +14,7 @@ table.dataTable thead th {
 	font-weight: bold;
 	cursor: pointer;
 	*cursor: hand;
+	padding: 2px;
 }
 
 table.dataTable tfoot th {
@@ -30,14 +32,14 @@ table.dataTable td.dataTables_empty {
 	text-align: center;
 }
 
-table.dataTable tr.odd { background-color: #5c6241; }
+table.dataTable tr.odd { background-color: #1874cd; }
 table.dataTable tr.even { background-color: #4682B4; }
 
-table.dataTable tr.odd td.sorting_1 { background-color: #5c6241; }
+table.dataTable tr.odd td.sorting_1 { background-color: #1874cd; }
 table.dataTable tr.odd td.sorting_2 { background-color: #4682B4; }
 table.dataTable tr.odd td.sorting_3 { background-color: #4682B4; }
 table.dataTable tr.even td.sorting_1 { background-color: #f1f1f1; }
-table.dataTable tr.even td.sorting_2 { background-color: #5c6241; }
+table.dataTable tr.even td.sorting_2 { background-color: #1874cd; }
 table.dataTable tr.even td.sorting_3 { background-color: #4682B4; }
 
 
