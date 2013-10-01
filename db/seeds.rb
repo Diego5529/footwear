@@ -1,11 +1,13 @@
-# people = [
-#   ['administrador','1234567',true]
-# ]
+people = [
+  ['Diego','123456',true],
+  ['administrador','1234567',true]
+]
 
-# people.each do |name,password,admin|
-#     Person.create(name:name,password:password,admin:admin)
-#  end
-# category = ['Esporte']
+people.each do |name,password,admin|
+    Person.create(name:name,password:password,admin:admin)
+ end
+
+# category = ['Infantil']
 
 
 # enterprises = [
@@ -13,13 +15,13 @@
 #   ['Puma', 'Puma','diego4@gmail.com','12346','12.111.111/1311-34','16200-000','Rua','1233','Centro','SP','Birigui','01897748585','../images/enterprises/51.jpg',true]
 # ]
 
-shoes = [
-  ['Nike', 5, 'Mussum ipsum cacilds, vidis litro abertis.', 170.00, DateTime.now, 6,49,13,true]
-  # ['New Shoe', 5, 'Mussum ipsum cacilds, vidis litro abertis.', 170.00, DateTime.now, 6,'http://imagens.passarela.com.br/passarelaEstatico/imagens/produto/8030087467/8030087467_1_Z.JPG',31,true],
-  # ['other', 5, 'Mussum ipsum cacilds, vidis litro abertis.', 170.00, DateTime.now, 6,'http://imagens.passarela.com.br/passarelaEstatico/imagens/produto/8030087467/8030087467_1_Z.JPG',32,true],
-  # ['Metropolitan2', 5, 'Mussum ipsum cacilds, vidis litro abertis.', 170.00, DateTime.now, 6,'http://imagens.passarela.com.br/passarelaEstatico/imagens/produto/8030087467/8030087467_1_Z.JPG',21,true],
-  # ['Metroo', 5, 'Mussum ipsum cacilds, vidis litro abertis.', 170.00, DateTime.now, 6,'http://imagens.passarela.com.br/passarelaEstatico/imagens/produto/8030087467/8030087467_1_Z.JPG',31,true]
-]
+# shoes = [
+#   ['Nike', 5, 'Mussum ipsum cacilds, vidis litro abertis.', 170.00, DateTime.now, 6,49,13,true]
+#   ['New Shoe', 5, 'Mussum ipsum cacilds, vidis litro abertis.', 170.00, DateTime.now, 6,'http://imagens.passarela.com.br/passarelaEstatico/imagens/produto/8030087467/8030087467_1_Z.JPG',31,true],
+#   ['other', 5, 'Mussum ipsum cacilds, vidis litro abertis.', 170.00, DateTime.now, 6,'http://imagens.passarela.com.br/passarelaEstatico/imagens/produto/8030087467/8030087467_1_Z.JPG',32,true],
+#   ['Metropolitan2', 5, 'Mussum ipsum cacilds, vidis litro abertis.', 170.00, DateTime.now, 6,'http://imagens.passarela.com.br/passarelaEstatico/imagens/produto/8030087467/8030087467_1_Z.JPG',21,true],
+#   ['Metroo', 5, 'Mussum ipsum cacilds, vidis litro abertis.', 170.00, DateTime.now, 6,'http://imagens.passarela.com.br/passarelaEstatico/imagens/produto/8030087467/8030087467_1_Z.JPG',31,true]
+# ]
 
 
 # client = [
