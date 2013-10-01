@@ -7,13 +7,13 @@
 #     Person.create(name:name,password:password,admin:admin)
 #  end
 
-category = [
-	['Infantil'],
-	['Adulto'],
-	['Masculino'],
-	['Feminino'],
-	['Esporte']
-]
+# category = [
+#   ['Infantil'],
+#   ['Adulto'],
+#   ['Masculino'],
+#   ['Feminino'],
+#   ['Esporte']
+# ]
 
 
 enterprises = [
@@ -45,9 +45,9 @@ enterprises.each do |name,name_social, email, password, cnpj, zip_code, address,
   Enterprise.create(name:name,name_social:name_social,email:email,password:password,cnpj:cnpj,zip_code:zip_code,address:address,number:number,district:district,state:state,city:city,telephone:telephone,image_title:image,permit:permit)
 end
 
-category.each do |name|
-  Category.create(name:name)
-end
+# category.each do |name|
+#   Category.create(name:name)
+# end
 
 # shoes.each do |name, stock, description, value, date,category,image,enterprise,permit|
 #   Shoe.create(name:name, stock: stock, description: description, value: value, registed: date, category_id: category, image_title:image, enterprise_id: enterprise,permit:permit)  
