@@ -242,7 +242,7 @@ pt-BR:
         state: "Estado "
         city: "Cidade "
         telephone: "Telephone para contato "
-        permit: "Permição "
+        permit: "Permissão "
         image_title: "Titulo da Imagem "
       client:
         name: "Nome: "

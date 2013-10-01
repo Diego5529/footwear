@@ -1,6 +1,5 @@
 %div{ style: 'color:#000; font-family: arial; background-color: #fff;border: 1px solid #f1f1f1;' }
   %h2{ style: 'text-align:center;font-size:16pt; background-color:#02314c;margin-top:0px; color:#fff' } - Catalog Footwear -
-  = link_to (image_tag("logo.png",height: 120, weight: 120)),'/'
   %h2{ style: 'font-size:16pt; ' }
     Recebemos seu pedido com sucesso!
   %p
@@ -25,7 +24,7 @@
           %table
             %th
               %td
-                = image_tag("http://localhost:3000#{item.shoe.image}",height: 200)
+                = image_tag("http://localhost:3000/#{item.shoe.image}",height: 200)
         %hr
   %p{ style: 'color:red; text-align:center; font-size:24pt; height:40px; margin-top:5px;' }
     %h3 Obrigado por usar Catalog Footwear
