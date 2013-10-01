@@ -3,6 +3,8 @@ gem 'rails', '3.2.13'
 gem "haml"
 gem 'mini_magick'
 gem 'kaminari'
+gem 'jquery-rails'
+gem 'jquery-fileupload-rails'
 
 group :development do
   gem 'sqlite3'
@@ -16,7 +18,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
-  gem 'jquery-rails'
 end
 
 group :test do
