@@ -2,12 +2,12 @@
 class PeopleController < ApplicationController
 
   respond_to :html
-  #before_filter :logged?
+  before_filter :logged?
   layout "admin"
 
-  # def logged?
-  #   redirect_to "/login" if !session[:admin]
-  # end
+  def logged?
+    redirect_to "/login" if !session[:admin]
+  end
 
   def index
     @people = Person.all
