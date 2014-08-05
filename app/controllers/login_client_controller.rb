@@ -1,49 +1,52 @@
 #encoding: utf-8
 class LoginClientController < ApplicationController
-  layout "public"
+  layout 'public'
+  before_filter :load_shoes, only: [:index]
+  
 
-        def login_client
-            if request.post?
-              email   = params[:email]
-              password = params[:password]
-              name = params[:name]
+  def login_client
+    if request.post?
+      email   = params[:email]
+      password = params[:password]
+      name = params[:name]
 
-            if email.blank? && password.blank?
-              flash[:notice] = "Enter the email and password"
-            return
-            end
+      if email.blank? && password.blank?
+        flash[:notice] = 'Digite o e-mail e senha'
+        return
+      end
 
-            if email.blank?
-              flash[:notice] = "Enter the email"
-              return
-            end
+      if email.blank?
+        flash[:notice] = 'Digite o e-mail'
+        return
+      end
 
-            if password.blank?
-            flash[:notice] = "Enter the password"
-            return
-            end
+      if password.blank?
+        flash[:notice] = 'Digite a senha'
+        return
+      end
 
-            client = Client.auth(email,password)
-            if  !client
-            flash[:notice] = "Failed Login"
-            return
-            end
+      client = Client.auth(email,password)
+      if  !client
+        flash[:notice] = 'Falha no login'
+        return
+      end
 
-            flash[:notice]  = "Welcome, #{client.email}!"
-            session[:id]  = client.id
-            session[:email]  = client.email
-            redirect_to "/"
-          end
-        end
+      flash[:notice]  = 'Bem-vindo, #{client.email}!'
+      session[:id]  = client.id
+      session[:email]  = client.email
+      session[:name] = client.name
+      redirect_to '/cart'
+    end
+  end
 
-        def logout_client
-          session[:id]  = nil
-          session[:email]  = nil
-          session[:name] = nil
-          redirect_to "/" #:action=>:login_client
-        end
+  def logout_client
+    session[:id]  = nil
+    session[:email]  = nil
+    session[:name] = nil
+    redirect_to '/'
+  end
 
-        def index
-          redirect_to :action=>"/"
-        end
+  def index
+    redirect_to action: '/'
+  end
 end

@@ -1,23 +1,29 @@
-= form_for(@person) do |f|
-  - if @person.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@person.errors.count, "error")
-        prohibited this person from being saved:
-      %ul
-        - @person.errors.full_messages.each do |msg|
-          %li= msg
-  .field
-    = f.label :name
-    %br/
-    = f.text_field :name
-  .field
-    = f.label :password
-    %br/
-    = f.text_field :plain_password
-  .field
-    = f.label :admin
-    %br/
-    = f.check_box :admin
-  .actions
-    = f.submit
+#form
+  = form_for(@person) do |f|
+    - if @person.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@person.errors.count, 'erro')
+          este admin não pode ser salvo:
+        %ul
+          - @person.errors.full_messages.each do |msg|
+            %li= msg
+    .field
+      %b Nome:
+      = f.text_field :name
+      %br/
+      %br/
+    .field
+      %b Senha:
+      = f.text_field :plain_password
+      %br/
+      %br/
+    .field
+      %b Administrador:
+      = f.check_box :admin
+      %br/
+      %br/
+    .actions
+      = f.submit 'Novo Administrador', class: 'submit'
+      %br/
+      %br/

@@ -1,27 +1,36 @@
-%p#notice= notice
-%p
-  %img{:src => @shoe.image}
-%p
-  %b Name:
-  = @shoe.name
-%p
-  %b Value:
-  = @shoe.value
-%p
-  %b Enterprise:
-  = @shoe.enterprise_id
-%p
-  %b Audience:
-  = @shoe.audience
-%p
-  %b Stock:
-  = @shoe.stock
-%p
-  %b Registed:
-  = @shoe.registed
-%p
-  %b Description:
-  = @shoe.description
-= link_to 'Edit', edit_shoe_path(@shoe)
-|
-\#{link_to 'Back', shoes_path}
+.container
+  %section#shoe_detail
+    #name_page
+      Detalhes do Produto
+    - presenter = ShoePresenter.new(@shoe)
+  #img
+    %img{:src => @shoe.image, heigth: 270, width:270}
+  #details
+    #notice= notice
+    %p
+      %b Nome:
+      = @shoe.name
+    %p
+      %b Preço:
+      = @shoe.value
+    %p
+      %b Empresa:
+      = @shoe.enterprise.name
+    %p
+      %b Categoria:
+      = @shoe.category.name
+    %p
+      %b Estoque:
+      = @shoe.stock
+    %p
+      %b Data de registro:
+      = @shoe.registed
+    %p
+      %b Descrição:
+      = @shoe.description
+    %p
+      %b Permissão:
+      = presenter.permit
+    = link_to 'Editar', edit_shoe_path(@shoe)
+    |
+    \#{link_to 'Voltar', shoes_path}

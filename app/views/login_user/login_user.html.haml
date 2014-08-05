@@ -1,0 +1,16 @@
+.container
+  #name_page
+    Minha empresa
+  #form
+    %p#notice= notice
+    = form_tag 'login_user' do
+      %p
+        %label{:for => 'email'}E-mail:
+        %input#email{:name => 'email', :type => 'text'}/
+      %p
+        %label{:for => 'password'}Senha:
+        %input#password{:name => 'password', :type => 'password'}/
+      %p
+        %input{:type => 'submit', :value => 'Entrar', class: 'submit'}/
+      %p
+        = link_to 'Cadastre-se', '/register_enterprise'

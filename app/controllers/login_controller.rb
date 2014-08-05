@@ -1,57 +1,35 @@
 #encoding: utf-8
 class LoginController < ApplicationController
-	layout "public"
+  layout "public"
+
   def login
-	if request.post?
-	name	 = params[:name]
-	password = params[:password]
-	admin	 = params[:admin]
+    if request.post?
+      name = params[:name]
+      password = params[:password]
+      LoginParms.check_by_name(name,password)
 
-	if name.blank? && password.blank?
-	flash[:notice] = "Enter the name and password"
-	return
-	end
+      person = Person.auth(name,password)
+      raise LoginException.new('Falha no login') if !person
+      raise LoginException.new('Você não é administrador') if !person.admin
 
-	if name.blank?
-	flash[:notice] = "Enter the name"
-	return
-	end
-	
-	if password.blank?
-	flash[:notice] = "Enter the password"
-	return
-	end
+      flash[:notice] = "Bem-vindo, #{person.name}!"
+      session[:id] = person.id
+      session[:name] = person.name
+      session[:admin] = person.admin
+      redirect_to people_path
+    end
+  rescue LoginException => e
+    flash[:notice] = e.to_s
+  end
 
-	
-	person = Person.auth(name,password)
-	if !person
-	flash[:notice] = "Failed Login"
-	return
-	end
+  def logout
+    session[:id] = nil
+    session[:name] = nil
+    session[:admin] = nil
+    redirect_to '/'
+  end
 
-	if !person.admin
-	flash[:notice] = "You are not Administrator"
-	return
-	end
-	
-	flash[:notice]	= "Welcome, #{person.name}!"
-	session[:id]	= person.id
-	session[:name]	= person.name
-	session[:admin]	= person.admin
-	redirect_to people_path
-
-
-	end
-end
-	
-	def logout
-		session[:id]	= nil
-		session[:name]	= nil
-		session[:admin] = nil
-		redirect_to "/" #:action=>:index
-	end
-
-	def index
-		redirect_to :action=>"/"
-	end
+  def index
+    redirect_to :action=>'/'
+  end
 end

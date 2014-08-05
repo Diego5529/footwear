@@ -1,0 +1,16 @@
+.container
+  #name_page
+    Lista de categorias
+  %br/
+  %table.tables
+    %thead
+      %tr
+        %th Nome
+        %th Editar?
+    %tbody
+      - @categories.each do |category|
+        %tr
+          %td= category.name
+          %td= link_to 'Editar', edit_category_path(category)
+  #form
+    %h2= link_to 'Nova categoria', new_category_path

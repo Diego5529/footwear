@@ -1,0 +1,28 @@
+.container
+  #name_page
+    Detalhe do Pedido
+  #form
+    %p
+    %b Código do pedido:
+    = @orders.id
+    %br/
+    %br/
+    %b Data:
+    = (@orders.created_at.to_formatted_s(:short))
+    %br/
+    %br/
+    %b Nome do produto:
+    = @orders.shoe.name
+    %br/
+    %br/
+    %b Código do produto:
+    = @orders.shoe.id
+    %br/
+    %br/
+    %b Cliente:
+    = @orders.client.name
+    %br/
+    %br/
+  %hr
+  #form
+    %b= link_to 'Voltar' , '/shoes'

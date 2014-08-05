@@ -13,6 +13,7 @@ class CreateEnterprises < ActiveRecord::Migration
       t.string :state
       t.string :city
       t.string :telephone
+      t.boolean :permit
 
       t.timestamps
     end

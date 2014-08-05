@@ -1,19 +1,26 @@
-%h1 Listing people
-%table{:align => "center"}
-  %tr
-    %th Name
-    %th Password
-    %th Admin
-    %th
-    %th
-    %th
-  - @people.each do |person|
-    %tr
-      %td= person.name
-      %td= person.password
-      %td= person.admin
-      %td= link_to 'Show', person
-      %td= link_to 'Edit', edit_person_path(person)
-      %td= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' }
-  %hr
-%h2= link_to 'New Admin', new_person_path
+.container
+  #name_page
+    Lista de Administradores
+  %br/
+  %table.tables
+    %thead
+      %tr
+        %th Nome
+        %th Senha
+        %th Administrador
+        %th Detalhes?
+        %th Editar?
+        %th Apagar?
+    %tbody
+      - @people.each do |person|
+      - presenter = PersonPresenter.new(person)
+        %tr
+          %td= person.name
+          %td= presenter.password
+          %td= presenter.admin
+          %td= link_to 'Detalhes', person
+          %td= link_to 'Editar', edit_person_path(person)
+          %td= link_to 'Apagar', person, method: :delete, data: { confirm: 'Tem certeza?' }
+  %br/
+  #form
+    %h2= link_to 'Novo Administrador', new_person_path

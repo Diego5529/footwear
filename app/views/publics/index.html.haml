@@ -1,25 +1,26 @@
-!!!
-%html
-  %head
-    %title Home page - Footwear
-  %body    
-    %h1 All Shoes
-    %ul#mini_shoes
-      %center 
-      .field
-      %ul
-      = render :partial=>"mini_shoe", :collection=>@shoes   
-
-
-    %h2 Admin
-    %a{:href => "login"} Admins
+.container
+  #name_page
+    = render partial: 'categories', collection: @categories
+  #menu_left
+    .title
+      Empresas
+    %h3
+      = render partial: 'enterprises', collection: @enterprises
+    = render "menu2"
+  #releases    
     %br/
-    %h2 Users
-    %a{:href => "login_user"} Enterprises
-    %br/
-    %a{:href => "login_client"} Clients
-    %br/
-    %a{:href => "/enterprises/new"} Enterprises
-    %br/
-    %a{:href => "/clients/new"} Clients
-    %br/
+    %h1 Lançamentos
+    .center_style
+      #mini_shoes
+        = render partial: 'releases', collection: @releases
+  #bestsellers
+    %h1 Mais vendidos
+    .center_style 
+      #mini_shoes
+        = render partial: 'bestsellers', collection: @bestsellers
+  #content_all
+    %h1 Produtos cadastrados
+    #mini_shoes
+      = render partial: 'mini_shoe', collection: @shoes
+  #end
+#end

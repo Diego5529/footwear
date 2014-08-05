@@ -2,22 +2,22 @@
 require 'spec_helper'
 
 describe Client do
-  
-    # #Enteclientrprise create?
-    # let(:client) do
-    #     client = FactoryGirl.create(:client)
-    #  end
 
-    it "should has a client" do
-       client = FactoryGirl.create(:client).should be_valid
-    end
+  let(:client) do
+    client = FactoryGirl.create(:client)
+  end
+
+  #Client create?
+  it "should has a client" do
+    client = FactoryGirl.create(:client).should be_valid
+  end
     
-    #NAME
-    it "should not have a blank name" do
-      client = FactoryGirl.build(:client, name: '').should_not be_valid
-    end
+  #NAME
+  it "should not have a blank name" do
+    client = FactoryGirl.build(:client, name: '').should_not be_valid
+  end
 
-    it "should not have nil name" do
+  it "should not have nil name" do
     client = FactoryGirl.build(:client, name: nil)
     client.should_not be_valid
   end
@@ -44,18 +44,18 @@ describe Client do
     new_client.should_not be_valid if user.email == new_client.email
   end 
   
-   #PASSWORD
-    it "should not have a blank name" do
-      client = FactoryGirl.build(:client, password:'')
-      client.should_not be_valid
-    end
+  #PASSWORD
+  it "should not have a blank name" do
+    client = FactoryGirl.build(:client, password:'')
+    client.should_not be_valid
+  end
 
-    it "should not have nil password" do
+  it "should not have nil password" do
     client = FactoryGirl.build(:client, password: nil)
     client.should_not be_valid
-   end
+  end
 
-   it "must return the correct encrypted password" do
+  it "must return the correct encrypted password" do
     client = FactoryGirl.build(:client, password: Digest::SHA1.hexdigest('abc_123456_123'))
     pass = Enterprise.encrypt_password('123456')
     client.password.should eq pass
@@ -67,7 +67,7 @@ describe Client do
   end
 
   it "should have attribute to return empty password" do
-     FactoryGirl.build(:client, plain_password: '').should be_valid
+     FactoryGirl.build(:client, plain_password: '').should_not be_valid
   end
 
   it "should save the encrypt password in password" do
@@ -99,7 +99,7 @@ describe Client do
   end  
 
   #address
-   it 'address should be up to 200 caracters' do
+  it 'address should be up to 200 caracters' do
     FactoryGirl.build(:client, address: '').should_not be_valid
     FactoryGirl.build(:client, address: 'X' * 201).should_not be_valid
     FactoryGirl.build(:client, address: 'X' * 200).should be_valid
@@ -123,7 +123,6 @@ describe Client do
     client.should_not be_valid
   end
 
-
   it "should not have nil district" do
     client = FactoryGirl.build(:client, district: nil)
     client.should_not be_valid
@@ -132,12 +131,17 @@ describe Client do
   #telephone
   it "could have empty telephone" do
     client = FactoryGirl.build(:client, telephone: '')
+    client.should_not be_valid
+  end
+
+  it "could have empty telephone" do
+    client = FactoryGirl.build(:client, telephone: '01897748686')
     client.should be_valid
   end
 
   it "could have nil telephone" do
     client = FactoryGirl.build(:client, telephone: nil)
-    client.should be_valid
+    client.should_not be_valid
   end
 
   it "telephone should has 11 caracters" do
@@ -171,5 +175,4 @@ describe Client do
     client = FactoryGirl.build(:client, zip_code: nil)
     client.should_not be_valid
   end
-
 end

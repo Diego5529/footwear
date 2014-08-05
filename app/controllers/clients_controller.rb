@@ -1,55 +1,42 @@
 #encoding: utf-8
 class ClientsController < ApplicationController
-  layout "admin"
+  layout 'admin'
 
   respond_to :html
   before_filter :logged?
-  #before_filter :login?
 
   def logged?
-  redirect_to "/people" if !session[:admin]
+    redirect_to '/people' if !session[:admin]
   end
   
-  # def login?
-  # redirect_to "/clients" if !session[:id]
-  # end
-
   def index
     @clients = Client.all
   end
 
-  # GET /clients/1
-  # GET /clients/1.json
   def show
     @client = Client.find(params[:id])
   end
 
-  # GET /clients/new
-  # GET /clients/new.json
   def new
     @client = Client.new
   end
 
-  # GET /clients/1/edit
   def edit
     @client = Client.find(params[:id])
   end
 
-  # POST /clients
-  # POST /clients.json
   def create
     begin
     @client = Client.new(params[:client])
-
     respond_to do |format|
       if @client.save
-        format.html { redirect_to @client, notice: 'Client was successfully created.' }
+        format.html { redirect_to @client, notice: 'Cliente criado' }
         format.json { render json: @client, status: :created, location: @client }
       else
-        format.html { render action: "new" }
+        format.html { render action: 'new' }
         format.json { render json: @client.errors, status: :unprocessable_entity }
       end
-    end    
+    end
     rescue => e
       @client = Client.new(params[:client].except(:plain_password))
       flash[:notice] = e.to_s
@@ -57,37 +44,27 @@ class ClientsController < ApplicationController
     end
   end
 
-  # PUT /clients/1
-  # PUT /clients/1.json
   def update
     @client = Client.find(params[:id])
-    
     respond_to do |format|
       if @client.update_attributes(params[:client])
-        format.html { redirect_to @client, notice: 'Client was successfully updated.' }
+        format.html { redirect_to @client, notice: 'Cliente atualizado.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: 'edit'}
         format.json { render json: @client.errors, status: :unprocessable_entity }
       end
     end
-    
+
     rescue => e
       @client = Client.new(params[:client].except(:plain_password))
       flash[:notice] = e.to_s
       render :edit
-
   end
 
-  # DELETE /clients/1
-  # DELETE /clients/1.json
   def destroy
     @client = Client.find(params[:id])
     @client.destroy
-
-    respond_to do |format|
-      format.html { redirect_to clients_url }
-      format.json { head :no_content }
-    end
+    redirect_to '/clients'
   end
 end

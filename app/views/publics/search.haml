@@ -1,0 +1,12 @@
+.container
+  #name_page
+    Procura
+  #searchs
+    %br/
+    -if @search.size > 0
+      #mini_shoes
+        = render partial: 'search', collection: @search
+    -else
+      #img
+        %h5 Nada foi encontrado. Tente novamente por nome do produto, empresa ou categoria.
+#end

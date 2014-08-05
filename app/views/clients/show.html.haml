@@ -1,37 +1,41 @@
-%p#notice= notice
-%p
-  %b Name:
-  = @client.name
-%p
-  %b Email:
-  = @client.email
-%p
-  %b Password:
-  = @client.password
-%p
-  %b CPF:
-  = @client.cpf
-%p
-  %b zip_code
-  = @client.zip_code
-%p
-  %b Address:
-  = @client.address
-%p
-  %b Number:
-  = @client.number
-%p
-  %b District:
-  = @client.district
-%p
-  %b State:
-  = @client.state
-%p
-  %b City:
-  = @client.city
-%p
-  %b Telephone:
-  = @client.telephone
-= link_to 'Edit', edit_client_path(@client)
-|
-\#{link_to 'Back', clients_path}
+.container
+  #name_page
+    Detalhes do Cliente
+  #form
+    %p#notice= notice
+    %p
+      %b Nome:
+      = @client.name
+    %p
+      %b E-mail:
+      = @client.email
+    %p
+      %b CPF:
+      = @client.cpf
+    %p
+      %b CEP:
+      = @client.zip_code
+    %p
+      %b Endereço:
+      = @client.address
+    %p
+      %b Numero:
+      = @client.number
+    %p
+      %b Bairro:
+      = @client.district
+    %p
+      %b Estado:
+      = @client.state
+    %p
+      %b Cidade:
+      = @client.city
+    %p
+      %b Telefone:
+      = @client.telephone
+  %hr
+  #form
+    = link_to 'Editar', edit_client_path(@client)
+    |
+    \#{link_to 'Voltar', clients_path}
+  %hr

@@ -1,51 +1,55 @@
 FactoryGirl.define do 
+  
   factory :person do
-    name 'admin'
-    #email 'treicyfelton@msn.com'
-    #nick 'treicy'
-    password '123456' 
-    #born_at '2013-05-04'
-    #situation 'on'
-    #hobby 'sei la'
     admin true
+    name 'Administrador'
+    plain_password '123456'
    end
    
-   factory :enterprise do
+  factory :enterprise do
+    address 'rua ssss, 885'
+    city 'Birigui'
+    cnpj '13.456.789/8745-66'
+    district 'Centro'
+    email 'foo@bar.com'
     name 'Empresa'
     name_social 'Nome Social'
-    email 'foo@bar.com'
-    password '123456'
-    zip_code '16200-000'
-    address 'rua ssss, 885'
     number '1332'
-    district 'Centro'
+    plain_password '123456'
     state 'Rio de Janeiro'
-    city 'Birigui'
-    telephone '12345678910'
-    cnpj '13.456.789/8745-66'
-   end
-
-   factory :client do
-    name 'Usuario'
-    email 'foo@bar.com'
-    password '123456'
+    telephone '01897748686'
     zip_code '16200-000'
+  end
+
+  factory :client do
     address 'Rua ssss'
-    number '1332'
-    district 'Centro'
-    state 'Rio de Janeiro'
     city 'Birigui'
-    telephone '12345678910'
     cpf '445.153.509-83'
+    district 'Centro'
+    email 'foo@bar.com'
+    name 'Usuario'
+    number '1332'
+    plain_password '123456'
+    state 'Rio de Janeiro'
+    telephone '01897748686'
+    zip_code '16200-000'
+  end
+
+  factory :shoe do
+    category_id 1
+    description 'Text decription'
+    enterprise_id 1
+    name 'Name'
+    stock 10
+    value 9.99
    end
 
-   # factory :shoe do
-   #  name 'Sapato'
-   #  value '100,00'
-   #  stock ''
+  factory :order_item do
+    shoe_id 1
+    value 9.99
+  end
 
-
-
-   # end
-
+  factory :category do
+    name 'Infantil'
+  end
 end

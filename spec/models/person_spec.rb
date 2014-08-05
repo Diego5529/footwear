@@ -13,7 +13,7 @@ describe Person do
      person.should be_valid
   end
 
-  #name
+  #Name
   it "should not have empty name" do
     person = FactoryGirl.build(:person, name: '')
     person.should_not be_valid
@@ -41,8 +41,6 @@ describe Person do
       person.should_not be_valid
   end
 
-  
-
   #tests for secure password
   it "must return the correct encrypted password" do
     person = FactoryGirl.build(:person, password: Digest::SHA1.hexdigest('abc_123456_123'))
@@ -56,12 +54,15 @@ describe Person do
   end
 
   it "should have attribute to return empty password" do
-    FactoryGirl.build(:person, plain_password: '').should be_valid
+    FactoryGirl.build(:person, plain_password: '').should_not be_valid
+  end
+
+  it "should have attribute to return empty password" do
+    FactoryGirl.build(:person, plain_password: nil).should_not be_valid
   end
 
   it "should save the encrypt password in password" do
     person = FactoryGirl.build(:person, plain_password: '123456')
     person.password.should eq Person.encrypt_password('123456')
   end
-
 end

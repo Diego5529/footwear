@@ -1,50 +1,37 @@
 #encoding: utf-8
 class LoginUserController < ApplicationController
-      layout "public"
+  layout 'public'
 
-        def login_user
-            if request.post?
-              email   = params[:email]
-              password = params[:password]
+  def login_user
+    if request.post?
+      email = params[:email]
+      password = params[:password]
 
-            if email.blank? && password.blank?
-              flash[:notice] = "Enter the email and password"
-            return
-            end
+      LoginParms.check_by_email(email,password)
 
-            if email.blank?
-              flash[:notice] = "Enter the email"
-              return
-            end
+      enterprise = Enterprise.auth(email,password)
+      raise LoginException.new("Falha no login") if !enterprise
 
-            if password.blank?
-            flash[:notice] = "Enter the password"
-            return
-            end
+      flash[:notice] = 'Bem-vindo, #{enterprise.email}!'
+      session[:id] = enterprise.id
+      session[:email] = enterprise.email
+      session[:name] = enterprise.name
+      session[:permit] = true
+      redirect_to shoes_path
+    end
+  rescue LoginException => e
+    flash[:notice] = e.to_s
+  end
 
-            enterprise = Enterprise.auth(email,password)
-            if  !enterprise
-            flash[:notice] = "Failed Login"
-            return
-            end
+  def logout_user
+    session[:id] = nil
+    session[:email] = nil
+    session[:name] = nil
+    session[:permit] = nil
+    redirect_to '/'
+  end
 
-            flash[:notice]  = "Welcome, #{enterprise.email}!"
-            session[:id]  = enterprise.id
-            session[:email]  = enterprise.email
-            session[:name]  = enterprise.name
-            session[:admin] = false
-            redirect_to shoes_path
-          end
-        end
-
-        def logout_user
-          session[:id]  = nil
-          session[:email]  = nil
-          session[:admin] = nil
-          redirect_to "/" #:action=>:login_user
-        end
-
-        def index
-          redirect_to :action=>"/"
-        end
+  def index
+    redirect_to :action=>'/'
+  end
 end

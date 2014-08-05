@@ -1,4 +1,10 @@
-%h1 Editing client
-= render 'form'
-= link_to 'Show', @client
-= link_to 'Back', clients_path
+.container
+  #name_page
+    Editar Cliente
+  %p#notice= notice
+  = render 'form'
+  %hr
+  #form 
+    = link_to 'Detalhes', @client
+    |
+    = link_to 'Voltar', clients_path

@@ -1,16 +1,30 @@
 !!!
 %html
   %head
-    %title -Footwear- Login Admin
-    = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
+    %title -Footwear
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
     %header
-      Welcome: #{session[:name]}
-      %ul
-        %li= link_to "Home", "/"
-        %li= link_to "Exit", "/logout_client"
+      #menu_top
+        #logo
+          = link_to (image_tag("logo_azul.png",height: 120, weight: 120)),'/', class: 'logo'
+        #cart2
+          = link_to (image_tag 'meu_carrinho.png'), 'cart', class: 'cart'
+        #buttons
+          = link_to "Início", '/'
+          = link_to 'Editar dados', '/editar_cliente'
+          = link_to 'Meus pedidos', '/myorders'
+        #search
+          = render 'layouts/search'
+        #message  
+          Bem vindo, #{session[:name]}!
+          = link_to 'Sair', logout_client_path
+    .faixa1
     = yield
     %footer
-      Hello, here is layout Clients
+      %b Email:
+      catalog_footwear@gmail.com
+      %br/
+      %b Desenvolvedor: Diego Oliveira

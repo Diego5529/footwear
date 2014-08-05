@@ -1,3 +1,47 @@
-%h1 Shoes of: #{@enterprise.name}
-%ul#mini_shoes
-  = render :partial=>"mini_shoe", :collection=>@shoes
+.container
+  #name_page
+    = render partial: 'categories', collection: @categories
+  #menu_left
+    .title
+      Empresas
+    %h3
+      = render partial: 'enterprises', collection: @enterprises
+    = render "menu2"
+  #enterprise
+    %h1
+      = @enterprise.name
+    .form 
+      #enterprise_total_info
+        = image_tag(@enterprise.image,width: 150,height: 150)
+        #enterprise_details_info
+          %b E-mail:
+          = @enterprise.email
+          %br/
+          %b Telefone:
+          = @enterprise.telephone
+          %br/
+          %b Endereço:
+          = @enterprise.address
+          ,
+          = @enterprise.number
+          %br/
+          %b Bairro:
+          = @enterprise.district
+          %br/
+          %b Cidade:
+          = @enterprise.city
+          %br/
+          %b Estado:
+          = @enterprise.state
+  .content_shoe_enterprise  
+    %h1 Produtos da #{@enterprise.name} 
+    #releases   
+      #mini_shoes
+        -if @shoes.size > 0
+          %ul
+            = render :partial=>'mini_shoe', :collection=>@shoes
+        -else
+          #Form
+            %h5 Não há nenhum produto desta empresa.
+  #end
+#end

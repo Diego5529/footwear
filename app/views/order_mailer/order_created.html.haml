@@ -1,0 +1,32 @@
+%div{ style: 'color:#000; font-family: arial; background-color: #fff;border: 1px solid #f1f1f1;' }
+  %h2{ style: 'text-align:center;font-size:16pt; background-color:#02314c;margin-top:0px; color:#fff' } - Catalog Footwear -
+  %h2{ style: 'font-size:16pt; ' }
+    Recebemos seu pedido com sucesso!
+  %p
+    Olá, seu pedido já foi encaminhado para a(as) empresas(as) com sua encomenda.
+  %p
+    Anote o número de sua encomenda:
+    %strong= @order.id
+  %p
+    Os itens solicitados foram:
+    %ul
+    - for item in @order.order_items
+      %ul  
+      Empresa:
+      = item.shoe.enterprise.name
+      %ul
+        %li
+          Produto:
+          = item.shoe.name
+          \- #{number_to_currency(item.value)}
+          \- Código do produto:
+          = item.shoe.id
+          %table
+            %th
+              %td
+                = image_tag("http://localhost:3000/#{item.shoe.image}",height: 200)
+        %hr
+  %p{ style: 'color:red; text-align:center; font-size:24pt; height:40px; margin-top:5px;' }
+    %h3 Obrigado por usar Catalog Footwear
+  %h2{ style: 'color: #fff; background-color:#02314c; text-align:center; font-size:22pt; height:40px; margin-bottom:0px;border: 2px solid #000;' }
+    ANUNCIE JÁ SUA EMPRESA E DIVULGUE SUA MARCA PARA O MUNDO
