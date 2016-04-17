@@ -1,18 +1,14 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.13'
-gem "haml"
+gem 'haml'
 gem 'mini_magick'
 gem 'kaminari'
 gem 'jquery-rails'
 gem 'jquery-fileupload-rails'
 
-group :development do
-  gem 'sqlite3'
-end
+gem 'sqlite3', group: :development
 
-group :production do
-  gem 'pg'
-end
+gem 'pg', group: :production
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
