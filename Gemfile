@@ -6,9 +6,13 @@ gem 'kaminari'
 gem 'jquery-rails'
 gem 'jquery-fileupload-rails'
 
-# group :development do
+group :development do
   gem 'sqlite3'
-# end
+end
+
+group :production do
+  gem 'pg'
+end
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
