@@ -15,10 +15,12 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-# group :test do
-#   gem 'factory_girl_rails'
-#   gem 'rspec-rails','2.14.0'
-#   gem 'rspec-rails-controller'
-#   gem 'capybara', '2.1.0'
-#   gem 'capybara-webkit', '1.0.0'
-# end
+gem 'test-unit'
+
+group :test do
+	gem 'factory_girl_rails'
+	gem 'rspec-rails'
+	gem 'rspec-rails-controller'
+	#gem 'capybara', '2.1.0'
+	#gem 'capybara-webkit', '1.0.0'
+end
