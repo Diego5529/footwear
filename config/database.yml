@@ -13,7 +13,5 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: dc7d2qvmmtp9jn
+  database: postgres://uettfpwjhbwpyg:FJq17bbFoSjDgUhxOKP1XWUVw0@ec2-23-21-215-184.compute-1.amazonaws.com:5432/doohv9e3a585
   pool: 5
-  username: rizcdoemhfydpm
-  password: l3Wa-Z7e9vkGJcChreYzBMzUrv
