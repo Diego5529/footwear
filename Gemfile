@@ -5,6 +5,7 @@ gem 'mini_magick'
 gem 'kaminari'
 gem 'jquery-rails'
 gem 'jquery-fileupload-rails'
+gem 'test-unit'
 
 gem 'sqlite3', group: :development
 gem 'pg', group: :production
@@ -14,8 +15,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
-
-gem 'test-unit'
 
 group :test do
 	gem 'factory_girl_rails'
